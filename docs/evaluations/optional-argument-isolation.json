@@ -1,0 +1,271 @@
+{
+  "purpose": "Bounded actual-model isolation of optional property generation; not full route acceptance",
+  "options": {
+    "temperature": 0.2,
+    "num_ctx": 4096,
+    "num_predict": 384,
+    "think": false
+  },
+  "observations": [
+    {
+      "model": "qwen3.5:2b-q4_K_M",
+      "variant": "optional_string",
+      "request": "How much disk space is available on the filesystem containing /?",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4096
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "system": "Extract the path from the user request into JSON. Preserve an explicit literal path exactly. If no path is supplied, use null when the schema permits it, otherwise omit path. Do not invent a path.",
+      "output": {
+        "path": "/"
+      },
+      "elapsed_ms": 2991
+    },
+    {
+      "model": "qwen3.5:2b-q4_K_M",
+      "variant": "optional_string",
+      "request": "How much disk space is available on this computer?",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4096
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "system": "Extract the path from the user request into JSON. Preserve an explicit literal path exactly. If no path is supplied, use null when the schema permits it, otherwise omit path. Do not invent a path.",
+      "output": {
+        "path": "null"
+      },
+      "elapsed_ms": 283
+    },
+    {
+      "model": "qwen3.5:2b-q4_K_M",
+      "variant": "required_string",
+      "request": "How much disk space is available on the filesystem containing /?",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4096
+          }
+        },
+        "required": [
+          "path"
+        ],
+        "additionalProperties": false
+      },
+      "system": "Extract the path from the user request into JSON. Preserve an explicit literal path exactly. If no path is supplied, use null when the schema permits it, otherwise omit path. Do not invent a path.",
+      "output": {
+        "path": "/"
+      },
+      "elapsed_ms": 339
+    },
+    {
+      "model": "qwen3.5:2b-q4_K_M",
+      "variant": "required_nullable",
+      "request": "How much disk space is available on the filesystem containing /?",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 4096
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "path"
+        ],
+        "additionalProperties": false
+      },
+      "system": "Extract the path from the user request into JSON. Preserve an explicit literal path exactly. If no path is supplied, use null when the schema permits it, otherwise omit path. Do not invent a path.",
+      "output": {
+        "path": null
+      },
+      "elapsed_ms": 167
+    },
+    {
+      "model": "qwen3.5:2b-q4_K_M",
+      "variant": "required_nullable",
+      "request": "How much disk space is available on this computer?",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 4096
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "path"
+        ],
+        "additionalProperties": false
+      },
+      "system": "Extract the path from the user request into JSON. Preserve an explicit literal path exactly. If no path is supplied, use null when the schema permits it, otherwise omit path. Do not invent a path.",
+      "output": {
+        "path": null
+      },
+      "elapsed_ms": 231
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "variant": "optional_string",
+      "request": "How much disk space is available on the filesystem containing /?",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4096
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "system": "Extract the path from the user request into JSON. Preserve an explicit literal path exactly. If no path is supplied, use null when the schema permits it, otherwise omit path. Do not invent a path.",
+      "output": {
+        "path": "/"
+      },
+      "elapsed_ms": 4173
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "variant": "optional_string",
+      "request": "How much disk space is available on this computer?",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4096
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "system": "Extract the path from the user request into JSON. Preserve an explicit literal path exactly. If no path is supplied, use null when the schema permits it, otherwise omit path. Do not invent a path.",
+      "output": {
+        "path": "null"
+      },
+      "elapsed_ms": 782
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "variant": "required_string",
+      "request": "How much disk space is available on the filesystem containing /?",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4096
+          }
+        },
+        "required": [
+          "path"
+        ],
+        "additionalProperties": false
+      },
+      "system": "Extract the path from the user request into JSON. Preserve an explicit literal path exactly. If no path is supplied, use null when the schema permits it, otherwise omit path. Do not invent a path.",
+      "output": {
+        "path": "/"
+      },
+      "elapsed_ms": 539
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "variant": "required_nullable",
+      "request": "How much disk space is available on the filesystem containing /?",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 4096
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "path"
+        ],
+        "additionalProperties": false
+      },
+      "system": "Extract the path from the user request into JSON. Preserve an explicit literal path exactly. If no path is supplied, use null when the schema permits it, otherwise omit path. Do not invent a path.",
+      "output": {
+        "path": "/"
+      },
+      "elapsed_ms": 308
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "variant": "required_nullable",
+      "request": "How much disk space is available on this computer?",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 4096
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "path"
+        ],
+        "additionalProperties": false
+      },
+      "system": "Extract the path from the user request into JSON. Preserve an explicit literal path exactly. If no path is supplied, use null when the schema permits it, otherwise omit path. Do not invent a path.",
+      "output": {
+        "path": null
+      },
+      "elapsed_ms": 471
+    }
+  ]
+}

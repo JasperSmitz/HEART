@@ -1,0 +1,10 @@
+[package]
+name = "heart-system"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+heart-contract = { path = "../../crates/contract" }
+serde_json.workspace = true
+fs4 = { version = "1.1", default-features = false }
+sysinfo = { version = "0.39.6", default-features = false, features = ["system"] }

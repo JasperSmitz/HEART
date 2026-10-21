@@ -1,10 +1,10 @@
 # 0003 — First useful terminal milestone
 
-**Status:** proposed; application implementation awaits explicit user authorization.
+**Status:** implemented and independently reviewed; validation on the 16 GB target remains open. Returned to discussion mode; no further implementation authorized by this record.
 
 ## Objective and authorization
 
-Open HEART, enter a short natural-language request, and receive a concise, sourced web answer in the selected character's voice. The user has established the product direction, Tavily as the initial provider, and a generic core/module boundary. Rust is the preferred CLI-core language. This proposal makes the implementation scope concrete; it is not a record of approval to start application code.
+Open HEART, enter a short natural-language request, and receive a concise, sourced web answer in the selected character's voice. The user explicitly authorized this milestone with “Alright let's go ahead on the first milestone. Let's rock!” This approves the scoped Rust/Ollama implementation below, with Tavily as the initial search provider and the generic core/module boundary. The earlier setup commit does not authorize any new commits.
 
 ## Recommended stack and sequence
 
@@ -37,8 +37,18 @@ Dashboard/widgets, system-information or music modules, visual characters, persi
 - Developer: request `gpt-6.1-sol`/medium; raise effort for a demonstrated difficult subtask as needed. Reviewer: request `gpt-6.1-sol`/high. Prefer native roles when the active client exposes them; otherwise use the documented explicit-role fallback. Record requested and verified client settings separately from execution telemetry.
 - Independent reviewer checks correctness, boundaries, security, portability, tests, and actual model measurements. The architect coordinates at most two correction rounds for unresolved findings before returning to the user.
 
-## Setup and open items
+## Initial setup observations
 
-The planning-session PATH did not expose `cargo`, `rustc`, or `ollama`; this is not proof they are uninstalled. Check existing installations before proposing setup. Necessary installations and model downloads use the environment's approval mechanisms. Do not enroll in paid services or enable paid Tavily usage. A Tavily API key will be needed for live lookup verification; it must be supplied through local configuration, not committed.
+The planning-session PATH did not expose `cargo`, `rustc`, or `ollama`. Existing installations were checked, then Rust/Cargo 1.99.1 and Ollama 0.40.6 were installed through approved Homebrew commands. Explicit Qwen3.5 2B/4B Q4_K_M model files were downloaded with approval. The user supplied a Tavily key through ignored `.env.local`; no paid enrollment or billing change was made.
 
-The exact model/quantization, contract fields, dependency versions, and measured latency/resource limits remain to be resolved within the approved milestone. No application directories, code, downloads, or installations have been created for this proposal.
+## Execution and handoff
+
+Implemented Rust workspace packages for the generic contract, core, CLI and separate web-search module. See [module contract](../MODULE_CONTRACT.md) for actual types and validation limits. Selected `qwen3.5:2b-q4_K_M` from the measured candidates; dependency versions are locked in `Cargo.lock`. No dashboard, extra capability, cloud fallback or application commit was added.
+
+Acceptance criteria 1–5 and 7 passed the implemented tests/live checks within the documented limitations. Criterion 6 has measured evidence on the actual M1 Pro/32 GiB machine, which supersedes the assumed baseline hardware; the intended 16 GB target is **not validated**. Warm fixture requests had a 1.147-second median for 2B versus 2.291 seconds for 4B. A full cold CLI/Tavily lookup took 3.67 seconds once. Exact factual fallback occurred in 3/6 2B cases and 2/6 4B cases; final character phrasing remains inconsistent. These small samples and practical rejection checks do not establish general semantic accuracy.
+
+All 15 tests passed on macOS and Linux ARM64 in an official Rust container. Formatting and warnings-denied Clippy passed. Latest-binary real Tavily checks passed in both personalities; an accelerated two-second idle check verified unload and subsequent reload. The five-minute default was not separately timed. No live Linux inference deployment or gaming coexistence was tested.
+
+Independent review cleared four concrete defects after one correction round, including a reverse-direction Unicode regression before closing the round. Reviewer maintained the substantive learning entry. Developer and reviewer requested Sol/medium and Sol/high respectively through the explicit-role fallback; task execution metadata was not independently verified. See [full evidence and limitations](../evaluations/milestone-1.md).
+
+Further work requires discussion and scoped approval. Priorities to discuss after hands-on use: phrasing reliability, a small read-only system module, and testing the 16 GB target.

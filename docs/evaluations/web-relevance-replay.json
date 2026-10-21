@@ -1,0 +1,451 @@
+{
+  "cases": [
+    {
+      "depth": "basic",
+      "query": "When did Deltarune release?",
+      "module_result": {
+        "outcome": "success",
+        "fallback": "Source [1] excerpt: After previously teasing something Undertale-related a day earlier, Fox released the first chapter of Deltarune for free on October 31, 2018.",
+        "factual_text": "After previously teasing something Undertale-related a day earlier, Fox released the first chapter of Deltarune for free on October 31, 2018.",
+        "data": {
+          "evidence": [
+            {
+              "title": "Deltarune - Wikipedia",
+              "excerpt": "After previously teasing something Undertale-related a day earlier, Fox released the first chapter of Deltarune for free on October 31, 2018. Initially disguised as a \"survey program\", it was then described as a game \"intended for people who have completed Undertale\". Originally, all of the remaining chapters were intended to be released after the completion of the entire game. As he envisioned a larger project than Undertale, he stated that he needed to form a team, claiming it would be [...] The first two chapters were released as free demos in 2018 and 2021, respectively, while the third and fourth chapters were made available in 2025 with the game's paid release. The fifth chapter was released as a free update in June 2026, with the sixth planned for 2027 and a seventh planned for a later release. Initially released for macOS and Windows, it was later ported to the Nintendo Switch an"
+            }
+          ]
+        },
+        "sources": [
+          {
+            "title": "Deltarune - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Deltarune"
+          }
+        ]
+      }
+    },
+    {
+      "depth": "advanced",
+      "query": "When did Deltarune release?",
+      "module_result": {
+        "outcome": "success",
+        "fallback": "Source [1] excerpt: Deltarune's paid release was June 4, 2025 to coincide with the Nintendo Switch 2's launch date in Japan, and Chapter 5 was released on June 24, 2026, as announced during the Nintendo Direct on June 9, 2026.",
+        "factual_text": "Deltarune's paid release was June 4, 2025 to coincide with the Nintendo Switch 2's launch date in Japan, and Chapter 5 was released on June 24, 2026, as announced during the Nintendo Direct on June 9, 2026.",
+        "data": {
+          "evidence": [
+            {
+              "title": "Deltarune - The Deltarune Wiki",
+              "excerpt": "Deltarune's paid release was June 4, 2025 to coincide with the Nintendo Switch 2's launch date in Japan, and Chapter 5 was released on June 24, 2026, as announced during the Nintendo Direct on June 9, 2026. Its price is $24.99, with subsequent Chapters intended to be released as free expansions to the paid version of the game. For console versions, Deltarune only has to be bought once on a Nintendo or PlayStation console via cross-buy. SAVE data can also be transferred from the demo to the full game. The official Deltarune FAQ page has further details on this, and emphasizes the option to import data only displays once. [...] The heroes as depicted in the 2025 trailer  Deltarune's paid release was on June 4 2025 on most platforms; it includes Chapters 3 and 4, and the Chapters 3+4 soundtrack was released alongside it. The trailer for the paid release contains Toby returning in the dog su"
+            },
+            {
+              "title": "A history of announcements and release dates. : r/Deltarune",
+              "excerpt": "Deltarune Chapter 1 on PS4 and Switch was announced on February 13, 2019, along with its release date. The game released 15 days later, on"
+            }
+          ]
+        },
+        "sources": [
+          {
+            "title": "Deltarune - The Deltarune Wiki",
+            "url": "https://deltarune.wiki/w/Deltarune"
+          },
+          {
+            "title": "A history of announcements and release dates. : r/Deltarune",
+            "url": "https://www.reddit.com/r/Deltarune/comments/1j6m3ya/a_history_of_announcements_and_release_dates"
+          }
+        ]
+      }
+    },
+    {
+      "depth": "basic",
+      "query": "What is Rust's package manager called?",
+      "module_result": {
+        "outcome": "success",
+        "fallback": "Source [1] excerpt: Cargo is a build system and package manager for Rust.",
+        "factual_text": "Cargo is a build system and package manager for Rust.",
+        "data": {
+          "evidence": [
+            {
+              "title": "Getting started with the Rust package manager, Cargo | Opensource.com",
+              "excerpt": "Cargo is a build system and package manager for Rust. It helps developers download and manage dependencies and assists in creating Rust packages. Packages in Rust are often called \"crates\" in the Rust community, but in this article, the two words are interchangeable. Refer to the Cargo FAQ provided by the Rust community for clarification.  If you need any help with Cargo's command-line utility, use the --help or -h command-line argument:  ``` $ cargo –help ``` [...] In addition to being a great programming language, Rust also features a build system and package manager called Cargo. Cargo handles a lot of tasks, like building code, downloading libraries or dependencies, and so on. The two are bundled together, so you get Cargo when you install Rust.  ## Installing Rust and Cargo [...] Supported by Red Hat  Home   Supported by Red Hat  # Getting started with the Rust package manager, Carg"
+            },
+            {
+              "title": "Hello, Cargo! - The Rust Programming Language",
+              "excerpt": "## Hello, Cargo!  Cargo is Rust’s build system and package manager. Most Rustaceans use this tool to manage their Rust projects because Cargo handles a lot of tasks for you, such as building your code, downloading the libraries your code depends on, and building those libraries. (We call the libraries that your code needs dependencies.)"
+            },
+            {
+              "title": "Hello, Cargo! - The Rust Programming Language",
+              "excerpt": "# The Rust Programming Language  ## Hello, Cargo!  Cargo is Rust’s build system and package manager. Most Rustaceans will use this tool to manage their Rust projects because Cargo takes care of a lot of tasks for you, such as building your code, downloading the libraries your code depends on, and building those libraries. (We call libraries your code needs dependencies.)"
+            }
+          ]
+        },
+        "sources": [
+          {
+            "title": "Getting started with the Rust package manager, Cargo | Opensource.com",
+            "url": "https://opensource.com/article/20/3/rust-cargo"
+          },
+          {
+            "title": "Hello, Cargo! - The Rust Programming Language",
+            "url": "https://doc.rust-lang.org/book/ch01-03-hello-cargo.html"
+          },
+          {
+            "title": "Hello, Cargo! - The Rust Programming Language",
+            "url": "https://web.mit.edu/rust-lang_v1.26.0/arch/amd64_ubuntu1404/share/doc/rust/html/book/second-edition/ch01-03-hello-cargo.html"
+          }
+        ]
+      }
+    },
+    {
+      "depth": "advanced",
+      "query": "What is Rust's package manager called?",
+      "module_result": {
+        "outcome": "success",
+        "fallback": "Source [1] excerpt: In addition to being a great programming language, Rust also features a build system and package manager called Cargo.",
+        "factual_text": "In addition to being a great programming language, Rust also features a build system and package manager called Cargo.",
+        "data": {
+          "evidence": [
+            {
+              "title": "Getting started with the Rust package manager, Cargo | Opensource.com",
+              "excerpt": "Supported by Red Hat  Home   Supported by Red Hat  # Getting started with the Rust package manager, Cargo  Get to know Rust's package manager and build tool.  Shipping containers stacked in a yard  Image by:   Lucarelli via Wikimedia Commons. CC-BY-SA 3.0  Rust is a modern programming language that provides performance, reliability, and productivity. It has consistently been voted as the most-loved language on StackOverflow surveys for a few years now.  In addition to being a great programming language, Rust also features a build system and package manager called Cargo. Cargo handles a lot of tasks, like building code, downloading libraries or dependencies, and so on. The two are bundled together, so you get Cargo when you install Rust.  ## Installing Rust and Cargo [...] Cargo is a build system and package manager for Rust. It helps developers download and manage dependencies and assist"
+            },
+            {
+              "title": "Hello, Cargo! - The Rust Programming Language",
+              "excerpt": "# The Rust Programming Language  ## Hello, Cargo!  Cargo is Rust’s build system and package manager. Most Rustaceans will use this tool to manage their Rust projects because Cargo takes care of a lot of tasks for you, such as building your code, downloading the libraries your code depends on, and building those libraries. (We call libraries your code needs dependencies.)  The simplest Rust programs, like the one we’ve written so far, don’t have any dependencies, so if we had built the Hello World project with Cargo, it would only be using the part of Cargo that takes care of building your code. As you write more complex Rust programs, you’ll want to add dependencies, and if you start the project off using Cargo, that will be a lot easier to do."
+            },
+            {
+              "title": "Hello, Cargo! - The Rust Programming Language",
+              "excerpt": "## Keyboard shortcuts  Press `←` or `→` to navigate between chapters  Press `S` or `/` to search in the book  Press `?` to show this help  Press `Esc` to hide this help  # The Rust Programming Language  ## Hello, Cargo!  Cargo is Rust’s build system and package manager. Most Rustaceans use this tool to manage their Rust projects because Cargo handles a lot of tasks for you, such as building your code, downloading the libraries your code depends on, and building those libraries. (We call the libraries that your code needs dependencies.)"
+            }
+          ]
+        },
+        "sources": [
+          {
+            "title": "Getting started with the Rust package manager, Cargo | Opensource.com",
+            "url": "https://opensource.com/article/20/3/rust-cargo"
+          },
+          {
+            "title": "Hello, Cargo! - The Rust Programming Language",
+            "url": "https://web.mit.edu/rust-lang_v1.26.0/arch/amd64_ubuntu1404/share/doc/rust/html/book/second-edition/ch01-03-hello-cargo.html"
+          },
+          {
+            "title": "Hello, Cargo! - The Rust Programming Language",
+            "url": "https://doc.rust-lang.org/book/ch01-03-hello-cargo.html"
+          }
+        ]
+      }
+    },
+    {
+      "depth": "basic",
+      "query": "Who composed The Legend of Zelda: Skyward Sword?",
+      "module_result": {
+        "outcome": "error",
+        "fallback": "I couldn't find relevant web evidence with enough answer detail for that lookup.",
+        "data": null,
+        "sources": []
+      }
+    },
+    {
+      "depth": "advanced",
+      "query": "Who composed The Legend of Zelda: Skyward Sword?",
+      "module_result": {
+        "outcome": "error",
+        "fallback": "I couldn't find relevant web evidence with enough answer detail for that lookup.",
+        "data": null,
+        "sources": []
+      }
+    },
+    {
+      "depth": "basic",
+      "query": "How large is Earth?",
+      "module_result": {
+        "outcome": "success",
+        "fallback": "Source [1] excerpt: Earth's circumference (the distance all the way around the equator) is 24,901 miles (40,075 kilometers).",
+        "factual_text": "Earth's circumference (the distance all the way around the equator) is 24,901 miles (40,075 kilometers).",
+        "data": {
+          "evidence": [
+            {
+              "title": "How large is Earth? | Cool Cosmos",
+              "excerpt": "Earth's circumference (the distance all the way around the equator) is 24,901 miles (40,075 kilometers). Its diameter (the distance from one side to the other through Earth's center) is 7,926 miles (about 12,756 kilometers). Earth is slightly smaller when measured between the North and South Poles which gives a diameter of 7,907 miles (12,725 kilometers). Earth bulges out a bit more around the equator than around the poles because of its rotation (spin).  Exexo_banner_image"
+            },
+            {
+              "title": "How big is Earth? | Space",
+              "excerpt": "The surface area of Earth is about 197 million square miles (510 million square kilometers). Around 57 million square miles (148 square km), or 29%, is taken up by land, while the remaining 140 million square miles (362 square km), or 71%, is covered by water. [...] The volume of Earth is 260 billion cubic miles (1.086 trillion cubic kilometers), while its mass is  6.6 x 1021 tons (6 x 1021 metric tons), according to NASA. With these values known, and Earth's oddball shape accounted for, it is easy to calculate the density of Earth, which is around 5.5 grams per cubic centimeter. [...] Therefore, the diameter of Earth through its center is 7,926 miles (12,756 km). Again, because of the equatorial bulge, the planet's diameter is slightly smaller when measured from pole to pole, where it is about 7,900 miles (12,712 km)."
+            },
+            {
+              "title": "How Big Is Earth? | Size, Diameter, & Mass",
+              "excerpt": "Table of Contents  Ask Anything   Earth has a diameter at the Equator of about 12,756 kilometers (7,926 miles), making it the fifth largest planet in the solar system. Earth’s mass is about 5.97 ⨉ 10 24 kilograms. Dividing this mass by Earth’s volume results in an average density of approximately 5,517 kilograms per cubic meter. This density reflects the composition of Earth’s interior, which is composed of elements like iron and nickel. [...] While often referred to as a sphere, Earth is actually an oblate spheroid, meaning it is slightly flattened at the poles and bulging at the Equator. Earth’s surface area is about 510 million square kilometers (197 million square miles). The surface is divided into land and water, with about 71 percent covered by oceans.  Image 7: Pluto  How Big Is Pluto?  Image 8: Sirius  Why Do Stars Twinkle?  Image 9: Mars  Why Is Mars Called the Red Planet?  Ima"
+            }
+          ]
+        },
+        "sources": [
+          {
+            "title": "How large is Earth? | Cool Cosmos",
+            "url": "https://coolcosmos.ipac.caltech.edu/ask/57-How-large-is-Earth-"
+          },
+          {
+            "title": "How big is Earth? | Space",
+            "url": "https://www.space.com/17638-how-big-is-earth.html"
+          },
+          {
+            "title": "How Big Is Earth? | Size, Diameter, & Mass",
+            "url": "https://www.britannica.com/science/How-Big-Is-Earth"
+          }
+        ]
+      }
+    },
+    {
+      "depth": "advanced",
+      "query": "How large is Earth?",
+      "module_result": {
+        "outcome": "success",
+        "fallback": "Source [1] excerpt: Earth's circumference (the distance all the way around the equator) is 24,901 miles (40,075 kilometers).",
+        "factual_text": "Earth's circumference (the distance all the way around the equator) is 24,901 miles (40,075 kilometers).",
+        "data": {
+          "evidence": [
+            {
+              "title": "How large is Earth? | Cool Cosmos",
+              "excerpt": "# How large is Earth?  Earth's circumference (the distance all the way around the equator) is 24,901 miles (40,075 kilometers). Its diameter (the distance from one side to the other through Earth's center) is 7,926 miles (about 12,756 kilometers). Earth is slightly smaller when measured between the North and South Poles which gives a diameter of 7,907 miles (12,725 kilometers). Earth bulges out a bit more around the equator than around the poles because of its rotation (spin).  Exexo_banner_image"
+            },
+            {
+              "title": "How big is Earth? | Space",
+              "excerpt": "The volume of Earth is 260 billion cubic miles (1.086 trillion cubic kilometers), while its mass is  6.6 x 1021 tons (6 x 1021 metric tons), according to NASA. With these values known, and Earth's oddball shape accounted for, it is easy to calculate the density of Earth, which is around 5.5 grams per cubic centimeter.         The surface area of Earth is about 197 million square miles (510 million square kilometers). Around 57 million square miles (148 square km), or 29%, is taken up by land, while the remaining 140 million square miles (362 square km), or 71%, is covered by water. [...] With a diameter of 30,599 miles (49,244 km), Neptune — the fourth largest planet in the solar system —is around four times as wide as Earth. It would take 57 Earths to fill the volume of Neptune. If Earth were the size of a nickel, Neptune would be the size of a baseball, according to NASA.         Altho"
+            },
+            {
+              "title": "How Big Is Earth? | Size, Diameter, & Mass",
+              "excerpt": "Table of Contents    Table of Contents  Ask Anything   Earth has a diameter at the Equator of about 12,756 kilometers (7,926 miles), making it the fifth largest planet in the solar system. Earth’s mass is about 5.97 ⨉ 10 24 kilograms. Dividing this mass by Earth’s volume results in an average density of approximately 5,517 kilograms per cubic meter. This density reflects the composition of Earth’s interior, which is composed of elements like iron and nickel.  While often referred to as a sphere, Earth is actually an oblate spheroid, meaning it is slightly flattened at the poles and bulging at the Equator. Earth’s surface area is about 510 million square kilometers (197 million square miles). The surface is divided into land and water, with about 71 percent covered by oceans."
+            }
+          ]
+        },
+        "sources": [
+          {
+            "title": "How large is Earth? | Cool Cosmos",
+            "url": "https://coolcosmos.ipac.caltech.edu/ask/57-How-large-is-Earth-"
+          },
+          {
+            "title": "How big is Earth? | Space",
+            "url": "https://www.space.com/17638-how-big-is-earth.html"
+          },
+          {
+            "title": "How Big Is Earth? | Size, Diameter, & Mass",
+            "url": "https://www.britannica.com/science/How-Big-Is-Earth"
+          }
+        ]
+      }
+    },
+    {
+      "depth": "basic",
+      "query": "When was Python 3.13 released?",
+      "module_result": {
+        "outcome": "success",
+        "fallback": "Source [1] excerpt: Python 3.13 was released on October 7, 2024.",
+        "factual_text": "Python 3.13 was released on October 7, 2024.",
+        "data": {
+          "evidence": [
+            {
+              "title": "What’s New In Python 3.13 — Python 3.15.0 documentation",
+              "excerpt": "### Navigation   index  modules |  next |  previous |  Python »  3.15.0 Documentation »  What’s New in Python »  What’s New In Python 3.13  |  |  # What’s New In Python 3.13¶  Editors: :   Adam Turner and Thomas Wouters  This article explains the new features in Python 3.13, compared to 3.12. Python 3.13 was released on October 7, 2024. For full details, see the changelog.  See also  PEP 719 – Python 3.13 Release Schedule  ## Summary – Release Highlights¶"
+            }
+          ]
+        },
+        "sources": [
+          {
+            "title": "What’s New In Python 3.13 — Python 3.15.0 documentation",
+            "url": "https://docs.python.org/3/whatsnew/3.13.html"
+          }
+        ]
+      }
+    },
+    {
+      "depth": "advanced",
+      "query": "When was Python 3.13 released?",
+      "module_result": {
+        "outcome": "success",
+        "fallback": "Source [1] excerpt: Python 3.13 was released on October 7, 2024.",
+        "factual_text": "Python 3.13 was released on October 7, 2024.",
+        "data": {
+          "evidence": [
+            {
+              "title": "What’s New In Python 3.13 — Python 3.15.0 documentation",
+              "excerpt": "### Navigation   index  modules |  next |  previous |  Python »  3.15.0 Documentation »  What’s New in Python »  What’s New In Python 3.13  |  |  # What’s New In Python 3.13¶  Editors: :   Adam Turner and Thomas Wouters  This article explains the new features in Python 3.13, compared to 3.12. Python 3.13 was released on October 7, 2024. For full details, see the changelog.  See also  PEP 719 – Python 3.13 Release Schedule  ## Summary – Release Highlights¶  Python 3.13 is a stable release of the Python programming language, with a mix of changes to the language, the implementation and the standard library. The biggest changes include a new interactive interpreter, experimental support for running in a free-threaded mode (PEP 703), and a Just-In-Time compiler (PEP 744)."
+            }
+          ]
+        },
+        "sources": [
+          {
+            "title": "What’s New In Python 3.13 — Python 3.15.0 documentation",
+            "url": "https://docs.python.org/3/whatsnew/3.13.html"
+          }
+        ]
+      }
+    },
+    {
+      "depth": "basic",
+      "query": "How do I list disk usage on Linux?",
+      "module_result": {
+        "outcome": "error",
+        "fallback": "I couldn't find relevant web evidence with enough answer detail for that lookup.",
+        "data": null,
+        "sources": []
+      }
+    },
+    {
+      "depth": "advanced",
+      "query": "How do I list disk usage on Linux?",
+      "module_result": {
+        "outcome": "error",
+        "fallback": "I couldn't find relevant web evidence with enough answer detail for that lookup.",
+        "data": null,
+        "sources": []
+      }
+    },
+    {
+      "depth": "basic",
+      "query": "What's the weather in Amsterdam today?",
+      "module_result": {
+        "outcome": "error",
+        "fallback": "I couldn't find relevant web evidence with enough answer detail for that lookup.",
+        "data": null,
+        "sources": []
+      }
+    },
+    {
+      "depth": "advanced",
+      "query": "What's the weather in Amsterdam today?",
+      "module_result": {
+        "outcome": "error",
+        "fallback": "I couldn't find relevant web evidence with enough answer detail for that lookup.",
+        "data": null,
+        "sources": []
+      }
+    },
+    {
+      "depth": "basic",
+      "query": "What is the capital of the Netherlands?",
+      "module_result": {
+        "outcome": "success",
+        "fallback": "Source [1] excerpt: While Amsterdam is the capital of the Netherlands according to the Dutch Constitution, the Hague is the seat of its government.",
+        "factual_text": "While Amsterdam is the capital of the Netherlands according to the Dutch Constitution, the Hague is the seat of its government.",
+        "data": {
+          "evidence": [
+            {
+              "title": "What Is The Capital Of The Netherlands?",
+              "excerpt": "When it comes to determining the capital city of the Netherlands, the questions is not as easy to answer as it is for other countries. While Amsterdam is the capital of the Netherlands according to the Dutch Constitution, the Hague is the seat of its government. The Netherlands is one of the most developed countries in the world, and it has become a benchmark for developing countries, keen to achieve its level of political and economic stability. The Netherlands boasts two capitals, both of [...] ## The Two Capitals Of The Netherlands  The Netherlands is characterized by two capitals: Amsterdam and the Hague. Amsterdam became the official capital of independent Netherlands in 1814 after the defeat of the French. The Hague is the administrative center of the Netherlands, housing both the government and the court.  ### Amsterdam [...] of the county of Holland. After several occupations, th"
+            },
+            {
+              "title": "Capital of the Netherlands - Wikipedia",
+              "excerpt": "Although the proper legal status of Amsterdam as capital of the Netherlands is of recent date, the city has been recognized as the capital since 1814. In that year  Willem Frederik, Prince of Orange and Nassau, was proclaimed Sovereign Prince of the United Netherlands and invested as such on 30 March 1814 in the Nieuwe Kerk in Amsterdam. This is partly because it is a Royal City, used not only for the inauguration of kings, but also for royal weddings (note though that royal burials take place [...] .   \"), have been situated in The Hague as the seat of government. Since the 1983 revision of the Constitution of the Netherlands, Article 32 mentions that \"the King shall be sworn in and inaugurated as soon as possible in the capital city, Amsterdam\". It is the only reference in the document stating that Amsterdam is the capital. In contrast, The Hague is customarily called the residentie (\""
+            },
+            {
+              "title": "Netherlands | History, Flag, Population, Languages, Map, & Facts | Britannica",
+              "excerpt": "The two provinces are Noord-Holland and Zuid-Holland. The name Holland (from Houtland, or “Wooded Land”) was originally given to one of the medieval cores of what later became the modern state and is still used for these 2 of its 12 provinces. Holland is also an unofficial name for the country as a whole.  ### What is the capital of the Netherlands and where is the seat of government?  The capital of the Netherlands is Amsterdam, and the seat of government is The Hague."
+            }
+          ]
+        },
+        "sources": [
+          {
+            "title": "What Is The Capital Of The Netherlands?",
+            "url": "https://www.worldatlas.com/articles/what-is-the-capital-of-the-netherlands.html"
+          },
+          {
+            "title": "Capital of the Netherlands - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Capital_of_the_Netherlands"
+          },
+          {
+            "title": "Netherlands | History, Flag, Population, Languages, Map, & Facts | Britannica",
+            "url": "https://www.britannica.com/place/Netherlands"
+          }
+        ]
+      }
+    },
+    {
+      "depth": "advanced",
+      "query": "What is the capital of the Netherlands?",
+      "module_result": {
+        "outcome": "success",
+        "fallback": "Source [1] excerpt: While Amsterdam is the capital of the Netherlands according to the Dutch Constitution, the Hague is the seat of its government.",
+        "factual_text": "While Amsterdam is the capital of the Netherlands according to the Dutch Constitution, the Hague is the seat of its government.",
+        "data": {
+          "evidence": [
+            {
+              "title": "What Is The Capital Of The Netherlands?",
+              "excerpt": "# What Is The Capital Of The Netherlands?        Binnenhof - the Dutch Parliament in The Hague, Netherlands    Binnenhof - the Dutch Parliament in The Hague, Netherlands     When it comes to determining the capital city of the Netherlands, the questions is not as easy to answer as it is for other countries. While Amsterdam is the capital of the Netherlands according to the Dutch Constitution, the Hague is the seat of its government. The Netherlands is one of the most developed countries in the world, and it has become a benchmark for developing countries, keen to achieve its level of political and economic stability. The Netherlands boasts two capitals, both of which are significant in Europe and even in the world.  ## The Two Capitals Of The Netherlands [...] ## The Two Capitals Of The Netherlands  The Netherlands is characterized by two capitals: Amsterdam and the Hague. Amsterdam beca"
+            }
+          ]
+        },
+        "sources": [
+          {
+            "title": "What Is The Capital Of The Netherlands?",
+            "url": "https://www.worldatlas.com/articles/what-is-the-capital-of-the-netherlands.html"
+          }
+        ]
+      }
+    },
+    {
+      "depth": "basic",
+      "query": "When did the Flarnox Pebble Orchestra release its Moonspoon album?",
+      "module_result": {
+        "outcome": "error",
+        "fallback": "I couldn't find relevant web evidence with enough answer detail for that lookup.",
+        "data": null,
+        "sources": []
+      }
+    },
+    {
+      "depth": "advanced",
+      "query": "When did the Flarnox Pebble Orchestra release its Moonspoon album?",
+      "module_result": {
+        "outcome": "error",
+        "fallback": "I couldn't find relevant web evidence with enough answer detail for that lookup.",
+        "data": null,
+        "sources": []
+      }
+    }
+  ],
+  "synthetic_checks": [
+    {
+      "name": "reported_DID_wrong_topic",
+      "expected_success": false,
+      "result": {
+        "outcome": "error",
+        "fallback": "I couldn't find relevant web evidence with enough answer detail for that lookup.",
+        "data": null,
+        "sources": []
+      }
+    },
+    {
+      "name": "later_relevant_result",
+      "expected_success": true,
+      "result": {
+        "outcome": "success",
+        "fallback": "Source [1] excerpt: The first chapter of Deltarune was released on October 31, 2018.",
+        "factual_text": "The first chapter of Deltarune was released on October 31, 2018.",
+        "data": {
+          "evidence": [
+            {
+              "title": "Deltarune",
+              "excerpt": "The first chapter of Deltarune was released on October 31, 2018."
+            }
+          ]
+        },
+        "sources": [
+          {
+            "title": "Deltarune",
+            "url": "https://example.org/deltarune"
+          }
+        ]
+      }
+    },
+    {
+      "name": "topic_only_without_date",
+      "expected_success": false,
+      "result": {
+        "outcome": "error",
+        "fallback": "I couldn't find relevant web evidence with enough answer detail for that lookup.",
+        "data": null,
+        "sources": []
+      }
+    }
+  ],
+  "notes": [
+    "Replayed previously captured provider responses through actual web module; no provider/model requests or credentials.",
+    "This reports selector behavior, not independent semantic correctness or completeness."
+  ]
+}

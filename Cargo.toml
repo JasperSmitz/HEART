@@ -1,0 +1,13 @@
+[workspace]
+members = ["crates/contract", "crates/core", "crates/cli", "modules/websearch", "modules/system"]
+resolver = "2"
+
+[workspace.package]
+edition = "2024"
+version = "0.1.0"
+
+[workspace.dependencies]
+serde = { version = "1", features = ["derive"] }
+# Preserve schema property order for external structured-output decoders.
+serde_json = { version = "1", features = ["preserve_order"] }
+reqwest = { version = "0.12", default-features = false, features = ["blocking", "json", "rustls-tls"] }

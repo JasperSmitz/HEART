@@ -1,0 +1,144 @@
+{
+  "model": "qwen3.5:2b-q4_K_M",
+  "native_diagnostics": "diagnostics: phrase=Rejected(NumberChanged) routing_performed=false selection_ms=0 extraction_ms=0 route_ms=0 phrase_ms=1308 total_ms=1308\ndiagnostics: phrase=Accepted routing_performed=false selection_ms=0 extraction_ms=0 route_ms=0 phrase_ms=1168 total_ms=1169\ndiagnostics: phrase=Rejected(NumberChanged) routing_performed=false selection_ms=0 extraction_ms=0 route_ms=0 phrase_ms=1267 total_ms=1268\n",
+  "cases": [
+    {
+      "request": "/disk /",
+      "canonical": "The filesystem containing \"/\" has 747.66 GiB available to the user, 178.69 GiB used and 926.35 GiB total.",
+      "data": {
+        "path": "/",
+        "total_bytes": 994662584320,
+        "free_bytes": 802792296448,
+        "available_bytes": 802792296448,
+        "used_bytes": 191870287872,
+        "reserved_bytes": 0
+      },
+      "candidate": "The \"/\" filesystem has 802.79 GiB available to the user, with 191.87 GiB used and 926.35 GiB total.",
+      "canonical_tokens": [
+        "747.66",
+        "178.69",
+        "926.35"
+      ],
+      "candidate_tokens": [
+        "802.79",
+        "191.87",
+        "926.35"
+      ],
+      "unmatched_numeric_tokens": [
+        "802.79",
+        "191.87"
+      ]
+    },
+    {
+      "request": "/disk /",
+      "canonical": "The filesystem containing \"/\" has 747.66 GiB available to the user, 178.69 GiB used and 926.35 GiB total.",
+      "data": {
+        "path": "/",
+        "total_bytes": 994662584320,
+        "free_bytes": 802792230912,
+        "available_bytes": 802792230912,
+        "used_bytes": 191870353408,
+        "reserved_bytes": 0
+      },
+      "candidate": "The filesystem containing \"/\" has 747.66 GiB available to the user, 178.69 GiB used and 926.35 GiB total.",
+      "canonical_tokens": [
+        "747.66",
+        "178.69",
+        "926.35"
+      ],
+      "candidate_tokens": [
+        "747.66",
+        "178.69",
+        "926.35"
+      ],
+      "unmatched_numeric_tokens": []
+    },
+    {
+      "request": "/disk /",
+      "canonical": "The filesystem containing \"/\" has 747.66 GiB available to the user, 178.69 GiB used and 926.35 GiB total.",
+      "data": {
+        "path": "/",
+        "total_bytes": 994662584320,
+        "free_bytes": 802792091648,
+        "available_bytes": 802792091648,
+        "used_bytes": 191870492672,
+        "reserved_bytes": 0
+      },
+      "candidate": "The \"/\" filesystem has 802.79 GiB available to the user, with 191.87 GiB used and 926.35 GiB total.",
+      "canonical_tokens": [
+        "747.66",
+        "178.69",
+        "926.35"
+      ],
+      "candidate_tokens": [
+        "802.79",
+        "191.87",
+        "926.35"
+      ],
+      "unmatched_numeric_tokens": [
+        "802.79",
+        "191.87"
+      ]
+    },
+    {
+      "request": "/search How large is earth",
+      "canonical": "Earth's circumference (the distance all the way around the equator) is 24,901 miles (40,075 kilometers).",
+      "data": {
+        "results": [
+          {
+            "title": "How large is Earth?",
+            "excerpt": "Earth's circumference (the distance all the way around the equator) is 24,901 miles (40,075 kilometers)."
+          }
+        ]
+      },
+      "candidate": "The Earth's circumference is 24,901 miles (40,075 kilometers).",
+      "canonical_tokens": [
+        "24",
+        "901",
+        "40",
+        "075"
+      ],
+      "candidate_tokens": [
+        "24",
+        "901",
+        "40",
+        "075"
+      ],
+      "unmatched_numeric_tokens": [],
+      "profile": "butler",
+      "synthetic_web_evidence": true
+    },
+    {
+      "request": "/search How large is earth",
+      "canonical": "Earth's circumference (the distance all the way around the equator) is 24,901 miles (40,075 kilometers).",
+      "data": {
+        "results": [
+          {
+            "title": "How large is Earth?",
+            "excerpt": "Earth's circumference (the distance all the way around the equator) is 24,901 miles (40,075 kilometers)."
+          }
+        ]
+      },
+      "candidate": "The Earth's circumference is 24,901 miles (40,075 kilometers).",
+      "canonical_tokens": [
+        "24",
+        "901",
+        "40",
+        "075"
+      ],
+      "candidate_tokens": [
+        "24",
+        "901",
+        "40",
+        "075"
+      ],
+      "unmatched_numeric_tokens": [],
+      "profile": "cat",
+      "synthetic_web_evidence": true
+    }
+  ],
+  "notes": [
+    "Local-only probe captures candidates explicitly; normal CLI remains safe diagnostics only.",
+    "Earth evidence fixed from user report; no Tavily keys or calls. Numeric token comparison is diagnostic, not a semantic validator."
+  ]
+}

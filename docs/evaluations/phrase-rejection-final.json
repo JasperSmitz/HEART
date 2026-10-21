@@ -1,0 +1,428 @@
+{
+  "model": "qwen3.5:2b-q4_K_M",
+  "hardware": "M1 Pro / 32 GiB",
+  "cases": [
+    {
+      "profile": "butler",
+      "request": "/disk /",
+      "inference_calls": [
+        {
+          "payload": {
+            "request": "/disk /",
+            "evidence": "The filesystem containing \"/\" has 747.52 GiB available to the user, 178.84 GiB used and 926.35 GiB total."
+          },
+          "candidate": {
+            "answer": "The filesystem contains 747.52 GiB of available space for the user."
+          },
+          "error": null
+        }
+      ],
+      "reply": {
+        "text": "The filesystem containing \"/\" has 747.52 GiB available to the user, 178.84 GiB used and 926.35 GiB total.",
+        "sources": [],
+        "fallback_used": true,
+        "phrase_status": {
+          "status": "rejected",
+          "reason": "ungrounded"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 0,
+          "load_ns": 0,
+          "prompt_ns": 0,
+          "generation_ns": 0,
+          "generated_tokens": 0
+        },
+        "selection_timing": {
+          "elapsed_ms": 0,
+          "load_ns": 0,
+          "prompt_ns": 0,
+          "generation_ns": 0,
+          "generated_tokens": 0
+        },
+        "routing_performed": false,
+        "extraction_timing": null,
+        "phrase_timing": {
+          "elapsed_ms": 3059,
+          "load_ns": 2317354583,
+          "prompt_ns": 313179000,
+          "generation_ns": 416616000,
+          "generated_tokens": 26
+        },
+        "elapsed_ms": 3059
+      }
+    },
+    {
+      "profile": "butler",
+      "request": "/disk /",
+      "inference_calls": [
+        {
+          "payload": {
+            "request": "/disk /",
+            "evidence": "The filesystem containing \"/\" has 747.52 GiB available to the user, 178.83 GiB used and 926.35 GiB total."
+          },
+          "candidate": {
+            "answer": "The filesystem contains 747.52 GiB of available space for the user."
+          },
+          "error": null
+        }
+      ],
+      "reply": {
+        "text": "The filesystem containing \"/\" has 747.52 GiB available to the user, 178.83 GiB used and 926.35 GiB total.",
+        "sources": [],
+        "fallback_used": true,
+        "phrase_status": {
+          "status": "rejected",
+          "reason": "ungrounded"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 0,
+          "load_ns": 0,
+          "prompt_ns": 0,
+          "generation_ns": 0,
+          "generated_tokens": 0
+        },
+        "selection_timing": {
+          "elapsed_ms": 0,
+          "load_ns": 0,
+          "prompt_ns": 0,
+          "generation_ns": 0,
+          "generated_tokens": 0
+        },
+        "routing_performed": false,
+        "extraction_timing": null,
+        "phrase_timing": {
+          "elapsed_ms": 765,
+          "load_ns": 567917,
+          "prompt_ns": 348894000,
+          "generation_ns": 412758000,
+          "generated_tokens": 26
+        },
+        "elapsed_ms": 766
+      }
+    },
+    {
+      "profile": "butler",
+      "request": "/fixture earth",
+      "inference_calls": [
+        {
+          "payload": {
+            "request": "/fixture earth",
+            "evidence": "Earth's circumference (the distance all the way around the equator) is 24,901 miles (40,075 kilometers)."
+          },
+          "candidate": {
+            "answer": "The Earth's circumference is 24,901 miles."
+          },
+          "error": null
+        }
+      ],
+      "reply": {
+        "text": "The Earth's circumference is 24,901 miles, sir.",
+        "sources": [
+          {
+            "title": "Fixed synthetic fixture, no provider request",
+            "url": "https://example.org/fixture"
+          }
+        ],
+        "fallback_used": false,
+        "phrase_status": {
+          "status": "accepted"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 0,
+          "load_ns": 0,
+          "prompt_ns": 0,
+          "generation_ns": 0,
+          "generated_tokens": 0
+        },
+        "selection_timing": {
+          "elapsed_ms": 0,
+          "load_ns": 0,
+          "prompt_ns": 0,
+          "generation_ns": 0,
+          "generated_tokens": 0
+        },
+        "routing_performed": false,
+        "extraction_timing": null,
+        "phrase_timing": {
+          "elapsed_ms": 680,
+          "load_ns": 469917,
+          "prompt_ns": 341379000,
+          "generation_ns": 334481000,
+          "generated_tokens": 21
+        },
+        "elapsed_ms": 680
+      }
+    },
+    {
+      "profile": "cat",
+      "request": "/disk /",
+      "inference_calls": [
+        {
+          "payload": {
+            "request": "/disk /",
+            "evidence": "The filesystem containing \"/\" has 747.52 GiB available to the user, 178.83 GiB used and 926.35 GiB total."
+          },
+          "candidate": {
+            "answer": "The root filesystem has 747.52 GiB available out of a total of 1,788.88 GiB."
+          },
+          "error": null
+        }
+      ],
+      "reply": {
+        "text": "The filesystem containing \"/\" has 747.52 GiB available to the user, 178.83 GiB used and 926.35 GiB total.",
+        "sources": [],
+        "fallback_used": true,
+        "phrase_status": {
+          "status": "rejected",
+          "reason": "number_changed"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 0,
+          "load_ns": 0,
+          "prompt_ns": 0,
+          "generation_ns": 0,
+          "generated_tokens": 0
+        },
+        "selection_timing": {
+          "elapsed_ms": 0,
+          "load_ns": 0,
+          "prompt_ns": 0,
+          "generation_ns": 0,
+          "generated_tokens": 0
+        },
+        "routing_performed": false,
+        "extraction_timing": null,
+        "phrase_timing": {
+          "elapsed_ms": 1097,
+          "load_ns": 635208,
+          "prompt_ns": 351297000,
+          "generation_ns": 741404000,
+          "generated_tokens": 41
+        },
+        "elapsed_ms": 1097
+      }
+    },
+    {
+      "profile": "cat",
+      "request": "/disk /",
+      "inference_calls": [
+        {
+          "payload": {
+            "request": "/disk /",
+            "evidence": "The filesystem containing \"/\" has 747.52 GiB available to the user, 178.83 GiB used and 926.35 GiB total."
+          },
+          "candidate": {
+            "answer": "The root filesystem has 747.52 GiB of available space out of a total of 1,788.88 GiB."
+          },
+          "error": null
+        }
+      ],
+      "reply": {
+        "text": "The filesystem containing \"/\" has 747.52 GiB available to the user, 178.83 GiB used and 926.35 GiB total.",
+        "sources": [],
+        "fallback_used": true,
+        "phrase_status": {
+          "status": "rejected",
+          "reason": "number_changed"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 0,
+          "load_ns": 0,
+          "prompt_ns": 0,
+          "generation_ns": 0,
+          "generated_tokens": 0
+        },
+        "selection_timing": {
+          "elapsed_ms": 0,
+          "load_ns": 0,
+          "prompt_ns": 0,
+          "generation_ns": 0,
+          "generated_tokens": 0
+        },
+        "routing_performed": false,
+        "extraction_timing": null,
+        "phrase_timing": {
+          "elapsed_ms": 844,
+          "load_ns": 538208,
+          "prompt_ns": 36736000,
+          "generation_ns": 803055000,
+          "generated_tokens": 42
+        },
+        "elapsed_ms": 844
+      }
+    },
+    {
+      "profile": "cat",
+      "request": "/fixture earth",
+      "inference_calls": [
+        {
+          "payload": {
+            "request": "/fixture earth",
+            "evidence": "Earth's circumference (the distance all the way around the equator) is 24,901 miles (40,075 kilometers)."
+          },
+          "candidate": {
+            "answer": "The Earth's circumference is 24,901 miles or 40,075 kilometers."
+          },
+          "error": null
+        }
+      ],
+      "reply": {
+        "text": "The Earth's circumference is 24,901 miles or 40,075 kilometers.",
+        "sources": [
+          {
+            "title": "Fixed synthetic fixture, no provider request",
+            "url": "https://example.org/fixture"
+          }
+        ],
+        "fallback_used": false,
+        "phrase_status": {
+          "status": "accepted"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 0,
+          "load_ns": 0,
+          "prompt_ns": 0,
+          "generation_ns": 0,
+          "generated_tokens": 0
+        },
+        "selection_timing": {
+          "elapsed_ms": 0,
+          "load_ns": 0,
+          "prompt_ns": 0,
+          "generation_ns": 0,
+          "generated_tokens": 0
+        },
+        "routing_performed": false,
+        "extraction_timing": null,
+        "phrase_timing": {
+          "elapsed_ms": 785,
+          "load_ns": 615042,
+          "prompt_ns": 302011000,
+          "generation_ns": 479161000,
+          "generated_tokens": 30
+        },
+        "elapsed_ms": 785
+      }
+    },
+    {
+      "profile": "butler",
+      "request": "/fixture museum",
+      "inference_calls": [
+        {
+          "payload": {
+            "request": "/fixture museum",
+            "evidence": "The museum is not open on Monday; it opens Tuesday at 10:00."
+          },
+          "candidate": {
+            "answer": "The museum does not open on Monday, but it opens at 10:00 on Tuesday."
+          },
+          "error": null
+        }
+      ],
+      "reply": {
+        "text": "The museum does not open on Monday, but it opens at 10:00 on Tuesday, sir.",
+        "sources": [
+          {
+            "title": "Fixed synthetic fixture, no provider request",
+            "url": "https://example.org/fixture"
+          }
+        ],
+        "fallback_used": false,
+        "phrase_status": {
+          "status": "accepted"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 0,
+          "load_ns": 0,
+          "prompt_ns": 0,
+          "generation_ns": 0,
+          "generated_tokens": 0
+        },
+        "selection_timing": {
+          "elapsed_ms": 0,
+          "load_ns": 0,
+          "prompt_ns": 0,
+          "generation_ns": 0,
+          "generated_tokens": 0
+        },
+        "routing_performed": false,
+        "extraction_timing": null,
+        "phrase_timing": {
+          "elapsed_ms": 782,
+          "load_ns": 598625,
+          "prompt_ns": 307928000,
+          "generation_ns": 470049000,
+          "generated_tokens": 28
+        },
+        "elapsed_ms": 782
+      }
+    },
+    {
+      "profile": "cat",
+      "request": "/fixture fare",
+      "inference_calls": [
+        {
+          "payload": {
+            "request": "/fixture fare",
+            "evidence": "The train fare is €12.50 per adult; children under 4 travel free."
+          },
+          "candidate": {
+            "answer": "Adults pay €12.50 while children under four travel free."
+          },
+          "error": null
+        }
+      ],
+      "reply": {
+        "text": "Source [1] excerpt: The train fare is €12.50 per adult; children under 4 travel free.",
+        "sources": [
+          {
+            "title": "Fixed synthetic fixture, no provider request",
+            "url": "https://example.org/fixture"
+          }
+        ],
+        "fallback_used": true,
+        "phrase_status": {
+          "status": "rejected",
+          "reason": "ungrounded"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 0,
+          "load_ns": 0,
+          "prompt_ns": 0,
+          "generation_ns": 0,
+          "generated_tokens": 0
+        },
+        "selection_timing": {
+          "elapsed_ms": 0,
+          "load_ns": 0,
+          "prompt_ns": 0,
+          "generation_ns": 0,
+          "generated_tokens": 0
+        },
+        "routing_performed": false,
+        "extraction_timing": null,
+        "phrase_timing": {
+          "elapsed_ms": 713,
+          "load_ns": 447292,
+          "prompt_ns": 339271000,
+          "generation_ns": 370780000,
+          "generated_tokens": 23
+        },
+        "elapsed_ms": 714
+      }
+    }
+  ],
+  "notes": [
+    "Fixed Earth, negation and fare fixtures; native disk is real. No Tavily keys/calls.",
+    "Candidate/payload capture is confined to this temporary explicit evaluator; normal CLI diagnostics unchanged.",
+    "One bounded run; no guarantee of general model accuracy or 16 GiB performance."
+  ]
+}

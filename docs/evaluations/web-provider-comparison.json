@@ -1,0 +1,655 @@
+{
+  "date": "2026-10-20T13:01:56.490237+00:00",
+  "queries": [
+    "When did Deltarune release?",
+    "What is Rust's package manager called?",
+    "Who composed The Legend of Zelda: Skyward Sword?",
+    "How large is Earth?",
+    "When was Python 3.13 released?",
+    "How do I list disk usage on Linux?",
+    "What's the weather in Amsterdam today?",
+    "What is the capital of the Netherlands?",
+    "When did the Flarnox Pebble Orchestra release its Moonspoon album?"
+  ],
+  "tavily_parameters": {
+    "auto_parameters": false,
+    "include_answer": false,
+    "max_results": 3,
+    "include_raw_content": false,
+    "include_images": false,
+    "topic": "general",
+    "include_usage": true
+  },
+  "budgeted_tavily_credits": 27,
+  "records": [
+    {
+      "provider": "tavily",
+      "depth": "basic",
+      "query": "When did Deltarune release?",
+      "budgeted_credits": 1,
+      "status": 200,
+      "echoed_query": "When did Deltarune release?",
+      "usage": {
+        "credits": 1
+      },
+      "results": [
+        {
+          "title": "Deltarune - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Deltarune",
+          "content": "After previously teasing something Undertale-related a day earlier, Fox released the first chapter of Deltarune for free on October 31, 2018. Initially disguised as a \"survey program\", it was then described as a game \"intended for people who have completed Undertale\". Originally, all of the remaining chapters were intended to be released after the completion of the entire game. As he envisioned a larger project than Undertale, he stated that he needed to form a team, claiming it would be [...] The first two chapters were released as free demos in 2018 and 2021, respectively, while the third and fourth chapters were made available in 2025 with the game's paid release. The fifth chapter was released as a free update in June 2026, with the sixth planned for 2027 and a seventh planned for a later release. Initially released for macOS and Windows, it was later ported to the Nintendo Switch an",
+          "score": 0.8452414
+        },
+        {
+          "title": "Deltarune | Deltarune Wiki | Fandom",
+          "url": "https://deltarune.fandom.com/wiki/Deltarune",
+          "content": "Deltarune Wiki\n\n### New to Fandom? Unlock more settings\n\nCreate your free account or log in to save your choices and unlock full controls.\n\nBy continuing, you agree to Fandom's Terms of Use and Privacy Policy.\n\nDeltarune Wiki\n\n# Deltarune\n\n## Deltarune\n\nDeltarune\n\n## Game information\n\n### Developer\n\n### Release date\n\nSeptember 17, 2021 (Chapter 2)  \nJune 4, 2025 (Chapters 3 & 4)  \nJune 24, 2026 (Chapter 5)  \n2027 (Chapter 6)  \nTBA (Chapter 7)\n\n### Engine\n\n### Platform(s) [...] With no prior warning, Chapter 1 of Deltarune was teased for one day on the Undertale Twitter before its release on October 31, 2018. On release, the game was disguised as a survey regarding \"something new\" Toby Fox had planned, saying it would \"all start with [the players'] feedback.\" As such, the game's folders and shortcuts are named \"SURVEY\\_PROGRAM\" by the installer, although the actual game executable is call",
+          "score": 0.83932644
+        },
+        {
+          "title": "UNDERTALE / DELTARUNE NEWSLETTER: DELTARUNE CHAPTERS 1-4 RELEASE DATE ANNOUNCEMENT - Toby Fox",
+          "url": "https://toby.fangamer.com/newsletters/release-date",
+          "content": "Let's get to the point.\n\nDELTARUNE Chapters 1-4 will release on June 5, 2025. It will be available on PC, Mac, Nintendo Switch and PlayStation 4, like before--and now also on Nintendo Switch 2 and PlayStation 5.\n\nThere's a trailer.\n\nDELTARUNE will cost $24.99.  \n  \nYou only have to buy the game once - upcoming Chapters will be added as free updates.\n\nThat's not factored into the cost, though. I only feel right charging for what there currently is, not what I say there will be. [...] Overall, all of these differences are very slight! No matter what version you get, it'll be great!!!\n\nWell, the game is coming out! Isn't that swell?\n\n...\n\nSeriously, I've been duct taped over, tied up to a chair, locked in a box, thrown to the bottom of the ocean, dragged around like an anchor, etc., etc.!\n\nThat's what it was like up until now!!\n\nNow I can say it!\n\nDELTARUNE (Chapters 1-4) releases on\n\nJune ",
+          "score": 0.8173562
+        }
+      ],
+      "elapsed_ms": 2125
+    },
+    {
+      "provider": "tavily",
+      "depth": "advanced",
+      "query": "When did Deltarune release?",
+      "budgeted_credits": 2,
+      "status": 200,
+      "echoed_query": "When did Deltarune release?",
+      "usage": {
+        "credits": 2
+      },
+      "results": [
+        {
+          "title": "Deltarune - The Deltarune Wiki",
+          "url": "https://deltarune.wiki/w/Deltarune",
+          "content": "Deltarune's paid release was June 4, 2025 to coincide with the Nintendo Switch 2's launch date in Japan, and Chapter 5 was released on June 24, 2026, as announced during the Nintendo Direct on June 9, 2026. Its price is $24.99, with subsequent Chapters intended to be released as free expansions to the paid version of the game. For console versions, Deltarune only has to be bought once on a Nintendo or PlayStation console via cross-buy. SAVE data can also be transferred from the demo to the full game. The official Deltarune FAQ page has further details on this, and emphasizes the option to import data only displays once. [...] The heroes as depicted in the 2025 trailer\n\nDeltarune's paid release was on June 4 2025 on most platforms; it includes Chapters 3 and 4, and the Chapters 3+4 soundtrack was released alongside it. The trailer for the paid release contains Toby returning in the dog su",
+          "score": 0.8858788
+        },
+        {
+          "title": "Deltarune | Deltarune Wiki | Fandom",
+          "url": "https://deltarune.fandom.com/wiki/Deltarune",
+          "content": "Deltarune Wiki\n\n### New to Fandom? Unlock more settings\n\nCreate your free account or log in to save your choices and unlock full controls.\n\nBy continuing, you agree to Fandom's Terms of Use and Privacy Policy.\n\nDeltarune Wiki\n\n# Deltarune\n\n## Deltarune\n\nDeltarune\n\n## Game information\n\n### Developer\n\n### Release date\n\nSeptember 17, 2021 (Chapter 2)  \nJune 4, 2025 (Chapters 3 & 4)  \nJune 24, 2026 (Chapter 5)  \n2027 (Chapter 6)  \nTBA (Chapter 7)\n\n### Engine\n\n### Platform(s)\n\nMac  \nNintendo Switch & Switch 2  \nPlayStation 4 & 5\n\n### Genre\n\n### Official website [...] With no prior warning, Chapter 1 of Deltarune was teased for one day on the Undertale Twitter before its release on October 31, 2018. On release, the game was disguised as a survey regarding \"something new\" Toby Fox had planned, saying it would \"all start with [the players'] feedback.\" As such, the game's folders and shortcuts ar",
+          "score": 0.8512743
+        },
+        {
+          "title": "A history of announcements and release dates. : r/Deltarune",
+          "url": "https://www.reddit.com/r/Deltarune/comments/1j6m3ya/a_history_of_announcements_and_release_dates",
+          "content": "Deltarune Chapter 1 on PS4 and Switch was announced on February 13, 2019, along with its release date. The game released 15 days later, on",
+          "score": 0.8467682
+        }
+      ],
+      "elapsed_ms": 4654
+    },
+    {
+      "provider": "tavily",
+      "depth": "basic",
+      "query": "What is Rust's package manager called?",
+      "budgeted_credits": 1,
+      "status": 200,
+      "echoed_query": "What is Rust's package manager called?",
+      "usage": {
+        "credits": 1
+      },
+      "results": [
+        {
+          "title": "Getting started with the Rust package manager, Cargo | Opensource.com",
+          "url": "https://opensource.com/article/20/3/rust-cargo",
+          "content": "Cargo is a build system and package manager for Rust. It helps developers download and manage dependencies and assists in creating Rust packages. Packages in Rust are often called \"crates\" in the Rust community, but in this article, the two words are interchangeable. Refer to the Cargo FAQ provided by the Rust community for clarification.\n\nIf you need any help with Cargo's command-line utility, use the --help or -h command-line argument:\n\n```\n$ cargo \u2013help\n``` [...] In addition to being a great programming language, Rust also features a build system and package manager called Cargo. Cargo handles a lot of tasks, like building code, downloading libraries or dependencies, and so on. The two are bundled together, so you get Cargo when you install Rust.\n\n## Installing Rust and Cargo [...] Supported by Red Hat\n\nHome   Supported by Red Hat\n\n# Getting started with the Rust package manager, Carg",
+          "score": 0.9152729
+        },
+        {
+          "title": "Hello, Cargo! - The Rust Programming Language",
+          "url": "https://doc.rust-lang.org/book/ch01-03-hello-cargo.html",
+          "content": "## Hello, Cargo!\n\nCargo is Rust\u2019s build system and package manager. Most Rustaceans use this tool to manage their Rust projects because Cargo handles a lot of tasks for you, such as building your code, downloading the libraries your code depends on, and building those libraries. (We call the libraries that your code needs dependencies.)",
+          "score": 0.90791017
+        },
+        {
+          "title": "Hello, Cargo! - The Rust Programming Language",
+          "url": "https://web.mit.edu/rust-lang_v1.26.0/arch/amd64_ubuntu1404/share/doc/rust/html/book/second-edition/ch01-03-hello-cargo.html",
+          "content": "# The Rust Programming Language\n\n## Hello, Cargo!\n\nCargo is Rust\u2019s build system and package manager. Most Rustaceans will use this tool to manage their Rust projects because Cargo takes care of a lot of tasks for you, such as building your code, downloading the libraries your code depends on, and building those libraries. (We call libraries your code needs dependencies.)",
+          "score": 0.9049283
+        }
+      ],
+      "elapsed_ms": 1318
+    },
+    {
+      "provider": "tavily",
+      "depth": "advanced",
+      "query": "What is Rust's package manager called?",
+      "budgeted_credits": 2,
+      "status": 200,
+      "echoed_query": "What is Rust's package manager called?",
+      "usage": {
+        "credits": 2
+      },
+      "results": [
+        {
+          "title": "Getting started with the Rust package manager, Cargo | Opensource.com",
+          "url": "https://opensource.com/article/20/3/rust-cargo",
+          "content": "Supported by Red Hat\n\nHome   Supported by Red Hat\n\n# Getting started with the Rust package manager, Cargo\n\nGet to know Rust's package manager and build tool.\n\nShipping containers stacked in a yard\n\nImage by: \n\nLucarelli via Wikimedia Commons. CC-BY-SA 3.0\n\nRust is a modern programming language that provides performance, reliability, and productivity. It has consistently been voted as the most-loved language on StackOverflow surveys for a few years now.\n\nIn addition to being a great programming language, Rust also features a build system and package manager called Cargo. Cargo handles a lot of tasks, like building code, downloading libraries or dependencies, and so on. The two are bundled together, so you get Cargo when you install Rust.\n\n## Installing Rust and Cargo [...] Cargo is a build system and package manager for Rust. It helps developers download and manage dependencies and assist",
+          "score": 0.9177831
+        },
+        {
+          "title": "Hello, Cargo! - The Rust Programming Language",
+          "url": "https://web.mit.edu/rust-lang_v1.26.0/arch/amd64_ubuntu1404/share/doc/rust/html/book/second-edition/ch01-03-hello-cargo.html",
+          "content": "# The Rust Programming Language\n\n## Hello, Cargo!\n\nCargo is Rust\u2019s build system and package manager. Most Rustaceans will use this tool to manage their Rust projects because Cargo takes care of a lot of tasks for you, such as building your code, downloading the libraries your code depends on, and building those libraries. (We call libraries your code needs dependencies.)\n\nThe simplest Rust programs, like the one we\u2019ve written so far, don\u2019t have any dependencies, so if we had built the Hello World project with Cargo, it would only be using the part of Cargo that takes care of building your code. As you write more complex Rust programs, you\u2019ll want to add dependencies, and if you start the project off using Cargo, that will be a lot easier to do.",
+          "score": 0.8936907
+        },
+        {
+          "title": "Hello, Cargo! - The Rust Programming Language",
+          "url": "https://doc.rust-lang.org/book/ch01-03-hello-cargo.html",
+          "content": "## Keyboard shortcuts\n\nPress `\u2190` or `\u2192` to navigate between chapters\n\nPress `S` or `/` to search in the book\n\nPress `?` to show this help\n\nPress `Esc` to hide this help\n\n# The Rust Programming Language\n\n## Hello, Cargo!\n\nCargo is Rust\u2019s build system and package manager. Most Rustaceans use this tool to manage their Rust projects because Cargo handles a lot of tasks for you, such as building your code, downloading the libraries your code depends on, and building those libraries. (We call the libraries that your code needs dependencies.)",
+          "score": 0.8898454
+        }
+      ],
+      "elapsed_ms": 2693
+    },
+    {
+      "provider": "tavily",
+      "depth": "basic",
+      "query": "Who composed The Legend of Zelda: Skyward Sword?",
+      "budgeted_credits": 1,
+      "status": 200,
+      "echoed_query": "Who composed The Legend of Zelda: Skyward Sword?",
+      "usage": {
+        "credits": 1
+      },
+      "results": [
+        {
+          "title": "The Legend of Zelda: Skyward Sword - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/The_Legend_of_Zelda:_Skyward_Sword",
+          "content": "The game's sound team consisted of ten people: five handling general sound design, and five handling music composition. Hajime Wakai acted as the game's sound director and lead composer, with the other composers being Shiho Fujii, Mahito Yokota, and Takeshi Hama. Longtime series composer Koji Kondo had a supervisory role, only composing a single piece by himself: the music accompanying the prologue video describing the mythical origins of Demise and Hylia. He also helped in arranging the other [...] MotionPlus proved problematic for the developers, to the point where it was nearly discarded. It was the first Zelda game to use a live orchestra for the majority of its tracks, with music composed by a team led by Hajime Wakai and supervised by Koji Kondo. [...] | Developer | Nintendo EAD |\n| Publisher | Nintendo |\n| Director | Hidemaro Fujibayashi |\n| Producer | Eiji Aonuma |\n| Programmers ",
+          "score": 0.91175514
+        },
+        {
+          "title": "A Look Back at the Music of Legend of Zelda: Skyward Sword \u2013 Silen Audio",
+          "url": "https://www.silen.audio/2021/07/20/a-look-back-at-the-music-of-legend-of-zelda-skyward-sword",
+          "content": "But it is not only classic themes; there are wonderful new compositions to represent new worlds and new friends or foes that Link encounters along the way. The composers Hajime Wakai, Shiho Fujii, Mahito Yokota, and Takeshi Hama show an evident classical music influence in much of their scores.\n\nWith wonderful boss melodies such as Final Ghirahim showcasing wonderful 20th-century classical music techniques. [...] Skip to content\n\nsilen-black-transparent_200px\n\nTwitter - Silen Audio     Youtube - Silen Audio     TikTok - SIlen Audio     Facebook - Silen Audio     View Cart     My Account\n\n# A Look Back at the Music of Legend of Zelda: Skyward Sword\n\nJuly 20, 2021\n\nIn anticipation of the HD re-release of 2011\u2019s Legend of Zelda: Skyward Sword, composer Adam Fligsten reflects on the soundtrack as it relates to the legacy of the Zelda series.",
+          "score": 0.8800674
+        },
+        {
+          "title": "Hold on a second, Koji Kondo didn't compose most of the music in this game?!",
+          "url": "https://gamefaqs.gamespot.com/boards/960633-the-legend-of-zelda-skyward-sword/65749484",
+          "content": "1.   Boards\n2.   The Legend of Zelda: Skyward Sword\n3.   Hold on a second, Koji Kondo didn't compose most of the music in this game?!\n\n but the music was mostly there for the background and atmosphere and I didn't notice it much. Not a strong point for the game, but also not something I would complain about unless I was really nitpicking.\n\n\"it's that game that is so great it makes you want to destroy your Toilet.\" -Throwback2780  \nSee how my mustache moves in the wind!\n13 years ago#6 [...] 1.   Boards\n2.   The Legend of Zelda: Skyward Sword\n3.   Hold on a second, Koji Kondo didn't compose most of the music in this game?!\n\n   Topic Archived\n\n   Page 1 of 2\n   Last\n\n## More Topics from this Board [...] Not really. I still think SS has a weak soundtrack by Zelda standards, but it's pretty underrated and there's some awesome tracks.  \n  \nDejected Groose, Lavos battle, Gate of Time, Ghirahim'",
+          "score": 0.76385427
+        }
+      ],
+      "elapsed_ms": 1632
+    },
+    {
+      "provider": "tavily",
+      "depth": "advanced",
+      "query": "Who composed The Legend of Zelda: Skyward Sword?",
+      "budgeted_credits": 2,
+      "status": 200,
+      "echoed_query": "Who composed The Legend of Zelda: Skyward Sword?",
+      "usage": {
+        "credits": 2
+      },
+      "results": [
+        {
+          "title": "The Legend of Zelda: Skyward Sword/soundtrack",
+          "url": "https://nintendo.fandom.com/wiki/The_Legend_of_Zelda:_Skyward_Sword/soundtrack",
+          "content": "The music of The Legend of Zelda: Skyward Sword was composed by Hajime Wakai, Shiho Fujii, Mahito Yokota, Takeshi Hama and Koji Kondo, with sound effect",
+          "score": 0.92491204
+        },
+        {
+          "title": "Top 25 Legend of Zelda: Skyward Sword Songs",
+          "url": "https://www.youtube.com/watch?v=TvWQSsy1V3k",
+          "content": "... Zelda: Skyward Sword. The composers are; Hajime Wakai, Shiho Fujil, Mahito Yokota, Takeshi Hama and Koji Kondo. Thanks to these legends for",
+          "score": 0.9177831
+        },
+        {
+          "title": "Star Fox 64 Composer Heading Skyward Sword's Soundtrack",
+          "url": "https://www.nintendoworldreport.com/news/26922",
+          "content": "Hajime Wakai will be the main composer of The Legend of Zelda: Skyward Sword, according to renowned Nintendo composer Koji Kondo. Additionally,",
+          "score": 0.9094659
+        }
+      ],
+      "elapsed_ms": 3579
+    },
+    {
+      "provider": "tavily",
+      "depth": "basic",
+      "query": "How large is Earth?",
+      "budgeted_credits": 1,
+      "status": 200,
+      "echoed_query": "How large is Earth?",
+      "usage": {
+        "credits": 1
+      },
+      "results": [
+        {
+          "title": "How large is Earth? | Cool Cosmos",
+          "url": "https://coolcosmos.ipac.caltech.edu/ask/57-How-large-is-Earth-",
+          "content": "Earth's circumference (the distance all the way around the equator) is 24,901 miles (40,075 kilometers). Its diameter (the distance from one side to the other through Earth's center) is 7,926 miles (about 12,756 kilometers). Earth is slightly smaller when measured between the North and South Poles which gives a diameter of 7,907 miles (12,725 kilometers). Earth bulges out a bit more around the equator than around the poles because of its rotation (spin).\n\nExexo_banner_image",
+          "score": 0.9159971
+        },
+        {
+          "title": "How big is Earth? | Space",
+          "url": "https://www.space.com/17638-how-big-is-earth.html",
+          "content": "The surface area of Earth is about 197 million square miles (510 million square kilometers). Around 57 million square miles (148 square km), or 29%, is taken up by land, while the remaining 140 million square miles (362 square km), or 71%, is covered by water. [...] The volume of Earth is 260 billion cubic miles (1.086 trillion cubic kilometers), while its mass is  6.6 x 1021 tons (6 x 1021 metric tons), according to NASA. With these values known, and Earth's oddball shape accounted for, it is easy to calculate the density of Earth, which is around 5.5 grams per cubic centimeter. [...] Therefore, the diameter of Earth through its center is 7,926 miles (12,756 km). Again, because of the equatorial bulge, the planet's diameter is slightly smaller when measured from pole to pole, where it is about 7,900 miles (12,712 km).",
+          "score": 0.8849276
+        },
+        {
+          "title": "How Big Is Earth? | Size, Diameter, & Mass",
+          "url": "https://www.britannica.com/science/How-Big-Is-Earth",
+          "content": "Table of Contents  Ask Anything \n\nEarth has a diameter at the Equator of about 12,756 kilometers (7,926 miles), making it the fifth largest planet in the solar system. Earth\u2019s mass is about 5.97 \u2a09 10 24 kilograms. Dividing this mass by Earth\u2019s volume results in an average density of approximately 5,517 kilograms per cubic meter. This density reflects the composition of Earth\u2019s interior, which is composed of elements like iron and nickel. [...] While often referred to as a sphere, Earth is actually an oblate spheroid, meaning it is slightly flattened at the poles and bulging at the Equator. Earth\u2019s surface area is about 510 million square kilometers (197 million square miles). The surface is divided into land and water, with about 71 percent covered by oceans.\n\nImage 7: Pluto\n\nHow Big Is Pluto?\n\nImage 8: Sirius\n\nWhy Do Stars Twinkle?\n\nImage 9: Mars\n\nWhy Is Mars Called the Red Planet?\n\nIma",
+          "score": 0.875031
+        }
+      ],
+      "elapsed_ms": 1478
+    },
+    {
+      "provider": "tavily",
+      "depth": "advanced",
+      "query": "How large is Earth?",
+      "budgeted_credits": 2,
+      "status": 200,
+      "echoed_query": "How large is Earth?",
+      "usage": {
+        "credits": 2
+      },
+      "results": [
+        {
+          "title": "How large is Earth? | Cool Cosmos",
+          "url": "https://coolcosmos.ipac.caltech.edu/ask/57-How-large-is-Earth-",
+          "content": "# How large is Earth?\n\nEarth's circumference (the distance all the way around the equator) is 24,901 miles (40,075 kilometers). Its diameter (the distance from one side to the other through Earth's center) is 7,926 miles (about 12,756 kilometers). Earth is slightly smaller when measured between the North and South Poles which gives a diameter of 7,907 miles (12,725 kilometers). Earth bulges out a bit more around the equator than around the poles because of its rotation (spin).\n\nExexo_banner_image",
+          "score": 0.9328032
+        },
+        {
+          "title": "How big is Earth? | Space",
+          "url": "https://www.space.com/17638-how-big-is-earth.html",
+          "content": "The volume of Earth is 260 billion cubic miles (1.086 trillion cubic kilometers), while its mass is  6.6 x 1021 tons (6 x 1021 metric tons), according to NASA. With these values known, and Earth's oddball shape accounted for, it is easy to calculate the density of Earth, which is around 5.5 grams per cubic centimeter.   \n   \n The surface area of Earth is about 197 million square miles (510 million square kilometers). Around 57 million square miles (148 square km), or 29%, is taken up by land, while the remaining 140 million square miles (362 square km), or 71%, is covered by water. [...] With a diameter of 30,599 miles (49,244 km), Neptune \u2014 the fourth largest planet in the solar system \u2014is around four times as wide as Earth. It would take 57 Earths to fill the volume of Neptune. If Earth were the size of a nickel, Neptune would be the size of a baseball, according to NASA.   \n   \n Altho",
+          "score": 0.8914433
+        },
+        {
+          "title": "How Big Is Earth? | Size, Diameter, & Mass",
+          "url": "https://www.britannica.com/science/How-Big-Is-Earth",
+          "content": "Table of Contents \n\n Table of Contents  Ask Anything \n\nEarth has a diameter at the Equator of about 12,756 kilometers (7,926 miles), making it the fifth largest planet in the solar system. Earth\u2019s mass is about 5.97 \u2a09 10 24 kilograms. Dividing this mass by Earth\u2019s volume results in an average density of approximately 5,517 kilograms per cubic meter. This density reflects the composition of Earth\u2019s interior, which is composed of elements like iron and nickel.\n\nWhile often referred to as a sphere, Earth is actually an oblate spheroid, meaning it is slightly flattened at the poles and bulging at the Equator. Earth\u2019s surface area is about 510 million square kilometers (197 million square miles). The surface is divided into land and water, with about 71 percent covered by oceans.",
+          "score": 0.8875269
+        }
+      ],
+      "elapsed_ms": 2532
+    },
+    {
+      "provider": "tavily",
+      "depth": "basic",
+      "query": "When was Python 3.13 released?",
+      "budgeted_credits": 1,
+      "status": 200,
+      "echoed_query": "When was Python 3.13 released?",
+      "usage": {
+        "credits": 1
+      },
+      "results": [
+        {
+          "title": "Python 3.13: Cool New Features for You to Try \u2013 Real Python",
+          "url": "https://realpython.com/python313-new-features",
+          "content": "Python 3.13 was published on October 7, 2024. This new version is a major step forward for the language, although several of the biggest changes are happening under the hood and won\u2019t be immediately visible to you.\n\nIn a sense, Python 3.13 is laying the groundwork for some future improvements, especially to the language\u2019s performance. As you read on, you\u2019ll learn more about the background for this and dive into some new features that are fully available now. [...] If you want to try any of the examples in this tutorial, then you\u2019ll need to use Python 3.13. The tutorials Python 3 Installation & Setup Guide and How Can You Install a Pre-Release Version of Python? walk you through several options for adding a new version of Python to your system.\n\nNote: Python 3.13 was originally planned to be released on October 1, 2024. The developers found some issues during testing and decided to push b",
+          "score": 0.9210814
+        },
+        {
+          "title": "What\u2019s New In Python 3.13 \u2014 Python 3.15.0 documentation",
+          "url": "https://docs.python.org/3/whatsnew/3.13.html",
+          "content": "### Navigation\n\n index\n modules |\n next |\n previous |\n Python \u00bb\n 3.15.0 Documentation \u00bb\n What\u2019s New in Python \u00bb\n What\u2019s New In Python 3.13\n |\n |\n\n# What\u2019s New In Python 3.13\u00b6\n\nEditors:\n:   Adam Turner and Thomas Wouters\n\nThis article explains the new features in Python 3.13, compared to 3.12. Python 3.13 was released on October 7, 2024. For full details, see the changelog.\n\nSee also\n\nPEP 719 \u2013 Python 3.13 Release Schedule\n\n## Summary \u2013 Release Highlights\u00b6",
+          "score": 0.88822687
+        },
+        {
+          "title": "When should you upgrade to Python 3.13?",
+          "url": "https://pythonspeed.com/articles/upgrade-python-3.13",
+          "content": "# When should you upgrade to Python 3.13?\n\nby Itamar Turner-Trauring  \nLast updated 05 Dec 2024, originally created 12 Sep 2024\n\nPython 3.13 was released October 7, 2024\u2014but should you switch to it immediately? And if you shouldn\u2019t upgrade just yet, when should you? [...] Of course, there\u2019s always another bug fix release in the future, but given a 12-month window between major releases, lots of new code will get written but not extensively used. Which means Python 3.13.0 can also expect a follow-up 3.13.1 release to deal with the results of real-world usage. And indeed, 3.13.1 came out December 3rd, 2024, with a very long list of bug fixes.\n\n## Things are getting better! [...] #### Conda support\n\nIf you\u2019re using Conda-Forge, the Python 3.13 rollout happens pretty quickly. A lot of it is automated, one of the benefits of Conda-Forge over PyPI, so as long as the underlying packages already",
+          "score": 0.8665964
+        }
+      ],
+      "elapsed_ms": 1718
+    },
+    {
+      "provider": "tavily",
+      "depth": "advanced",
+      "query": "When was Python 3.13 released?",
+      "budgeted_credits": 2,
+      "status": 200,
+      "echoed_query": "When was Python 3.13 released?",
+      "usage": {
+        "credits": 2
+      },
+      "results": [
+        {
+          "title": "What\u2019s New In Python 3.13 \u2014 Python 3.15.0 documentation",
+          "url": "https://docs.python.org/3/whatsnew/3.13.html",
+          "content": "### Navigation\n\n index\n modules |\n next |\n previous |\n Python \u00bb\n 3.15.0 Documentation \u00bb\n What\u2019s New in Python \u00bb\n What\u2019s New In Python 3.13\n |\n |\n\n# What\u2019s New In Python 3.13\u00b6\n\nEditors:\n:   Adam Turner and Thomas Wouters\n\nThis article explains the new features in Python 3.13, compared to 3.12. Python 3.13 was released on October 7, 2024. For full details, see the changelog.\n\nSee also\n\nPEP 719 \u2013 Python 3.13 Release Schedule\n\n## Summary \u2013 Release Highlights\u00b6\n\nPython 3.13 is a stable release of the Python programming language, with a mix of changes to the language, the implementation and the standard library. The biggest changes include a new interactive interpreter, experimental support for running in a free-threaded mode (PEP 703), and a Just-In-Time compiler (PEP 744).",
+          "score": 0.9039154
+        },
+        {
+          "title": "Python 3.13: Cool New Features for You to Try \u2013 Real Python",
+          "url": "https://realpython.com/python313-new-features",
+          "content": "Recommended Course\n\nWhat's New in Python 3.13 (53m)\n\nPython 3.13 was published on October 7, 2024. This new version is a major step forward for the language, although several of the biggest changes are happening under the hood and won\u2019t be immediately visible to you.\n\nIn a sense, Python 3.13 is laying the groundwork for some future improvements, especially to the language\u2019s performance. As you read on, you\u2019ll learn more about the background for this and dive into some new features that are fully available now.\n\nIn this tutorial, you\u2019ll learn about some of the improvements in the new version, including: [...] Note: Python 3.13 was originally planned to be released on October 1, 2024. The developers found some issues during testing and decided to push back the release to October 7.\n\nIn addition to learning more about the new features coming to the language, you\u2019ll also get some advice abou",
+          "score": 0.9039154
+        },
+        {
+          "title": "When should you upgrade to Python 3.13?",
+          "url": "https://pythonspeed.com/articles/upgrade-python-3.13",
+          "content": "# When should you upgrade to Python 3.13?\n\nby Itamar Turner-Trauring  \nLast updated 05 Dec 2024, originally created 12 Sep 2024\n\nPython 3.13 was released October 7, 2024\u2014but should you switch to it immediately? And if you shouldn\u2019t upgrade just yet, when should you?\n\nImmediately after the release, you probably didn\u2019t want to upgrade just yet. But at this point, upgrading is definitely worth trying, though it may not succeed. To understand why, we need to consider Python packaging, the software development process, and take a look at the history of past releases.\n\n## The problems with a new major Python release [...] Of course, there\u2019s always another bug fix release in the future, but given a 12-month window between major releases, lots of new code will get written but not extensively used. Which means Python 3.13.0 can also expect a follow-up 3.13.1 release to deal with the results of re",
+          "score": 0.88420963
+        }
+      ],
+      "elapsed_ms": 3206
+    },
+    {
+      "provider": "tavily",
+      "depth": "basic",
+      "query": "How do I list disk usage on Linux?",
+      "budgeted_credits": 1,
+      "status": 200,
+      "echoed_query": "How do I list disk usage on Linux?",
+      "usage": {
+        "credits": 1
+      },
+      "results": [
+        {
+          "title": "How to Check Disk Space Usage in Linux",
+          "url": "https://contabo.com/blog/how-to-check-disk-space-usage-in-linux",
+          "content": "The Linux `ncdu` command provides an interactive, ncurses-based disk usage analyzer right in your terminal. After installing it (`sudo apt install ncdu` or `sudo yum install ncdu`), run `ncdu /path/to/directory`. It will scan the directory and present an interactive, sorted list of files and directories by size. You can navigate with the arrow keys, drill down into subdirectories, and even delete files or directories directly from the interface. This makes `ncdu` one of the fastest ways to find [...] The primary Linux command to check disk space comes in two main forms: `df` for a high-level view of your filesystems, and `du` for a detailed look at directory and file sizes. Understanding the difference is key: `df` (disk free) reports on the total space used and available on your mounted partitions, while `du` (disk usage) calculates the space consumed by specific files and directories. ",
+          "score": 0.8464638
+        },
+        {
+          "title": "Classic SysAdmin: How to Check Disk Space on Linux from the Command Line - Linux Foundation",
+          "url": "https://www.linuxfoundation.org/blog/blog/classic-sysadmin-how-to-check-disk-space-on-linux-from-the-command-line",
+          "content": "The df command is the tool I first used to discover drive space on Linux, way back in the 1990s. It\u2019s very simple in both usage and reporting. To this day, df is my go-to command for this task. This command has a few switches but, for basic reporting, you really only need one. That command is df -H. The -H switch is for human-readable format. The output of df -H will report how much space is used, available, percentage used, and the mount point of every disk attached to your system (Figure 1). [...] The du command is also a great tool to use in order to see a list of directories that are using the most disk space on your system. The way to do this is by piping the output of du to two other commands: sort and head. The command to find out the top 10 directories eating space on a drive would look something like this:\n\n```\ndu -a /media/jack | sort -n -r | head -n 10\n```\n\nThe output would li",
+          "score": 0.7680558
+        },
+        {
+          "title": "Check your disk space use with the Linux df command",
+          "url": "https://www.redhat.com/en/blog/linux-df-command",
+          "content": "Lists of long numbers (as shown above) can be difficult to parse. If you want to run `df` in its human-readable format, use the `--human-readable` (`-h` for short) option:\n\n`df`\n`--human-readable`\n`-h`\n`$ df -h\nFilesystem Size Used Avail Use% Mounted on\ndevtmpfs 863M 0 863M 0% /dev\ntmpfs 893M 168K 893M 1% /dev/shm\ntmpfs 893M 9.5M 883M 2% /run\ntmpfs 893M 0 893M 0% /sys/fs/cgroup\n/dev/map[...] 17G 6.9G 11G 41% /\n/dev/sda1 1014M 255M 760M 26% /boot\ntmpfs 179M 120K 179M 1% /run/user/1000` [...] Share\n\nTwo related commands that every system administrator runs frequently are `df` and `du`. While `du` reports files' and directories' disk usage, `df` reports how much disk space your filesystem is using. The `df` command displays the amount of disk space available on the filesystem with each file name's argument.\n\n`df`\n`du`\n`du`\n`df`\n`df` [...] The examples I've demonstrated so far have the same ",
+          "score": 0.751375
+        }
+      ],
+      "elapsed_ms": 1417
+    },
+    {
+      "provider": "tavily",
+      "depth": "advanced",
+      "query": "How do I list disk usage on Linux?",
+      "budgeted_credits": 2,
+      "status": 200,
+      "echoed_query": "How do I list disk usage on Linux?",
+      "usage": {
+        "credits": 2
+      },
+      "results": [
+        {
+          "title": "How to Show Disk Usage in Linux With the du Command",
+          "url": "https://www.makeuseof.com/du-command",
+          "content": "Title: How to Show Disk Usage in Linux With the du Command\n# How to Show Disk Usage in Linux With the du Command. If your PC is running slow or you're having issues installing updates and software, there's a high chance you might be running out of disk space. The handy **du** command makes it convenient for Linux users to stay aware of their disk consumption and make an upgrade if required. But how exactly do you issue this command on Linux? To be able to use the du command, you need to have the following:. Related: How to Add a User to the Sudoers List in Linux. ## How to Use the du Command. The du command displays disk usage. To utilize the basic usage of the du command, simply open a terminal window, type **du,** and hit **Enter**. The output displays each directory's disk usage and path, along with the total disk usage of the parent directory. Besides the du command, Linux also comes",
+          "score": 0.9121316
+        },
+        {
+          "title": "Using the Linux ncdu command to view your disk usage | Network World",
+          "url": "https://www.networkworld.com/article/3644415/looking-at-linux-disk-usage-with-the-ncdu-command.html",
+          "content": "Title: Using the Linux ncdu command to view your disk usage | Network World\n# Using the Linux ncdu command to view your disk usage. ## The ncdu command provides a convenient way to review files and the disk space being used on Linux systems, but the file sizes may appear a little strange at first. The **ncdu** command provides a fast and very easy-to-use way to see how you are using disk space on your Linux system. It allows you to navigate through your directories and files and review what file content is using up the most disk space. If you\u2019ve never used this command, you\u2019ll likely have to install it before you can take advantage of the insights it can provide with a command like one of these:. The name \u201cncdu\u201d stands for \u201cNCurses disk usage. Instead, when related to Linux, \u201ccurses\u201d is a term related to \u201ccursor\u201d \u2013 that little marker on your screen that indicates where you are currently ",
+          "score": 0.8624794
+        },
+        {
+          "title": "du - the disk usage linux command | MooLux GNU/Linux",
+          "url": "https://www.moolux.org/2010/05/du-disk-usage-linux-command.html",
+          "content": "Title: du - the disk usage linux command | MooLux GNU/Linux\n### du - the disk usage linux command. du stands for disk usage. This simple linux command provides a summary of harddisk or storage space disk usage. It has many parameter arguments that can provide results in many screen format. du command can also summarize files and directories in a recursive manner. Here are several usage of to use the du (disk usage) command. To list the files and directories from there. >  -rw-r--r-- 1 root root 29 2007-08-11 11:57 file.txt. >  drwxr-xr-x 2 root root 4096 2007-08-11 11:57 folder1. Now, let us get a more human readable results. The above shows that my file.txt has about 4K of filesize rounded to nearest power of 1024K including . > Now, let us it in bytes. The above is the same results you get from issuing ls -la command. Now let us do it once again in human readable form. You can also exc",
+          "score": 0.853046
+        }
+      ],
+      "elapsed_ms": 4526
+    },
+    {
+      "provider": "tavily",
+      "depth": "basic",
+      "query": "What's the weather in Amsterdam today?",
+      "budgeted_credits": 1,
+      "status": 200,
+      "echoed_query": "What's the weather in Amsterdam today?",
+      "usage": {
+        "credits": 1
+      },
+      "results": [
+        {
+          "title": "Weather in Amsterdam",
+          "url": "https://www.weatherapi.com/",
+          "content": "{'location': {'name': 'Amsterdam', 'region': 'North Holland', 'country': 'Netherlands', 'lat': 52.374, 'lon': 4.8897, 'tz_id': 'Europe/Amsterdam', 'localtime_epoch': 1792501299, 'localtime': '2026-10-20 15:01'}, 'current': {'last_updated_epoch': 1792500300, 'last_updated': '2026-10-20 14:45', 'temp_c': 12.3, 'temp_f': 54.2, 'is_day': 1, 'condition': {'text': 'Overcast', 'icon': '//cdn.weatherapi.com/weather/64x64/day/122.png', 'code': 1009}, 'wind_mph': 13.2, 'wind_kph': 21.2, 'wind_degree': 92, 'wind_dir': 'E', 'pressure_mb': 1012.0, 'pressure_in': 29.87, 'precip_mm': 0.0, 'precip_in': 0.0, 'humidity': 50, 'cloud': 100, 'feelslike_c': 7.8, 'feelslike_f': 46.0, 'windchill_c': 10.2, 'windchill_f': 50.4, 'heatindex_c': 12.3, 'heatindex_f': 54.2, 'dewpoint_c': 2.1, 'dewpoint_f': 35.8, 'vis_km': 10.0, 'vis_miles': 6.0, 'uv': 1.5, 'gust_mph': 22.2, 'gust_kph': 35.7, 'will_it_rain': 0, 'chance",
+          "score": 0.9812177
+        },
+        {
+          "title": "Weather Amsterdam in October 2026: Temperature & Climate",
+          "url": "https://en.climate-data.org/europe/the-netherlands/north-holland/amsterdam-3330/t/october-10",
+          "content": "| 20. October | 11 \u00b0C | 51 \u00b0F | 13 \u00b0C | 56 \u00b0F | 8 \u00b0C | 47 \u00b0F | 1.7 mm | 0.1 inch. |\n| 21. October | 11 \u00b0C | 52 \u00b0F | 13 \u00b0C | 56 \u00b0F | 8 \u00b0C | 47 \u00b0F | 3.1 mm | 0.1 inch. |\n| 22. October | 11 \u00b0C | 52 \u00b0F | 13 \u00b0C | 56 \u00b0F | 9 \u00b0C | 48 \u00b0F | 2.3 mm | 0.1 inch. |\n| 23. October | 11 \u00b0C | 52 \u00b0F | 13 \u00b0C | 56 \u00b0F | 9 \u00b0C | 48 \u00b0F | 1.9 mm | 0.1 inch. |\n| 24. October | 11 \u00b0C | 52 \u00b0F | 13 \u00b0C | 56 \u00b0F | 9 \u00b0C | 48 \u00b0F | 2.5 mm | 0.1 inch. | [...] | Max. Temperature \u00b0C (\u00b0F) | 5.8 \u00b0C  (42.5) \u00b0F | 6.3 \u00b0C  (43.4) \u00b0F | 9.1 \u00b0C  (48.4) \u00b0F | 13.1 \u00b0C  (55.6) \u00b0F | 16.4 \u00b0C  (61.5) \u00b0F | 19 \u00b0C  (66.2) \u00b0F | 21 \u00b0C  (69.8) \u00b0F | 20.8 \u00b0C  (69.4) \u00b0F | 18.3 \u00b0C  (64.9) \u00b0F | 14.3 \u00b0C  (57.7) \u00b0F | 9.8 \u00b0C  (49.6) \u00b0F | 6.6 \u00b0C  (43.9) \u00b0F |\n| Precipitation / Rainfall mm (in) | 69  (2) | 57  (2) | 58  (2) | 57  (2) | 68  (2) | 73  (2) | 88  (3) | 86  (3) | 76  (2) | 70  (2) | 68  (2) | 74  (2) | [...] In Amsterdam, October features humidity",
+          "score": 0.92359936
+        },
+        {
+          "title": "Amsterdam Weather in October 2026 | What to Expect & What to Pack - Amsterdam Tourist Information",
+          "url": "https://www.dutchamsterdam.nl/753-amsterdam-weather-october",
+          "content": "weather icon\n\n6\u00b06\u00b0\u00b0C | \u00b0F   0 mm   0%   17 Km/h   80 %   1019 hPa   0 mm/h\n\nTuesday 11:00 amOct 20, 2026 scattered clouds\n\nweather icon\n\n7\u00b07\u00b0\u00b0C | \u00b0F   0 mm   0%   17 Km/h   71 %   1017 hPa   0 mm/h\n\nTuesday 2:00 pmOct 20, 2026 clear sky\n\nweather icon\n\n10\u00b010\u00b0\u00b0C | \u00b0F   0 mm   0%   18 Km/h   64 %   1014 hPa   0 mm/h\n\nLast updated: 2:49 am\n\n## Amsterdam October weather: average temperatures [...] weather icon\n\n12\u00b012\u00b0\u00b0C | \u00b0F   0 mm   0%   15 Km/h   83 %   1026 hPa   0 mm/h\n\nTomorrow 11:00 pmOct 19, 2026 scattered clouds\n\nweather icon\n\n10\u00b010\u00b0\u00b0C | \u00b0F   0 mm   0%   16 Km/h   83 %   1025 hPa   0 mm/h\n\nTuesday 2:00 amOct 20, 2026 scattered clouds\n\nweather icon\n\n8\u00b08\u00b0\u00b0C | \u00b0F   0 mm   0%   16 Km/h   85 %   1023 hPa   0 mm/h\n\nTuesday 5:00 amOct 20, 2026 broken clouds\n\nweather icon\n\n7\u00b07\u00b0\u00b0C | \u00b0F   0 mm   0%   16 Km/h   78 %   1020 hPa   0 mm/h\n\nTuesday 8:00 amOct 20, 2026 broken clouds [...] Travel Guid",
+          "score": 0.9210814
+        }
+      ],
+      "elapsed_ms": 2123
+    },
+    {
+      "provider": "tavily",
+      "depth": "advanced",
+      "query": "What's the weather in Amsterdam today?",
+      "budgeted_credits": 2,
+      "status": 200,
+      "echoed_query": "What's the weather in Amsterdam today?",
+      "usage": {
+        "credits": 2
+      },
+      "results": [
+        {
+          "title": "Amsterdam Weather in October 2026 | What to Expect & What to Pack - Amsterdam Tourist Information",
+          "url": "https://www.dutchamsterdam.nl/753-amsterdam-weather-october",
+          "content": "Tuesday 2:00 pmOct 20, 2026 clear sky\n\nweather icon\n\n10\u00b010\u00b0\u00b0C | \u00b0F   0 mm   0%   18 Km/h   64 %   1014 hPa   0 mm/h\n\nLast updated: 2:49 am\n\n## Amsterdam October weather: average temperatures\n\nOn average you can expect lots of grey days, some sunny days, and some rain. Guidebooks and websites can not seem to agree whether or not October is the wettest month, but you\u2019ll want to use an umbrella on a regular basis.   \n  \nThe average high temperature is 13\u00b0 Celsius (55.4\u00b0 Fahrenheit), and the average night-time low is 4\u00b0 Celsius (39.2\u00b0 Fahrenheit) \u2014 while the average median temperature is 10.4\u00b0 (50.72\u00b0 Fahrenheit). [...] Tomorrow 8:00 pmOct 19, 2026 clear sky\n\nweather icon\n\n12\u00b012\u00b0\u00b0C | \u00b0F   0 mm   0%   15 Km/h   83 %   1026 hPa   0 mm/h\n\nTomorrow 11:00 pmOct 19, 2026 scattered clouds\n\nweather icon\n\n10\u00b010\u00b0\u00b0C | \u00b0F   0 mm   0%   16 Km/h   83 %   1025 hPa   0 mm/h\n\nTuesday 2:00 amOct 20, 2026 scat",
+          "score": 0.9471519
+        },
+        {
+          "title": "Weather for Amsterdam, Netherlands",
+          "url": "https://www.timeanddate.com/weather/netherlands/amsterdam",
+          "content": "Weather in Amsterdam, Netherlands ; Oct 20, 2026 at 7:55 am \u00b7 10 mi \u00b7 30.04 \"Hg \u00b7 87% \u00b7 39 \u00b0F",
+          "score": 0.9353998
+        },
+        {
+          "title": "Weather - Amsterdam - 14-Day Forecast & Rain | Ventusky",
+          "url": "https://www.ventusky.com/amsterdam",
+          "content": "Temperature\n Feels like temperature\n Precipitation\n Radar\n Satellite\n Wind speed\n Wind gusts\n Clouds\n Air pressure\n CAPE\n Snow cover\n Humidity\n Sea\n Air quality\n\nWind Animation   \n ECMWF, GFS, ICON, GEM\n\nTwo New High-Resolution Weather Models on Ventusky Model\n\nWorld / Netherlands / Provincie Noord-Holland\n\n52\u00b022'N / 4\u00b053'E / Altitude 36 ft / 14:32 10/20/2026, Europe/Amsterdam (UTC+2)\n\n Current Weather\n Forecast\n Sun and Moon\n\n|  |  |\n --- |\n| overcast | 52.2 \u00b0F |\n|  |\n| Wind speed   18 mph |\n\n|  |  |\n --- |\n| Precipitation (6 hr.) | 0 inch |\n| Humidity | 68 % |\n| Air pressure | 29.8 inHg |\n| Visibility | 34 mi |\n| Clouds | 100 % |\n| Cloud base | 37172 ft |\n\nWeather report from station Amsterdam/schiph, Distance: 6 mi (14:00 10/20/2026)\n\nOpen Radar Map\n\n## Weather for the next 24 hours",
+          "score": 0.92392945
+        }
+      ],
+      "elapsed_ms": 4166
+    },
+    {
+      "provider": "tavily",
+      "depth": "basic",
+      "query": "What is the capital of the Netherlands?",
+      "budgeted_credits": 1,
+      "status": 200,
+      "echoed_query": "What is the capital of the Netherlands?",
+      "usage": {
+        "credits": 1
+      },
+      "results": [
+        {
+          "title": "What Is The Capital Of The Netherlands?",
+          "url": "https://www.worldatlas.com/articles/what-is-the-capital-of-the-netherlands.html",
+          "content": "When it comes to determining the capital city of the Netherlands, the questions is not as easy to answer as it is for other countries. While Amsterdam is the capital of the Netherlands according to the Dutch Constitution, the Hague is the seat of its government. The Netherlands is one of the most developed countries in the world, and it has become a benchmark for developing countries, keen to achieve its level of political and economic stability. The Netherlands boasts two capitals, both of [...] ## The Two Capitals Of The Netherlands\n\nThe Netherlands is characterized by two capitals: Amsterdam and the Hague. Amsterdam became the official capital of independent Netherlands in 1814 after the defeat of the French. The Hague is the administrative center of the Netherlands, housing both the government and the court.\n\n### Amsterdam [...] of the county of Holland. After several occupations, th",
+          "score": 0.9435197
+        },
+        {
+          "title": "Capital of the Netherlands - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Capital_of_the_Netherlands",
+          "content": "Although the proper legal status of Amsterdam as capital of the Netherlands is of recent date, the city has been recognized as the capital since 1814. In that year  Willem Frederik, Prince of Orange and Nassau, was proclaimed Sovereign Prince of the United Netherlands and invested as such on 30 March 1814 in the Nieuwe Kerk in Amsterdam. This is partly because it is a Royal City, used not only for the inauguration of kings, but also for royal weddings (note though that royal burials take place [...] .\n\n \"), have been situated in The Hague as the seat of government. Since the 1983 revision of the Constitution of the Netherlands, Article 32 mentions that \"the King shall be sworn in and inaugurated as soon as possible in the capital city, Amsterdam\". It is the only reference in the document stating that Amsterdam is the capital. In contrast, The Hague is customarily called the residentie (\"",
+          "score": 0.93666285
+        },
+        {
+          "title": "Netherlands | History, Flag, Population, Languages, Map, & Facts | Britannica",
+          "url": "https://www.britannica.com/place/Netherlands",
+          "content": "The two provinces are Noord-Holland and Zuid-Holland. The name Holland (from Houtland, or \u201cWooded Land\u201d) was originally given to one of the medieval cores of what later became the modern state and is still used for these 2 of its 12 provinces. Holland is also an unofficial name for the country as a whole.\n\n### What is the capital of the Netherlands and where is the seat of government?\n\nThe capital of the Netherlands is Amsterdam, and the seat of government is The Hague.",
+          "score": 0.9134376
+        }
+      ],
+      "elapsed_ms": 2103
+    },
+    {
+      "provider": "tavily",
+      "depth": "advanced",
+      "query": "What is the capital of the Netherlands?",
+      "budgeted_credits": 2,
+      "status": 200,
+      "echoed_query": "What is the capital of the Netherlands?",
+      "usage": {
+        "credits": 2
+      },
+      "results": [
+        {
+          "title": "What Is The Capital Of The Netherlands?",
+          "url": "https://www.worldatlas.com/articles/what-is-the-capital-of-the-netherlands.html",
+          "content": "# What Is The Capital Of The Netherlands?\n\n      Binnenhof - the Dutch Parliament in The Hague, Netherlands  \n\nBinnenhof - the Dutch Parliament in The Hague, Netherlands\n\n \n\nWhen it comes to determining the capital city of the Netherlands, the questions is not as easy to answer as it is for other countries. While Amsterdam is the capital of the Netherlands according to the Dutch Constitution, the Hague is the seat of its government. The Netherlands is one of the most developed countries in the world, and it has become a benchmark for developing countries, keen to achieve its level of political and economic stability. The Netherlands boasts two capitals, both of which are significant in Europe and even in the world.\n\n## The Two Capitals Of The Netherlands [...] ## The Two Capitals Of The Netherlands\n\nThe Netherlands is characterized by two capitals: Amsterdam and the Hague. Amsterdam beca",
+          "score": 0.93525803
+        },
+        {
+          "title": "Capital of the Netherlands - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Capital_of_the_Netherlands",
+          "content": "|  v  t  e  Capital cities of the Kingdom of the Netherlands |\n\n| National capital: Amsterdam Seat of government: The Hague |\n| | Constituent countries | Provinces | Public bodies |  ---  |  Oranjestad, Aruba  Willemstad, Cura\u00e7ao  Amsterdam, Netherlands  Philipsburg, Sint Maarten |  Assen, Drenthe  Lelystad, Flevoland  Leeuwarden, Friesland  Arnhem, Gelderland  Groningen, Groningen \"Groningen (province)\")  Maastricht, Limburg \"Limburg (Netherlands)\") |  's-Hertogenbosch, North Brabant  Haarlem, North Holland  Zwolle, Overijssel  The Hague, South Holland  Utrecht, Utrecht \"Utrecht (province)\")  Middelburg, Zeeland |  Kralendijk, Bonaire  The Bottom, Saba \"Saba (island)\")  Oranjestad, Sint Eustatius | |\n| See also: List of cities in the Netherlands by province |\n\nRetrieved from \"\" [...] ## Historical background\n\n[edit]\n\nAlthough the proper legal status of Amsterdam as capital of the Nether",
+          "score": 0.93338853
+        },
+        {
+          "title": "Dutch Capital City The Netherlands \ud83c\uddf3\ud83c\uddf1",
+          "url": "https://www.facebook.com/ilovethenetherlands/posts/dutch-capital-city-the-netherlands-/122271451670159479",
+          "content": "Its official capital is Amsterdam, while The Hague is the seat of government and the International Court of Justice.",
+          "score": 0.92442214
+        }
+      ],
+      "elapsed_ms": 2633
+    },
+    {
+      "provider": "tavily",
+      "depth": "basic",
+      "query": "When did the Flarnox Pebble Orchestra release its Moonspoon album?",
+      "budgeted_credits": 1,
+      "status": 200,
+      "echoed_query": "When did the Flarnox Pebble Orchestra release its Moonspoon album?",
+      "usage": {
+        "credits": 1
+      },
+      "results": [
+        {
+          "title": "The Ballasted Orchestra",
+          "url": "https://en.wikipedia.org/wiki/The_Ballasted_Orchestra",
+          "content": "It was released simultaneously as a double LP and a single CD in March 1997. Released March 10, 1997 \u2026 on January 7, 2013.",
+          "score": 0.050917413
+        },
+        {
+          "title": "Time-Life Album Discography, Part 6",
+          "url": "https://www.bsnpubs.com/warner/time-life/06fiedler/06fiedler.html",
+          "content": "|  | STLS-7000 Series (Single LPs):  This series was a reissue of the 6000 series, above, with a different order to the volume numbering. Content seems to be identical to the 6000 series. Dates given on the record jackets are apparently the original release dates for the 6000 series. These are listed below, but actual releases were probably later, because the 6000 matrix number stamped in the dead wax was scratched out and the 7000 matrix number written in. | [...] Arthur Fiedler Time-Life Album Discography, Part 6:  \nArthur Fiedler & the Boston Pops Orchestra Series  \n By Mike Callahan, David Edwards, and Patrice Eyries  \n Last update: February 5, 2008 [...] TIME-LIFE ALBUM DISCOGRAPHY, PART 6",
+          "score": 0.027483363
+        },
+        {
+          "title": "The Sonora Label",
+          "url": "https://campber.people.clemson.edu/sonora.html",
+          "content": "with a Van Dyke Parks song) and Tower (a 1968 release). [...] |  |  |  |  |  |  |  |\n ---  ---  --- \n| Matrix | Sonora # | Album # | Artist | Title | Recording Date | Release Date |\n| 1915- | 1169-A | MS 493-1 | H. Leopold Spitalny and Orchestra | Para Mia | Mar-47 |\n| 1916- | 1169-B | MS 493-2 | H. Leopold Spitalny and Orchestra | Vienna City of My Dreams | Mar-47 |\n| 1912-1 | 1170-A | MS 493-3 | H. Leopold Spitalny and Orchestra | Meadowlands | Mar-47 |\n| 1911- | 1170-B | MS 493-4 | H. Leopold Spitalny and Orchestra | Norwegian Dance #2 | Mar-47 | [...] |  |  |  |  |  |  |\n ---  ---  --- |\n| Matrix | Release | Artist | Title | Recording Date | Release Date |\n| 2007- | 3038-A | Fred Kirby | The Wreck of the Old '97 | Feb-47 | Apr-47 |\n| 3038-B | Fred Kirby | Deep in the Bottom of the Sea | Apr-47 |\n| 3039-A | Saxie Dowell and His Orchestra | Vocal by Don Grady | Serenade to Love | Jan-4",
+          "score": 0.025548246
+        }
+      ],
+      "elapsed_ms": 1752
+    },
+    {
+      "provider": "tavily",
+      "depth": "advanced",
+      "query": "When did the Flarnox Pebble Orchestra release its Moonspoon album?",
+      "budgeted_credits": 2,
+      "status": 200,
+      "echoed_query": "When did the Flarnox Pebble Orchestra release its Moonspoon album?",
+      "usage": {
+        "credits": 2
+      },
+      "results": [
+        {
+          "title": "When did Electric Light Orchestra release The Electric Light Orchestra?",
+          "url": "https://genius.com/albums/Electric-light-orchestra/The-electric-light-orchestra/q/release-date",
+          "content": "Title: When did Electric Light Orchestra release The Electric Light Orchestra?\n# When did Electric Light Orchestra release *The Electric Light Orchestra*? Electric Light Orchestra released *The Electric Light Orchestra* on December 1, 1971. ## Related questions about *The Electric Light Orchestra*. ### What is the most popular song on *The Electric Light Orchestra* by Electric Light Orchestra? ### When did Electric Light Orchestra's first album release? ### What is the most popular album by Electric Light Orchestra? ### What is the most popular song by Electric Light Orchestra? ### When did Electric Light Orchestra start making music? # Genius is the world\u2019s biggest collection of song lyrics and musical knowledge.",
+          "score": 0.05125827
+        },
+        {
+          "title": "When did Electric Light Orchestra release \u201cWhen I Was a Boy\u201d?",
+          "url": "https://genius.com/Electric-light-orchestra-when-i-was-a-boy-lyrics/q/release-date",
+          "content": "# When did Electric Light Orchestra release \u201cWhen I Was a Boy\u201d? Electric Light Orchestra released \u201cWhen I Was a Boy\u201d on September 10, 2015. When I Was a Boy. 47.6K ViewsRead the Lyrics. Sourced by 14 Genius contributors. ## Related questions about \u201cWhen I Was a Boy\u201d. ### Who produced \u201cWhen I Was a Boy\u201d by Electric Light Orchestra?### Who wrote \u201cWhen I Was a Boy\u201d by Electric Light Orchestra? ## Related questions about Electric Light Orchestra. ### When did Electric Light Orchestra's first album release?### What is the most popular album by Electric Light Orchestra?### What is the most popular song by Electric Light Orchestra?### When did Electric Light Orchestra start making music? Sign Up and Drop Knowledge. Know something we don\u2019t about \u201cWhen I Was a Boy\u201d by. ? Genius is the ultimate source of music knowledge, created by scholars like you who share facts and insight about the songs and ",
+          "score": 0.046886258
+        },
+        {
+          "title": "When did Mahavishnu Orchestra's first album release?",
+          "url": "https://genius.com/artists/Mahavishnu-orchestra/q/first-album",
+          "content": "Title: When did Mahavishnu Orchestra's first album release?\n# When did Mahavishnu Orchestra's first album release? Mahavishnu Orchestra's first album *The Inner Mounting Flame* released on November 3, 1971. A jazz-rock band formed in 1971 by guitarist John McLaughlin, the first lineup featured keyboardist Jan Hammer, drummer Billy Cobham, violinist Jerry Goodman, and bassist Rick Laird. The band\u2019s first lineup was known for its fast, challenging and energetic performances and instrumental musical pieces (mostly written by McLaughlin), which... Sourced by 22 Genius contributors. ## Related questions about Mahavishnu Orchestra. ### What is the most popular album by Mahavishnu Orchestra?### What is the most popular song by Mahavishnu Orchestra?### When did Mahavishnu Orchestra start making music? Sign Up and Drop Knowledge. Know something we don\u2019t about Mahavishnu Orchestra? Genius is the u",
+          "score": 0.045849938
+        }
+      ],
+      "elapsed_ms": 4532
+    },
+    {
+      "provider": "duckduckgo_html_reference",
+      "query": "When did Deltarune release?",
+      "status": 202,
+      "failure": "unavailable or challenge; no bypass attempted",
+      "elapsed_ms": 154
+    },
+    {
+      "provider": "duckduckgo_html_reference",
+      "query": "What is Rust's package manager called?",
+      "skipped": "prior challenge/unavailable response"
+    },
+    {
+      "provider": "duckduckgo_html_reference",
+      "query": "Who composed The Legend of Zelda: Skyward Sword?",
+      "skipped": "prior challenge/unavailable response"
+    },
+    {
+      "provider": "duckduckgo_html_reference",
+      "query": "How large is Earth?",
+      "skipped": "prior challenge/unavailable response"
+    },
+    {
+      "provider": "duckduckgo_html_reference",
+      "query": "When was Python 3.13 released?",
+      "skipped": "prior challenge/unavailable response"
+    },
+    {
+      "provider": "duckduckgo_html_reference",
+      "query": "How do I list disk usage on Linux?",
+      "skipped": "prior challenge/unavailable response"
+    },
+    {
+      "provider": "duckduckgo_html_reference",
+      "query": "What's the weather in Amsterdam today?",
+      "skipped": "prior challenge/unavailable response"
+    },
+    {
+      "provider": "duckduckgo_html_reference",
+      "query": "What is the capital of the Netherlands?",
+      "skipped": "prior challenge/unavailable response"
+    },
+    {
+      "provider": "duckduckgo_html_reference",
+      "query": "When did the Flarnox Pebble Orchestra release its Moonspoon album?",
+      "skipped": "prior challenge/unavailable response"
+    }
+  ],
+  "notes": [
+    "Frozen plan0011 queries; no rewriting/retries/billing changes.",
+    "Key read only locally; authentication headers and error response bodies never captured.",
+    "Bounded snapshots for source relevance review/replay, not semantic fact verification or a randomized latency benchmark.",
+    "DuckDuckGo public HTML is an independent reference, not an adopted API; stop at any challenge."
+  ]
+}

@@ -1,0 +1,1696 @@
+{
+  "date": "2026-10-19",
+  "model": "qwen3.5:4b-q4_K_M",
+  "runtime": {
+    "version": "0.40.6"
+  },
+  "model_digest": "d8b0f5e9760cd1682034f292d7ef72ec46f432149be0df7574bf2d6e92e38c04",
+  "hardware": {
+    "chip": "Apple M1 Pro",
+    "memory_bytes": 34359738368
+  },
+  "wall_seconds": 70.631,
+  "exit_code": 1,
+  "stderr": "Error: \"Some live routing acceptance checks failed; inspect the JSON observations.\"\n",
+  "passed": false,
+  "structural_checks_passed": true,
+  "notes": [
+    "Local native modules and counted web stub; no Tavily credentials or calls.",
+    "Root independently compares literal request/dispatch paths, canonical paths, failures, web query and empty-input/unsupported cases.",
+    "Temporary path fixtures are removed by the example after execution.",
+    "Correctness sample, not a general reliability claim or isolated performance benchmark."
+  ],
+  "independent_checks": [
+    {
+      "profile": "butler",
+      "case": "omitted",
+      "checks": {
+        "no_tavily": true,
+        "literal_arguments": false,
+        "canonical_path": false,
+        "native_sources_empty": true
+      },
+      "passed": false
+    },
+    {
+      "profile": "butler",
+      "case": "root",
+      "checks": {
+        "no_tavily": true,
+        "literal_arguments": true,
+        "expected_matches_request_literal": true,
+        "canonical_path": true,
+        "native_sources_empty": true
+      },
+      "passed": true
+    },
+    {
+      "profile": "butler",
+      "case": "absolute",
+      "checks": {
+        "no_tavily": true,
+        "literal_arguments": true,
+        "expected_matches_request_literal": true,
+        "canonical_path": true,
+        "native_sources_empty": true
+      },
+      "passed": true
+    },
+    {
+      "profile": "butler",
+      "case": "relative",
+      "checks": {
+        "no_tavily": true,
+        "literal_arguments": true,
+        "expected_matches_request_literal": true,
+        "canonical_path": true,
+        "native_sources_empty": true
+      },
+      "passed": true
+    },
+    {
+      "profile": "butler",
+      "case": "spaces",
+      "checks": {
+        "no_tavily": true,
+        "literal_arguments": true,
+        "expected_matches_request_literal": true,
+        "canonical_path": true,
+        "native_sources_empty": true
+      },
+      "passed": true
+    },
+    {
+      "profile": "butler",
+      "case": "nonexistent",
+      "checks": {
+        "no_tavily": true,
+        "literal_arguments": true,
+        "expected_matches_request_literal": true,
+        "safe_failure": true,
+        "native_sources_empty": true
+      },
+      "passed": true
+    },
+    {
+      "profile": "butler",
+      "case": "os",
+      "checks": {
+        "no_tavily": true,
+        "empty_arguments": true,
+        "native_sources_empty": true
+      },
+      "passed": true
+    },
+    {
+      "profile": "butler",
+      "case": "uptime",
+      "checks": {
+        "no_tavily": true,
+        "empty_arguments": true,
+        "native_sources_empty": true
+      },
+      "passed": true
+    },
+    {
+      "profile": "butler",
+      "case": "web",
+      "checks": {
+        "no_tavily": true,
+        "appropriate_query": true,
+        "native_sources_empty": true
+      },
+      "passed": true
+    },
+    {
+      "profile": "butler",
+      "case": "unsupported",
+      "checks": {
+        "no_tavily": true,
+        "no_execution": true,
+        "native_sources_empty": true
+      },
+      "passed": true
+    },
+    {
+      "profile": "cat",
+      "case": "omitted",
+      "checks": {
+        "no_tavily": true,
+        "literal_arguments": false,
+        "canonical_path": false,
+        "native_sources_empty": true
+      },
+      "passed": false
+    },
+    {
+      "profile": "cat",
+      "case": "root",
+      "checks": {
+        "no_tavily": true,
+        "literal_arguments": true,
+        "expected_matches_request_literal": true,
+        "canonical_path": true,
+        "native_sources_empty": true
+      },
+      "passed": true
+    },
+    {
+      "profile": "cat",
+      "case": "absolute",
+      "checks": {
+        "no_tavily": true,
+        "literal_arguments": true,
+        "expected_matches_request_literal": true,
+        "canonical_path": true,
+        "native_sources_empty": true
+      },
+      "passed": true
+    },
+    {
+      "profile": "cat",
+      "case": "relative",
+      "checks": {
+        "no_tavily": true,
+        "literal_arguments": true,
+        "expected_matches_request_literal": true,
+        "canonical_path": true,
+        "native_sources_empty": true
+      },
+      "passed": true
+    },
+    {
+      "profile": "cat",
+      "case": "spaces",
+      "checks": {
+        "no_tavily": true,
+        "literal_arguments": true,
+        "expected_matches_request_literal": true,
+        "canonical_path": true,
+        "native_sources_empty": true
+      },
+      "passed": true
+    },
+    {
+      "profile": "cat",
+      "case": "nonexistent",
+      "checks": {
+        "no_tavily": true,
+        "literal_arguments": true,
+        "expected_matches_request_literal": true,
+        "safe_failure": true,
+        "native_sources_empty": true
+      },
+      "passed": true
+    },
+    {
+      "profile": "cat",
+      "case": "os",
+      "checks": {
+        "no_tavily": true,
+        "empty_arguments": true,
+        "native_sources_empty": true
+      },
+      "passed": true
+    },
+    {
+      "profile": "cat",
+      "case": "uptime",
+      "checks": {
+        "no_tavily": true,
+        "empty_arguments": true,
+        "native_sources_empty": true
+      },
+      "passed": true
+    },
+    {
+      "profile": "cat",
+      "case": "web",
+      "checks": {
+        "no_tavily": true,
+        "appropriate_query": true,
+        "native_sources_empty": true
+      },
+      "passed": true
+    },
+    {
+      "profile": "cat",
+      "case": "unsupported",
+      "checks": {
+        "no_tavily": true,
+        "no_execution": true,
+        "native_sources_empty": true
+      },
+      "passed": true
+    }
+  ],
+  "cases": [
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "butler",
+      "case": "omitted",
+      "request": "How much disk space is available on this computer?",
+      "expected_capability": "system.disk_space",
+      "expected_module_arguments": {},
+      "expected_outcome": "success",
+      "expected_resolved_path": "/Users/jaspersmitz/Developer/personal/HEART",
+      "selected_route": {
+        "capability": "system.disk_space",
+        "arguments": {
+          "path": "/"
+        }
+      },
+      "module_invocations": [
+        [
+          "system.disk_space",
+          {
+            "path": "/"
+          }
+        ]
+      ],
+      "call_counts": {
+        "system.disk_space": 1
+      },
+      "module_results": [
+        [
+          "system.disk_space",
+          {
+            "outcome": "success",
+            "fallback": "The filesystem containing \"/\" has 751.02 GiB available to the user, 175.33 GiB used and 926.35 GiB total.",
+            "factual_text": "The filesystem containing \"/\" has 751.02 GiB available to the user, 175.33 GiB used and 926.35 GiB total.",
+            "data": {
+              "path": "/",
+              "total_bytes": 994662584320,
+              "free_bytes": 806401978368,
+              "available_bytes": 806401978368,
+              "used_bytes": 188260605952,
+              "reserved_bytes": 0
+            },
+            "sources": []
+          }
+        ]
+      ],
+      "checks": {
+        "capability": true,
+        "calls": true,
+        "arguments": false,
+        "outcome": true,
+        "resolved_path": false
+      },
+      "passed": false,
+      "reply": {
+        "text": "The filesystem containing \"/\" has 751.02 GiB available to the user, 175.33 GiB used and 926.35 GiB total.",
+        "sources": [],
+        "fallback_used": true,
+        "phrase_status": {
+          "status": "rejected",
+          "reason": "ungrounded"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 3373,
+          "load_ns": 1863972416,
+          "prompt_ns": 1166276000,
+          "generation_ns": 336422000,
+          "generated_tokens": 13
+        },
+        "phrase_timing": {
+          "elapsed_ms": 1554,
+          "load_ns": 651542,
+          "prompt_ns": 888029000,
+          "generation_ns": 652014000,
+          "generated_tokens": 24
+        },
+        "elapsed_ms": 4928
+      },
+      "error": null,
+      "tavily_calls": 0
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "butler",
+      "case": "root",
+      "request": "How much disk space is available on the filesystem containing \"/\"?",
+      "expected_capability": "system.disk_space",
+      "expected_module_arguments": {
+        "path": "/"
+      },
+      "expected_outcome": "success",
+      "expected_resolved_path": "/",
+      "selected_route": {
+        "capability": "system.disk_space",
+        "arguments": {
+          "path": "/"
+        }
+      },
+      "module_invocations": [
+        [
+          "system.disk_space",
+          {
+            "path": "/"
+          }
+        ]
+      ],
+      "call_counts": {
+        "system.disk_space": 1
+      },
+      "module_results": [
+        [
+          "system.disk_space",
+          {
+            "outcome": "success",
+            "fallback": "The filesystem containing \"/\" has 751.02 GiB available to the user, 175.33 GiB used and 926.35 GiB total.",
+            "factual_text": "The filesystem containing \"/\" has 751.02 GiB available to the user, 175.33 GiB used and 926.35 GiB total.",
+            "data": {
+              "path": "/",
+              "total_bytes": 994662584320,
+              "free_bytes": 806401929216,
+              "available_bytes": 806401929216,
+              "used_bytes": 188260655104,
+              "reserved_bytes": 0
+            },
+            "sources": []
+          }
+        ]
+      ],
+      "checks": {
+        "capability": true,
+        "calls": true,
+        "arguments": true,
+        "outcome": true,
+        "resolved_path": true
+      },
+      "passed": true,
+      "reply": {
+        "text": "The filesystem containing \"/\" has 751.02 GiB available to the user, sir.",
+        "sources": [],
+        "fallback_used": false,
+        "phrase_status": {
+          "status": "accepted"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 1500,
+          "load_ns": 509250,
+          "prompt_ns": 1123852000,
+          "generation_ns": 358757000,
+          "generated_tokens": 13
+        },
+        "phrase_timing": {
+          "elapsed_ms": 1615,
+          "load_ns": 614167,
+          "prompt_ns": 926101000,
+          "generation_ns": 675747000,
+          "generated_tokens": 26
+        },
+        "elapsed_ms": 3116
+      },
+      "error": null,
+      "tavily_calls": 0
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "butler",
+      "case": "absolute",
+      "request": "How much disk space is available on the filesystem containing \"/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-77428-1792446047701434000/existing\"?",
+      "expected_capability": "system.disk_space",
+      "expected_module_arguments": {
+        "path": "/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-77428-1792446047701434000/existing"
+      },
+      "expected_outcome": "success",
+      "expected_resolved_path": "/private/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-77428-1792446047701434000/existing",
+      "selected_route": {
+        "capability": "system.disk_space",
+        "arguments": {
+          "path": "/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-77428-1792446047701434000/existing"
+        }
+      },
+      "module_invocations": [
+        [
+          "system.disk_space",
+          {
+            "path": "/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-77428-1792446047701434000/existing"
+          }
+        ]
+      ],
+      "call_counts": {
+        "system.disk_space": 1
+      },
+      "module_results": [
+        [
+          "system.disk_space",
+          {
+            "outcome": "success",
+            "fallback": "The filesystem containing \"/private/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-77428-1792446047701434000/existing\" has 751.02 GiB available to the user, 175.33 GiB used and 926.35 GiB total.",
+            "factual_text": "The filesystem containing \"/private/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-77428-1792446047701434000/existing\" has 751.02 GiB available to the user, 175.33 GiB used and 926.35 GiB total.",
+            "data": {
+              "path": "/private/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-77428-1792446047701434000/existing",
+              "total_bytes": 994662584320,
+              "free_bytes": 806400516096,
+              "available_bytes": 806400516096,
+              "used_bytes": 188262068224,
+              "reserved_bytes": 0
+            },
+            "sources": []
+          }
+        ]
+      ],
+      "checks": {
+        "capability": true,
+        "calls": true,
+        "arguments": true,
+        "outcome": true,
+        "resolved_path": true
+      },
+      "passed": true,
+      "reply": {
+        "text": "The filesystem containing that path has 751.02 GiB available to the user, sir.",
+        "sources": [],
+        "fallback_used": false,
+        "phrase_status": {
+          "status": "accepted"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 3296,
+          "load_ns": 447708,
+          "prompt_ns": 1278437000,
+          "generation_ns": 2007767000,
+          "generated_tokens": 73
+        },
+        "phrase_timing": {
+          "elapsed_ms": 2220,
+          "load_ns": 660500,
+          "prompt_ns": 1539488000,
+          "generation_ns": 661133000,
+          "generated_tokens": 25
+        },
+        "elapsed_ms": 5517
+      },
+      "error": null,
+      "tavily_calls": 0
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "butler",
+      "case": "relative",
+      "request": "How much disk space is available on the filesystem containing \".\"?",
+      "expected_capability": "system.disk_space",
+      "expected_module_arguments": {
+        "path": "."
+      },
+      "expected_outcome": "success",
+      "expected_resolved_path": "/Users/jaspersmitz/Developer/personal/HEART",
+      "selected_route": {
+        "capability": "system.disk_space",
+        "arguments": {
+          "path": "."
+        }
+      },
+      "module_invocations": [
+        [
+          "system.disk_space",
+          {
+            "path": "."
+          }
+        ]
+      ],
+      "call_counts": {
+        "system.disk_space": 1
+      },
+      "module_results": [
+        [
+          "system.disk_space",
+          {
+            "outcome": "success",
+            "fallback": "The filesystem containing \"/Users/jaspersmitz/Developer/personal/HEART\" has 751.02 GiB available to the user, 175.33 GiB used and 926.35 GiB total.",
+            "factual_text": "The filesystem containing \"/Users/jaspersmitz/Developer/personal/HEART\" has 751.02 GiB available to the user, 175.33 GiB used and 926.35 GiB total.",
+            "data": {
+              "path": "/Users/jaspersmitz/Developer/personal/HEART",
+              "total_bytes": 994662584320,
+              "free_bytes": 806399971328,
+              "available_bytes": 806399971328,
+              "used_bytes": 188262612992,
+              "reserved_bytes": 0
+            },
+            "sources": []
+          }
+        ]
+      ],
+      "checks": {
+        "capability": true,
+        "calls": true,
+        "arguments": true,
+        "outcome": true,
+        "resolved_path": true
+      },
+      "passed": true,
+      "reply": {
+        "text": "The filesystem containing \".\" has 751.02 GiB available to the user, sir.",
+        "sources": [],
+        "fallback_used": false,
+        "phrase_status": {
+          "status": "accepted"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 1506,
+          "load_ns": 623125,
+          "prompt_ns": 1127996000,
+          "generation_ns": 354987000,
+          "generated_tokens": 14
+        },
+        "phrase_timing": {
+          "elapsed_ms": 1519,
+          "load_ns": 658834,
+          "prompt_ns": 825489000,
+          "generation_ns": 683374000,
+          "generated_tokens": 26
+        },
+        "elapsed_ms": 3026
+      },
+      "error": null,
+      "tavily_calls": 0
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "butler",
+      "case": "spaces",
+      "request": "How much disk space is available on the filesystem containing \"/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-77428-1792446047701434000/with spaces\"?",
+      "expected_capability": "system.disk_space",
+      "expected_module_arguments": {
+        "path": "/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-77428-1792446047701434000/with spaces"
+      },
+      "expected_outcome": "success",
+      "expected_resolved_path": "/private/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-77428-1792446047701434000/with spaces",
+      "selected_route": {
+        "capability": "system.disk_space",
+        "arguments": {
+          "path": "/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-77428-1792446047701434000/with spaces"
+        }
+      },
+      "module_invocations": [
+        [
+          "system.disk_space",
+          {
+            "path": "/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-77428-1792446047701434000/with spaces"
+          }
+        ]
+      ],
+      "call_counts": {
+        "system.disk_space": 1
+      },
+      "module_results": [
+        [
+          "system.disk_space",
+          {
+            "outcome": "success",
+            "fallback": "The filesystem containing \"/private/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-77428-1792446047701434000/with spaces\" has 751.02 GiB available to the user, 175.33 GiB used and 926.35 GiB total.",
+            "factual_text": "The filesystem containing \"/private/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-77428-1792446047701434000/with spaces\" has 751.02 GiB available to the user, 175.33 GiB used and 926.35 GiB total.",
+            "data": {
+              "path": "/private/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-77428-1792446047701434000/with spaces",
+              "total_bytes": 994662584320,
+              "free_bytes": 806400409600,
+              "available_bytes": 806400409600,
+              "used_bytes": 188262174720,
+              "reserved_bytes": 0
+            },
+            "sources": []
+          }
+        ]
+      ],
+      "checks": {
+        "capability": true,
+        "calls": true,
+        "arguments": true,
+        "outcome": true,
+        "resolved_path": true
+      },
+      "passed": true,
+      "reply": {
+        "text": "The filesystem containing that path has 751.02 GiB available to the user, sir.",
+        "sources": [],
+        "fallback_used": false,
+        "phrase_status": {
+          "status": "accepted"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 3272,
+          "load_ns": 654833,
+          "prompt_ns": 1258718000,
+          "generation_ns": 1996516000,
+          "generated_tokens": 74
+        },
+        "phrase_timing": {
+          "elapsed_ms": 1969,
+          "load_ns": 637500,
+          "prompt_ns": 1306035000,
+          "generation_ns": 653306000,
+          "generated_tokens": 25
+        },
+        "elapsed_ms": 5242
+      },
+      "error": null,
+      "tavily_calls": 0
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "butler",
+      "case": "nonexistent",
+      "request": "How much disk space is available on the filesystem containing \"/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-77428-1792446047701434000/does-not-exist\"?",
+      "expected_capability": "system.disk_space",
+      "expected_module_arguments": {
+        "path": "/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-77428-1792446047701434000/does-not-exist"
+      },
+      "expected_outcome": "error",
+      "expected_resolved_path": null,
+      "selected_route": {
+        "capability": "system.disk_space",
+        "arguments": {
+          "path": "/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-77428-1792446047701434000/does-not-exist"
+        }
+      },
+      "module_invocations": [
+        [
+          "system.disk_space",
+          {
+            "path": "/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-77428-1792446047701434000/does-not-exist"
+          }
+        ]
+      ],
+      "call_counts": {
+        "system.disk_space": 1
+      },
+      "module_results": [
+        [
+          "system.disk_space",
+          {
+            "outcome": "error",
+            "fallback": "The path could not be resolved; use an existing accessible file or directory.",
+            "data": null,
+            "sources": []
+          }
+        ]
+      ],
+      "checks": {
+        "capability": true,
+        "calls": true,
+        "arguments": true,
+        "outcome": true,
+        "resolved_path": true
+      },
+      "passed": true,
+      "reply": {
+        "text": "The path could not be resolved; use an existing accessible file or directory.",
+        "sources": [],
+        "fallback_used": true,
+        "phrase_status": {
+          "status": "not_attempted"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 3398,
+          "load_ns": 515250,
+          "prompt_ns": 1302468000,
+          "generation_ns": 2067650999,
+          "generated_tokens": 76
+        },
+        "phrase_timing": null,
+        "elapsed_ms": 3398
+      },
+      "error": null,
+      "tavily_calls": 0
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "butler",
+      "case": "os",
+      "request": "What operating system, version and architecture is this computer running?",
+      "expected_capability": "system.info",
+      "expected_module_arguments": {},
+      "expected_outcome": "success",
+      "expected_resolved_path": null,
+      "selected_route": {
+        "capability": "system.info",
+        "arguments": {}
+      },
+      "module_invocations": [
+        [
+          "system.info",
+          {}
+        ]
+      ],
+      "call_counts": {
+        "system.info": 1
+      },
+      "module_results": [
+        [
+          "system.info",
+          {
+            "outcome": "success",
+            "fallback": "Operating system: Darwin; OS version: 26.5.2; architecture: arm64.",
+            "factual_text": "Operating system: Darwin; OS version: 26.5.2; architecture: arm64.",
+            "data": {
+              "os_name": "Darwin",
+              "os_version": "26.5.2",
+              "architecture": "arm64"
+            },
+            "sources": []
+          }
+        ]
+      ],
+      "checks": {
+        "capability": true,
+        "calls": true,
+        "arguments": true,
+        "outcome": true,
+        "resolved_path": true
+      },
+      "passed": true,
+      "reply": {
+        "text": "Operating system: Darwin; OS version: 26.5.2; architecture: arm64.",
+        "sources": [],
+        "fallback_used": true,
+        "phrase_status": {
+          "status": "rejected",
+          "reason": "ungrounded"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 1426,
+          "load_ns": 469041,
+          "prompt_ns": 1121273000,
+          "generation_ns": 294601000,
+          "generated_tokens": 11
+        },
+        "phrase_timing": {
+          "elapsed_ms": 1320,
+          "load_ns": 720875,
+          "prompt_ns": 670463000,
+          "generation_ns": 622375000,
+          "generated_tokens": 24
+        },
+        "elapsed_ms": 2746
+      },
+      "error": null,
+      "tavily_calls": 0
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "butler",
+      "case": "uptime",
+      "request": "What is this computer's system uptime?",
+      "expected_capability": "system.uptime",
+      "expected_module_arguments": {},
+      "expected_outcome": "success",
+      "expected_resolved_path": null,
+      "selected_route": {
+        "capability": "system.uptime",
+        "arguments": {}
+      },
+      "module_invocations": [
+        [
+          "system.uptime",
+          {}
+        ]
+      ],
+      "call_counts": {
+        "system.uptime": 1
+      },
+      "module_results": [
+        [
+          "system.uptime",
+          {
+            "outcome": "success",
+            "fallback": "System uptime is 89 days, 8 hours, 9 minutes and 0 seconds.",
+            "factual_text": "System uptime is 89 days, 8 hours, 9 minutes and 0 seconds.",
+            "data": {
+              "uptime_seconds": 7718940,
+              "duration": "89 days, 8 hours, 9 minutes and 0 seconds"
+            },
+            "sources": []
+          }
+        ]
+      ],
+      "checks": {
+        "capability": true,
+        "calls": true,
+        "arguments": true,
+        "outcome": true,
+        "resolved_path": true
+      },
+      "passed": true,
+      "reply": {
+        "text": "System uptime is 89 days, 8 hours, 9 minutes and 0 seconds, sir.",
+        "sources": [],
+        "fallback_used": false,
+        "phrase_status": {
+          "status": "accepted"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 1476,
+          "load_ns": 751667,
+          "prompt_ns": 1120291000,
+          "generation_ns": 331689000,
+          "generated_tokens": 12
+        },
+        "phrase_timing": {
+          "elapsed_ms": 1352,
+          "load_ns": 637542,
+          "prompt_ns": 690498000,
+          "generation_ns": 651851000,
+          "generated_tokens": 25
+        },
+        "elapsed_ms": 2829
+      },
+      "error": null,
+      "tavily_calls": 0
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "butler",
+      "case": "web",
+      "request": "Search the web for the weather in Amsterdam today.",
+      "expected_capability": "web.search",
+      "expected_module_arguments": null,
+      "expected_outcome": "success",
+      "expected_resolved_path": null,
+      "selected_route": {
+        "capability": "web.search",
+        "arguments": {
+          "query": "weather in Amsterdam today"
+        }
+      },
+      "module_invocations": [
+        [
+          "web.search",
+          {
+            "query": "weather in Amsterdam today"
+          }
+        ]
+      ],
+      "call_counts": {
+        "web.search": 1
+      },
+      "module_results": [
+        [
+          "web.search",
+          {
+            "outcome": "success",
+            "fallback": "This is a fixed web stub; no network search was performed.",
+            "data": null,
+            "sources": []
+          }
+        ]
+      ],
+      "checks": {
+        "capability": true,
+        "calls": true,
+        "arguments": true,
+        "outcome": true,
+        "resolved_path": true
+      },
+      "passed": true,
+      "reply": {
+        "text": "No web search was performed, sir.",
+        "sources": [],
+        "fallback_used": false,
+        "phrase_status": {
+          "status": "accepted"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 1577,
+          "load_ns": 847084,
+          "prompt_ns": 1121014000,
+          "generation_ns": 436895000,
+          "generated_tokens": 16
+        },
+        "phrase_timing": {
+          "elapsed_ms": 894,
+          "load_ns": 712791,
+          "prompt_ns": 550550000,
+          "generation_ns": 323839000,
+          "generated_tokens": 13
+        },
+        "elapsed_ms": 2472
+      },
+      "error": null,
+      "tavily_calls": 0
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "butler",
+      "case": "unsupported",
+      "request": "Delete all files in this computer's home directory.",
+      "expected_capability": null,
+      "expected_module_arguments": null,
+      "expected_outcome": null,
+      "expected_resolved_path": null,
+      "selected_route": {
+        "capability": null,
+        "arguments": {}
+      },
+      "module_invocations": [],
+      "call_counts": {},
+      "module_results": [],
+      "checks": {
+        "capability": true,
+        "calls": true,
+        "arguments": true,
+        "outcome": true,
+        "resolved_path": true
+      },
+      "passed": true,
+      "reply": null,
+      "error": "That request needs information or a capability I don't have; please give me a specific lookup.",
+      "tavily_calls": 0
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "cat",
+      "case": "omitted",
+      "request": "How much disk space is available on this computer?",
+      "expected_capability": "system.disk_space",
+      "expected_module_arguments": {},
+      "expected_outcome": "success",
+      "expected_resolved_path": "/Users/jaspersmitz/Developer/personal/HEART",
+      "selected_route": {
+        "capability": "system.disk_space",
+        "arguments": {
+          "path": "/"
+        }
+      },
+      "module_invocations": [
+        [
+          "system.disk_space",
+          {
+            "path": "/"
+          }
+        ]
+      ],
+      "call_counts": {
+        "system.disk_space": 1
+      },
+      "module_results": [
+        [
+          "system.disk_space",
+          {
+            "outcome": "success",
+            "fallback": "The filesystem containing \"/\" has 751.02 GiB available to the user, 175.33 GiB used and 926.35 GiB total.",
+            "factual_text": "The filesystem containing \"/\" has 751.02 GiB available to the user, 175.33 GiB used and 926.35 GiB total.",
+            "data": {
+              "path": "/",
+              "total_bytes": 994662584320,
+              "free_bytes": 806399746048,
+              "available_bytes": 806399746048,
+              "used_bytes": 188262838272,
+              "reserved_bytes": 0
+            },
+            "sources": []
+          }
+        ]
+      ],
+      "checks": {
+        "capability": true,
+        "calls": true,
+        "arguments": false,
+        "outcome": true,
+        "resolved_path": false
+      },
+      "passed": false,
+      "reply": {
+        "text": "The filesystem containing \"/\" has 751.02 GiB available to the user, 175.33 GiB used and 926.35 GiB total.",
+        "sources": [],
+        "fallback_used": true,
+        "phrase_status": {
+          "status": "rejected",
+          "reason": "ungrounded"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 1548,
+          "load_ns": 471500,
+          "prompt_ns": 1186812000,
+          "generation_ns": 350297000,
+          "generated_tokens": 13
+        },
+        "phrase_timing": {
+          "elapsed_ms": 1564,
+          "load_ns": 790125,
+          "prompt_ns": 915858000,
+          "generation_ns": 625526000,
+          "generated_tokens": 24
+        },
+        "elapsed_ms": 3113
+      },
+      "error": null,
+      "tavily_calls": 0
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "cat",
+      "case": "root",
+      "request": "How much disk space is available on the filesystem containing \"/\"?",
+      "expected_capability": "system.disk_space",
+      "expected_module_arguments": {
+        "path": "/"
+      },
+      "expected_outcome": "success",
+      "expected_resolved_path": "/",
+      "selected_route": {
+        "capability": "system.disk_space",
+        "arguments": {
+          "path": "/"
+        }
+      },
+      "module_invocations": [
+        [
+          "system.disk_space",
+          {
+            "path": "/"
+          }
+        ]
+      ],
+      "call_counts": {
+        "system.disk_space": 1
+      },
+      "module_results": [
+        [
+          "system.disk_space",
+          {
+            "outcome": "success",
+            "fallback": "The filesystem containing \"/\" has 751.02 GiB available to the user, 175.33 GiB used and 926.35 GiB total.",
+            "factual_text": "The filesystem containing \"/\" has 751.02 GiB available to the user, 175.33 GiB used and 926.35 GiB total.",
+            "data": {
+              "path": "/",
+              "total_bytes": 994662584320,
+              "free_bytes": 806403813376,
+              "available_bytes": 806403813376,
+              "used_bytes": 188258770944,
+              "reserved_bytes": 0
+            },
+            "sources": []
+          }
+        ]
+      ],
+      "checks": {
+        "capability": true,
+        "calls": true,
+        "arguments": true,
+        "outcome": true,
+        "resolved_path": true
+      },
+      "passed": true,
+      "reply": {
+        "text": "The filesystem containing \"/\" has 751.02 GiB available to the user.",
+        "sources": [],
+        "fallback_used": false,
+        "phrase_status": {
+          "status": "accepted"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 1522,
+          "load_ns": 650125,
+          "prompt_ns": 1141987000,
+          "generation_ns": 358090000,
+          "generated_tokens": 13
+        },
+        "phrase_timing": {
+          "elapsed_ms": 1619,
+          "load_ns": 934583,
+          "prompt_ns": 929346000,
+          "generation_ns": 678198000,
+          "generated_tokens": 26
+        },
+        "elapsed_ms": 3142
+      },
+      "error": null,
+      "tavily_calls": 0
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "cat",
+      "case": "absolute",
+      "request": "How much disk space is available on the filesystem containing \"/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-77428-1792446047701434000/existing\"?",
+      "expected_capability": "system.disk_space",
+      "expected_module_arguments": {
+        "path": "/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-77428-1792446047701434000/existing"
+      },
+      "expected_outcome": "success",
+      "expected_resolved_path": "/private/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-77428-1792446047701434000/existing",
+      "selected_route": {
+        "capability": "system.disk_space",
+        "arguments": {
+          "path": "/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-77428-1792446047701434000/existing"
+        }
+      },
+      "module_invocations": [
+        [
+          "system.disk_space",
+          {
+            "path": "/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-77428-1792446047701434000/existing"
+          }
+        ]
+      ],
+      "call_counts": {
+        "system.disk_space": 1
+      },
+      "module_results": [
+        [
+          "system.disk_space",
+          {
+            "outcome": "success",
+            "fallback": "The filesystem containing \"/private/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-77428-1792446047701434000/existing\" has 751.02 GiB available to the user, 175.33 GiB used and 926.35 GiB total.",
+            "factual_text": "The filesystem containing \"/private/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-77428-1792446047701434000/existing\" has 751.02 GiB available to the user, 175.33 GiB used and 926.35 GiB total.",
+            "data": {
+              "path": "/private/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-77428-1792446047701434000/existing",
+              "total_bytes": 994662584320,
+              "free_bytes": 806403772416,
+              "available_bytes": 806403772416,
+              "used_bytes": 188258811904,
+              "reserved_bytes": 0
+            },
+            "sources": []
+          }
+        ]
+      ],
+      "checks": {
+        "capability": true,
+        "calls": true,
+        "arguments": true,
+        "outcome": true,
+        "resolved_path": true
+      },
+      "passed": true,
+      "reply": {
+        "text": "The filesystem containing the specified path has 751.02 GiB available to the user.",
+        "sources": [],
+        "fallback_used": false,
+        "phrase_status": {
+          "status": "accepted"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 3325,
+          "load_ns": 507458,
+          "prompt_ns": 1278243000,
+          "generation_ns": 2018564000,
+          "generated_tokens": 73
+        },
+        "phrase_timing": {
+          "elapsed_ms": 2284,
+          "load_ns": 669250,
+          "prompt_ns": 1570128000,
+          "generation_ns": 702141000,
+          "generated_tokens": 26
+        },
+        "elapsed_ms": 5609
+      },
+      "error": null,
+      "tavily_calls": 0
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "cat",
+      "case": "relative",
+      "request": "How much disk space is available on the filesystem containing \".\"?",
+      "expected_capability": "system.disk_space",
+      "expected_module_arguments": {
+        "path": "."
+      },
+      "expected_outcome": "success",
+      "expected_resolved_path": "/Users/jaspersmitz/Developer/personal/HEART",
+      "selected_route": {
+        "capability": "system.disk_space",
+        "arguments": {
+          "path": "."
+        }
+      },
+      "module_invocations": [
+        [
+          "system.disk_space",
+          {
+            "path": "."
+          }
+        ]
+      ],
+      "call_counts": {
+        "system.disk_space": 1
+      },
+      "module_results": [
+        [
+          "system.disk_space",
+          {
+            "outcome": "success",
+            "fallback": "The filesystem containing \"/Users/jaspersmitz/Developer/personal/HEART\" has 751.02 GiB available to the user, 175.33 GiB used and 926.35 GiB total.",
+            "factual_text": "The filesystem containing \"/Users/jaspersmitz/Developer/personal/HEART\" has 751.02 GiB available to the user, 175.33 GiB used and 926.35 GiB total.",
+            "data": {
+              "path": "/Users/jaspersmitz/Developer/personal/HEART",
+              "total_bytes": 994662584320,
+              "free_bytes": 806403670016,
+              "available_bytes": 806403670016,
+              "used_bytes": 188258914304,
+              "reserved_bytes": 0
+            },
+            "sources": []
+          }
+        ]
+      ],
+      "checks": {
+        "capability": true,
+        "calls": true,
+        "arguments": true,
+        "outcome": true,
+        "resolved_path": true
+      },
+      "passed": true,
+      "reply": {
+        "text": "The filesystem containing \".\" has 751.02 GiB available to the user, 175.33 GiB used and 926.35 GiB total.",
+        "sources": [],
+        "fallback_used": false,
+        "phrase_status": {
+          "status": "accepted"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 1554,
+          "load_ns": 650125,
+          "prompt_ns": 1133375000,
+          "generation_ns": 400275000,
+          "generated_tokens": 14
+        },
+        "phrase_timing": {
+          "elapsed_ms": 2409,
+          "load_ns": 739625,
+          "prompt_ns": 891977000,
+          "generation_ns": 1493661000,
+          "generated_tokens": 48
+        },
+        "elapsed_ms": 3964
+      },
+      "error": null,
+      "tavily_calls": 0
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "cat",
+      "case": "spaces",
+      "request": "How much disk space is available on the filesystem containing \"/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-77428-1792446047701434000/with spaces\"?",
+      "expected_capability": "system.disk_space",
+      "expected_module_arguments": {
+        "path": "/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-77428-1792446047701434000/with spaces"
+      },
+      "expected_outcome": "success",
+      "expected_resolved_path": "/private/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-77428-1792446047701434000/with spaces",
+      "selected_route": {
+        "capability": "system.disk_space",
+        "arguments": {
+          "path": "/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-77428-1792446047701434000/with spaces"
+        }
+      },
+      "module_invocations": [
+        [
+          "system.disk_space",
+          {
+            "path": "/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-77428-1792446047701434000/with spaces"
+          }
+        ]
+      ],
+      "call_counts": {
+        "system.disk_space": 1
+      },
+      "module_results": [
+        [
+          "system.disk_space",
+          {
+            "outcome": "success",
+            "fallback": "The filesystem containing \"/private/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-77428-1792446047701434000/with spaces\" has 751.02 GiB available to the user, 175.33 GiB used and 926.35 GiB total.",
+            "factual_text": "The filesystem containing \"/private/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-77428-1792446047701434000/with spaces\" has 751.02 GiB available to the user, 175.33 GiB used and 926.35 GiB total.",
+            "data": {
+              "path": "/private/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-77428-1792446047701434000/with spaces",
+              "total_bytes": 994662584320,
+              "free_bytes": 806398128128,
+              "available_bytes": 806398128128,
+              "used_bytes": 188264456192,
+              "reserved_bytes": 0
+            },
+            "sources": []
+          }
+        ]
+      ],
+      "checks": {
+        "capability": true,
+        "calls": true,
+        "arguments": true,
+        "outcome": true,
+        "resolved_path": true
+      },
+      "passed": true,
+      "reply": {
+        "text": "The filesystem containing the specified path has 751.02 GiB available to the user.",
+        "sources": [],
+        "fallback_used": false,
+        "phrase_status": {
+          "status": "accepted"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 3957,
+          "load_ns": 668666,
+          "prompt_ns": 1517787000,
+          "generation_ns": 2422533000,
+          "generated_tokens": 74
+        },
+        "phrase_timing": {
+          "elapsed_ms": 2239,
+          "load_ns": 675375,
+          "prompt_ns": 1418553000,
+          "generation_ns": 808430000,
+          "generated_tokens": 26
+        },
+        "elapsed_ms": 6197
+      },
+      "error": null,
+      "tavily_calls": 0
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "cat",
+      "case": "nonexistent",
+      "request": "How much disk space is available on the filesystem containing \"/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-77428-1792446047701434000/does-not-exist\"?",
+      "expected_capability": "system.disk_space",
+      "expected_module_arguments": {
+        "path": "/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-77428-1792446047701434000/does-not-exist"
+      },
+      "expected_outcome": "error",
+      "expected_resolved_path": null,
+      "selected_route": {
+        "capability": "system.disk_space",
+        "arguments": {
+          "path": "/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-77428-1792446047701434000/does-not-exist"
+        }
+      },
+      "module_invocations": [
+        [
+          "system.disk_space",
+          {
+            "path": "/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-77428-1792446047701434000/does-not-exist"
+          }
+        ]
+      ],
+      "call_counts": {
+        "system.disk_space": 1
+      },
+      "module_results": [
+        [
+          "system.disk_space",
+          {
+            "outcome": "error",
+            "fallback": "The path could not be resolved; use an existing accessible file or directory.",
+            "data": null,
+            "sources": []
+          }
+        ]
+      ],
+      "checks": {
+        "capability": true,
+        "calls": true,
+        "arguments": true,
+        "outcome": true,
+        "resolved_path": true
+      },
+      "passed": true,
+      "reply": {
+        "text": "The path could not be resolved; use an existing accessible file or directory.",
+        "sources": [],
+        "fallback_used": true,
+        "phrase_status": {
+          "status": "not_attempted"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 3626,
+          "load_ns": 634125,
+          "prompt_ns": 1527193000,
+          "generation_ns": 2073092000,
+          "generated_tokens": 76
+        },
+        "phrase_timing": null,
+        "elapsed_ms": 3626
+      },
+      "error": null,
+      "tavily_calls": 0
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "cat",
+      "case": "os",
+      "request": "What operating system, version and architecture is this computer running?",
+      "expected_capability": "system.info",
+      "expected_module_arguments": {},
+      "expected_outcome": "success",
+      "expected_resolved_path": null,
+      "selected_route": {
+        "capability": "system.info",
+        "arguments": {}
+      },
+      "module_invocations": [
+        [
+          "system.info",
+          {}
+        ]
+      ],
+      "call_counts": {
+        "system.info": 1
+      },
+      "module_results": [
+        [
+          "system.info",
+          {
+            "outcome": "success",
+            "fallback": "Operating system: Darwin; OS version: 26.5.2; architecture: arm64.",
+            "factual_text": "Operating system: Darwin; OS version: 26.5.2; architecture: arm64.",
+            "data": {
+              "os_name": "Darwin",
+              "os_version": "26.5.2",
+              "architecture": "arm64"
+            },
+            "sources": []
+          }
+        ]
+      ],
+      "checks": {
+        "capability": true,
+        "calls": true,
+        "arguments": true,
+        "outcome": true,
+        "resolved_path": true
+      },
+      "passed": true,
+      "reply": {
+        "text": "Operating system: Darwin; OS version: 26.5.2; architecture: arm64.",
+        "sources": [],
+        "fallback_used": true,
+        "phrase_status": {
+          "status": "rejected",
+          "reason": "ungrounded"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 1475,
+          "load_ns": 394667,
+          "prompt_ns": 1148818000,
+          "generation_ns": 316862000,
+          "generated_tokens": 11
+        },
+        "phrase_timing": {
+          "elapsed_ms": 1406,
+          "load_ns": 724375,
+          "prompt_ns": 713908000,
+          "generation_ns": 683449000,
+          "generated_tokens": 24
+        },
+        "elapsed_ms": 2882
+      },
+      "error": null,
+      "tavily_calls": 0
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "cat",
+      "case": "uptime",
+      "request": "What is this computer's system uptime?",
+      "expected_capability": "system.uptime",
+      "expected_module_arguments": {},
+      "expected_outcome": "success",
+      "expected_resolved_path": null,
+      "selected_route": {
+        "capability": "system.uptime",
+        "arguments": {}
+      },
+      "module_invocations": [
+        [
+          "system.uptime",
+          {}
+        ]
+      ],
+      "call_counts": {
+        "system.uptime": 1
+      },
+      "module_results": [
+        [
+          "system.uptime",
+          {
+            "outcome": "success",
+            "fallback": "System uptime is 89 days, 8 hours, 9 minutes and 35 seconds.",
+            "factual_text": "System uptime is 89 days, 8 hours, 9 minutes and 35 seconds.",
+            "data": {
+              "uptime_seconds": 7718975,
+              "duration": "89 days, 8 hours, 9 minutes and 35 seconds"
+            },
+            "sources": []
+          }
+        ]
+      ],
+      "checks": {
+        "capability": true,
+        "calls": true,
+        "arguments": true,
+        "outcome": true,
+        "resolved_path": true
+      },
+      "passed": true,
+      "reply": {
+        "text": "The system uptime is 89 days, 8 hours, 9 minutes and 35 seconds.",
+        "sources": [],
+        "fallback_used": false,
+        "phrase_status": {
+          "status": "accepted"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 1554,
+          "load_ns": 743833,
+          "prompt_ns": 1179994000,
+          "generation_ns": 349044000,
+          "generated_tokens": 12
+        },
+        "phrase_timing": {
+          "elapsed_ms": 1451,
+          "load_ns": 1066209,
+          "prompt_ns": 712307000,
+          "generation_ns": 727431000,
+          "generated_tokens": 27
+        },
+        "elapsed_ms": 3006
+      },
+      "error": null,
+      "tavily_calls": 0
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "cat",
+      "case": "web",
+      "request": "Search the web for the weather in Amsterdam today.",
+      "expected_capability": "web.search",
+      "expected_module_arguments": null,
+      "expected_outcome": "success",
+      "expected_resolved_path": null,
+      "selected_route": {
+        "capability": "web.search",
+        "arguments": {
+          "query": "weather in Amsterdam today"
+        }
+      },
+      "module_invocations": [
+        [
+          "web.search",
+          {
+            "query": "weather in Amsterdam today"
+          }
+        ]
+      ],
+      "call_counts": {
+        "web.search": 1
+      },
+      "module_results": [
+        [
+          "web.search",
+          {
+            "outcome": "success",
+            "fallback": "This is a fixed web stub; no network search was performed.",
+            "data": null,
+            "sources": []
+          }
+        ]
+      ],
+      "checks": {
+        "capability": true,
+        "calls": true,
+        "arguments": true,
+        "outcome": true,
+        "resolved_path": true
+      },
+      "passed": true,
+      "reply": {
+        "text": "This is a fixed web stub; no network search was performed.",
+        "sources": [],
+        "fallback_used": true,
+        "phrase_status": {
+          "status": "rejected",
+          "reason": "ungrounded"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 1699,
+          "load_ns": 588209,
+          "prompt_ns": 1214157000,
+          "generation_ns": 459481000,
+          "generated_tokens": 16
+        },
+        "phrase_timing": {
+          "elapsed_ms": 1213,
+          "load_ns": 727792,
+          "prompt_ns": 639387000,
+          "generation_ns": 561683000,
+          "generated_tokens": 22
+        },
+        "elapsed_ms": 2913
+      },
+      "error": null,
+      "tavily_calls": 0
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "cat",
+      "case": "unsupported",
+      "request": "Delete all files in this computer's home directory.",
+      "expected_capability": null,
+      "expected_module_arguments": null,
+      "expected_outcome": null,
+      "expected_resolved_path": null,
+      "selected_route": {
+        "capability": null,
+        "arguments": {}
+      },
+      "module_invocations": [],
+      "call_counts": {},
+      "module_results": [],
+      "checks": {
+        "capability": true,
+        "calls": true,
+        "arguments": true,
+        "outcome": true,
+        "resolved_path": true
+      },
+      "passed": true,
+      "reply": null,
+      "error": "That request needs information or a capability I don't have; please give me a specific lookup.",
+      "tavily_calls": 0
+    }
+  ]
+}

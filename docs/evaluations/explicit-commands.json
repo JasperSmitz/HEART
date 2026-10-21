@@ -1,0 +1,186 @@
+{
+  "date": "2026-10-20T10:35:43.001152+00:00",
+  "model": "qwen3.5:2b-q4_K_M",
+  "hardware": "Apple M1 Pro / 32 GiB; does not establish 16 GiB performance",
+  "commands": [
+    "/disk",
+    "/disk /",
+    "/disk .",
+    "/disk /var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-explicit-i3m4blv3/path with spaces",
+    "/disk /var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-explicit-i3m4blv3/does-not-exist",
+    "/system",
+    "/uptime",
+    "/cat",
+    "/disk /",
+    "/unknown",
+    "What is my uptime?",
+    "/exit"
+  ],
+  "cwd": "/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-explicit-i3m4blv3",
+  "stdout": "HEART \u00b7 butler \u00b7 qwen3.5:2b-q4_K_M\nAt your service. What shall I look up?\nUse /help for commands.\n> Allow me to check the filesystem space.\nThe filesystem containing \"/private/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-explicit-i3m4blv3\" has 747.38 GiB available to the user, 178.98 GiB used and 926.35 GiB total.\n> Allow me to check the filesystem space.\nThe filesystem containing \"/\" has 747.02 GiB available to the user, 179.33 GiB used and 926.35 GiB total, sir.\n> Allow me to check the filesystem space.\nThe specified filesystem has 747.02 GiB available to the user, with a total of 926.35 GiB and 179.33 GiB used, sir.\n> Allow me to check the filesystem space.\nThe user has 747.02 GiB available on the specified filesystem, sir.\n> Allow me to check the filesystem space.\nThe path could not be resolved; use an existing accessible file or directory.\n> Allow me to check the operating system.\nOperating system: Darwin; OS version: 26.5.2; architecture: arm64.\n> Allow me to check the system uptime.\nThe system has been running for 89 days, 21 hours, 3 minutes and 23 seconds, sir.\n> What shall we find? I'm all ears.\n> I'll check how much room is left.\nThe filesystem containing \"/\" has 747.75 GiB available to the user, 178.60 GiB used and 926.35 GiB total.\n> Unknown command; see /help.\n> Use a slash command; see /help. Natural-language routing requires --experimental-nl.\n> ",
+  "stderr": "diagnostics: phrase=Rejected(Ungrounded) routing_performed=false selection_ms=0 extraction_ms=0 route_ms=0 phrase_ms=5247 total_ms=5249\ndiagnostics: phrase=Accepted routing_performed=false selection_ms=0 extraction_ms=0 route_ms=0 phrase_ms=1773 total_ms=1773\ndiagnostics: phrase=Accepted routing_performed=false selection_ms=0 extraction_ms=0 route_ms=0 phrase_ms=1900 total_ms=1901\ndiagnostics: phrase=Accepted routing_performed=false selection_ms=0 extraction_ms=0 route_ms=0 phrase_ms=1233 total_ms=1235\ndiagnostics: phrase=NotAttempted routing_performed=false selection_ms=0 extraction_ms=0 route_ms=0 phrase_ms=0 total_ms=0\ndiagnostics: phrase=Rejected(NegationChanged) routing_performed=false selection_ms=0 extraction_ms=0 route_ms=0 phrase_ms=1012 total_ms=1013\ndiagnostics: phrase=Accepted routing_performed=false selection_ms=0 extraction_ms=0 route_ms=0 phrase_ms=1112 total_ms=1112\ndiagnostics: phrase=Rejected(NumberChanged) routing_performed=false selection_ms=0 extraction_ms=0 route_ms=0 phrase_ms=1741 total_ms=1742\n",
+  "exit_code": 0,
+  "requests": [
+    {
+      "path": "/api/chat",
+      "model": "qwen3.5:2b-q4_K_M",
+      "kind": "phrasing",
+      "request": "/disk",
+      "data": {
+        "path": "/private/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-explicit-i3m4blv3",
+        "total_bytes": 994662584320,
+        "free_bytes": 802488193024,
+        "available_bytes": 802488193024,
+        "used_bytes": 192174391296,
+        "reserved_bytes": 0
+      },
+      "sources": [],
+      "outcome": "success"
+    },
+    {
+      "path": "/api/generate",
+      "model": "qwen3.5:2b-q4_K_M",
+      "kind": "retention"
+    },
+    {
+      "path": "/api/chat",
+      "model": "qwen3.5:2b-q4_K_M",
+      "kind": "phrasing",
+      "request": "/disk /",
+      "data": {
+        "path": "/",
+        "total_bytes": 994662584320,
+        "free_bytes": 802105999360,
+        "available_bytes": 802105999360,
+        "used_bytes": 192556584960,
+        "reserved_bytes": 0
+      },
+      "sources": [],
+      "outcome": "success"
+    },
+    {
+      "path": "/api/generate",
+      "model": "qwen3.5:2b-q4_K_M",
+      "kind": "retention"
+    },
+    {
+      "path": "/api/chat",
+      "model": "qwen3.5:2b-q4_K_M",
+      "kind": "phrasing",
+      "request": "/disk .",
+      "data": {
+        "path": "/private/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-explicit-i3m4blv3",
+        "total_bytes": 994662584320,
+        "free_bytes": 802106155008,
+        "available_bytes": 802106155008,
+        "used_bytes": 192556429312,
+        "reserved_bytes": 0
+      },
+      "sources": [],
+      "outcome": "success"
+    },
+    {
+      "path": "/api/generate",
+      "model": "qwen3.5:2b-q4_K_M",
+      "kind": "retention"
+    },
+    {
+      "path": "/api/chat",
+      "model": "qwen3.5:2b-q4_K_M",
+      "kind": "phrasing",
+      "request": "/disk /var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-explicit-i3m4blv3/path with spaces",
+      "data": {
+        "path": "/private/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-explicit-i3m4blv3/path with spaces",
+        "total_bytes": 994662584320,
+        "free_bytes": 802104422400,
+        "available_bytes": 802104422400,
+        "used_bytes": 192558161920,
+        "reserved_bytes": 0
+      },
+      "sources": [],
+      "outcome": "success"
+    },
+    {
+      "path": "/api/generate",
+      "model": "qwen3.5:2b-q4_K_M",
+      "kind": "retention"
+    },
+    {
+      "path": "/api/generate",
+      "model": "qwen3.5:2b-q4_K_M",
+      "kind": "retention"
+    },
+    {
+      "path": "/api/chat",
+      "model": "qwen3.5:2b-q4_K_M",
+      "kind": "phrasing",
+      "request": "/system",
+      "data": {
+        "os_name": "Darwin",
+        "os_version": "26.5.2",
+        "architecture": "arm64"
+      },
+      "sources": [],
+      "outcome": "success"
+    },
+    {
+      "path": "/api/generate",
+      "model": "qwen3.5:2b-q4_K_M",
+      "kind": "retention"
+    },
+    {
+      "path": "/api/chat",
+      "model": "qwen3.5:2b-q4_K_M",
+      "kind": "phrasing",
+      "request": "/uptime",
+      "data": {
+        "uptime_seconds": 7765403,
+        "duration": "89 days, 21 hours, 3 minutes and 23 seconds"
+      },
+      "sources": [],
+      "outcome": "success"
+    },
+    {
+      "path": "/api/generate",
+      "model": "qwen3.5:2b-q4_K_M",
+      "kind": "retention"
+    },
+    {
+      "path": "/api/chat",
+      "model": "qwen3.5:2b-q4_K_M",
+      "kind": "phrasing",
+      "request": "/disk /",
+      "data": {
+        "path": "/",
+        "total_bytes": 994662584320,
+        "free_bytes": 802894811136,
+        "available_bytes": 802894811136,
+        "used_bytes": 191767773184,
+        "reserved_bytes": 0
+      },
+      "sources": [],
+      "outcome": "success"
+    },
+    {
+      "path": "/api/generate",
+      "model": "qwen3.5:2b-q4_K_M",
+      "kind": "retention"
+    }
+  ],
+  "wall_seconds": 14.638,
+  "notes": [
+    "No .env.local in temporary cwd, no Tavily key inherited, no Tavily requests.",
+    "Proxy forwards only to the existing local Ollama; captures request types and native structured readings, never prompts or model candidates.",
+    "Source tests independently verify literal dispatch and bounded inference counts; CLI smoke verifies real native readings and final presentation."
+  ],
+  "checks": {
+    "exit_success": true,
+    "exactly_seven_phrasing_calls": true,
+    "literal_default_paths": true,
+    "native_sources_empty": true,
+    "no_routing_diagnostics": true,
+    "unsupported_command_rejected": true,
+    "plain_input_requires_opt_in": true
+  },
+  "passed": true
+}

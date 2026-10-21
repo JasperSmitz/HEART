@@ -1,0 +1,458 @@
+{
+  "date": "2026-10-19",
+  "hardware": {
+    "chip": "Apple M1 Pro",
+    "memory_bytes": 34359738368
+  },
+  "runtime": {
+    "version": "0.40.6"
+  },
+  "model": "qwen3.5:2b-q4_K_M",
+  "model_digest": "1e2d21a4f03ab9e4a9c1976a4b7e88f21de61d65f2c5485d8fde8942be73f1e7",
+  "notes": [
+    "Actual native readings with a counted web stub using the real web capability declaration.",
+    "No Tavily calls or credentials; existing user-owned Ollama service reused.",
+    "No forced cold load; a Linux container build ran concurrently, so timings are not isolated benchmarks.",
+    "Disk snapshots compared after the run; allow 1 GiB sampling drift and record actual differences."
+  ],
+  "baseline": {
+    "os_product_version": "26.5.2",
+    "architecture": "arm64",
+    "boot_time_epoch_seconds": 1784727137
+  },
+  "run_wall_seconds": 14.792,
+  "native_checks": [
+    {
+      "profile": "butler",
+      "request": "How much disk space is available on this computer?",
+      "capability": "system.disk_space",
+      "outcome": "success",
+      "independent_statvfs": {
+        "total_bytes": 994662584320,
+        "free_bytes": 808899051520,
+        "available_bytes": 808899051520,
+        "used_bytes": 185763532800
+      },
+      "difference_bytes": {
+        "total_bytes": 0,
+        "free_bytes": 131072,
+        "available_bytes": 131072,
+        "used_bytes": -131072
+      }
+    },
+    {
+      "profile": "butler",
+      "request": "How much disk space is available on the filesystem containing /?",
+      "capability": "system.disk_space",
+      "outcome": "success",
+      "independent_statvfs": {
+        "total_bytes": 994662584320,
+        "free_bytes": 808899051520,
+        "available_bytes": 808899051520,
+        "used_bytes": 185763532800
+      },
+      "difference_bytes": {
+        "total_bytes": 0,
+        "free_bytes": 122880,
+        "available_bytes": 122880,
+        "used_bytes": -122880
+      }
+    },
+    {
+      "profile": "cat",
+      "request": "How much disk space is available on this computer?",
+      "capability": "system.disk_space",
+      "outcome": "success",
+      "independent_statvfs": {
+        "total_bytes": 994662584320,
+        "free_bytes": 808899051520,
+        "available_bytes": 808899051520,
+        "used_bytes": 185763532800
+      },
+      "difference_bytes": {
+        "total_bytes": 0,
+        "free_bytes": 40960,
+        "available_bytes": 40960,
+        "used_bytes": -40960
+      }
+    },
+    {
+      "profile": "cat",
+      "request": "How much disk space is available on the filesystem containing /?",
+      "capability": "system.disk_space",
+      "outcome": "error"
+    },
+    {
+      "profile": "cat",
+      "request": "Search the web for the weather in Amsterdam today.",
+      "capability": "web.search",
+      "outcome": "success"
+    }
+  ],
+  "cases": [
+    {
+      "call_counts": {
+        "system.disk_space": 1
+      },
+      "error": null,
+      "expected_capability": "system.disk_space",
+      "model": "qwen3.5:2b-q4_K_M",
+      "module_results": [
+        [
+          "system.disk_space",
+          {
+            "data": {
+              "available_bytes": 808899182592,
+              "free_bytes": 808899182592,
+              "path": "/",
+              "reserved_bytes": 0,
+              "total_bytes": 994662584320,
+              "used_bytes": 185763401728
+            },
+            "factual_text": "The filesystem containing \"/\" has 753.35 GiB available to the user, 173.01 GiB used and 926.35 GiB total.",
+            "fallback": "The filesystem containing \"/\" has 753.35 GiB available to the user, 173.01 GiB used and 926.35 GiB total.",
+            "outcome": "success",
+            "sources": []
+          }
+        ]
+      ],
+      "profile": "butler",
+      "reply": {
+        "elapsed_ms": 4397,
+        "fallback_used": false,
+        "phrase_status": {
+          "status": "accepted"
+        },
+        "phrase_timing": {
+          "elapsed_ms": 1170,
+          "generated_tokens": 48,
+          "generation_ns": 775126000,
+          "load_ns": 774583,
+          "prompt_ns": 387009000
+        },
+        "route_timing": {
+          "elapsed_ms": 3226,
+          "generated_tokens": 14,
+          "generation_ns": 225825000,
+          "load_ns": 2570295042,
+          "prompt_ns": 422251000
+        },
+        "sources": [],
+        "text": "The filesystem containing \"/\" has 753.35 GiB available to the user, 173.01 GiB used and 926.35 GiB total, sir.",
+        "warning": null
+      },
+      "request": "How much disk space is available on this computer?",
+      "selected_route": {
+        "arguments": {
+          "path": "/"
+        },
+        "capability": "system.disk_space"
+      },
+      "tavily_calls": 0
+    },
+    {
+      "call_counts": {
+        "system.disk_space": 1
+      },
+      "error": null,
+      "expected_capability": "system.disk_space",
+      "model": "qwen3.5:2b-q4_K_M",
+      "module_results": [
+        [
+          "system.disk_space",
+          {
+            "data": {
+              "available_bytes": 808899174400,
+              "free_bytes": 808899174400,
+              "path": "/",
+              "reserved_bytes": 0,
+              "total_bytes": 994662584320,
+              "used_bytes": 185763409920
+            },
+            "factual_text": "The filesystem containing \"/\" has 753.35 GiB available to the user, 173.01 GiB used and 926.35 GiB total.",
+            "fallback": "The filesystem containing \"/\" has 753.35 GiB available to the user, 173.01 GiB used and 926.35 GiB total.",
+            "outcome": "success",
+            "sources": []
+          }
+        ]
+      ],
+      "profile": "butler",
+      "reply": {
+        "elapsed_ms": 1435,
+        "fallback_used": false,
+        "phrase_status": {
+          "status": "accepted"
+        },
+        "phrase_timing": {
+          "elapsed_ms": 727,
+          "generated_tokens": 26,
+          "generation_ns": 349263000,
+          "load_ns": 784875,
+          "prompt_ns": 370803000
+        },
+        "route_timing": {
+          "elapsed_ms": 707,
+          "generated_tokens": 14,
+          "generation_ns": 263060999,
+          "load_ns": 574542,
+          "prompt_ns": 431127000
+        },
+        "sources": [],
+        "text": "The filesystem containing \"/\" has 753.35 GiB available to the user, sir.",
+        "warning": null
+      },
+      "request": "How much disk space is available on the filesystem containing /?",
+      "selected_route": {
+        "arguments": {
+          "path": "/"
+        },
+        "capability": "system.disk_space"
+      },
+      "tavily_calls": 0
+    },
+    {
+      "call_counts": {},
+      "error": "The model supplied invalid arguments; no action was taken.",
+      "expected_capability": "system.info",
+      "model": "qwen3.5:2b-q4_K_M",
+      "module_results": [],
+      "profile": "butler",
+      "reply": null,
+      "request": "What operating system, version and architecture is this computer running?",
+      "selected_route": {
+        "arguments": {
+          "query": "What operating system, version and architecture is this computer running?"
+        },
+        "capability": "system.info"
+      },
+      "tavily_calls": 0
+    },
+    {
+      "call_counts": {},
+      "error": "The model supplied invalid arguments; no action was taken.",
+      "expected_capability": "system.uptime",
+      "model": "qwen3.5:2b-q4_K_M",
+      "module_results": [],
+      "profile": "butler",
+      "reply": null,
+      "request": "What is this computer's system uptime?",
+      "selected_route": {
+        "arguments": {
+          "path": "null"
+        },
+        "capability": "system.uptime"
+      },
+      "tavily_calls": 0
+    },
+    {
+      "call_counts": {},
+      "error": "The model supplied invalid arguments; no action was taken.",
+      "expected_capability": "web.search",
+      "model": "qwen3.5:2b-q4_K_M",
+      "module_results": [],
+      "profile": "butler",
+      "reply": null,
+      "request": "Search the web for the weather in Amsterdam today.",
+      "selected_route": {
+        "arguments": {
+          "query": "weather in Amsterdam today"
+        },
+        "capability": "system.info"
+      },
+      "tavily_calls": 0
+    },
+    {
+      "call_counts": {
+        "system.disk_space": 1
+      },
+      "error": null,
+      "expected_capability": "system.disk_space",
+      "model": "qwen3.5:2b-q4_K_M",
+      "module_results": [
+        [
+          "system.disk_space",
+          {
+            "data": {
+              "available_bytes": 808899092480,
+              "free_bytes": 808899092480,
+              "path": "/",
+              "reserved_bytes": 0,
+              "total_bytes": 994662584320,
+              "used_bytes": 185763491840
+            },
+            "factual_text": "The filesystem containing \"/\" has 753.35 GiB available to the user, 173.01 GiB used and 926.35 GiB total.",
+            "fallback": "The filesystem containing \"/\" has 753.35 GiB available to the user, 173.01 GiB used and 926.35 GiB total.",
+            "outcome": "success",
+            "sources": []
+          }
+        ]
+      ],
+      "profile": "cat",
+      "reply": {
+        "elapsed_ms": 1698,
+        "fallback_used": false,
+        "phrase_status": {
+          "status": "accepted"
+        },
+        "phrase_timing": {
+          "elapsed_ms": 1049,
+          "generated_tokens": 48,
+          "generation_ns": 693297000,
+          "load_ns": 648667,
+          "prompt_ns": 349826000
+        },
+        "route_timing": {
+          "elapsed_ms": 648,
+          "generated_tokens": 15,
+          "generation_ns": 257285000,
+          "load_ns": 534000,
+          "prompt_ns": 386850000
+        },
+        "sources": [],
+        "text": "The filesystem containing \"/\" has 753.35 GiB available to the user, 173.01 GiB used and 926.35 GiB total.",
+        "warning": null
+      },
+      "request": "How much disk space is available on this computer?",
+      "selected_route": {
+        "arguments": {
+          "path": "/"
+        },
+        "capability": "system.disk_space"
+      },
+      "tavily_calls": 0
+    },
+    {
+      "call_counts": {
+        "system.disk_space": 1
+      },
+      "error": null,
+      "expected_capability": "system.disk_space",
+      "model": "qwen3.5:2b-q4_K_M",
+      "module_results": [
+        [
+          "system.disk_space",
+          {
+            "data": null,
+            "fallback": "The path could not be resolved; use an existing accessible file or directory.",
+            "outcome": "error",
+            "sources": []
+          }
+        ]
+      ],
+      "profile": "cat",
+      "reply": {
+        "elapsed_ms": 1091,
+        "fallback_used": true,
+        "phrase_status": {
+          "status": "not_attempted"
+        },
+        "phrase_timing": null,
+        "route_timing": {
+          "elapsed_ms": 1091,
+          "generated_tokens": 21,
+          "generation_ns": 670585000,
+          "load_ns": 552125,
+          "prompt_ns": 408425000
+        },
+        "sources": [],
+        "text": "The path could not be resolved; use an existing accessible file or directory.",
+        "warning": null
+      },
+      "request": "How much disk space is available on the filesystem containing /?",
+      "selected_route": {
+        "arguments": {
+          "path": "/?}} {"
+        },
+        "capability": "system.disk_space"
+      },
+      "tavily_calls": 0
+    },
+    {
+      "call_counts": {},
+      "error": "The model supplied invalid arguments; no action was taken.",
+      "expected_capability": "system.info",
+      "model": "qwen3.5:2b-q4_K_M",
+      "module_results": [],
+      "profile": "cat",
+      "reply": null,
+      "request": "What operating system, version and architecture is this computer running?",
+      "selected_route": {
+        "arguments": {
+          "path": ","
+        },
+        "capability": "system.info"
+      },
+      "tavily_calls": 0
+    },
+    {
+      "call_counts": {},
+      "error": "The model supplied invalid arguments; no action was taken.",
+      "expected_capability": "system.uptime",
+      "model": "qwen3.5:2b-q4_K_M",
+      "module_results": [],
+      "profile": "cat",
+      "reply": null,
+      "request": "What is this computer's system uptime?",
+      "selected_route": {
+        "arguments": {
+          "path": "null"
+        },
+        "capability": "system.uptime"
+      },
+      "tavily_calls": 0
+    },
+    {
+      "call_counts": {
+        "web.search": 1
+      },
+      "error": null,
+      "expected_capability": "web.search",
+      "model": "qwen3.5:2b-q4_K_M",
+      "module_results": [
+        [
+          "web.search",
+          {
+            "data": null,
+            "fallback": "This is a fixed web stub; no network search was performed.",
+            "outcome": "success",
+            "sources": []
+          }
+        ]
+      ],
+      "profile": "cat",
+      "reply": {
+        "elapsed_ms": 1250,
+        "fallback_used": true,
+        "phrase_status": {
+          "reason": "ungrounded",
+          "status": "rejected"
+        },
+        "phrase_timing": {
+          "elapsed_ms": 572,
+          "generated_tokens": 26,
+          "generation_ns": 336064000,
+          "load_ns": 745875,
+          "prompt_ns": 229697000
+        },
+        "route_timing": {
+          "elapsed_ms": 677,
+          "generated_tokens": 20,
+          "generation_ns": 275490000,
+          "load_ns": 522375,
+          "prompt_ns": 397232000
+        },
+        "sources": [],
+        "text": "This is a fixed web stub; no network search was performed.",
+        "warning": null
+      },
+      "request": "Search the web for the weather in Amsterdam today.",
+      "selected_route": {
+        "arguments": {
+          "query": "weather in Amsterdam today"
+        },
+        "capability": "web.search"
+      },
+      "tavily_calls": 0
+    }
+  ]
+}

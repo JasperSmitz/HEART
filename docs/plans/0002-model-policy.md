@@ -2,7 +2,7 @@
 
 **Status:** complete; configuration verified and independent review cleared. Returned to discussion mode.
 
-The user explicitly requested Sol/high for the architect, Sol/medium for the developer, and Sol/high for the reviewer. Trivial tasks may use Luna/low or medium; challenging tasks may use Astra/medium or high. Extra High requires genuine task complexity. Responsiveness and implementation quality guide selection.
+The user initially requested Sol/high for the architect, Sol/medium for the developer, and Sol/high for the reviewer. The original execution evidence below is preserved; the lighter-default follow-up at the end supersedes that selection policy.
 
 ## Scope and acceptance
 
@@ -28,3 +28,15 @@ The user explicitly requested Sol/high for the architect, Sol/medium for the dev
 The user supplied a successful fresh-session test on 2026-10-19: developer and reviewer were selected sequentially through `agent_type`, received their project instructions natively, and showed matching assigned roles and model/effort metadata (developer Sol/medium; reviewer Sol/high). Setup checks passed; all 14 repository files remained unchanged. This supersedes the earlier untested status above. It is user-supplied verification of client settings, not backend execution telemetry; the original architect session did not independently rerun it.
 
 Architecture documentation was updated to prefer the reported native role mechanism where exposed and scope the original tool-interface limitation to that session. No configuration change was needed. Independent documentation review found one provenance wording ambiguity; the opening policy paragraph was corrected to explicitly attribute the result to the user. No other findings; Markdown whitespace and local link checks passed.
+
+## Follow-up — lighter defaults
+
+**Status:** complete; lighter defaults verified and focused independent review cleared. Returned to discussion mode.
+
+After observing high usage, the user approved the architect's recommendation with “Let's go with that.” Scope: Sol/medium by default for architect, developer and reviewer; Luna/medium for small, well-defined developer tasks; Luna/low for straightforward documentation and formatting. Escalate Sol to high for significant architecture, difficult debugging, complex logic or sensitive reviews. Reserve Astra for exceptional problems where Sol is struggling, and Extra High for demonstrated benefit. Keep concise handoffs/output, focused correction reviews and independent implementation review; avoid extra agents for routine bookkeeping.
+
+Acceptance: update project config and both role instructions without pinning model/effort overrides, align AGENTS and architecture, preserve historical checks, validate TOML and effective project defaults where practical, and obtain one focused independent review. This routine policy bookkeeping is handled directly by the architect, followed by the reviewer; no separate developer agent, application changes, dependencies, global settings or commits are needed.
+
+Preflight: installed CLI remains 0.163.0. The local model catalog fetched on 2026-10-19 lists Sol, Luna and Astra with the selected low/medium/high/xhigh efforts; the native spawn interface supports explicit model/effort for fresh agents. Official OpenAI [configuration](https://learn.chatgpt.com/docs/config-file/config-reference) and [subagent](https://learn.chatgpt.com/docs/agent-configuration/subagents) documentation confirm shared defaults and explicit task selection, with role overrides taking precedence. Leave role overrides absent. Updating repository defaults does not change the already-running architect's effort or establish backend execution telemetry.
+
+Verification: all three TOMLs parsed with the installed Python `tomllib`; both role files remain free of model/effort overrides. A metadata-only `codex app-server --stdio --strict-config` / `config/read` request resolved the enabled project layer to Sol/medium for the architect and subagents, with agents enabled and the two-spawned-thread cap preserved. No model request was sent by this check; the temporary reader was terminated. `git diff --check` passed. The single fresh reviewer requested Sol/medium and reported no findings; its runtime selection was not independently observed. No application code, dependency, global setting, lesson or commit changed.

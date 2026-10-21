@@ -1,0 +1,3495 @@
+{
+  "date": "2026-10-19",
+  "model": "qwen3.5:4b-q4_K_M",
+  "runtime": {
+    "version": "0.40.6"
+  },
+  "model_digest": "d8b0f5e9760cd1682034f292d7ef72ec46f432149be0df7574bf2d6e92e38c04",
+  "hardware": {
+    "chip": "Apple M1 Pro",
+    "memory_bytes": 34359738368
+  },
+  "stage": "initial",
+  "wall_seconds": 84.921,
+  "exit_code": 1,
+  "stderr": "Error: \"Some live routing acceptance checks failed; inspect the JSON observations.\"\n",
+  "passed": false,
+  "structural_checks_passed": true,
+  "notes": [
+    "Local native modules and counted web stub; no Tavily credentials or calls.",
+    "Root independently compares literal request/dispatch paths, canonical paths, failures, web query and empty-input/unsupported cases.",
+    "Temporary path fixtures are removed by the example after execution.",
+    "Correctness sample, not a general reliability claim or isolated performance benchmark."
+  ],
+  "independent_checks": [
+    {
+      "profile": "butler",
+      "case": "omitted",
+      "checks": {
+        "no_tavily": true,
+        "literal_arguments": false,
+        "canonical_path": true,
+        "native_sources_empty": true,
+        "bounded_stage_order": true,
+        "timing_sum": true
+      },
+      "passed": false
+    },
+    {
+      "profile": "butler",
+      "case": "root",
+      "checks": {
+        "no_tavily": true,
+        "literal_arguments": true,
+        "expected_matches_request_literal": true,
+        "canonical_path": true,
+        "native_sources_empty": true,
+        "bounded_stage_order": true,
+        "timing_sum": true
+      },
+      "passed": true
+    },
+    {
+      "profile": "butler",
+      "case": "absolute",
+      "checks": {
+        "no_tavily": true,
+        "literal_arguments": true,
+        "expected_matches_request_literal": true,
+        "canonical_path": true,
+        "native_sources_empty": true,
+        "bounded_stage_order": true,
+        "timing_sum": true
+      },
+      "passed": true
+    },
+    {
+      "profile": "butler",
+      "case": "relative",
+      "checks": {
+        "no_tavily": true,
+        "literal_arguments": true,
+        "expected_matches_request_literal": true,
+        "canonical_path": true,
+        "native_sources_empty": true,
+        "bounded_stage_order": true,
+        "timing_sum": true
+      },
+      "passed": true
+    },
+    {
+      "profile": "butler",
+      "case": "spaces",
+      "checks": {
+        "no_tavily": true,
+        "literal_arguments": true,
+        "expected_matches_request_literal": true,
+        "canonical_path": true,
+        "native_sources_empty": true,
+        "bounded_stage_order": true,
+        "timing_sum": true
+      },
+      "passed": true
+    },
+    {
+      "profile": "butler",
+      "case": "nonexistent",
+      "checks": {
+        "no_tavily": true,
+        "literal_arguments": true,
+        "expected_matches_request_literal": true,
+        "safe_failure": true,
+        "native_sources_empty": true,
+        "bounded_stage_order": true,
+        "timing_sum": true
+      },
+      "passed": true
+    },
+    {
+      "profile": "butler",
+      "case": "os",
+      "checks": {
+        "no_tavily": true,
+        "empty_arguments": true,
+        "native_sources_empty": true,
+        "bounded_stage_order": true,
+        "timing_sum": true
+      },
+      "passed": true
+    },
+    {
+      "profile": "butler",
+      "case": "uptime",
+      "checks": {
+        "no_tavily": true,
+        "empty_arguments": true,
+        "native_sources_empty": true,
+        "bounded_stage_order": true,
+        "timing_sum": true
+      },
+      "passed": true
+    },
+    {
+      "profile": "butler",
+      "case": "web",
+      "checks": {
+        "no_tavily": true,
+        "appropriate_query": true,
+        "native_sources_empty": true,
+        "bounded_stage_order": true,
+        "timing_sum": true
+      },
+      "passed": true
+    },
+    {
+      "profile": "butler",
+      "case": "unsupported",
+      "checks": {
+        "no_tavily": true,
+        "no_execution": true,
+        "native_sources_empty": true,
+        "bounded_stage_order": true
+      },
+      "passed": true
+    },
+    {
+      "profile": "butler",
+      "case": "unquoted-root",
+      "checks": {
+        "no_tavily": true,
+        "literal_arguments": true,
+        "expected_matches_request_literal": true,
+        "canonical_path": true,
+        "native_sources_empty": true,
+        "bounded_stage_order": true,
+        "timing_sum": true
+      },
+      "passed": true
+    },
+    {
+      "profile": "butler",
+      "case": "unquoted-existing",
+      "checks": {
+        "no_tavily": true,
+        "literal_arguments": true,
+        "expected_matches_request_literal": true,
+        "canonical_path": true,
+        "native_sources_empty": true,
+        "bounded_stage_order": true,
+        "timing_sum": true
+      },
+      "passed": true
+    },
+    {
+      "profile": "butler",
+      "case": "unsupported-open",
+      "checks": {
+        "no_tavily": true,
+        "no_execution": true,
+        "native_sources_empty": true,
+        "bounded_stage_order": true
+      },
+      "passed": true
+    },
+    {
+      "profile": "butler",
+      "case": "public-fact",
+      "checks": {
+        "no_tavily": true,
+        "appropriate_query": true,
+        "native_sources_empty": true,
+        "bounded_stage_order": true,
+        "timing_sum": true
+      },
+      "passed": true
+    },
+    {
+      "profile": "cat",
+      "case": "omitted",
+      "checks": {
+        "no_tavily": true,
+        "literal_arguments": false,
+        "canonical_path": false,
+        "native_sources_empty": true,
+        "bounded_stage_order": false,
+        "timing_sum": true
+      },
+      "passed": false
+    },
+    {
+      "profile": "cat",
+      "case": "root",
+      "checks": {
+        "no_tavily": true,
+        "literal_arguments": true,
+        "expected_matches_request_literal": true,
+        "canonical_path": true,
+        "native_sources_empty": true,
+        "bounded_stage_order": true,
+        "timing_sum": true
+      },
+      "passed": true
+    },
+    {
+      "profile": "cat",
+      "case": "absolute",
+      "checks": {
+        "no_tavily": true,
+        "literal_arguments": true,
+        "expected_matches_request_literal": true,
+        "canonical_path": true,
+        "native_sources_empty": true,
+        "bounded_stage_order": true,
+        "timing_sum": true
+      },
+      "passed": true
+    },
+    {
+      "profile": "cat",
+      "case": "relative",
+      "checks": {
+        "no_tavily": true,
+        "literal_arguments": true,
+        "expected_matches_request_literal": true,
+        "canonical_path": true,
+        "native_sources_empty": true,
+        "bounded_stage_order": true,
+        "timing_sum": true
+      },
+      "passed": true
+    },
+    {
+      "profile": "cat",
+      "case": "spaces",
+      "checks": {
+        "no_tavily": true,
+        "literal_arguments": true,
+        "expected_matches_request_literal": true,
+        "canonical_path": true,
+        "native_sources_empty": true,
+        "bounded_stage_order": true,
+        "timing_sum": true
+      },
+      "passed": true
+    },
+    {
+      "profile": "cat",
+      "case": "nonexistent",
+      "checks": {
+        "no_tavily": true,
+        "literal_arguments": true,
+        "expected_matches_request_literal": true,
+        "safe_failure": true,
+        "native_sources_empty": true,
+        "bounded_stage_order": true,
+        "timing_sum": true
+      },
+      "passed": true
+    },
+    {
+      "profile": "cat",
+      "case": "os",
+      "checks": {
+        "no_tavily": true,
+        "empty_arguments": true,
+        "native_sources_empty": true,
+        "bounded_stage_order": true,
+        "timing_sum": true
+      },
+      "passed": true
+    },
+    {
+      "profile": "cat",
+      "case": "uptime",
+      "checks": {
+        "no_tavily": true,
+        "empty_arguments": true,
+        "native_sources_empty": true,
+        "bounded_stage_order": true,
+        "timing_sum": true
+      },
+      "passed": true
+    },
+    {
+      "profile": "cat",
+      "case": "web",
+      "checks": {
+        "no_tavily": true,
+        "appropriate_query": true,
+        "native_sources_empty": true,
+        "bounded_stage_order": true,
+        "timing_sum": true
+      },
+      "passed": true
+    },
+    {
+      "profile": "cat",
+      "case": "unsupported",
+      "checks": {
+        "no_tavily": true,
+        "no_execution": true,
+        "native_sources_empty": true,
+        "bounded_stage_order": true
+      },
+      "passed": true
+    }
+  ],
+  "cases": [
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "butler",
+      "case": "omitted",
+      "suite": "regression",
+      "request": "How much disk space is available on this computer?",
+      "expected_capability": "system.disk_space",
+      "expected_module_arguments": {},
+      "expected_outcome": "success",
+      "expected_resolved_path": "/Users/jaspersmitz/Developer/personal/HEART",
+      "selected_route": {
+        "capability": "system.disk_space",
+        "arguments": {
+          "path": "./"
+        }
+      },
+      "selection": {
+        "capability": "system.disk_space"
+      },
+      "extraction": {
+        "path": "./"
+      },
+      "inference_calls": [
+        {
+          "stage": "selection",
+          "cold": true,
+          "wall_ms": 3772,
+          "timing": {
+            "elapsed_ms": 3772,
+            "load_ns": 2807111709,
+            "prompt_ns": 719013000,
+            "generation_ns": 240219000,
+            "generated_tokens": 9
+          },
+          "error": null
+        },
+        {
+          "stage": "extraction",
+          "cold": false,
+          "wall_ms": 764,
+          "timing": {
+            "elapsed_ms": 764,
+            "load_ns": 695417,
+            "prompt_ns": 588148000,
+            "generation_ns": 140994000,
+            "generated_tokens": 6
+          },
+          "error": null
+        },
+        {
+          "stage": "phrasing",
+          "cold": false,
+          "wall_ms": 2057,
+          "timing": {
+            "elapsed_ms": 2057,
+            "load_ns": 644125,
+            "prompt_ns": 966236000,
+            "generation_ns": 1055983000,
+            "generated_tokens": 40
+          },
+          "error": null
+        }
+      ],
+      "module_invocations": [
+        [
+          "system.disk_space",
+          {
+            "path": "./"
+          }
+        ]
+      ],
+      "call_counts": {
+        "system.disk_space": 1
+      },
+      "module_results": [
+        [
+          "system.disk_space",
+          {
+            "outcome": "success",
+            "fallback": "The filesystem containing \"/Users/jaspersmitz/Developer/personal/HEART\" has 750.93 GiB available to the user, 175.42 GiB used and 926.35 GiB total.",
+            "factual_text": "The filesystem containing \"/Users/jaspersmitz/Developer/personal/HEART\" has 750.93 GiB available to the user, 175.42 GiB used and 926.35 GiB total.",
+            "data": {
+              "path": "/Users/jaspersmitz/Developer/personal/HEART",
+              "total_bytes": 994662584320,
+              "free_bytes": 806307672064,
+              "available_bytes": 806307672064,
+              "used_bytes": 188354912256,
+              "reserved_bytes": 0
+            },
+            "sources": []
+          }
+        ]
+      ],
+      "checks": {
+        "capability": true,
+        "calls": true,
+        "arguments": false,
+        "outcome": true,
+        "resolved_path": true,
+        "inference_stages": true
+      },
+      "passed": false,
+      "reply": {
+        "text": "There is 750.93 GiB of available disk space on the filesystem containing \"/Users/jaspersmitz/Developer/personal/HEART\", sir.",
+        "sources": [],
+        "fallback_used": false,
+        "phrase_status": {
+          "status": "accepted"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 4536,
+          "load_ns": 2807807126,
+          "prompt_ns": 1307161000,
+          "generation_ns": 381213000,
+          "generated_tokens": 15
+        },
+        "selection_timing": {
+          "elapsed_ms": 3772,
+          "load_ns": 2807111709,
+          "prompt_ns": 719013000,
+          "generation_ns": 240219000,
+          "generated_tokens": 9
+        },
+        "extraction_timing": {
+          "elapsed_ms": 764,
+          "load_ns": 695417,
+          "prompt_ns": 588148000,
+          "generation_ns": 140994000,
+          "generated_tokens": 6
+        },
+        "phrase_timing": {
+          "elapsed_ms": 2057,
+          "load_ns": 644125,
+          "prompt_ns": 966236000,
+          "generation_ns": 1055983000,
+          "generated_tokens": 40
+        },
+        "elapsed_ms": 6595
+      },
+      "error": null,
+      "tavily_calls": 0
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "butler",
+      "case": "root",
+      "suite": "regression",
+      "request": "How much disk space is available on the filesystem containing \"/\"?",
+      "expected_capability": "system.disk_space",
+      "expected_module_arguments": {
+        "path": "/"
+      },
+      "expected_outcome": "success",
+      "expected_resolved_path": "/",
+      "selected_route": {
+        "capability": "system.disk_space",
+        "arguments": {
+          "path": "/"
+        }
+      },
+      "selection": {
+        "capability": "system.disk_space"
+      },
+      "extraction": {
+        "path": "/"
+      },
+      "inference_calls": [
+        {
+          "stage": "selection",
+          "cold": false,
+          "wall_ms": 941,
+          "timing": {
+            "elapsed_ms": 941,
+            "load_ns": 415667,
+            "prompt_ns": 695407000,
+            "generation_ns": 209798000,
+            "generated_tokens": 8
+          },
+          "error": null
+        },
+        {
+          "stage": "extraction",
+          "cold": false,
+          "wall_ms": 742,
+          "timing": {
+            "elapsed_ms": 742,
+            "load_ns": 1153333,
+            "prompt_ns": 597172000,
+            "generation_ns": 123251000,
+            "generated_tokens": 5
+          },
+          "error": null
+        },
+        {
+          "stage": "phrasing",
+          "cold": false,
+          "wall_ms": 1552,
+          "timing": {
+            "elapsed_ms": 1552,
+            "load_ns": 651667,
+            "prompt_ns": 881814000,
+            "generation_ns": 661366000,
+            "generated_tokens": 26
+          },
+          "error": null
+        }
+      ],
+      "module_invocations": [
+        [
+          "system.disk_space",
+          {
+            "path": "/"
+          }
+        ]
+      ],
+      "call_counts": {
+        "system.disk_space": 1
+      },
+      "module_results": [
+        [
+          "system.disk_space",
+          {
+            "outcome": "success",
+            "fallback": "The filesystem containing \"/\" has 750.93 GiB available to the user, 175.42 GiB used and 926.35 GiB total.",
+            "factual_text": "The filesystem containing \"/\" has 750.93 GiB available to the user, 175.42 GiB used and 926.35 GiB total.",
+            "data": {
+              "path": "/",
+              "total_bytes": 994662584320,
+              "free_bytes": 806307680256,
+              "available_bytes": 806307680256,
+              "used_bytes": 188354904064,
+              "reserved_bytes": 0
+            },
+            "sources": []
+          }
+        ]
+      ],
+      "checks": {
+        "capability": true,
+        "calls": true,
+        "arguments": true,
+        "outcome": true,
+        "resolved_path": true,
+        "inference_stages": true
+      },
+      "passed": true,
+      "reply": {
+        "text": "The filesystem containing \"/\" has 750.93 GiB available to the user, sir.",
+        "sources": [],
+        "fallback_used": false,
+        "phrase_status": {
+          "status": "accepted"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 1683,
+          "load_ns": 1569000,
+          "prompt_ns": 1292579000,
+          "generation_ns": 333049000,
+          "generated_tokens": 13
+        },
+        "selection_timing": {
+          "elapsed_ms": 941,
+          "load_ns": 415667,
+          "prompt_ns": 695407000,
+          "generation_ns": 209798000,
+          "generated_tokens": 8
+        },
+        "extraction_timing": {
+          "elapsed_ms": 742,
+          "load_ns": 1153333,
+          "prompt_ns": 597172000,
+          "generation_ns": 123251000,
+          "generated_tokens": 5
+        },
+        "phrase_timing": {
+          "elapsed_ms": 1552,
+          "load_ns": 651667,
+          "prompt_ns": 881814000,
+          "generation_ns": 661366000,
+          "generated_tokens": 26
+        },
+        "elapsed_ms": 3236
+      },
+      "error": null,
+      "tavily_calls": 0
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "butler",
+      "case": "absolute",
+      "suite": "regression",
+      "request": "How much disk space is available on the filesystem containing \"/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/existing\"?",
+      "expected_capability": "system.disk_space",
+      "expected_module_arguments": {
+        "path": "/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/existing"
+      },
+      "expected_outcome": "success",
+      "expected_resolved_path": "/private/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/existing",
+      "selected_route": {
+        "capability": "system.disk_space",
+        "arguments": {
+          "path": "/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/existing"
+        }
+      },
+      "selection": {
+        "capability": "system.disk_space"
+      },
+      "extraction": {
+        "path": "/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/existing"
+      },
+      "inference_calls": [
+        {
+          "stage": "selection",
+          "cold": false,
+          "wall_ms": 1031,
+          "timing": {
+            "elapsed_ms": 1031,
+            "load_ns": 418833,
+            "prompt_ns": 798505000,
+            "generation_ns": 222685000,
+            "generated_tokens": 8
+          },
+          "error": null
+        },
+        {
+          "stage": "extraction",
+          "cold": false,
+          "wall_ms": 2422,
+          "timing": {
+            "elapsed_ms": 2422,
+            "load_ns": 748917,
+            "prompt_ns": 712631000,
+            "generation_ns": 1686955000,
+            "generated_tokens": 65
+          },
+          "error": null
+        },
+        {
+          "stage": "phrasing",
+          "cold": false,
+          "wall_ms": 2762,
+          "timing": {
+            "elapsed_ms": 2762,
+            "load_ns": 655750,
+            "prompt_ns": 1503239000,
+            "generation_ns": 1240354000,
+            "generated_tokens": 47
+          },
+          "error": null
+        }
+      ],
+      "module_invocations": [
+        [
+          "system.disk_space",
+          {
+            "path": "/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/existing"
+          }
+        ]
+      ],
+      "call_counts": {
+        "system.disk_space": 1
+      },
+      "module_results": [
+        [
+          "system.disk_space",
+          {
+            "outcome": "success",
+            "fallback": "The filesystem containing \"/private/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/existing\" has 750.93 GiB available to the user, 175.42 GiB used and 926.35 GiB total.",
+            "factual_text": "The filesystem containing \"/private/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/existing\" has 750.93 GiB available to the user, 175.42 GiB used and 926.35 GiB total.",
+            "data": {
+              "path": "/private/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/existing",
+              "total_bytes": 994662584320,
+              "free_bytes": 806307627008,
+              "available_bytes": 806307627008,
+              "used_bytes": 188354957312,
+              "reserved_bytes": 0
+            },
+            "sources": []
+          }
+        ]
+      ],
+      "checks": {
+        "capability": true,
+        "calls": true,
+        "arguments": true,
+        "outcome": true,
+        "resolved_path": true,
+        "inference_stages": true
+      },
+      "passed": true,
+      "reply": {
+        "text": "The filesystem containing that path has 750.93 GiB available to the user, 175.42 GiB used and 926.35 GiB total, sir.",
+        "sources": [],
+        "fallback_used": false,
+        "phrase_status": {
+          "status": "accepted"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 3453,
+          "load_ns": 1167750,
+          "prompt_ns": 1511136000,
+          "generation_ns": 1909640000,
+          "generated_tokens": 73
+        },
+        "selection_timing": {
+          "elapsed_ms": 1031,
+          "load_ns": 418833,
+          "prompt_ns": 798505000,
+          "generation_ns": 222685000,
+          "generated_tokens": 8
+        },
+        "extraction_timing": {
+          "elapsed_ms": 2422,
+          "load_ns": 748917,
+          "prompt_ns": 712631000,
+          "generation_ns": 1686955000,
+          "generated_tokens": 65
+        },
+        "phrase_timing": {
+          "elapsed_ms": 2762,
+          "load_ns": 655750,
+          "prompt_ns": 1503239000,
+          "generation_ns": 1240354000,
+          "generated_tokens": 47
+        },
+        "elapsed_ms": 6217
+      },
+      "error": null,
+      "tavily_calls": 0
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "butler",
+      "case": "relative",
+      "suite": "regression",
+      "request": "How much disk space is available on the filesystem containing \".\"?",
+      "expected_capability": "system.disk_space",
+      "expected_module_arguments": {
+        "path": "."
+      },
+      "expected_outcome": "success",
+      "expected_resolved_path": "/Users/jaspersmitz/Developer/personal/HEART",
+      "selected_route": {
+        "capability": "system.disk_space",
+        "arguments": {
+          "path": "."
+        }
+      },
+      "selection": {
+        "capability": "system.disk_space"
+      },
+      "extraction": {
+        "path": "."
+      },
+      "inference_calls": [
+        {
+          "stage": "selection",
+          "cold": false,
+          "wall_ms": 947,
+          "timing": {
+            "elapsed_ms": 947,
+            "load_ns": 587792,
+            "prompt_ns": 694929000,
+            "generation_ns": 230167000,
+            "generated_tokens": 8
+          },
+          "error": null
+        },
+        {
+          "stage": "extraction",
+          "cold": false,
+          "wall_ms": 741,
+          "timing": {
+            "elapsed_ms": 741,
+            "load_ns": 706791,
+            "prompt_ns": 592974000,
+            "generation_ns": 138735000,
+            "generated_tokens": 6
+          },
+          "error": null
+        },
+        {
+          "stage": "phrasing",
+          "cold": false,
+          "wall_ms": 2234,
+          "timing": {
+            "elapsed_ms": 2234,
+            "load_ns": 647375,
+            "prompt_ns": 959641000,
+            "generation_ns": 1267463000,
+            "generated_tokens": 48
+          },
+          "error": null
+        }
+      ],
+      "module_invocations": [
+        [
+          "system.disk_space",
+          {
+            "path": "."
+          }
+        ]
+      ],
+      "call_counts": {
+        "system.disk_space": 1
+      },
+      "module_results": [
+        [
+          "system.disk_space",
+          {
+            "outcome": "success",
+            "fallback": "The filesystem containing \"/Users/jaspersmitz/Developer/personal/HEART\" has 750.93 GiB available to the user, 175.42 GiB used and 926.35 GiB total.",
+            "factual_text": "The filesystem containing \"/Users/jaspersmitz/Developer/personal/HEART\" has 750.93 GiB available to the user, 175.42 GiB used and 926.35 GiB total.",
+            "data": {
+              "path": "/Users/jaspersmitz/Developer/personal/HEART",
+              "total_bytes": 994662584320,
+              "free_bytes": 806307545088,
+              "available_bytes": 806307545088,
+              "used_bytes": 188355039232,
+              "reserved_bytes": 0
+            },
+            "sources": []
+          }
+        ]
+      ],
+      "checks": {
+        "capability": true,
+        "calls": true,
+        "arguments": true,
+        "outcome": true,
+        "resolved_path": true,
+        "inference_stages": true
+      },
+      "passed": true,
+      "reply": {
+        "text": "The filesystem containing \".\" has 750.93 GiB available to the user, 175.42 GiB used and 926.35 GiB total, sir.",
+        "sources": [],
+        "fallback_used": false,
+        "phrase_status": {
+          "status": "accepted"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 1688,
+          "load_ns": 1294583,
+          "prompt_ns": 1287903000,
+          "generation_ns": 368902000,
+          "generated_tokens": 14
+        },
+        "selection_timing": {
+          "elapsed_ms": 947,
+          "load_ns": 587792,
+          "prompt_ns": 694929000,
+          "generation_ns": 230167000,
+          "generated_tokens": 8
+        },
+        "extraction_timing": {
+          "elapsed_ms": 741,
+          "load_ns": 706791,
+          "prompt_ns": 592974000,
+          "generation_ns": 138735000,
+          "generated_tokens": 6
+        },
+        "phrase_timing": {
+          "elapsed_ms": 2234,
+          "load_ns": 647375,
+          "prompt_ns": 959641000,
+          "generation_ns": 1267463000,
+          "generated_tokens": 48
+        },
+        "elapsed_ms": 3924
+      },
+      "error": null,
+      "tavily_calls": 0
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "butler",
+      "case": "spaces",
+      "suite": "regression",
+      "request": "How much disk space is available on the filesystem containing \"/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/with spaces\"?",
+      "expected_capability": "system.disk_space",
+      "expected_module_arguments": {
+        "path": "/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/with spaces"
+      },
+      "expected_outcome": "success",
+      "expected_resolved_path": "/private/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/with spaces",
+      "selected_route": {
+        "capability": "system.disk_space",
+        "arguments": {
+          "path": "/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/with spaces"
+        }
+      },
+      "selection": {
+        "capability": "system.disk_space"
+      },
+      "extraction": {
+        "path": "/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/with spaces"
+      },
+      "inference_calls": [
+        {
+          "stage": "selection",
+          "cold": false,
+          "wall_ms": 1085,
+          "timing": {
+            "elapsed_ms": 1085,
+            "load_ns": 470792,
+            "prompt_ns": 832552000,
+            "generation_ns": 234059000,
+            "generated_tokens": 8
+          },
+          "error": null
+        },
+        {
+          "stage": "extraction",
+          "cold": false,
+          "wall_ms": 2522,
+          "timing": {
+            "elapsed_ms": 2522,
+            "load_ns": 645125,
+            "prompt_ns": 755343000,
+            "generation_ns": 1757281000,
+            "generated_tokens": 66
+          },
+          "error": null
+        },
+        {
+          "stage": "phrasing",
+          "cold": false,
+          "wall_ms": 2594,
+          "timing": {
+            "elapsed_ms": 2594,
+            "load_ns": 613584,
+            "prompt_ns": 1342723000,
+            "generation_ns": 1242313000,
+            "generated_tokens": 47
+          },
+          "error": null
+        }
+      ],
+      "module_invocations": [
+        [
+          "system.disk_space",
+          {
+            "path": "/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/with spaces"
+          }
+        ]
+      ],
+      "call_counts": {
+        "system.disk_space": 1
+      },
+      "module_results": [
+        [
+          "system.disk_space",
+          {
+            "outcome": "success",
+            "fallback": "The filesystem containing \"/private/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/with spaces\" has 750.93 GiB available to the user, 175.42 GiB used and 926.35 GiB total.",
+            "factual_text": "The filesystem containing \"/private/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/with spaces\" has 750.93 GiB available to the user, 175.42 GiB used and 926.35 GiB total.",
+            "data": {
+              "path": "/private/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/with spaces",
+              "total_bytes": 994662584320,
+              "free_bytes": 806307479552,
+              "available_bytes": 806307479552,
+              "used_bytes": 188355104768,
+              "reserved_bytes": 0
+            },
+            "sources": []
+          }
+        ]
+      ],
+      "checks": {
+        "capability": true,
+        "calls": true,
+        "arguments": true,
+        "outcome": true,
+        "resolved_path": true,
+        "inference_stages": true
+      },
+      "passed": true,
+      "reply": {
+        "text": "The filesystem containing that path has 750.93 GiB available to the user, 175.42 GiB used and 926.35 GiB total, sir.",
+        "sources": [],
+        "fallback_used": false,
+        "phrase_status": {
+          "status": "accepted"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 3607,
+          "load_ns": 1115917,
+          "prompt_ns": 1587895000,
+          "generation_ns": 1991340000,
+          "generated_tokens": 74
+        },
+        "selection_timing": {
+          "elapsed_ms": 1085,
+          "load_ns": 470792,
+          "prompt_ns": 832552000,
+          "generation_ns": 234059000,
+          "generated_tokens": 8
+        },
+        "extraction_timing": {
+          "elapsed_ms": 2522,
+          "load_ns": 645125,
+          "prompt_ns": 755343000,
+          "generation_ns": 1757281000,
+          "generated_tokens": 66
+        },
+        "phrase_timing": {
+          "elapsed_ms": 2594,
+          "load_ns": 613584,
+          "prompt_ns": 1342723000,
+          "generation_ns": 1242313000,
+          "generated_tokens": 47
+        },
+        "elapsed_ms": 6202
+      },
+      "error": null,
+      "tavily_calls": 0
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "butler",
+      "case": "nonexistent",
+      "suite": "regression",
+      "request": "How much disk space is available on the filesystem containing \"/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/does-not-exist\"?",
+      "expected_capability": "system.disk_space",
+      "expected_module_arguments": {
+        "path": "/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/does-not-exist"
+      },
+      "expected_outcome": "error",
+      "expected_resolved_path": null,
+      "selected_route": {
+        "capability": "system.disk_space",
+        "arguments": {
+          "path": "/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/does-not-exist"
+        }
+      },
+      "selection": {
+        "capability": "system.disk_space"
+      },
+      "extraction": {
+        "path": "/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/does-not-exist"
+      },
+      "inference_calls": [
+        {
+          "stage": "selection",
+          "cold": false,
+          "wall_ms": 1097,
+          "timing": {
+            "elapsed_ms": 1097,
+            "load_ns": 475959,
+            "prompt_ns": 844145000,
+            "generation_ns": 230695000,
+            "generated_tokens": 8
+          },
+          "error": null
+        },
+        {
+          "stage": "extraction",
+          "cold": false,
+          "wall_ms": 2581,
+          "timing": {
+            "elapsed_ms": 2581,
+            "load_ns": 635125,
+            "prompt_ns": 745531000,
+            "generation_ns": 1826588000,
+            "generated_tokens": 68
+          },
+          "error": null
+        }
+      ],
+      "module_invocations": [
+        [
+          "system.disk_space",
+          {
+            "path": "/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/does-not-exist"
+          }
+        ]
+      ],
+      "call_counts": {
+        "system.disk_space": 1
+      },
+      "module_results": [
+        [
+          "system.disk_space",
+          {
+            "outcome": "error",
+            "fallback": "The path could not be resolved; use an existing accessible file or directory.",
+            "data": null,
+            "sources": []
+          }
+        ]
+      ],
+      "checks": {
+        "capability": true,
+        "calls": true,
+        "arguments": true,
+        "outcome": true,
+        "resolved_path": true,
+        "inference_stages": true
+      },
+      "passed": true,
+      "reply": {
+        "text": "The path could not be resolved; use an existing accessible file or directory.",
+        "sources": [],
+        "fallback_used": true,
+        "phrase_status": {
+          "status": "not_attempted"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 3678,
+          "load_ns": 1111084,
+          "prompt_ns": 1589676000,
+          "generation_ns": 2057283000,
+          "generated_tokens": 76
+        },
+        "selection_timing": {
+          "elapsed_ms": 1097,
+          "load_ns": 475959,
+          "prompt_ns": 844145000,
+          "generation_ns": 230695000,
+          "generated_tokens": 8
+        },
+        "extraction_timing": {
+          "elapsed_ms": 2581,
+          "load_ns": 635125,
+          "prompt_ns": 745531000,
+          "generation_ns": 1826588000,
+          "generated_tokens": 68
+        },
+        "phrase_timing": null,
+        "elapsed_ms": 3678
+      },
+      "error": null,
+      "tavily_calls": 0
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "butler",
+      "case": "os",
+      "suite": "regression",
+      "request": "What operating system, version and architecture is this computer running?",
+      "expected_capability": "system.info",
+      "expected_module_arguments": {},
+      "expected_outcome": "success",
+      "expected_resolved_path": null,
+      "selected_route": {
+        "capability": "system.info",
+        "arguments": {}
+      },
+      "selection": {
+        "capability": "system.info"
+      },
+      "extraction": null,
+      "inference_calls": [
+        {
+          "stage": "selection",
+          "cold": false,
+          "wall_ms": 906,
+          "timing": {
+            "elapsed_ms": 906,
+            "load_ns": 390125,
+            "prompt_ns": 701870000,
+            "generation_ns": 197257000,
+            "generated_tokens": 7
+          },
+          "error": null
+        },
+        {
+          "stage": "phrasing",
+          "cold": false,
+          "wall_ms": 1307,
+          "timing": {
+            "elapsed_ms": 1307,
+            "load_ns": 671625,
+            "prompt_ns": 671618000,
+            "generation_ns": 626337000,
+            "generated_tokens": 24
+          },
+          "error": null
+        }
+      ],
+      "module_invocations": [
+        [
+          "system.info",
+          {}
+        ]
+      ],
+      "call_counts": {
+        "system.info": 1
+      },
+      "module_results": [
+        [
+          "system.info",
+          {
+            "outcome": "success",
+            "fallback": "Operating system: Darwin; OS version: 26.5.2; architecture: arm64.",
+            "factual_text": "Operating system: Darwin; OS version: 26.5.2; architecture: arm64.",
+            "data": {
+              "os_name": "Darwin",
+              "os_version": "26.5.2",
+              "architecture": "arm64"
+            },
+            "sources": []
+          }
+        ]
+      ],
+      "checks": {
+        "capability": true,
+        "calls": true,
+        "arguments": true,
+        "outcome": true,
+        "resolved_path": true,
+        "inference_stages": true
+      },
+      "passed": true,
+      "reply": {
+        "text": "Operating system: Darwin; OS version: 26.5.2; architecture: arm64.",
+        "sources": [],
+        "fallback_used": true,
+        "phrase_status": {
+          "status": "rejected",
+          "reason": "ungrounded"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 906,
+          "load_ns": 390125,
+          "prompt_ns": 701870000,
+          "generation_ns": 197257000,
+          "generated_tokens": 7
+        },
+        "selection_timing": {
+          "elapsed_ms": 906,
+          "load_ns": 390125,
+          "prompt_ns": 701870000,
+          "generation_ns": 197257000,
+          "generated_tokens": 7
+        },
+        "extraction_timing": null,
+        "phrase_timing": {
+          "elapsed_ms": 1307,
+          "load_ns": 671625,
+          "prompt_ns": 671618000,
+          "generation_ns": 626337000,
+          "generated_tokens": 24
+        },
+        "elapsed_ms": 2214
+      },
+      "error": null,
+      "tavily_calls": 0
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "butler",
+      "case": "uptime",
+      "suite": "regression",
+      "request": "What is this computer's system uptime?",
+      "expected_capability": "system.uptime",
+      "expected_module_arguments": {},
+      "expected_outcome": "success",
+      "expected_resolved_path": null,
+      "selected_route": {
+        "capability": "system.uptime",
+        "arguments": {}
+      },
+      "selection": {
+        "capability": "system.uptime"
+      },
+      "extraction": null,
+      "inference_calls": [
+        {
+          "stage": "selection",
+          "cold": false,
+          "wall_ms": 933,
+          "timing": {
+            "elapsed_ms": 933,
+            "load_ns": 452166,
+            "prompt_ns": 696150000,
+            "generation_ns": 228461000,
+            "generated_tokens": 8
+          },
+          "error": null
+        },
+        {
+          "stage": "phrasing",
+          "cold": false,
+          "wall_ms": 1438,
+          "timing": {
+            "elapsed_ms": 1438,
+            "load_ns": 700334,
+            "prompt_ns": 704979000,
+            "generation_ns": 724610000,
+            "generated_tokens": 28
+          },
+          "error": null
+        }
+      ],
+      "module_invocations": [
+        [
+          "system.uptime",
+          {}
+        ]
+      ],
+      "call_counts": {
+        "system.uptime": 1
+      },
+      "module_results": [
+        [
+          "system.uptime",
+          {
+            "outcome": "success",
+            "fallback": "System uptime is 89 days, 8 hours, 24 minutes and 56 seconds.",
+            "factual_text": "System uptime is 89 days, 8 hours, 24 minutes and 56 seconds.",
+            "data": {
+              "uptime_seconds": 7719896,
+              "duration": "89 days, 8 hours, 24 minutes and 56 seconds"
+            },
+            "sources": []
+          }
+        ]
+      ],
+      "checks": {
+        "capability": true,
+        "calls": true,
+        "arguments": true,
+        "outcome": true,
+        "resolved_path": true,
+        "inference_stages": true
+      },
+      "passed": true,
+      "reply": {
+        "text": "The system uptime is 89 days, 8 hours, 24 minutes and 56 seconds, sir.",
+        "sources": [],
+        "fallback_used": false,
+        "phrase_status": {
+          "status": "accepted"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 933,
+          "load_ns": 452166,
+          "prompt_ns": 696150000,
+          "generation_ns": 228461000,
+          "generated_tokens": 8
+        },
+        "selection_timing": {
+          "elapsed_ms": 933,
+          "load_ns": 452166,
+          "prompt_ns": 696150000,
+          "generation_ns": 228461000,
+          "generated_tokens": 8
+        },
+        "extraction_timing": null,
+        "phrase_timing": {
+          "elapsed_ms": 1438,
+          "load_ns": 700334,
+          "prompt_ns": 704979000,
+          "generation_ns": 724610000,
+          "generated_tokens": 28
+        },
+        "elapsed_ms": 2372
+      },
+      "error": null,
+      "tavily_calls": 0
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "butler",
+      "case": "web",
+      "suite": "regression",
+      "request": "Search the web for the weather in Amsterdam today.",
+      "expected_capability": "web.search",
+      "expected_module_arguments": null,
+      "expected_outcome": "success",
+      "expected_resolved_path": null,
+      "selected_route": {
+        "capability": "web.search",
+        "arguments": {
+          "query": "weather in Amsterdam today"
+        }
+      },
+      "selection": {
+        "capability": "web.search"
+      },
+      "extraction": {
+        "query": "weather in Amsterdam today"
+      },
+      "inference_calls": [
+        {
+          "stage": "selection",
+          "cold": false,
+          "wall_ms": 887,
+          "timing": {
+            "elapsed_ms": 887,
+            "load_ns": 373000,
+            "prompt_ns": 695378000,
+            "generation_ns": 183614000,
+            "generated_tokens": 7
+          },
+          "error": null
+        },
+        {
+          "stage": "extraction",
+          "cold": false,
+          "wall_ms": 753,
+          "timing": {
+            "elapsed_ms": 753,
+            "load_ns": 685292,
+            "prompt_ns": 517942000,
+            "generation_ns": 226376000,
+            "generated_tokens": 9
+          },
+          "error": null
+        },
+        {
+          "stage": "phrasing",
+          "cold": false,
+          "wall_ms": 872,
+          "timing": {
+            "elapsed_ms": 872,
+            "load_ns": 686417,
+            "prompt_ns": 537122000,
+            "generation_ns": 327381000,
+            "generated_tokens": 13
+          },
+          "error": null
+        }
+      ],
+      "module_invocations": [
+        [
+          "web.search",
+          {
+            "query": "weather in Amsterdam today"
+          }
+        ]
+      ],
+      "call_counts": {
+        "web.search": 1
+      },
+      "module_results": [
+        [
+          "web.search",
+          {
+            "outcome": "success",
+            "fallback": "This is a fixed web stub; no network search was performed.",
+            "data": null,
+            "sources": []
+          }
+        ]
+      ],
+      "checks": {
+        "capability": true,
+        "calls": true,
+        "arguments": true,
+        "outcome": true,
+        "resolved_path": true,
+        "inference_stages": true
+      },
+      "passed": true,
+      "reply": {
+        "text": "No web search was performed, sir.",
+        "sources": [],
+        "fallback_used": false,
+        "phrase_status": {
+          "status": "accepted"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 1640,
+          "load_ns": 1058292,
+          "prompt_ns": 1213320000,
+          "generation_ns": 409990000,
+          "generated_tokens": 16
+        },
+        "selection_timing": {
+          "elapsed_ms": 887,
+          "load_ns": 373000,
+          "prompt_ns": 695378000,
+          "generation_ns": 183614000,
+          "generated_tokens": 7
+        },
+        "extraction_timing": {
+          "elapsed_ms": 753,
+          "load_ns": 685292,
+          "prompt_ns": 517942000,
+          "generation_ns": 226376000,
+          "generated_tokens": 9
+        },
+        "phrase_timing": {
+          "elapsed_ms": 872,
+          "load_ns": 686417,
+          "prompt_ns": 537122000,
+          "generation_ns": 327381000,
+          "generated_tokens": 13
+        },
+        "elapsed_ms": 2514
+      },
+      "error": null,
+      "tavily_calls": 0
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "butler",
+      "case": "unsupported",
+      "suite": "regression",
+      "request": "Delete all files in this computer's home directory.",
+      "expected_capability": null,
+      "expected_module_arguments": null,
+      "expected_outcome": null,
+      "expected_resolved_path": null,
+      "selected_route": {
+        "capability": null,
+        "arguments": {}
+      },
+      "selection": {
+        "capability": null
+      },
+      "extraction": null,
+      "inference_calls": [
+        {
+          "stage": "selection",
+          "cold": false,
+          "wall_ms": 843,
+          "timing": {
+            "elapsed_ms": 843,
+            "load_ns": 404542,
+            "prompt_ns": 696679000,
+            "generation_ns": 138818000,
+            "generated_tokens": 6
+          },
+          "error": null
+        }
+      ],
+      "module_invocations": [],
+      "call_counts": {},
+      "module_results": [],
+      "checks": {
+        "capability": true,
+        "calls": true,
+        "arguments": true,
+        "outcome": true,
+        "resolved_path": true,
+        "inference_stages": true
+      },
+      "passed": true,
+      "reply": null,
+      "error": "That request needs information or a capability I don't have; please give me a specific lookup.",
+      "tavily_calls": 0
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "butler",
+      "case": "unquoted-root",
+      "suite": "holdout",
+      "request": "Check disk space for the path /",
+      "expected_capability": "system.disk_space",
+      "expected_module_arguments": {
+        "path": "/"
+      },
+      "expected_outcome": "success",
+      "expected_resolved_path": "/",
+      "selected_route": {
+        "capability": "system.disk_space",
+        "arguments": {
+          "path": "/"
+        }
+      },
+      "selection": {
+        "capability": "system.disk_space"
+      },
+      "extraction": {
+        "path": "/"
+      },
+      "inference_calls": [
+        {
+          "stage": "selection",
+          "cold": true,
+          "wall_ms": 942,
+          "timing": {
+            "elapsed_ms": 942,
+            "load_ns": 422500,
+            "prompt_ns": 709078000,
+            "generation_ns": 226904000,
+            "generated_tokens": 8
+          },
+          "error": null
+        },
+        {
+          "stage": "extraction",
+          "cold": false,
+          "wall_ms": 729,
+          "timing": {
+            "elapsed_ms": 729,
+            "load_ns": 680833,
+            "prompt_ns": 595324000,
+            "generation_ns": 116565000,
+            "generated_tokens": 5
+          },
+          "error": null
+        },
+        {
+          "stage": "phrasing",
+          "cold": false,
+          "wall_ms": 2194,
+          "timing": {
+            "elapsed_ms": 2194,
+            "load_ns": 745292,
+            "prompt_ns": 915434000,
+            "generation_ns": 1269698000,
+            "generated_tokens": 48
+          },
+          "error": null
+        }
+      ],
+      "module_invocations": [
+        [
+          "system.disk_space",
+          {
+            "path": "/"
+          }
+        ]
+      ],
+      "call_counts": {
+        "system.disk_space": 1
+      },
+      "module_results": [
+        [
+          "system.disk_space",
+          {
+            "outcome": "success",
+            "fallback": "The filesystem containing \"/\" has 750.93 GiB available to the user, 175.42 GiB used and 926.35 GiB total.",
+            "factual_text": "The filesystem containing \"/\" has 750.93 GiB available to the user, 175.42 GiB used and 926.35 GiB total.",
+            "data": {
+              "path": "/",
+              "total_bytes": 994662584320,
+              "free_bytes": 806303260672,
+              "available_bytes": 806303260672,
+              "used_bytes": 188359323648,
+              "reserved_bytes": 0
+            },
+            "sources": []
+          }
+        ]
+      ],
+      "checks": {
+        "capability": true,
+        "calls": true,
+        "arguments": true,
+        "outcome": true,
+        "resolved_path": true,
+        "inference_stages": true
+      },
+      "passed": true,
+      "reply": {
+        "text": "The filesystem containing \"/\" has 750.93 GiB available to the user, 175.42 GiB used and 926.35 GiB total, sir.",
+        "sources": [],
+        "fallback_used": false,
+        "phrase_status": {
+          "status": "accepted"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 1671,
+          "load_ns": 1103333,
+          "prompt_ns": 1304402000,
+          "generation_ns": 343469000,
+          "generated_tokens": 13
+        },
+        "selection_timing": {
+          "elapsed_ms": 942,
+          "load_ns": 422500,
+          "prompt_ns": 709078000,
+          "generation_ns": 226904000,
+          "generated_tokens": 8
+        },
+        "extraction_timing": {
+          "elapsed_ms": 729,
+          "load_ns": 680833,
+          "prompt_ns": 595324000,
+          "generation_ns": 116565000,
+          "generated_tokens": 5
+        },
+        "phrase_timing": {
+          "elapsed_ms": 2194,
+          "load_ns": 745292,
+          "prompt_ns": 915434000,
+          "generation_ns": 1269698000,
+          "generated_tokens": 48
+        },
+        "elapsed_ms": 3867
+      },
+      "error": null,
+      "tavily_calls": 0
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "butler",
+      "case": "unquoted-existing",
+      "suite": "holdout",
+      "request": "Check disk space for the path /var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/existing",
+      "expected_capability": "system.disk_space",
+      "expected_module_arguments": {
+        "path": "/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/existing"
+      },
+      "expected_outcome": "success",
+      "expected_resolved_path": "/private/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/existing",
+      "selected_route": {
+        "capability": "system.disk_space",
+        "arguments": {
+          "path": "/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/existing"
+        }
+      },
+      "selection": {
+        "capability": "system.disk_space"
+      },
+      "extraction": {
+        "path": "/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/existing"
+      },
+      "inference_calls": [
+        {
+          "stage": "selection",
+          "cold": false,
+          "wall_ms": 1067,
+          "timing": {
+            "elapsed_ms": 1067,
+            "load_ns": 795125,
+            "prompt_ns": 835184000,
+            "generation_ns": 222686000,
+            "generated_tokens": 8
+          },
+          "error": null
+        },
+        {
+          "stage": "extraction",
+          "cold": false,
+          "wall_ms": 2489,
+          "timing": {
+            "elapsed_ms": 2489,
+            "load_ns": 762542,
+            "prompt_ns": 742686000,
+            "generation_ns": 1732878000,
+            "generated_tokens": 65
+          },
+          "error": null
+        },
+        {
+          "stage": "phrasing",
+          "cold": false,
+          "wall_ms": 2665,
+          "timing": {
+            "elapsed_ms": 2665,
+            "load_ns": 605166,
+            "prompt_ns": 1541519000,
+            "generation_ns": 1114746000,
+            "generated_tokens": 42
+          },
+          "error": null
+        }
+      ],
+      "module_invocations": [
+        [
+          "system.disk_space",
+          {
+            "path": "/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/existing"
+          }
+        ]
+      ],
+      "call_counts": {
+        "system.disk_space": 1
+      },
+      "module_results": [
+        [
+          "system.disk_space",
+          {
+            "outcome": "success",
+            "fallback": "The filesystem containing \"/private/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/existing\" has 750.93 GiB available to the user, 175.42 GiB used and 926.35 GiB total.",
+            "factual_text": "The filesystem containing \"/private/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/existing\" has 750.93 GiB available to the user, 175.42 GiB used and 926.35 GiB total.",
+            "data": {
+              "path": "/private/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/existing",
+              "total_bytes": 994662584320,
+              "free_bytes": 806303109120,
+              "available_bytes": 806303109120,
+              "used_bytes": 188359475200,
+              "reserved_bytes": 0
+            },
+            "sources": []
+          }
+        ]
+      ],
+      "checks": {
+        "capability": true,
+        "calls": true,
+        "arguments": true,
+        "outcome": true,
+        "resolved_path": true,
+        "inference_stages": true
+      },
+      "passed": true,
+      "reply": {
+        "text": "The path has 750.93 GiB available, 175.42 GiB used, and 926.35 GiB total, sir.",
+        "sources": [],
+        "fallback_used": false,
+        "phrase_status": {
+          "status": "accepted"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 3556,
+          "load_ns": 1557667,
+          "prompt_ns": 1577870000,
+          "generation_ns": 1955564000,
+          "generated_tokens": 73
+        },
+        "selection_timing": {
+          "elapsed_ms": 1067,
+          "load_ns": 795125,
+          "prompt_ns": 835184000,
+          "generation_ns": 222686000,
+          "generated_tokens": 8
+        },
+        "extraction_timing": {
+          "elapsed_ms": 2489,
+          "load_ns": 762542,
+          "prompt_ns": 742686000,
+          "generation_ns": 1732878000,
+          "generated_tokens": 65
+        },
+        "phrase_timing": {
+          "elapsed_ms": 2665,
+          "load_ns": 605166,
+          "prompt_ns": 1541519000,
+          "generation_ns": 1114746000,
+          "generated_tokens": 42
+        },
+        "elapsed_ms": 6224
+      },
+      "error": null,
+      "tavily_calls": 0
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "butler",
+      "case": "unsupported-open",
+      "suite": "holdout",
+      "request": "Open my Downloads folder.",
+      "expected_capability": null,
+      "expected_module_arguments": null,
+      "expected_outcome": null,
+      "expected_resolved_path": null,
+      "selected_route": {
+        "capability": null,
+        "arguments": {}
+      },
+      "selection": {
+        "capability": null
+      },
+      "extraction": null,
+      "inference_calls": [
+        {
+          "stage": "selection",
+          "cold": false,
+          "wall_ms": 869,
+          "timing": {
+            "elapsed_ms": 869,
+            "load_ns": 458958,
+            "prompt_ns": 697892000,
+            "generation_ns": 153549000,
+            "generated_tokens": 6
+          },
+          "error": null
+        }
+      ],
+      "module_invocations": [],
+      "call_counts": {},
+      "module_results": [],
+      "checks": {
+        "capability": true,
+        "calls": true,
+        "arguments": true,
+        "outcome": true,
+        "resolved_path": true,
+        "inference_stages": true
+      },
+      "passed": true,
+      "reply": null,
+      "error": "That request needs information or a capability I don't have; please give me a specific lookup.",
+      "tavily_calls": 0
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "butler",
+      "case": "public-fact",
+      "suite": "holdout",
+      "request": "What is Rust's package manager called?",
+      "expected_capability": "web.search",
+      "expected_module_arguments": null,
+      "expected_outcome": "success",
+      "expected_resolved_path": null,
+      "selected_route": {
+        "capability": "web.search",
+        "arguments": {
+          "query": "What is Rust's package manager called?"
+        }
+      },
+      "selection": {
+        "capability": "web.search"
+      },
+      "extraction": {
+        "query": "What is Rust's package manager called?"
+      },
+      "inference_calls": [
+        {
+          "stage": "selection",
+          "cold": true,
+          "wall_ms": 890,
+          "timing": {
+            "elapsed_ms": 890,
+            "load_ns": 654708,
+            "prompt_ns": 698596000,
+            "generation_ns": 184242000,
+            "generated_tokens": 7
+          },
+          "error": null
+        },
+        {
+          "stage": "extraction",
+          "cold": false,
+          "wall_ms": 870,
+          "timing": {
+            "elapsed_ms": 870,
+            "load_ns": 694250,
+            "prompt_ns": 526467000,
+            "generation_ns": 328933000,
+            "generated_tokens": 13
+          },
+          "error": null
+        },
+        {
+          "stage": "phrasing",
+          "cold": false,
+          "wall_ms": 948,
+          "timing": {
+            "elapsed_ms": 948,
+            "load_ns": 700375,
+            "prompt_ns": 526775000,
+            "generation_ns": 414100000,
+            "generated_tokens": 16
+          },
+          "error": null
+        }
+      ],
+      "module_invocations": [
+        [
+          "web.search",
+          {
+            "query": "What is Rust's package manager called?"
+          }
+        ]
+      ],
+      "call_counts": {
+        "web.search": 1
+      },
+      "module_results": [
+        [
+          "web.search",
+          {
+            "outcome": "success",
+            "fallback": "This is a fixed web stub; no network search was performed.",
+            "data": null,
+            "sources": []
+          }
+        ]
+      ],
+      "checks": {
+        "capability": true,
+        "calls": true,
+        "arguments": true,
+        "outcome": true,
+        "resolved_path": true,
+        "inference_stages": true
+      },
+      "passed": true,
+      "reply": {
+        "text": "This is a fixed web stub; no network search was performed.",
+        "sources": [],
+        "fallback_used": true,
+        "phrase_status": {
+          "status": "rejected",
+          "reason": "negation_changed"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 1760,
+          "load_ns": 1348958,
+          "prompt_ns": 1225063000,
+          "generation_ns": 513175000,
+          "generated_tokens": 20
+        },
+        "selection_timing": {
+          "elapsed_ms": 890,
+          "load_ns": 654708,
+          "prompt_ns": 698596000,
+          "generation_ns": 184242000,
+          "generated_tokens": 7
+        },
+        "extraction_timing": {
+          "elapsed_ms": 870,
+          "load_ns": 694250,
+          "prompt_ns": 526467000,
+          "generation_ns": 328933000,
+          "generated_tokens": 13
+        },
+        "phrase_timing": {
+          "elapsed_ms": 948,
+          "load_ns": 700375,
+          "prompt_ns": 526775000,
+          "generation_ns": 414100000,
+          "generated_tokens": 16
+        },
+        "elapsed_ms": 2709
+      },
+      "error": null,
+      "tavily_calls": 0
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "cat",
+      "case": "omitted",
+      "suite": "regression",
+      "request": "How much disk space is available on this computer?",
+      "expected_capability": "system.disk_space",
+      "expected_module_arguments": {},
+      "expected_outcome": "success",
+      "expected_resolved_path": "/Users/jaspersmitz/Developer/personal/HEART",
+      "selected_route": {
+        "capability": "system.disk_space",
+        "arguments": {
+          "path": "null"
+        }
+      },
+      "selection": {
+        "capability": "system.disk_space"
+      },
+      "extraction": {
+        "path": "null"
+      },
+      "inference_calls": [
+        {
+          "stage": "selection",
+          "cold": false,
+          "wall_ms": 937,
+          "timing": {
+            "elapsed_ms": 937,
+            "load_ns": 507334,
+            "prompt_ns": 695287000,
+            "generation_ns": 224784000,
+            "generated_tokens": 8
+          },
+          "error": null
+        },
+        {
+          "stage": "extraction",
+          "cold": false,
+          "wall_ms": 745,
+          "timing": {
+            "elapsed_ms": 745,
+            "load_ns": 591500,
+            "prompt_ns": 599656000,
+            "generation_ns": 137683000,
+            "generated_tokens": 6
+          },
+          "error": null
+        }
+      ],
+      "module_invocations": [
+        [
+          "system.disk_space",
+          {
+            "path": "null"
+          }
+        ]
+      ],
+      "call_counts": {
+        "system.disk_space": 1
+      },
+      "module_results": [
+        [
+          "system.disk_space",
+          {
+            "outcome": "error",
+            "fallback": "The path could not be resolved; use an existing accessible file or directory.",
+            "data": null,
+            "sources": []
+          }
+        ]
+      ],
+      "checks": {
+        "capability": true,
+        "calls": true,
+        "arguments": false,
+        "outcome": false,
+        "resolved_path": false,
+        "inference_stages": false
+      },
+      "passed": false,
+      "reply": {
+        "text": "The path could not be resolved; use an existing accessible file or directory.",
+        "sources": [],
+        "fallback_used": true,
+        "phrase_status": {
+          "status": "not_attempted"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 1682,
+          "load_ns": 1098834,
+          "prompt_ns": 1294943000,
+          "generation_ns": 362467000,
+          "generated_tokens": 14
+        },
+        "selection_timing": {
+          "elapsed_ms": 937,
+          "load_ns": 507334,
+          "prompt_ns": 695287000,
+          "generation_ns": 224784000,
+          "generated_tokens": 8
+        },
+        "extraction_timing": {
+          "elapsed_ms": 745,
+          "load_ns": 591500,
+          "prompt_ns": 599656000,
+          "generation_ns": 137683000,
+          "generated_tokens": 6
+        },
+        "phrase_timing": null,
+        "elapsed_ms": 1684
+      },
+      "error": null,
+      "tavily_calls": 0
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "cat",
+      "case": "root",
+      "suite": "regression",
+      "request": "How much disk space is available on the filesystem containing \"/\"?",
+      "expected_capability": "system.disk_space",
+      "expected_module_arguments": {
+        "path": "/"
+      },
+      "expected_outcome": "success",
+      "expected_resolved_path": "/",
+      "selected_route": {
+        "capability": "system.disk_space",
+        "arguments": {
+          "path": "/"
+        }
+      },
+      "selection": {
+        "capability": "system.disk_space"
+      },
+      "extraction": {
+        "path": "/"
+      },
+      "inference_calls": [
+        {
+          "stage": "selection",
+          "cold": false,
+          "wall_ms": 931,
+          "timing": {
+            "elapsed_ms": 931,
+            "load_ns": 401000,
+            "prompt_ns": 696445000,
+            "generation_ns": 226130000,
+            "generated_tokens": 8
+          },
+          "error": null
+        },
+        {
+          "stage": "extraction",
+          "cold": false,
+          "wall_ms": 720,
+          "timing": {
+            "elapsed_ms": 720,
+            "load_ns": 723875,
+            "prompt_ns": 599704000,
+            "generation_ns": 111869000,
+            "generated_tokens": 5
+          },
+          "error": null
+        },
+        {
+          "stage": "phrasing",
+          "cold": false,
+          "wall_ms": 1586,
+          "timing": {
+            "elapsed_ms": 1586,
+            "load_ns": 730042,
+            "prompt_ns": 900489000,
+            "generation_ns": 676211000,
+            "generated_tokens": 26
+          },
+          "error": null
+        }
+      ],
+      "module_invocations": [
+        [
+          "system.disk_space",
+          {
+            "path": "/"
+          }
+        ]
+      ],
+      "call_counts": {
+        "system.disk_space": 1
+      },
+      "module_results": [
+        [
+          "system.disk_space",
+          {
+            "outcome": "success",
+            "fallback": "The filesystem containing \"/\" has 750.93 GiB available to the user, 175.42 GiB used and 926.35 GiB total.",
+            "factual_text": "The filesystem containing \"/\" has 750.93 GiB available to the user, 175.42 GiB used and 926.35 GiB total.",
+            "data": {
+              "path": "/",
+              "total_bytes": 994662584320,
+              "free_bytes": 806301970432,
+              "available_bytes": 806301970432,
+              "used_bytes": 188360613888,
+              "reserved_bytes": 0
+            },
+            "sources": []
+          }
+        ]
+      ],
+      "checks": {
+        "capability": true,
+        "calls": true,
+        "arguments": true,
+        "outcome": true,
+        "resolved_path": true,
+        "inference_stages": true
+      },
+      "passed": true,
+      "reply": {
+        "text": "The filesystem containing \"/\" has 750.93 GiB available to the user.",
+        "sources": [],
+        "fallback_used": false,
+        "phrase_status": {
+          "status": "accepted"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 1651,
+          "load_ns": 1124875,
+          "prompt_ns": 1296149000,
+          "generation_ns": 337999000,
+          "generated_tokens": 13
+        },
+        "selection_timing": {
+          "elapsed_ms": 931,
+          "load_ns": 401000,
+          "prompt_ns": 696445000,
+          "generation_ns": 226130000,
+          "generated_tokens": 8
+        },
+        "extraction_timing": {
+          "elapsed_ms": 720,
+          "load_ns": 723875,
+          "prompt_ns": 599704000,
+          "generation_ns": 111869000,
+          "generated_tokens": 5
+        },
+        "phrase_timing": {
+          "elapsed_ms": 1586,
+          "load_ns": 730042,
+          "prompt_ns": 900489000,
+          "generation_ns": 676211000,
+          "generated_tokens": 26
+        },
+        "elapsed_ms": 3238
+      },
+      "error": null,
+      "tavily_calls": 0
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "cat",
+      "case": "absolute",
+      "suite": "regression",
+      "request": "How much disk space is available on the filesystem containing \"/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/existing\"?",
+      "expected_capability": "system.disk_space",
+      "expected_module_arguments": {
+        "path": "/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/existing"
+      },
+      "expected_outcome": "success",
+      "expected_resolved_path": "/private/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/existing",
+      "selected_route": {
+        "capability": "system.disk_space",
+        "arguments": {
+          "path": "/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/existing"
+        }
+      },
+      "selection": {
+        "capability": "system.disk_space"
+      },
+      "extraction": {
+        "path": "/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/existing"
+      },
+      "inference_calls": [
+        {
+          "stage": "selection",
+          "cold": false,
+          "wall_ms": 1098,
+          "timing": {
+            "elapsed_ms": 1098,
+            "load_ns": 451208,
+            "prompt_ns": 847389000,
+            "generation_ns": 231296000,
+            "generated_tokens": 8
+          },
+          "error": null
+        },
+        {
+          "stage": "extraction",
+          "cold": false,
+          "wall_ms": 2483,
+          "timing": {
+            "elapsed_ms": 2483,
+            "load_ns": 915209,
+            "prompt_ns": 740703000,
+            "generation_ns": 1732548000,
+            "generated_tokens": 65
+          },
+          "error": null
+        },
+        {
+          "stage": "phrasing",
+          "cold": false,
+          "wall_ms": 2827,
+          "timing": {
+            "elapsed_ms": 2827,
+            "load_ns": 717042,
+            "prompt_ns": 1552276000,
+            "generation_ns": 1265354000,
+            "generated_tokens": 48
+          },
+          "error": null
+        }
+      ],
+      "module_invocations": [
+        [
+          "system.disk_space",
+          {
+            "path": "/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/existing"
+          }
+        ]
+      ],
+      "call_counts": {
+        "system.disk_space": 1
+      },
+      "module_results": [
+        [
+          "system.disk_space",
+          {
+            "outcome": "success",
+            "fallback": "The filesystem containing \"/private/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/existing\" has 750.93 GiB available to the user, 175.42 GiB used and 926.35 GiB total.",
+            "factual_text": "The filesystem containing \"/private/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/existing\" has 750.93 GiB available to the user, 175.42 GiB used and 926.35 GiB total.",
+            "data": {
+              "path": "/private/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/existing",
+              "total_bytes": 994662584320,
+              "free_bytes": 806301970432,
+              "available_bytes": 806301970432,
+              "used_bytes": 188360613888,
+              "reserved_bytes": 0
+            },
+            "sources": []
+          }
+        ]
+      ],
+      "checks": {
+        "capability": true,
+        "calls": true,
+        "arguments": true,
+        "outcome": true,
+        "resolved_path": true,
+        "inference_stages": true
+      },
+      "passed": true,
+      "reply": {
+        "text": "The filesystem containing the specified path has 750.93 GiB available to the user, 175.42 GiB used and 926.35 GiB total.",
+        "sources": [],
+        "fallback_used": false,
+        "phrase_status": {
+          "status": "accepted"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 3581,
+          "load_ns": 1366417,
+          "prompt_ns": 1588092000,
+          "generation_ns": 1963844000,
+          "generated_tokens": 73
+        },
+        "selection_timing": {
+          "elapsed_ms": 1098,
+          "load_ns": 451208,
+          "prompt_ns": 847389000,
+          "generation_ns": 231296000,
+          "generated_tokens": 8
+        },
+        "extraction_timing": {
+          "elapsed_ms": 2483,
+          "load_ns": 915209,
+          "prompt_ns": 740703000,
+          "generation_ns": 1732548000,
+          "generated_tokens": 65
+        },
+        "phrase_timing": {
+          "elapsed_ms": 2827,
+          "load_ns": 717042,
+          "prompt_ns": 1552276000,
+          "generation_ns": 1265354000,
+          "generated_tokens": 48
+        },
+        "elapsed_ms": 6410
+      },
+      "error": null,
+      "tavily_calls": 0
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "cat",
+      "case": "relative",
+      "suite": "regression",
+      "request": "How much disk space is available on the filesystem containing \".\"?",
+      "expected_capability": "system.disk_space",
+      "expected_module_arguments": {
+        "path": "."
+      },
+      "expected_outcome": "success",
+      "expected_resolved_path": "/Users/jaspersmitz/Developer/personal/HEART",
+      "selected_route": {
+        "capability": "system.disk_space",
+        "arguments": {
+          "path": "."
+        }
+      },
+      "selection": {
+        "capability": "system.disk_space"
+      },
+      "extraction": {
+        "path": "."
+      },
+      "inference_calls": [
+        {
+          "stage": "selection",
+          "cold": false,
+          "wall_ms": 959,
+          "timing": {
+            "elapsed_ms": 959,
+            "load_ns": 568541,
+            "prompt_ns": 697043000,
+            "generation_ns": 229047000,
+            "generated_tokens": 8
+          },
+          "error": null
+        },
+        {
+          "stage": "extraction",
+          "cold": false,
+          "wall_ms": 753,
+          "timing": {
+            "elapsed_ms": 753,
+            "load_ns": 639375,
+            "prompt_ns": 603529000,
+            "generation_ns": 141029000,
+            "generated_tokens": 6
+          },
+          "error": null
+        },
+        {
+          "stage": "phrasing",
+          "cold": false,
+          "wall_ms": 2124,
+          "timing": {
+            "elapsed_ms": 2124,
+            "load_ns": 699542,
+            "prompt_ns": 811131000,
+            "generation_ns": 1303426000,
+            "generated_tokens": 48
+          },
+          "error": null
+        }
+      ],
+      "module_invocations": [
+        [
+          "system.disk_space",
+          {
+            "path": "."
+          }
+        ]
+      ],
+      "call_counts": {
+        "system.disk_space": 1
+      },
+      "module_results": [
+        [
+          "system.disk_space",
+          {
+            "outcome": "success",
+            "fallback": "The filesystem containing \"/Users/jaspersmitz/Developer/personal/HEART\" has 750.93 GiB available to the user, 175.42 GiB used and 926.35 GiB total.",
+            "factual_text": "The filesystem containing \"/Users/jaspersmitz/Developer/personal/HEART\" has 750.93 GiB available to the user, 175.42 GiB used and 926.35 GiB total.",
+            "data": {
+              "path": "/Users/jaspersmitz/Developer/personal/HEART",
+              "total_bytes": 994662584320,
+              "free_bytes": 806302130176,
+              "available_bytes": 806302130176,
+              "used_bytes": 188360454144,
+              "reserved_bytes": 0
+            },
+            "sources": []
+          }
+        ]
+      ],
+      "checks": {
+        "capability": true,
+        "calls": true,
+        "arguments": true,
+        "outcome": true,
+        "resolved_path": true,
+        "inference_stages": true
+      },
+      "passed": true,
+      "reply": {
+        "text": "The filesystem containing \".\" has 750.93 GiB available to the user, 175.42 GiB used and 926.35 GiB total.",
+        "sources": [],
+        "fallback_used": false,
+        "phrase_status": {
+          "status": "accepted"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 1712,
+          "load_ns": 1207916,
+          "prompt_ns": 1300572000,
+          "generation_ns": 370076000,
+          "generated_tokens": 14
+        },
+        "selection_timing": {
+          "elapsed_ms": 959,
+          "load_ns": 568541,
+          "prompt_ns": 697043000,
+          "generation_ns": 229047000,
+          "generated_tokens": 8
+        },
+        "extraction_timing": {
+          "elapsed_ms": 753,
+          "load_ns": 639375,
+          "prompt_ns": 603529000,
+          "generation_ns": 141029000,
+          "generated_tokens": 6
+        },
+        "phrase_timing": {
+          "elapsed_ms": 2124,
+          "load_ns": 699542,
+          "prompt_ns": 811131000,
+          "generation_ns": 1303426000,
+          "generated_tokens": 48
+        },
+        "elapsed_ms": 3839
+      },
+      "error": null,
+      "tavily_calls": 0
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "cat",
+      "case": "spaces",
+      "suite": "regression",
+      "request": "How much disk space is available on the filesystem containing \"/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/with spaces\"?",
+      "expected_capability": "system.disk_space",
+      "expected_module_arguments": {
+        "path": "/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/with spaces"
+      },
+      "expected_outcome": "success",
+      "expected_resolved_path": "/private/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/with spaces",
+      "selected_route": {
+        "capability": "system.disk_space",
+        "arguments": {
+          "path": "/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/with spaces"
+        }
+      },
+      "selection": {
+        "capability": "system.disk_space"
+      },
+      "extraction": {
+        "path": "/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/with spaces"
+      },
+      "inference_calls": [
+        {
+          "stage": "selection",
+          "cold": false,
+          "wall_ms": 1087,
+          "timing": {
+            "elapsed_ms": 1087,
+            "load_ns": 786833,
+            "prompt_ns": 845642000,
+            "generation_ns": 230418000,
+            "generated_tokens": 8
+          },
+          "error": null
+        },
+        {
+          "stage": "extraction",
+          "cold": false,
+          "wall_ms": 2520,
+          "timing": {
+            "elapsed_ms": 2520,
+            "load_ns": 699417,
+            "prompt_ns": 758196000,
+            "generation_ns": 1753007000,
+            "generated_tokens": 66
+          },
+          "error": null
+        },
+        {
+          "stage": "phrasing",
+          "cold": false,
+          "wall_ms": 2599,
+          "timing": {
+            "elapsed_ms": 2599,
+            "load_ns": 811542,
+            "prompt_ns": 1343893000,
+            "generation_ns": 1245614000,
+            "generated_tokens": 47
+          },
+          "error": null
+        }
+      ],
+      "module_invocations": [
+        [
+          "system.disk_space",
+          {
+            "path": "/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/with spaces"
+          }
+        ]
+      ],
+      "call_counts": {
+        "system.disk_space": 1
+      },
+      "module_results": [
+        [
+          "system.disk_space",
+          {
+            "outcome": "success",
+            "fallback": "The filesystem containing \"/private/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/with spaces\" has 750.93 GiB available to the user, 175.42 GiB used and 926.35 GiB total.",
+            "factual_text": "The filesystem containing \"/private/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/with spaces\" has 750.93 GiB available to the user, 175.42 GiB used and 926.35 GiB total.",
+            "data": {
+              "path": "/private/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/with spaces",
+              "total_bytes": 994662584320,
+              "free_bytes": 806302048256,
+              "available_bytes": 806302048256,
+              "used_bytes": 188360536064,
+              "reserved_bytes": 0
+            },
+            "sources": []
+          }
+        ]
+      ],
+      "checks": {
+        "capability": true,
+        "calls": true,
+        "arguments": true,
+        "outcome": true,
+        "resolved_path": true,
+        "inference_stages": true
+      },
+      "passed": true,
+      "reply": {
+        "text": "The filesystem containing that path has 750.93 GiB available to the user, 175.42 GiB used and 926.35 GiB total.",
+        "sources": [],
+        "fallback_used": false,
+        "phrase_status": {
+          "status": "accepted"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 3607,
+          "load_ns": 1486250,
+          "prompt_ns": 1603838000,
+          "generation_ns": 1983425000,
+          "generated_tokens": 74
+        },
+        "selection_timing": {
+          "elapsed_ms": 1087,
+          "load_ns": 786833,
+          "prompt_ns": 845642000,
+          "generation_ns": 230418000,
+          "generated_tokens": 8
+        },
+        "extraction_timing": {
+          "elapsed_ms": 2520,
+          "load_ns": 699417,
+          "prompt_ns": 758196000,
+          "generation_ns": 1753007000,
+          "generated_tokens": 66
+        },
+        "phrase_timing": {
+          "elapsed_ms": 2599,
+          "load_ns": 811542,
+          "prompt_ns": 1343893000,
+          "generation_ns": 1245614000,
+          "generated_tokens": 47
+        },
+        "elapsed_ms": 6207
+      },
+      "error": null,
+      "tavily_calls": 0
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "cat",
+      "case": "nonexistent",
+      "suite": "regression",
+      "request": "How much disk space is available on the filesystem containing \"/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/does-not-exist\"?",
+      "expected_capability": "system.disk_space",
+      "expected_module_arguments": {
+        "path": "/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/does-not-exist"
+      },
+      "expected_outcome": "error",
+      "expected_resolved_path": null,
+      "selected_route": {
+        "capability": "system.disk_space",
+        "arguments": {
+          "path": "/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/does-not-exist"
+        }
+      },
+      "selection": {
+        "capability": "system.disk_space"
+      },
+      "extraction": {
+        "path": "/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/does-not-exist"
+      },
+      "inference_calls": [
+        {
+          "stage": "selection",
+          "cold": false,
+          "wall_ms": 1118,
+          "timing": {
+            "elapsed_ms": 1118,
+            "load_ns": 434958,
+            "prompt_ns": 857236000,
+            "generation_ns": 225781000,
+            "generated_tokens": 8
+          },
+          "error": null
+        },
+        {
+          "stage": "extraction",
+          "cold": false,
+          "wall_ms": 2562,
+          "timing": {
+            "elapsed_ms": 2562,
+            "load_ns": 672417,
+            "prompt_ns": 747327000,
+            "generation_ns": 1805104000,
+            "generated_tokens": 68
+          },
+          "error": null
+        }
+      ],
+      "module_invocations": [
+        [
+          "system.disk_space",
+          {
+            "path": "/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-routing-81576-1792447000527428000/does-not-exist"
+          }
+        ]
+      ],
+      "call_counts": {
+        "system.disk_space": 1
+      },
+      "module_results": [
+        [
+          "system.disk_space",
+          {
+            "outcome": "error",
+            "fallback": "The path could not be resolved; use an existing accessible file or directory.",
+            "data": null,
+            "sources": []
+          }
+        ]
+      ],
+      "checks": {
+        "capability": true,
+        "calls": true,
+        "arguments": true,
+        "outcome": true,
+        "resolved_path": true,
+        "inference_stages": true
+      },
+      "passed": true,
+      "reply": {
+        "text": "The path could not be resolved; use an existing accessible file or directory.",
+        "sources": [],
+        "fallback_used": true,
+        "phrase_status": {
+          "status": "not_attempted"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 3680,
+          "load_ns": 1107375,
+          "prompt_ns": 1604563000,
+          "generation_ns": 2030885000,
+          "generated_tokens": 76
+        },
+        "selection_timing": {
+          "elapsed_ms": 1118,
+          "load_ns": 434958,
+          "prompt_ns": 857236000,
+          "generation_ns": 225781000,
+          "generated_tokens": 8
+        },
+        "extraction_timing": {
+          "elapsed_ms": 2562,
+          "load_ns": 672417,
+          "prompt_ns": 747327000,
+          "generation_ns": 1805104000,
+          "generated_tokens": 68
+        },
+        "phrase_timing": null,
+        "elapsed_ms": 3681
+      },
+      "error": null,
+      "tavily_calls": 0
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "cat",
+      "case": "os",
+      "suite": "regression",
+      "request": "What operating system, version and architecture is this computer running?",
+      "expected_capability": "system.info",
+      "expected_module_arguments": {},
+      "expected_outcome": "success",
+      "expected_resolved_path": null,
+      "selected_route": {
+        "capability": "system.info",
+        "arguments": {}
+      },
+      "selection": {
+        "capability": "system.info"
+      },
+      "extraction": null,
+      "inference_calls": [
+        {
+          "stage": "selection",
+          "cold": false,
+          "wall_ms": 906,
+          "timing": {
+            "elapsed_ms": 906,
+            "load_ns": 372708,
+            "prompt_ns": 695169000,
+            "generation_ns": 198650000,
+            "generated_tokens": 7
+          },
+          "error": null
+        },
+        {
+          "stage": "phrasing",
+          "cold": false,
+          "wall_ms": 1305,
+          "timing": {
+            "elapsed_ms": 1305,
+            "load_ns": 1036500,
+            "prompt_ns": 668751000,
+            "generation_ns": 623606000,
+            "generated_tokens": 24
+          },
+          "error": null
+        }
+      ],
+      "module_invocations": [
+        [
+          "system.info",
+          {}
+        ]
+      ],
+      "call_counts": {
+        "system.info": 1
+      },
+      "module_results": [
+        [
+          "system.info",
+          {
+            "outcome": "success",
+            "fallback": "Operating system: Darwin; OS version: 26.5.2; architecture: arm64.",
+            "factual_text": "Operating system: Darwin; OS version: 26.5.2; architecture: arm64.",
+            "data": {
+              "os_name": "Darwin",
+              "os_version": "26.5.2",
+              "architecture": "arm64"
+            },
+            "sources": []
+          }
+        ]
+      ],
+      "checks": {
+        "capability": true,
+        "calls": true,
+        "arguments": true,
+        "outcome": true,
+        "resolved_path": true,
+        "inference_stages": true
+      },
+      "passed": true,
+      "reply": {
+        "text": "Operating system: Darwin; OS version: 26.5.2; architecture: arm64.",
+        "sources": [],
+        "fallback_used": true,
+        "phrase_status": {
+          "status": "rejected",
+          "reason": "ungrounded"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 906,
+          "load_ns": 372708,
+          "prompt_ns": 695169000,
+          "generation_ns": 198650000,
+          "generated_tokens": 7
+        },
+        "selection_timing": {
+          "elapsed_ms": 906,
+          "load_ns": 372708,
+          "prompt_ns": 695169000,
+          "generation_ns": 198650000,
+          "generated_tokens": 7
+        },
+        "extraction_timing": null,
+        "phrase_timing": {
+          "elapsed_ms": 1305,
+          "load_ns": 1036500,
+          "prompt_ns": 668751000,
+          "generation_ns": 623606000,
+          "generated_tokens": 24
+        },
+        "elapsed_ms": 2212
+      },
+      "error": null,
+      "tavily_calls": 0
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "cat",
+      "case": "uptime",
+      "suite": "regression",
+      "request": "What is this computer's system uptime?",
+      "expected_capability": "system.uptime",
+      "expected_module_arguments": {},
+      "expected_outcome": "success",
+      "expected_resolved_path": null,
+      "selected_route": {
+        "capability": "system.uptime",
+        "arguments": {}
+      },
+      "selection": {
+        "capability": "system.uptime"
+      },
+      "extraction": null,
+      "inference_calls": [
+        {
+          "stage": "selection",
+          "cold": false,
+          "wall_ms": 945,
+          "timing": {
+            "elapsed_ms": 945,
+            "load_ns": 508167,
+            "prompt_ns": 694416000,
+            "generation_ns": 235628000,
+            "generated_tokens": 8
+          },
+          "error": null
+        },
+        {
+          "stage": "phrasing",
+          "cold": false,
+          "wall_ms": 1483,
+          "timing": {
+            "elapsed_ms": 1483,
+            "load_ns": 687125,
+            "prompt_ns": 737965000,
+            "generation_ns": 735219000,
+            "generated_tokens": 28
+          },
+          "error": null
+        }
+      ],
+      "module_invocations": [
+        [
+          "system.uptime",
+          {}
+        ]
+      ],
+      "call_counts": {
+        "system.uptime": 1
+      },
+      "module_results": [
+        [
+          "system.uptime",
+          {
+            "outcome": "success",
+            "fallback": "System uptime is 89 days, 8 hours, 25 minutes and 43 seconds.",
+            "factual_text": "System uptime is 89 days, 8 hours, 25 minutes and 43 seconds.",
+            "data": {
+              "uptime_seconds": 7719943,
+              "duration": "89 days, 8 hours, 25 minutes and 43 seconds"
+            },
+            "sources": []
+          }
+        ]
+      ],
+      "checks": {
+        "capability": true,
+        "calls": true,
+        "arguments": true,
+        "outcome": true,
+        "resolved_path": true,
+        "inference_stages": true
+      },
+      "passed": true,
+      "reply": {
+        "text": "The system uptime is 89 days, 8 hours, 25 minutes and 43 seconds.",
+        "sources": [],
+        "fallback_used": false,
+        "phrase_status": {
+          "status": "accepted"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 945,
+          "load_ns": 508167,
+          "prompt_ns": 694416000,
+          "generation_ns": 235628000,
+          "generated_tokens": 8
+        },
+        "selection_timing": {
+          "elapsed_ms": 945,
+          "load_ns": 508167,
+          "prompt_ns": 694416000,
+          "generation_ns": 235628000,
+          "generated_tokens": 8
+        },
+        "extraction_timing": null,
+        "phrase_timing": {
+          "elapsed_ms": 1483,
+          "load_ns": 687125,
+          "prompt_ns": 737965000,
+          "generation_ns": 735219000,
+          "generated_tokens": 28
+        },
+        "elapsed_ms": 2429
+      },
+      "error": null,
+      "tavily_calls": 0
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "cat",
+      "case": "web",
+      "suite": "regression",
+      "request": "Search the web for the weather in Amsterdam today.",
+      "expected_capability": "web.search",
+      "expected_module_arguments": null,
+      "expected_outcome": "success",
+      "expected_resolved_path": null,
+      "selected_route": {
+        "capability": "web.search",
+        "arguments": {
+          "query": "weather in Amsterdam today"
+        }
+      },
+      "selection": {
+        "capability": "web.search"
+      },
+      "extraction": {
+        "query": "weather in Amsterdam today"
+      },
+      "inference_calls": [
+        {
+          "stage": "selection",
+          "cold": false,
+          "wall_ms": 904,
+          "timing": {
+            "elapsed_ms": 904,
+            "load_ns": 450875,
+            "prompt_ns": 691361000,
+            "generation_ns": 196911000,
+            "generated_tokens": 7
+          },
+          "error": null
+        },
+        {
+          "stage": "extraction",
+          "cold": false,
+          "wall_ms": 744,
+          "timing": {
+            "elapsed_ms": 744,
+            "load_ns": 763208,
+            "prompt_ns": 514501999,
+            "generation_ns": 220475000,
+            "generated_tokens": 9
+          },
+          "error": null
+        },
+        {
+          "stage": "phrasing",
+          "cold": false,
+          "wall_ms": 1188,
+          "timing": {
+            "elapsed_ms": 1188,
+            "load_ns": 615459,
+            "prompt_ns": 612142000,
+            "generation_ns": 566330000,
+            "generated_tokens": 22
+          },
+          "error": null
+        }
+      ],
+      "module_invocations": [
+        [
+          "web.search",
+          {
+            "query": "weather in Amsterdam today"
+          }
+        ]
+      ],
+      "call_counts": {
+        "web.search": 1
+      },
+      "module_results": [
+        [
+          "web.search",
+          {
+            "outcome": "success",
+            "fallback": "This is a fixed web stub; no network search was performed.",
+            "data": null,
+            "sources": []
+          }
+        ]
+      ],
+      "checks": {
+        "capability": true,
+        "calls": true,
+        "arguments": true,
+        "outcome": true,
+        "resolved_path": true,
+        "inference_stages": true
+      },
+      "passed": true,
+      "reply": {
+        "text": "This is a fixed web stub; no network search was performed.",
+        "sources": [],
+        "fallback_used": true,
+        "phrase_status": {
+          "status": "rejected",
+          "reason": "ungrounded"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 1648,
+          "load_ns": 1214083,
+          "prompt_ns": 1205862999,
+          "generation_ns": 417386000,
+          "generated_tokens": 16
+        },
+        "selection_timing": {
+          "elapsed_ms": 904,
+          "load_ns": 450875,
+          "prompt_ns": 691361000,
+          "generation_ns": 196911000,
+          "generated_tokens": 7
+        },
+        "extraction_timing": {
+          "elapsed_ms": 744,
+          "load_ns": 763208,
+          "prompt_ns": 514501999,
+          "generation_ns": 220475000,
+          "generated_tokens": 9
+        },
+        "phrase_timing": {
+          "elapsed_ms": 1188,
+          "load_ns": 615459,
+          "prompt_ns": 612142000,
+          "generation_ns": 566330000,
+          "generated_tokens": 22
+        },
+        "elapsed_ms": 2838
+      },
+      "error": null,
+      "tavily_calls": 0
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "cat",
+      "case": "unsupported",
+      "suite": "regression",
+      "request": "Delete all files in this computer's home directory.",
+      "expected_capability": null,
+      "expected_module_arguments": null,
+      "expected_outcome": null,
+      "expected_resolved_path": null,
+      "selected_route": {
+        "capability": null,
+        "arguments": {}
+      },
+      "selection": {
+        "capability": null
+      },
+      "extraction": null,
+      "inference_calls": [
+        {
+          "stage": "selection",
+          "cold": false,
+          "wall_ms": 844,
+          "timing": {
+            "elapsed_ms": 844,
+            "load_ns": 743167,
+            "prompt_ns": 696062000,
+            "generation_ns": 139538000,
+            "generated_tokens": 6
+          },
+          "error": null
+        }
+      ],
+      "module_invocations": [],
+      "call_counts": {},
+      "module_results": [],
+      "checks": {
+        "capability": true,
+        "calls": true,
+        "arguments": true,
+        "outcome": true,
+        "resolved_path": true,
+        "inference_stages": true
+      },
+      "passed": true,
+      "reply": null,
+      "error": "That request needs information or a capability I don't have; please give me a specific lookup.",
+      "tavily_calls": 0
+    }
+  ],
+  "latency_comparison": {
+    "baseline": "optional-argument-acceptance-4b-round2.json",
+    "method": "Exclude first request of each run; pair regression cases passing both runs with Reply timings. Old wrong routes and no-Reply unsupported cases excluded. Runs were not interleaved or randomized; web is a local stub.",
+    "pairs": [
+      {
+        "profile": "butler",
+        "case": "root",
+        "previous_route_ms": 1610,
+        "current_route_ms": 1683,
+        "selection_ms": 941,
+        "extraction_ms": 742,
+        "route_increase_ms": 73,
+        "previous_total_ms": 3224,
+        "current_total_ms": 3236
+      },
+      {
+        "profile": "butler",
+        "case": "absolute",
+        "previous_route_ms": 3386,
+        "current_route_ms": 3453,
+        "selection_ms": 1031,
+        "extraction_ms": 2422,
+        "route_increase_ms": 67,
+        "previous_total_ms": 6216,
+        "current_total_ms": 6217
+      },
+      {
+        "profile": "butler",
+        "case": "relative",
+        "previous_route_ms": 1495,
+        "current_route_ms": 1688,
+        "selection_ms": 947,
+        "extraction_ms": 741,
+        "route_increase_ms": 193,
+        "previous_total_ms": 3737,
+        "current_total_ms": 3924
+      },
+      {
+        "profile": "butler",
+        "case": "spaces",
+        "previous_route_ms": 3242,
+        "current_route_ms": 3607,
+        "selection_ms": 1085,
+        "extraction_ms": 2522,
+        "route_increase_ms": 365,
+        "previous_total_ms": 5266,
+        "current_total_ms": 6202
+      },
+      {
+        "profile": "butler",
+        "case": "nonexistent",
+        "previous_route_ms": 3363,
+        "current_route_ms": 3678,
+        "selection_ms": 1097,
+        "extraction_ms": 2581,
+        "route_increase_ms": 315,
+        "previous_total_ms": 3363,
+        "current_total_ms": 3678
+      },
+      {
+        "profile": "butler",
+        "case": "os",
+        "previous_route_ms": 1430,
+        "current_route_ms": 906,
+        "selection_ms": 906,
+        "extraction_ms": 0,
+        "route_increase_ms": -524,
+        "previous_total_ms": 2768,
+        "current_total_ms": 2214
+      },
+      {
+        "profile": "butler",
+        "case": "uptime",
+        "previous_route_ms": 1430,
+        "current_route_ms": 933,
+        "selection_ms": 933,
+        "extraction_ms": 0,
+        "route_increase_ms": -497,
+        "previous_total_ms": 2853,
+        "current_total_ms": 2372
+      },
+      {
+        "profile": "butler",
+        "case": "web",
+        "previous_route_ms": 1559,
+        "current_route_ms": 1640,
+        "selection_ms": 887,
+        "extraction_ms": 753,
+        "route_increase_ms": 81,
+        "previous_total_ms": 2434,
+        "current_total_ms": 2514
+      },
+      {
+        "profile": "cat",
+        "case": "root",
+        "previous_route_ms": 1510,
+        "current_route_ms": 1651,
+        "selection_ms": 931,
+        "extraction_ms": 720,
+        "route_increase_ms": 141,
+        "previous_total_ms": 2800,
+        "current_total_ms": 3238
+      },
+      {
+        "profile": "cat",
+        "case": "absolute",
+        "previous_route_ms": 3230,
+        "current_route_ms": 3581,
+        "selection_ms": 1098,
+        "extraction_ms": 2483,
+        "route_increase_ms": 351,
+        "previous_total_ms": 6075,
+        "current_total_ms": 6410
+      },
+      {
+        "profile": "cat",
+        "case": "relative",
+        "previous_route_ms": 1526,
+        "current_route_ms": 1712,
+        "selection_ms": 959,
+        "extraction_ms": 753,
+        "route_increase_ms": 186,
+        "previous_total_ms": 3614,
+        "current_total_ms": 3839
+      },
+      {
+        "profile": "cat",
+        "case": "spaces",
+        "previous_route_ms": 3256,
+        "current_route_ms": 3607,
+        "selection_ms": 1087,
+        "extraction_ms": 2520,
+        "route_increase_ms": 351,
+        "previous_total_ms": 5275,
+        "current_total_ms": 6207
+      },
+      {
+        "profile": "cat",
+        "case": "nonexistent",
+        "previous_route_ms": 3322,
+        "current_route_ms": 3680,
+        "selection_ms": 1118,
+        "extraction_ms": 2562,
+        "route_increase_ms": 358,
+        "previous_total_ms": 3323,
+        "current_total_ms": 3681
+      },
+      {
+        "profile": "cat",
+        "case": "os",
+        "previous_route_ms": 1405,
+        "current_route_ms": 906,
+        "selection_ms": 906,
+        "extraction_ms": 0,
+        "route_increase_ms": -499,
+        "previous_total_ms": 2714,
+        "current_total_ms": 2212
+      },
+      {
+        "profile": "cat",
+        "case": "uptime",
+        "previous_route_ms": 1433,
+        "current_route_ms": 945,
+        "selection_ms": 945,
+        "extraction_ms": 0,
+        "route_increase_ms": -488,
+        "previous_total_ms": 2817,
+        "current_total_ms": 2429
+      },
+      {
+        "profile": "cat",
+        "case": "web",
+        "previous_route_ms": 1546,
+        "current_route_ms": 1648,
+        "selection_ms": 904,
+        "extraction_ms": 744,
+        "route_increase_ms": 102,
+        "previous_total_ms": 2737,
+        "current_total_ms": 2838
+      }
+    ],
+    "paired_samples": 16,
+    "previous_route_median_ms": 1552.5,
+    "current_route_median_ms": 1685.5,
+    "paired_route_increase_median_ms": 121.5,
+    "selection_median_ms": 946.0,
+    "extraction_median_ms_including_skips": 748.5,
+    "disk_paired_samples": 10,
+    "disk_route_increase_median_ms": 254.0,
+    "previous_total_median_ms": 3273.5,
+    "current_total_median_ms": 3458.0,
+    "two_b_target_met": null
+  },
+  "suite_counts": {
+    "regression": 20,
+    "holdout": 4
+  }
+}

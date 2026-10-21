@@ -1,0 +1,23 @@
+{
+  "commands": [
+    "/disk /var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-errors-r8rpowww/does-not-exist",
+    "/search weather",
+    "/exit"
+  ],
+  "stdout": "HEART \u00b7 butler \u00b7 qwen3.5:2b-q4_K_M\nAt your service. What shall I look up?\nUse /help for commands.\n> Allow me to check the filesystem space.\nThe path could not be resolved; use an existing accessible file or directory.\n> Allow me to consult the web.\nSet TAVILY_API_KEY in your environment or .env.local to enable web lookup.\n> ",
+  "stderr": "diagnostics: phrase=NotAttempted routing_performed=false selection_ms=0 extraction_ms=0 route_ms=0 phrase_ms=0 total_ms=0\ndiagnostics: phrase=NotAttempted routing_performed=false selection_ms=0 extraction_ms=0 route_ms=0 phrase_ms=0 total_ms=0\n",
+  "requests": [],
+  "checks": {
+    "exit_success": true,
+    "zero_model_requests": true,
+    "two_unphrased_results": true,
+    "safe_missing_path": true,
+    "missing_key_message": true,
+    "no_retention_warning": true
+  },
+  "passed": true,
+  "notes": [
+    "Postcorrection resource-only check; localhost endpoint records unexpected requests and never forwards to Ollama or web providers.",
+    "No .env.local in temporary working directory; no Tavily key inherited."
+  ]
+}

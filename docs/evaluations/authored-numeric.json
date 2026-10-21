@@ -1,0 +1,68 @@
+{
+  "hardware": "M1 Pro / 32 GiB; no inference used",
+  "cases": [
+    {
+      "name": "native_both_profiles",
+      "commands": [
+        "/disk",
+        "/disk /",
+        "/disk .",
+        "/disk /var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-authored-bq1ol0a_/path with spaces",
+        "/disk /var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-authored-bq1ol0a_/literal {available}",
+        "/disk /var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-authored-bq1ol0a_/does-not-exist",
+        "/uptime",
+        "/cat",
+        "/disk /",
+        "/uptime"
+      ],
+      "stdout": "HEART \u00b7 butler \u00b7 qwen3.5:2b-q4_K_M\nAt your service. What shall I look up?\nUse /help for commands.\n> Allow me to check the filesystem space.\nYou have 746.75 GiB available on the filesystem containing \"/private/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-authored-bq1ol0a_\", sir.\n> Allow me to check the filesystem space.\nYou have 746.75 GiB available on the filesystem containing \"/\", sir.\n> Allow me to check the filesystem space.\nYou have 746.75 GiB available on the filesystem containing \"/private/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-authored-bq1ol0a_\", sir.\n> Allow me to check the filesystem space.\nYou have 746.75 GiB available on the filesystem containing \"/private/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-authored-bq1ol0a_/path with spaces\", sir.\n> Allow me to check the filesystem space.\nYou have 746.75 GiB available on the filesystem containing \"/private/var/folders/58/p5cbd1r51sb6wxnz4nm10pg40000gn/T/heart-authored-bq1ol0a_/literal {available}\", sir.\n> Allow me to check the filesystem space.\nThe path could not be resolved; use an existing accessible file or directory.\n> Allow me to check the system uptime.\nThe system has been running for 89 days, 22 hours, 2 minutes and 59 seconds, sir.\n> What shall we find? I'm all ears.\n> I'll check how much room is left.\nA cozy 746.75 GiB available on the filesystem containing \"/\".\n> I'll check how long this system has been running.\nStill purring after 89 days, 22 hours, 2 minutes and 59 seconds of uptime.\n> ",
+      "stderr": "diagnostics: phrase=Authored routing_performed=false selection_ms=0 extraction_ms=0 route_ms=0 phrase_ms=0 total_ms=0\ndiagnostics: phrase=Authored routing_performed=false selection_ms=0 extraction_ms=0 route_ms=0 phrase_ms=0 total_ms=0\ndiagnostics: phrase=Authored routing_performed=false selection_ms=0 extraction_ms=0 route_ms=0 phrase_ms=0 total_ms=0\ndiagnostics: phrase=Authored routing_performed=false selection_ms=0 extraction_ms=0 route_ms=0 phrase_ms=0 total_ms=0\ndiagnostics: phrase=Authored routing_performed=false selection_ms=0 extraction_ms=0 route_ms=0 phrase_ms=0 total_ms=0\ndiagnostics: phrase=NotAttempted routing_performed=false selection_ms=0 extraction_ms=0 route_ms=0 phrase_ms=0 total_ms=0\ndiagnostics: phrase=Authored routing_performed=false selection_ms=0 extraction_ms=0 route_ms=0 phrase_ms=0 total_ms=0\ndiagnostics: phrase=Authored routing_performed=false selection_ms=0 extraction_ms=0 route_ms=0 phrase_ms=0 total_ms=0\ndiagnostics: phrase=Authored routing_performed=false selection_ms=0 extraction_ms=0 route_ms=0 phrase_ms=0 total_ms=0\n",
+      "model_requests": [],
+      "exit_code": 0
+    },
+    {
+      "name": "custom_profile_without_templates",
+      "commands": [
+        "/disk /",
+        "/uptime"
+      ],
+      "stdout": "HEART \u00b7 pirate \u00b7 qwen3.5:2b-q4_K_M\nAhoy!\nUse /help for commands.\n> Checking filesystem space.\nThe filesystem containing \"/\" has 746.75 GiB available to the user, 179.60 GiB used and 926.35 GiB total.\n> Checking system uptime.\nSystem uptime is 89 days, 22 hours, 2 minutes and 59 seconds.\n> ",
+      "stderr": "diagnostics: phrase=AuthoredFallback routing_performed=false selection_ms=0 extraction_ms=0 route_ms=0 phrase_ms=0 total_ms=0\ndiagnostics: phrase=AuthoredFallback routing_performed=false selection_ms=0 extraction_ms=0 route_ms=0 phrase_ms=0 total_ms=0\n",
+      "model_requests": [],
+      "exit_code": 0
+    },
+    {
+      "name": "custom_template_and_unknown_placeholder",
+      "commands": [
+        "/pirate",
+        "/disk /",
+        "/uptime"
+      ],
+      "stdout": "HEART \u00b7 pirate \u00b7 qwen3.5:2b-q4_K_M\nAhoy!\nUse /help for commands.\n> Ahoy!\n> Checking filesystem space.\nThe filesystem containing \"/\" has 746.75 GiB available to the user, 179.60 GiB used and 926.35 GiB total.\n> Checking system uptime.\nThe ship has been up for 89 days, 22 hours, 2 minutes and 59 seconds, captain.\n> ",
+      "stderr": "diagnostics: phrase=AuthoredFallback routing_performed=false selection_ms=0 extraction_ms=0 route_ms=0 phrase_ms=0 total_ms=0\ndiagnostics: phrase=Authored routing_performed=false selection_ms=0 extraction_ms=0 route_ms=0 phrase_ms=0 total_ms=0\n",
+      "model_requests": [],
+      "exit_code": 0
+    }
+  ],
+  "checks": {
+    "all_processes_successful": true,
+    "zero_model_or_retention_requests": true,
+    "eight_native_authored_replies": true,
+    "no_generated_rejections": true,
+    "all_native_routing_zero": true,
+    "safe_missing_path": true,
+    "literal_braced_path_preserved": true,
+    "literal_spaced_path_preserved": true,
+    "bare_profile_direct_facts": true,
+    "unknown_placeholder_exact_direct_facts": true,
+    "custom_uptime_template_used": true,
+    "no_spurious_model_warning": true
+  },
+  "passed": true,
+  "notes": [
+    "All runs use temporary cwd, no .env.local and no inherited Tavily key.",
+    "Counting model endpoint always returns503 and never forwards requests; tests detect complete or retention requests.",
+    "No Ollama service contact, model loading/download/unload or real web-provider calls.",
+    "Native data values are live snapshots; module tests independently verify exact display formatting and interpolation."
+  ]
+}

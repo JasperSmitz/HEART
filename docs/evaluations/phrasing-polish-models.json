@@ -1,0 +1,812 @@
+{
+  "date": "2026-10-19",
+  "hardware": {
+    "chip": "Apple M1 Pro",
+    "memory_bytes": 34359738368
+  },
+  "runtime": {
+    "version": "0.40.6"
+  },
+  "context_tokens": 4096,
+  "notes": [
+    "Synthetic fixed evidence; no Tavily calls or local API key required.",
+    "Both evaluated models explicitly unloaded before each candidate run.",
+    "Existing user-owned Ollama service reused without changing its configuration.",
+    "No concurrent Linux build or application tests started by the evaluator.",
+    "First case per model is cold; remaining cases are warm, in fixed order.",
+    "Small developer-machine sample, not an accuracy guarantee or 16 GB validation."
+  ],
+  "results": [
+    {
+      "model": "qwen3.5:2b-q4_K_M",
+      "digest": "1e2d21a4f03ab9e4a9c1976a4b7e88f21de61d65f2c5485d8fde8942be73f1e7",
+      "download_bytes": 1945781358,
+      "details": {
+        "parent_model": "model.gguf",
+        "format": "gguf",
+        "family": "qwen35",
+        "families": [
+          "qwen35"
+        ],
+        "parameter_size": "1.9B",
+        "quantization_level": "Q4_K_M",
+        "context_length": 262144,
+        "embedding_length": 2048,
+        "runner": "llamacpp"
+      },
+      "run_wall_seconds": 13.314,
+      "cases": [
+        {
+          "candidate": {
+            "answer": "Amsterdam's current temperature is 12 \u00b0C; it feels like 10 \u00b0C."
+          },
+          "case_wall_ms": 3461,
+          "model": "qwen3.5:2b-q4_K_M",
+          "profile": "butler",
+          "reply": {
+            "elapsed_ms": 3460,
+            "fallback_used": false,
+            "phrase_status": {
+              "status": "accepted"
+            },
+            "phrase_timing": {
+              "elapsed_ms": 684,
+              "generated_tokens": 30,
+              "generation_ns": 382502000,
+              "load_ns": 795334,
+              "prompt_ns": 294157000
+            },
+            "route_timing": {
+              "elapsed_ms": 2775,
+              "generated_tokens": 38,
+              "generation_ns": 522224000,
+              "load_ns": 2062180125,
+              "prompt_ns": 186843000
+            },
+            "sources": [
+              {
+                "title": "Fixed synthetic evaluation evidence",
+                "url": "https://example.org/fixture"
+              }
+            ],
+            "text": "Amsterdam's current temperature is 12 \u00b0C; it feels like 10 \u00b0C, sir.",
+            "warning": null
+          },
+          "request": "What's the temperature in Amsterdam right now?",
+          "synthetic_evidence": true
+        },
+        {
+          "case_wall_ms": 341,
+          "error": "The model supplied invalid arguments; no action was taken.",
+          "model": "qwen3.5:2b-q4_K_M",
+          "profile": "butler",
+          "request": "How much is the train fare for an adult?",
+          "synthetic_evidence": true
+        },
+        {
+          "candidate": {
+            "answer": "The museum is not open on Monday."
+          },
+          "case_wall_ms": 1014,
+          "model": "qwen3.5:2b-q4_K_M",
+          "profile": "butler",
+          "reply": {
+            "elapsed_ms": 1013,
+            "fallback_used": false,
+            "phrase_status": {
+              "status": "accepted"
+            },
+            "phrase_timing": {
+              "elapsed_ms": 510,
+              "generated_tokens": 17,
+              "generation_ns": 211025000,
+              "load_ns": 578458,
+              "prompt_ns": 293382000
+            },
+            "route_timing": {
+              "elapsed_ms": 502,
+              "generated_tokens": 20,
+              "generation_ns": 322585000,
+              "load_ns": 572875,
+              "prompt_ns": 175387000
+            },
+            "sources": [
+              {
+                "title": "Fixed synthetic evaluation evidence",
+                "url": "https://example.org/fixture"
+              }
+            ],
+            "text": "The museum is not open on Monday, sir.",
+            "warning": null
+          },
+          "request": "Can I visit the museum on Monday?",
+          "synthetic_evidence": true
+        },
+        {
+          "candidate": {
+            "answer": "Cargo is the Rust package manager."
+          },
+          "case_wall_ms": 900,
+          "model": "qwen3.5:2b-q4_K_M",
+          "profile": "butler",
+          "reply": {
+            "elapsed_ms": 899,
+            "fallback_used": false,
+            "phrase_status": {
+              "status": "accepted"
+            },
+            "phrase_timing": {
+              "elapsed_ms": 417,
+              "generated_tokens": 12,
+              "generation_ns": 150317000,
+              "load_ns": 689750,
+              "prompt_ns": 261293000
+            },
+            "route_timing": {
+              "elapsed_ms": 481,
+              "generated_tokens": 16,
+              "generation_ns": 300090000,
+              "load_ns": 535500,
+              "prompt_ns": 175267000
+            },
+            "sources": [
+              {
+                "title": "Fixed synthetic evaluation evidence",
+                "url": "https://example.org/fixture"
+              }
+            ],
+            "text": "Cargo is the Rust package manager, sir.",
+            "warning": null
+          },
+          "request": "What is the Rust package manager?",
+          "synthetic_evidence": true
+        },
+        {
+          "candidate": {
+            "answer": "The music for The Legend of Zelda: Ocarina of Time was composed by K\u014dji Kond\u014d."
+          },
+          "case_wall_ms": 1328,
+          "model": "qwen3.5:2b-q4_K_M",
+          "profile": "butler",
+          "reply": {
+            "elapsed_ms": 1327,
+            "fallback_used": false,
+            "phrase_status": {
+              "status": "accepted"
+            },
+            "phrase_timing": {
+              "elapsed_ms": 732,
+              "generated_tokens": 27,
+              "generation_ns": 377402000,
+              "load_ns": 736333,
+              "prompt_ns": 348628000
+            },
+            "route_timing": {
+              "elapsed_ms": 594,
+              "generated_tokens": 23,
+              "generation_ns": 388974000,
+              "load_ns": 445666,
+              "prompt_ns": 200180000
+            },
+            "sources": [
+              {
+                "title": "Koji Kondo: The Legend of Zelda: Ocarina of Time",
+                "url": "https://example.org/fixture"
+              }
+            ],
+            "text": "The music for The Legend of Zelda: Ocarina of Time was composed by K\u014dji Kond\u014d, sir.",
+            "warning": null
+          },
+          "request": "Who composed the music for The Legend of Zelda: Ocarina of Time?",
+          "synthetic_evidence": true
+        },
+        {
+          "candidate": {
+            "answer": "Amsterdam's current temperature is 12 \u00b0C; it feels like 10 \u00b0C."
+          },
+          "case_wall_ms": 1207,
+          "model": "qwen3.5:2b-q4_K_M",
+          "profile": "cat",
+          "reply": {
+            "elapsed_ms": 1206,
+            "fallback_used": false,
+            "phrase_status": {
+              "status": "accepted"
+            },
+            "phrase_timing": {
+              "elapsed_ms": 682,
+              "generated_tokens": 30,
+              "generation_ns": 384892000,
+              "load_ns": 673541,
+              "prompt_ns": 291881000
+            },
+            "route_timing": {
+              "elapsed_ms": 523,
+              "generated_tokens": 21,
+              "generation_ns": 337438000,
+              "load_ns": 365042,
+              "prompt_ns": 178766000
+            },
+            "sources": [
+              {
+                "title": "Fixed synthetic evaluation evidence",
+                "url": "https://example.org/fixture"
+              }
+            ],
+            "text": "Amsterdam's current temperature is 12 \u00b0C; it feels like 10 \u00b0C.",
+            "warning": null
+          },
+          "request": "What's the temperature in Amsterdam right now?",
+          "synthetic_evidence": true
+        },
+        {
+          "candidate": {
+            "answer": "The train fare is \u20ac12.50 per adult, with children under 4 traveling free."
+          },
+          "case_wall_ms": 1239,
+          "model": "qwen3.5:2b-q4_K_M",
+          "profile": "cat",
+          "reply": {
+            "elapsed_ms": 1238,
+            "fallback_used": false,
+            "phrase_status": {
+              "status": "accepted"
+            },
+            "phrase_timing": {
+              "elapsed_ms": 669,
+              "generated_tokens": 28,
+              "generation_ns": 370259000,
+              "load_ns": 685167,
+              "prompt_ns": 293321000
+            },
+            "route_timing": {
+              "elapsed_ms": 568,
+              "generated_tokens": 22,
+              "generation_ns": 377207000,
+              "load_ns": 481000,
+              "prompt_ns": 185750000
+            },
+            "sources": [
+              {
+                "title": "Fixed synthetic evaluation evidence",
+                "url": "https://example.org/fixture"
+              }
+            ],
+            "text": "The train fare is \u20ac12.50 per adult, with children under 4 traveling free.",
+            "warning": null
+          },
+          "request": "How much is the train fare for an adult?",
+          "synthetic_evidence": true
+        },
+        {
+          "candidate": {
+            "answer": "The museum is not open on Monday."
+          },
+          "case_wall_ms": 1040,
+          "model": "qwen3.5:2b-q4_K_M",
+          "profile": "cat",
+          "reply": {
+            "elapsed_ms": 1039,
+            "fallback_used": false,
+            "phrase_status": {
+              "status": "accepted"
+            },
+            "phrase_timing": {
+              "elapsed_ms": 511,
+              "generated_tokens": 17,
+              "generation_ns": 211805000,
+              "load_ns": 778500,
+              "prompt_ns": 292972000
+            },
+            "route_timing": {
+              "elapsed_ms": 528,
+              "generated_tokens": 20,
+              "generation_ns": 342975000,
+              "load_ns": 587583,
+              "prompt_ns": 179869000
+            },
+            "sources": [
+              {
+                "title": "Fixed synthetic evaluation evidence",
+                "url": "https://example.org/fixture"
+              }
+            ],
+            "text": "The museum is not open on Monday.",
+            "warning": null
+          },
+          "request": "Can I visit the museum on Monday?",
+          "synthetic_evidence": true
+        },
+        {
+          "candidate": {
+            "answer": "Cargo is the Rust package manager."
+          },
+          "case_wall_ms": 921,
+          "model": "qwen3.5:2b-q4_K_M",
+          "profile": "cat",
+          "reply": {
+            "elapsed_ms": 920,
+            "fallback_used": false,
+            "phrase_status": {
+              "status": "accepted"
+            },
+            "phrase_timing": {
+              "elapsed_ms": 483,
+              "generated_tokens": 17,
+              "generation_ns": 210761000,
+              "load_ns": 681625,
+              "prompt_ns": 266622000
+            },
+            "route_timing": {
+              "elapsed_ms": 436,
+              "generated_tokens": 16,
+              "generation_ns": 252084000,
+              "load_ns": 464583,
+              "prompt_ns": 179264000
+            },
+            "sources": [
+              {
+                "title": "Fixed synthetic evaluation evidence",
+                "url": "https://example.org/fixture"
+              }
+            ],
+            "text": "Cargo is the Rust package manager.",
+            "warning": null
+          },
+          "request": "What is the Rust package manager?",
+          "synthetic_evidence": true
+        },
+        {
+          "candidate": {
+            "answer": "The music for The Legend of Zelda: Ocarina of Time was composed by Koji Kond\u014d."
+          },
+          "case_wall_ms": 1347,
+          "model": "qwen3.5:2b-q4_K_M",
+          "profile": "cat",
+          "reply": {
+            "elapsed_ms": 1346,
+            "fallback_used": false,
+            "phrase_status": {
+              "status": "accepted"
+            },
+            "phrase_timing": {
+              "elapsed_ms": 755,
+              "generated_tokens": 31,
+              "generation_ns": 397145000,
+              "load_ns": 650208,
+              "prompt_ns": 352032000
+            },
+            "route_timing": {
+              "elapsed_ms": 590,
+              "generated_tokens": 23,
+              "generation_ns": 380342000,
+              "load_ns": 502792,
+              "prompt_ns": 204547000
+            },
+            "sources": [
+              {
+                "title": "Koji Kondo: The Legend of Zelda: Ocarina of Time",
+                "url": "https://example.org/fixture"
+              }
+            ],
+            "text": "The music for The Legend of Zelda: Ocarina of Time was composed by Koji Kond\u014d.",
+            "warning": null
+          },
+          "request": "Who composed the music for The Legend of Zelda: Ocarina of Time?",
+          "synthetic_evidence": true
+        }
+      ]
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "digest": "d8b0f5e9760cd1682034f292d7ef72ec46f432149be0df7574bf2d6e92e38c04",
+      "download_bytes": 3324173934,
+      "details": {
+        "parent_model": "model.gguf",
+        "format": "gguf",
+        "family": "qwen35",
+        "families": [
+          "qwen35"
+        ],
+        "parameter_size": "4.2B",
+        "quantization_level": "Q4_K_M",
+        "context_length": 262144,
+        "embedding_length": 2560,
+        "runner": "llamacpp"
+      },
+      "run_wall_seconds": 26.013,
+      "cases": [
+        {
+          "candidate": {
+            "answer": "Amsterdam's current temperature is 12 \u00b0C; it feels like 10 \u00b0C."
+          },
+          "case_wall_ms": 5219,
+          "model": "qwen3.5:4b-q4_K_M",
+          "profile": "butler",
+          "reply": {
+            "elapsed_ms": 5217,
+            "fallback_used": false,
+            "phrase_status": {
+              "status": "accepted"
+            },
+            "phrase_timing": {
+              "elapsed_ms": 1489,
+              "generated_tokens": 28,
+              "generation_ns": 726580000,
+              "load_ns": 725250,
+              "prompt_ns": 725908000
+            },
+            "route_timing": {
+              "elapsed_ms": 3727,
+              "generated_tokens": 17,
+              "generation_ns": 442526000,
+              "load_ns": 2817753917,
+              "prompt_ns": 463016000
+            },
+            "sources": [
+              {
+                "title": "Fixed synthetic evaluation evidence",
+                "url": "https://example.org/fixture"
+              }
+            ],
+            "text": "Amsterdam's current temperature is 12 \u00b0C; it feels like 10 \u00b0C, sir.",
+            "warning": null
+          },
+          "request": "What's the temperature in Amsterdam right now?",
+          "synthetic_evidence": true
+        },
+        {
+          "candidate": {
+            "answer": "The train fare is \u20ac12.50 per adult."
+          },
+          "case_wall_ms": 2227,
+          "model": "qwen3.5:4b-q4_K_M",
+          "profile": "butler",
+          "reply": {
+            "elapsed_ms": 2226,
+            "fallback_used": false,
+            "phrase_status": {
+              "status": "accepted"
+            },
+            "phrase_timing": {
+              "elapsed_ms": 1229,
+              "generated_tokens": 18,
+              "generation_ns": 455407000,
+              "load_ns": 782125,
+              "prompt_ns": 751718000
+            },
+            "route_timing": {
+              "elapsed_ms": 997,
+              "generated_tokens": 17,
+              "generation_ns": 501189000,
+              "load_ns": 549625,
+              "prompt_ns": 460238000
+            },
+            "sources": [
+              {
+                "title": "Fixed synthetic evaluation evidence",
+                "url": "https://example.org/fixture"
+              }
+            ],
+            "text": "The train fare is \u20ac12.50 per adult, sir.",
+            "warning": null
+          },
+          "request": "How much is the train fare for an adult?",
+          "synthetic_evidence": true
+        },
+        {
+          "candidate": {
+            "answer": "No, the museum is not open on Monday."
+          },
+          "case_wall_ms": 2162,
+          "model": "qwen3.5:4b-q4_K_M",
+          "profile": "butler",
+          "reply": {
+            "elapsed_ms": 2161,
+            "fallback_used": false,
+            "phrase_status": {
+              "status": "accepted"
+            },
+            "phrase_timing": {
+              "elapsed_ms": 1169,
+              "generated_tokens": 17,
+              "generation_ns": 428661000,
+              "load_ns": 717792,
+              "prompt_ns": 727240000
+            },
+            "route_timing": {
+              "elapsed_ms": 991,
+              "generated_tokens": 20,
+              "generation_ns": 523181000,
+              "load_ns": 501041,
+              "prompt_ns": 459292000
+            },
+            "sources": [
+              {
+                "title": "Fixed synthetic evaluation evidence",
+                "url": "https://example.org/fixture"
+              }
+            ],
+            "text": "No, the museum is not open on Monday, sir.",
+            "warning": null
+          },
+          "request": "Can I visit the museum on Monday?",
+          "synthetic_evidence": true
+        },
+        {
+          "candidate": {
+            "answer": "Cargo is the Rust package manager."
+          },
+          "case_wall_ms": 1932,
+          "model": "qwen3.5:4b-q4_K_M",
+          "profile": "butler",
+          "reply": {
+            "elapsed_ms": 1930,
+            "fallback_used": false,
+            "phrase_status": {
+              "status": "accepted"
+            },
+            "phrase_timing": {
+              "elapsed_ms": 965,
+              "generated_tokens": 12,
+              "generation_ns": 298003000,
+              "load_ns": 685750,
+              "prompt_ns": 648505000
+            },
+            "route_timing": {
+              "elapsed_ms": 964,
+              "generated_tokens": 19,
+              "generation_ns": 497393000,
+              "load_ns": 472333,
+              "prompt_ns": 450493000
+            },
+            "sources": [
+              {
+                "title": "Fixed synthetic evaluation evidence",
+                "url": "https://example.org/fixture"
+              }
+            ],
+            "text": "Cargo is the Rust package manager, sir.",
+            "warning": null
+          },
+          "request": "What is the Rust package manager?",
+          "synthetic_evidence": true
+        },
+        {
+          "candidate": {
+            "answer": "The music for The Legend of Zelda: Ocarina of Time was composed by K\u014dji Kond\u014d."
+          },
+          "case_wall_ms": 2903,
+          "model": "qwen3.5:4b-q4_K_M",
+          "profile": "butler",
+          "reply": {
+            "elapsed_ms": 2901,
+            "fallback_used": false,
+            "phrase_status": {
+              "status": "accepted"
+            },
+            "phrase_timing": {
+              "elapsed_ms": 1636,
+              "generated_tokens": 29,
+              "generation_ns": 748859000,
+              "load_ns": 736000,
+              "prompt_ns": 868990000
+            },
+            "route_timing": {
+              "elapsed_ms": 1264,
+              "generated_tokens": 28,
+              "generation_ns": 733283000,
+              "load_ns": 462000,
+              "prompt_ns": 519260999
+            },
+            "sources": [
+              {
+                "title": "Koji Kondo: The Legend of Zelda: Ocarina of Time",
+                "url": "https://example.org/fixture"
+              }
+            ],
+            "text": "The music for The Legend of Zelda: Ocarina of Time was composed by K\u014dji Kond\u014d, sir.",
+            "warning": null
+          },
+          "request": "Who composed the music for The Legend of Zelda: Ocarina of Time?",
+          "synthetic_evidence": true
+        },
+        {
+          "candidate": {
+            "answer": "Amsterdam's current temperature is 12 \u00b0C; it feels like 10 \u00b0C."
+          },
+          "case_wall_ms": 2462,
+          "model": "qwen3.5:4b-q4_K_M",
+          "profile": "cat",
+          "reply": {
+            "elapsed_ms": 2461,
+            "fallback_used": false,
+            "phrase_status": {
+              "status": "accepted"
+            },
+            "phrase_timing": {
+              "elapsed_ms": 1430,
+              "generated_tokens": 26,
+              "generation_ns": 667272000,
+              "load_ns": 667042,
+              "prompt_ns": 753833000
+            },
+            "route_timing": {
+              "elapsed_ms": 1030,
+              "generated_tokens": 21,
+              "generation_ns": 553403000,
+              "load_ns": 493250,
+              "prompt_ns": 458479000
+            },
+            "sources": [
+              {
+                "title": "Fixed synthetic evaluation evidence",
+                "url": "https://example.org/fixture"
+              }
+            ],
+            "text": "Amsterdam's current temperature is 12 \u00b0C; it feels like 10 \u00b0C.",
+            "warning": null
+          },
+          "request": "What's the temperature in Amsterdam right now?",
+          "synthetic_evidence": true
+        },
+        {
+          "candidate": {
+            "answer": "The train fare is \u20ac12.50 per adult."
+          },
+          "case_wall_ms": 2267,
+          "model": "qwen3.5:4b-q4_K_M",
+          "profile": "cat",
+          "reply": {
+            "elapsed_ms": 2266,
+            "fallback_used": false,
+            "phrase_status": {
+              "status": "accepted"
+            },
+            "phrase_timing": {
+              "elapsed_ms": 1223,
+              "generated_tokens": 18,
+              "generation_ns": 458773000,
+              "load_ns": 655667,
+              "prompt_ns": 754639000
+            },
+            "route_timing": {
+              "elapsed_ms": 1042,
+              "generated_tokens": 22,
+              "generation_ns": 580886000,
+              "load_ns": 375250,
+              "prompt_ns": 453535000
+            },
+            "sources": [
+              {
+                "title": "Fixed synthetic evaluation evidence",
+                "url": "https://example.org/fixture"
+              }
+            ],
+            "text": "The train fare is \u20ac12.50 per adult.",
+            "warning": null
+          },
+          "request": "How much is the train fare for an adult?",
+          "synthetic_evidence": true
+        },
+        {
+          "candidate": {
+            "answer": "No, the museum is not open on Monday."
+          },
+          "case_wall_ms": 2100,
+          "model": "qwen3.5:4b-q4_K_M",
+          "profile": "cat",
+          "reply": {
+            "elapsed_ms": 2098,
+            "fallback_used": false,
+            "phrase_status": {
+              "status": "accepted"
+            },
+            "phrase_timing": {
+              "elapsed_ms": 1111,
+              "generated_tokens": 15,
+              "generation_ns": 380119000,
+              "load_ns": 883125,
+              "prompt_ns": 721672000
+            },
+            "route_timing": {
+              "elapsed_ms": 987,
+              "generated_tokens": 20,
+              "generation_ns": 520812000,
+              "load_ns": 464292,
+              "prompt_ns": 457544000
+            },
+            "sources": [
+              {
+                "title": "Fixed synthetic evaluation evidence",
+                "url": "https://example.org/fixture"
+              }
+            ],
+            "text": "No, the museum is not open on Monday.",
+            "warning": null
+          },
+          "request": "Can I visit the museum on Monday?",
+          "synthetic_evidence": true
+        },
+        {
+          "candidate": {
+            "answer": "Cargo is the Rust package manager."
+          },
+          "case_wall_ms": 1936,
+          "model": "qwen3.5:4b-q4_K_M",
+          "profile": "cat",
+          "reply": {
+            "elapsed_ms": 1935,
+            "fallback_used": false,
+            "phrase_status": {
+              "status": "accepted"
+            },
+            "phrase_timing": {
+              "elapsed_ms": 974,
+              "generated_tokens": 12,
+              "generation_ns": 294541000,
+              "load_ns": 601584,
+              "prompt_ns": 670450000
+            },
+            "route_timing": {
+              "elapsed_ms": 961,
+              "generated_tokens": 19,
+              "generation_ns": 497535000,
+              "load_ns": 458625,
+              "prompt_ns": 454630000
+            },
+            "sources": [
+              {
+                "title": "Fixed synthetic evaluation evidence",
+                "url": "https://example.org/fixture"
+              }
+            ],
+            "text": "Cargo is the Rust package manager.",
+            "warning": null
+          },
+          "request": "What is the Rust package manager?",
+          "synthetic_evidence": true
+        },
+        {
+          "candidate": {
+            "answer": "K\u014dji Kond\u014d composed the music for The Legend of Zelda: Ocarina of Time."
+          },
+          "case_wall_ms": 2794,
+          "model": "qwen3.5:4b-q4_K_M",
+          "profile": "cat",
+          "reply": {
+            "elapsed_ms": 2793,
+            "fallback_used": false,
+            "phrase_status": {
+              "status": "accepted"
+            },
+            "phrase_timing": {
+              "elapsed_ms": 1526,
+              "generated_tokens": 25,
+              "generation_ns": 646164000,
+              "load_ns": 718417,
+              "prompt_ns": 870877000
+            },
+            "route_timing": {
+              "elapsed_ms": 1267,
+              "generated_tokens": 28,
+              "generation_ns": 735045000,
+              "load_ns": 457000,
+              "prompt_ns": 523601000
+            },
+            "sources": [
+              {
+                "title": "Koji Kondo: The Legend of Zelda: Ocarina of Time",
+                "url": "https://example.org/fixture"
+              }
+            ],
+            "text": "K\u014dji Kond\u014d composed the music for The Legend of Zelda: Ocarina of Time.",
+            "warning": null
+          },
+          "request": "Who composed the music for The Legend of Zelda: Ocarina of Time?",
+          "synthetic_evidence": true
+        }
+      ]
+    }
+  ]
+}

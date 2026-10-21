@@ -1,0 +1,436 @@
+{
+  "hardware": {
+    "chip": "Apple M1 Pro",
+    "memory_bytes": 34359738368
+  },
+  "date": "2026-10-19",
+  "runtime": "Ollama 0.40.6",
+  "context_tokens": 4096,
+  "notes": [
+    "Controlled fixture capability; no live Tavily requests in this run.",
+    "Model is explicitly unloaded before each six-case run.",
+    "Memory sampled at 0.5-second intervals; process RSS and runtime-reported model size are distinct metrics.",
+    "Hardware is M1 Pro/32 GiB; this does not validate base M1/16 GB performance.",
+    "A two-CPU Linux container build ran concurrently; timings are indicative development-machine measurements, not isolated benchmarks."
+  ],
+  "results": [
+    {
+      "model": "qwen3.5:2b-q4_K_M",
+      "digest": "1e2d21a4f03ab9e4a9c1976a4b7e88f21de61d65f2c5485d8fde8942be73f1e7",
+      "download_bytes": 1945781358,
+      "details": {
+        "parent_model": "model.gguf",
+        "format": "gguf",
+        "family": "qwen35",
+        "families": [
+          "qwen35"
+        ],
+        "parameter_size": "1.9B",
+        "quantization_level": "Q4_K_M",
+        "context_length": 262144,
+        "embedding_length": 2048,
+        "runner": "llamacpp"
+      },
+      "peak_sampled_ollama_process_rss_bytes": 2520268800,
+      "peak_runtime_reported_model_bytes": 1631059966,
+      "memory_samples": 20,
+      "cases": [
+        {
+          "model": "qwen3.5:2b-q4_K_M",
+          "profile": "butler",
+          "reply": {
+            "elapsed_ms": 3340,
+            "fallback_used": false,
+            "phrase_timing": {
+              "elapsed_ms": 621,
+              "generated_tokens": 24,
+              "generation_ns": 337612000,
+              "load_ns": 740250,
+              "prompt_ns": 275824000
+            },
+            "route_timing": {
+              "elapsed_ms": 2718,
+              "generated_tokens": 21,
+              "generation_ns": 465482000,
+              "load_ns": 2059928709,
+              "prompt_ns": 188533000
+            },
+            "sources": [
+              {
+                "title": "Fixed evaluation evidence",
+                "url": "https://example.org/fixture"
+              }
+            ],
+            "text": "Certainly, Amsterdam's current temperature is 12 \u00b0C, sir.",
+            "warning": null
+          },
+          "request": "What's the temperature in Amsterdam right now?"
+        },
+        {
+          "model": "qwen3.5:2b-q4_K_M",
+          "profile": "butler",
+          "reply": {
+            "elapsed_ms": 1258,
+            "fallback_used": false,
+            "phrase_timing": {
+              "elapsed_ms": 657,
+              "generated_tokens": 27,
+              "generation_ns": 390047000,
+              "load_ns": 668875,
+              "prompt_ns": 261594000
+            },
+            "route_timing": {
+              "elapsed_ms": 600,
+              "generated_tokens": 22,
+              "generation_ns": 395191000,
+              "load_ns": 1987084,
+              "prompt_ns": 186660000
+            },
+            "sources": [
+              {
+                "title": "Fixed evaluation evidence",
+                "url": "https://example.org/fixture"
+              }
+            ],
+            "text": "Certainly, the reported train fare is \u20ac12.50 per adult, sir.",
+            "warning": null
+          },
+          "request": "How much is the train fare for an adult?"
+        },
+        {
+          "model": "qwen3.5:2b-q4_K_M",
+          "profile": "butler",
+          "reply": {
+            "elapsed_ms": 1100,
+            "fallback_used": true,
+            "phrase_timing": {
+              "elapsed_ms": 584,
+              "generated_tokens": 23,
+              "generation_ns": 315625000,
+              "load_ns": 776958,
+              "prompt_ns": 261438000
+            },
+            "route_timing": {
+              "elapsed_ms": 516,
+              "generated_tokens": 20,
+              "generation_ns": 331416000,
+              "load_ns": 495500,
+              "prompt_ns": 174559000
+            },
+            "sources": [
+              {
+                "title": "Fixed evaluation evidence",
+                "url": "https://example.org/fixture"
+              }
+            ],
+            "text": "The museum is not open on Monday; it opens Tuesday at 10:00.",
+            "warning": null
+          },
+          "request": "Can I visit the museum on Monday?"
+        },
+        {
+          "model": "qwen3.5:2b-q4_K_M",
+          "profile": "cat",
+          "reply": {
+            "elapsed_ms": 1147,
+            "fallback_used": true,
+            "phrase_timing": {
+              "elapsed_ms": 586,
+              "generated_tokens": 21,
+              "generation_ns": 309686000,
+              "load_ns": 603958,
+              "prompt_ns": 266653000
+            },
+            "route_timing": {
+              "elapsed_ms": 560,
+              "generated_tokens": 21,
+              "generation_ns": 375125000,
+              "load_ns": 499584,
+              "prompt_ns": 176060000
+            },
+            "sources": [
+              {
+                "title": "Fixed evaluation evidence",
+                "url": "https://example.org/fixture"
+              }
+            ],
+            "text": "Amsterdam's current temperature is 12 \u00b0C; it feels like 10 \u00b0C.",
+            "warning": null
+          },
+          "request": "What's the temperature in Amsterdam right now?"
+        },
+        {
+          "model": "qwen3.5:2b-q4_K_M",
+          "profile": "cat",
+          "reply": {
+            "elapsed_ms": 1196,
+            "fallback_used": false,
+            "phrase_timing": {
+              "elapsed_ms": 629,
+              "generated_tokens": 25,
+              "generation_ns": 352749000,
+              "load_ns": 685208,
+              "prompt_ns": 266476999
+            },
+            "route_timing": {
+              "elapsed_ms": 567,
+              "generated_tokens": 22,
+              "generation_ns": 382674000,
+              "load_ns": 489208,
+              "prompt_ns": 177117000
+            },
+            "sources": [
+              {
+                "title": "Fixed evaluation evidence",
+                "url": "https://example.org/fixture"
+              }
+            ],
+            "text": "The reported train fare is \u20ac12.50 per adult, nya.",
+            "warning": null
+          },
+          "request": "How much is the train fare for an adult?"
+        },
+        {
+          "model": "qwen3.5:2b-q4_K_M",
+          "profile": "cat",
+          "reply": {
+            "elapsed_ms": 1099,
+            "fallback_used": true,
+            "phrase_timing": {
+              "elapsed_ms": 608,
+              "generated_tokens": 24,
+              "generation_ns": 340629000,
+              "load_ns": 707625,
+              "prompt_ns": 260593000
+            },
+            "route_timing": {
+              "elapsed_ms": 490,
+              "generated_tokens": 20,
+              "generation_ns": 310428000,
+              "load_ns": 452416,
+              "prompt_ns": 174118000
+            },
+            "sources": [
+              {
+                "title": "Fixed evaluation evidence",
+                "url": "https://example.org/fixture"
+              }
+            ],
+            "text": "The museum is not open on Monday; it opens Tuesday at 10:00.",
+            "warning": null
+          },
+          "request": "Can I visit the museum on Monday?"
+        }
+      ]
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "digest": "d8b0f5e9760cd1682034f292d7ef72ec46f432149be0df7574bf2d6e92e38c04",
+      "download_bytes": 3324173934,
+      "details": {
+        "parent_model": "model.gguf",
+        "format": "gguf",
+        "family": "qwen35",
+        "families": [
+          "qwen35"
+        ],
+        "parameter_size": "4.2B",
+        "quantization_level": "Q4_K_M",
+        "context_length": 262144,
+        "embedding_length": 2560,
+        "runner": "llamacpp"
+      },
+      "peak_sampled_ollama_process_rss_bytes": 4153049088,
+      "peak_runtime_reported_model_bytes": 3152229169,
+      "memory_samples": 34,
+      "cases": [
+        {
+          "model": "qwen3.5:4b-q4_K_M",
+          "profile": "butler",
+          "reply": {
+            "elapsed_ms": 5708,
+            "fallback_used": false,
+            "phrase_timing": {
+              "elapsed_ms": 1334,
+              "generated_tokens": 23,
+              "generation_ns": 630304000,
+              "load_ns": 909708,
+              "prompt_ns": 669771000
+            },
+            "route_timing": {
+              "elapsed_ms": 4373,
+              "generated_tokens": 21,
+              "generation_ns": 555736000,
+              "load_ns": 3339043250,
+              "prompt_ns": 473287000
+            },
+            "sources": [
+              {
+                "title": "Fixed evaluation evidence",
+                "url": "https://example.org/fixture"
+              }
+            ],
+            "text": "Certainly, the current temperature in Amsterdam is 12 \u00b0C, sir.",
+            "warning": null
+          },
+          "request": "What's the temperature in Amsterdam right now?"
+        },
+        {
+          "model": "qwen3.5:4b-q4_K_M",
+          "profile": "butler",
+          "reply": {
+            "elapsed_ms": 2557,
+            "fallback_used": false,
+            "phrase_timing": {
+              "elapsed_ms": 1377,
+              "generated_tokens": 24,
+              "generation_ns": 695561000,
+              "load_ns": 608792,
+              "prompt_ns": 667698000
+            },
+            "route_timing": {
+              "elapsed_ms": 1179,
+              "generated_tokens": 22,
+              "generation_ns": 670044000,
+              "load_ns": 610667,
+              "prompt_ns": 467314000
+            },
+            "sources": [
+              {
+                "title": "Fixed evaluation evidence",
+                "url": "https://example.org/fixture"
+              }
+            ],
+            "text": "Certainly, the train fare is \u20ac12.50 per adult, sir.",
+            "warning": null
+          },
+          "request": "How much is the train fare for an adult?"
+        },
+        {
+          "model": "qwen3.5:4b-q4_K_M",
+          "profile": "butler",
+          "reply": {
+            "elapsed_ms": 2278,
+            "fallback_used": false,
+            "phrase_timing": {
+              "elapsed_ms": 1202,
+              "generated_tokens": 19,
+              "generation_ns": 515794000,
+              "load_ns": 739542,
+              "prompt_ns": 674618000
+            },
+            "route_timing": {
+              "elapsed_ms": 1074,
+              "generated_tokens": 20,
+              "generation_ns": 595309000,
+              "load_ns": 497292,
+              "prompt_ns": 457507000
+            },
+            "sources": [
+              {
+                "title": "Fixed evaluation evidence",
+                "url": "https://example.org/fixture"
+              }
+            ],
+            "text": "Certainly, the museum is not open on Monday, sir.",
+            "warning": null
+          },
+          "request": "Can I visit the museum on Monday?"
+        },
+        {
+          "model": "qwen3.5:4b-q4_K_M",
+          "profile": "cat",
+          "reply": {
+            "elapsed_ms": 2223,
+            "fallback_used": true,
+            "phrase_timing": {
+              "elapsed_ms": 1203,
+              "generated_tokens": 21,
+              "generation_ns": 548562000,
+              "load_ns": 759375,
+              "prompt_ns": 644927000
+            },
+            "route_timing": {
+              "elapsed_ms": 1019,
+              "generated_tokens": 21,
+              "generation_ns": 563540000,
+              "load_ns": 621416,
+              "prompt_ns": 443186000
+            },
+            "sources": [
+              {
+                "title": "Fixed evaluation evidence",
+                "url": "https://example.org/fixture"
+              }
+            ],
+            "text": "Amsterdam's current temperature is 12 \u00b0C; it feels like 10 \u00b0C.",
+            "warning": null
+          },
+          "request": "What's the temperature in Amsterdam right now?"
+        },
+        {
+          "model": "qwen3.5:4b-q4_K_M",
+          "profile": "cat",
+          "reply": {
+            "elapsed_ms": 2291,
+            "fallback_used": false,
+            "phrase_timing": {
+              "elapsed_ms": 1231,
+              "generated_tokens": 22,
+              "generation_ns": 575802000,
+              "load_ns": 688917,
+              "prompt_ns": 645713000
+            },
+            "route_timing": {
+              "elapsed_ms": 1060,
+              "generated_tokens": 22,
+              "generation_ns": 602395000,
+              "load_ns": 596250,
+              "prompt_ns": 443321000
+            },
+            "sources": [
+              {
+                "title": "Fixed evaluation evidence",
+                "url": "https://example.org/fixture"
+              }
+            ],
+            "text": "The train fare is \u20ac12.50 per adult, nya.",
+            "warning": null
+          },
+          "request": "How much is the train fare for an adult?"
+        },
+        {
+          "model": "qwen3.5:4b-q4_K_M",
+          "profile": "cat",
+          "reply": {
+            "elapsed_ms": 2517,
+            "fallback_used": true,
+            "phrase_timing": {
+              "elapsed_ms": 1514,
+              "generated_tokens": 30,
+              "generation_ns": 864274000,
+              "load_ns": 764750,
+              "prompt_ns": 640529000
+            },
+            "route_timing": {
+              "elapsed_ms": 1001,
+              "generated_tokens": 20,
+              "generation_ns": 550598000,
+              "load_ns": 430875,
+              "prompt_ns": 442500000
+            },
+            "sources": [
+              {
+                "title": "Fixed evaluation evidence",
+                "url": "https://example.org/fixture"
+              }
+            ],
+            "text": "The museum is not open on Monday; it opens Tuesday at 10:00.",
+            "warning": null
+          },
+          "request": "Can I visit the museum on Monday?"
+        }
+      ]
+    }
+  ]
+}

@@ -2,7 +2,7 @@
 
 ## Start here
 
-The repository is the source of truth. Read `docs/VISION.md`, `docs/ARCHITECTURE.md`, `docs/ROADMAP.md`, relevant files in `docs/plans/` and `docs/decisions/`, and `docs/LESSONS.md` before working. Do not assume earlier conversations are available. No application technology stack is decided.
+The repository is the source of truth. Read `docs/VISION.md`, `docs/ARCHITECTURE.md`, `docs/ROADMAP.md`, relevant files in `docs/plans/` and `docs/decisions/`, and `docs/LESSONS.md` before working. Do not assume earlier conversations are available. The application uses a Rust core/CLI, local Ollama inference and capabilities under `modules/*`. Approved plans define implementation scope; roadmap ideas alone do not authorize work.
 
 ## Roles and approval
 
@@ -17,4 +17,4 @@ Prefer the simplest adequate solution, purposeful dependencies, clear module bou
 
 The reviewer records lessons only when supported by substantial evidence, using discovery / why it matters / future action. The architect decides whether a repeated or broadly useful lesson should become a project convention; a lesson alone does not establish one.
 
-See `docs/ARCHITECTURE.md` for agent configuration, task model selection, and verification limitations.
+Default to GPT-6.1 Sol / Medium for all roles. Use Luna / Medium for small, well-defined implementation tasks and Luna / Low for straightforward documentation or formatting. Escalate Sol to High for significant architecture, difficult debugging, complex logic, or security-sensitive review; reserve Astra and Extra High for demonstrated need. Keep handoffs and tool output concise, focus correction reviews on changed areas and affected behavior, and avoid extra agents for routine bookkeeping. Preserve independent implementation review. See `docs/ARCHITECTURE.md` for configuration, task selection, and verification limitations.

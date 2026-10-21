@@ -1,0 +1,627 @@
+{
+  "date": "2026-10-19",
+  "hardware": {
+    "chip": "Apple M1 Pro",
+    "memory_bytes": 34359738368
+  },
+  "runtime": {
+    "version": "0.40.6"
+  },
+  "model": "qwen3.5:2b-q4_K_M",
+  "model_digest": "1e2d21a4f03ab9e4a9c1976a4b7e88f21de61d65f2c5485d8fde8942be73f1e7",
+  "notes": [
+    "Actual native readings with a counted web stub using the real web capability declaration.",
+    "No Tavily calls or credentials; existing user-owned Ollama service reused.",
+    "No forced cold load; a Linux container build ran concurrently, so timings are not isolated benchmarks.",
+    "Disk snapshots compared after the run; allow 1 GiB sampling drift and record actual differences."
+  ],
+  "baseline": {
+    "os_product_version": "26.5.2",
+    "architecture": "arm64",
+    "boot_time_epoch_seconds": 1784727137
+  },
+  "run_wall_seconds": 15.383,
+  "native_checks": [
+    {
+      "profile": "butler",
+      "request": "How much disk space is available on this computer?",
+      "capability": "system.disk_space",
+      "outcome": "error"
+    },
+    {
+      "profile": "butler",
+      "request": "How much disk space is available on the filesystem containing /?",
+      "capability": "system.disk_space",
+      "outcome": "success",
+      "independent_statvfs": {
+        "total_bytes": 994662584320,
+        "free_bytes": 808876388352,
+        "available_bytes": 808876388352,
+        "used_bytes": 185786195968
+      },
+      "difference_bytes": {
+        "total_bytes": 0,
+        "free_bytes": 2859008,
+        "available_bytes": 2859008,
+        "used_bytes": -2859008
+      }
+    },
+    {
+      "profile": "butler",
+      "request": "What operating system, version and architecture is this computer running?",
+      "capability": "system.disk_space",
+      "outcome": "error"
+    },
+    {
+      "profile": "butler",
+      "request": "What is this computer's system uptime?",
+      "capability": "system.disk_space",
+      "outcome": "error"
+    },
+    {
+      "profile": "butler",
+      "request": "Search the web for the weather in Amsterdam today.",
+      "capability": "system.disk_space",
+      "outcome": "success",
+      "independent_statvfs": {
+        "total_bytes": 994662584320,
+        "free_bytes": 808876388352,
+        "available_bytes": 808876388352,
+        "used_bytes": 185786195968
+      },
+      "difference_bytes": {
+        "total_bytes": 0,
+        "free_bytes": 2678784,
+        "available_bytes": 2678784,
+        "used_bytes": -2678784
+      }
+    },
+    {
+      "profile": "cat",
+      "request": "How much disk space is available on this computer?",
+      "capability": "system.disk_space",
+      "outcome": "error"
+    },
+    {
+      "profile": "cat",
+      "request": "How much disk space is available on the filesystem containing /?",
+      "capability": "system.disk_space",
+      "outcome": "success",
+      "independent_statvfs": {
+        "total_bytes": 994662584320,
+        "free_bytes": 808876388352,
+        "available_bytes": 808876388352,
+        "used_bytes": 185786195968
+      },
+      "difference_bytes": {
+        "total_bytes": 0,
+        "free_bytes": 2580480,
+        "available_bytes": 2580480,
+        "used_bytes": -2580480
+      }
+    },
+    {
+      "profile": "cat",
+      "request": "What operating system, version and architecture is this computer running?",
+      "capability": "system.disk_space",
+      "outcome": "error"
+    },
+    {
+      "profile": "cat",
+      "request": "What is this computer's system uptime?",
+      "capability": "system.disk_space",
+      "outcome": "error"
+    },
+    {
+      "profile": "cat",
+      "request": "Search the web for the weather in Amsterdam today.",
+      "capability": "system.disk_space",
+      "outcome": "error"
+    }
+  ],
+  "cases": [
+    {
+      "call_counts": {
+        "system.disk_space": 1
+      },
+      "error": null,
+      "expected_capability": "system.disk_space",
+      "model": "qwen3.5:2b-q4_K_M",
+      "module_results": [
+        [
+          "system.disk_space",
+          {
+            "data": null,
+            "fallback": "The path could not be resolved; use an existing accessible file or directory.",
+            "outcome": "error",
+            "sources": []
+          }
+        ]
+      ],
+      "profile": "butler",
+      "reply": {
+        "elapsed_ms": 3266,
+        "fallback_used": true,
+        "phrase_status": {
+          "status": "not_attempted"
+        },
+        "phrase_timing": null,
+        "route_timing": {
+          "elapsed_ms": 3266,
+          "generated_tokens": 19,
+          "generation_ns": 436021000,
+          "load_ns": 2319687666,
+          "prompt_ns": 501254000
+        },
+        "sources": [],
+        "text": "The path could not be resolved; use an existing accessible file or directory.",
+        "warning": null
+      },
+      "request": "How much disk space is available on this computer?",
+      "selected_route": {
+        "arguments": {
+          "path": "{current_working_directory}"
+        },
+        "capability": "system.disk_space"
+      },
+      "tavily_calls": 0
+    },
+    {
+      "call_counts": {
+        "system.disk_space": 1
+      },
+      "error": null,
+      "expected_capability": "system.disk_space",
+      "model": "qwen3.5:2b-q4_K_M",
+      "module_results": [
+        [
+          "system.disk_space",
+          {
+            "data": {
+              "available_bytes": 808879247360,
+              "free_bytes": 808879247360,
+              "path": "/",
+              "reserved_bytes": 0,
+              "total_bytes": 994662584320,
+              "used_bytes": 185783336960
+            },
+            "factual_text": "The filesystem containing \"/\" has 753.33 GiB available to the user, 173.02 GiB used and 926.35 GiB total.",
+            "fallback": "The filesystem containing \"/\" has 753.33 GiB available to the user, 173.02 GiB used and 926.35 GiB total.",
+            "outcome": "success",
+            "sources": []
+          }
+        ]
+      ],
+      "profile": "butler",
+      "reply": {
+        "elapsed_ms": 1988,
+        "fallback_used": false,
+        "phrase_status": {
+          "status": "accepted"
+        },
+        "phrase_timing": {
+          "elapsed_ms": 1058,
+          "generated_tokens": 46,
+          "generation_ns": 682513000,
+          "load_ns": 761375,
+          "prompt_ns": 368341000
+        },
+        "route_timing": {
+          "elapsed_ms": 929,
+          "generated_tokens": 16,
+          "generation_ns": 472511000,
+          "load_ns": 556041,
+          "prompt_ns": 451482000
+        },
+        "sources": [],
+        "text": "The filesystem containing / has 753.33 GiB available to the user, 173.02 GiB used and 926.35 GiB total, sir.",
+        "warning": null
+      },
+      "request": "How much disk space is available on the filesystem containing /?",
+      "selected_route": {
+        "arguments": {
+          "path": "/"
+        },
+        "capability": "system.disk_space"
+      },
+      "tavily_calls": 0
+    },
+    {
+      "call_counts": {
+        "system.disk_space": 1
+      },
+      "error": null,
+      "expected_capability": "system.info",
+      "model": "qwen3.5:2b-q4_K_M",
+      "module_results": [
+        [
+          "system.disk_space",
+          {
+            "data": null,
+            "fallback": "The path could not be resolved; use an existing accessible file or directory.",
+            "outcome": "error",
+            "sources": []
+          }
+        ]
+      ],
+      "profile": "butler",
+      "reply": {
+        "elapsed_ms": 941,
+        "fallback_used": true,
+        "phrase_status": {
+          "status": "not_attempted"
+        },
+        "phrase_timing": null,
+        "route_timing": {
+          "elapsed_ms": 941,
+          "generated_tokens": 20,
+          "generation_ns": 483290000,
+          "load_ns": 464292,
+          "prompt_ns": 444125000
+        },
+        "sources": [],
+        "text": "The path could not be resolved; use an existing accessible file or directory.",
+        "warning": null
+      },
+      "request": "What operating system, version and architecture is this computer running?",
+      "selected_route": {
+        "arguments": {
+          "path": "null"
+        },
+        "capability": "system.disk_space"
+      },
+      "tavily_calls": 0
+    },
+    {
+      "call_counts": {
+        "system.disk_space": 1
+      },
+      "error": null,
+      "expected_capability": "system.uptime",
+      "model": "qwen3.5:2b-q4_K_M",
+      "module_results": [
+        [
+          "system.disk_space",
+          {
+            "data": null,
+            "fallback": "The path could not be resolved; use an existing accessible file or directory.",
+            "outcome": "error",
+            "sources": []
+          }
+        ]
+      ],
+      "profile": "butler",
+      "reply": {
+        "elapsed_ms": 1088,
+        "fallback_used": true,
+        "phrase_status": {
+          "status": "not_attempted"
+        },
+        "phrase_timing": null,
+        "route_timing": {
+          "elapsed_ms": 1088,
+          "generated_tokens": 21,
+          "generation_ns": 632439000,
+          "load_ns": 463958,
+          "prompt_ns": 450745000
+        },
+        "sources": [],
+        "text": "The path could not be resolved; use an existing accessible file or directory.",
+        "warning": null
+      },
+      "request": "What is this computer's system uptime?",
+      "selected_route": {
+        "arguments": {
+          "path": "{}},"
+        },
+        "capability": "system.disk_space"
+      },
+      "tavily_calls": 0
+    },
+    {
+      "call_counts": {
+        "system.disk_space": 1
+      },
+      "error": null,
+      "expected_capability": "web.search",
+      "model": "qwen3.5:2b-q4_K_M",
+      "module_results": [
+        [
+          "system.disk_space",
+          {
+            "data": {
+              "available_bytes": 808879067136,
+              "free_bytes": 808879067136,
+              "path": "/Users/jaspersmitz/Developer/personal/HEART",
+              "reserved_bytes": 0,
+              "total_bytes": 994662584320,
+              "used_bytes": 185783517184
+            },
+            "factual_text": "The filesystem containing \"/Users/jaspersmitz/Developer/personal/HEART\" has 753.33 GiB available to the user, 173.02 GiB used and 926.35 GiB total.",
+            "fallback": "The filesystem containing \"/Users/jaspersmitz/Developer/personal/HEART\" has 753.33 GiB available to the user, 173.02 GiB used and 926.35 GiB total.",
+            "outcome": "success",
+            "sources": []
+          }
+        ]
+      ],
+      "profile": "butler",
+      "reply": {
+        "elapsed_ms": 1549,
+        "fallback_used": true,
+        "phrase_status": {
+          "reason": "negation_changed",
+          "status": "rejected"
+        },
+        "phrase_timing": {
+          "elapsed_ms": 658,
+          "generated_tokens": 21,
+          "generation_ns": 265774999,
+          "load_ns": 743416,
+          "prompt_ns": 385807000
+        },
+        "route_timing": {
+          "elapsed_ms": 890,
+          "generated_tokens": 15,
+          "generation_ns": 437973000,
+          "load_ns": 478625,
+          "prompt_ns": 447578000
+        },
+        "sources": [],
+        "text": "The filesystem containing \"/Users/jaspersmitz/Developer/personal/HEART\" has 753.33 GiB available to the user, 173.02 GiB used and 926.35 GiB total.",
+        "warning": null
+      },
+      "request": "Search the web for the weather in Amsterdam today.",
+      "selected_route": {
+        "arguments": {
+          "path": "."
+        },
+        "capability": "system.disk_space"
+      },
+      "tavily_calls": 0
+    },
+    {
+      "call_counts": {
+        "system.disk_space": 1
+      },
+      "error": null,
+      "expected_capability": "system.disk_space",
+      "model": "qwen3.5:2b-q4_K_M",
+      "module_results": [
+        [
+          "system.disk_space",
+          {
+            "data": null,
+            "fallback": "The path could not be resolved; use an existing accessible file or directory.",
+            "outcome": "error",
+            "sources": []
+          }
+        ]
+      ],
+      "profile": "cat",
+      "reply": {
+        "elapsed_ms": 844,
+        "fallback_used": true,
+        "phrase_status": {
+          "status": "not_attempted"
+        },
+        "phrase_timing": null,
+        "route_timing": {
+          "elapsed_ms": 844,
+          "generated_tokens": 19,
+          "generation_ns": 399710000,
+          "load_ns": 616709,
+          "prompt_ns": 434472000
+        },
+        "sources": [],
+        "text": "The path could not be resolved; use an existing accessible file or directory.",
+        "warning": null
+      },
+      "request": "How much disk space is available on this computer?",
+      "selected_route": {
+        "arguments": {
+          "path": "{current_working_directory}"
+        },
+        "capability": "system.disk_space"
+      },
+      "tavily_calls": 0
+    },
+    {
+      "call_counts": {
+        "system.disk_space": 1
+      },
+      "error": null,
+      "expected_capability": "system.disk_space",
+      "model": "qwen3.5:2b-q4_K_M",
+      "module_results": [
+        [
+          "system.disk_space",
+          {
+            "data": {
+              "available_bytes": 808878968832,
+              "free_bytes": 808878968832,
+              "path": "/",
+              "reserved_bytes": 0,
+              "total_bytes": 994662584320,
+              "used_bytes": 185783615488
+            },
+            "factual_text": "The filesystem containing \"/\" has 753.33 GiB available to the user, 173.02 GiB used and 926.35 GiB total.",
+            "fallback": "The filesystem containing \"/\" has 753.33 GiB available to the user, 173.02 GiB used and 926.35 GiB total.",
+            "outcome": "success",
+            "sources": []
+          }
+        ]
+      ],
+      "profile": "cat",
+      "reply": {
+        "elapsed_ms": 1998,
+        "fallback_used": false,
+        "phrase_status": {
+          "status": "accepted"
+        },
+        "phrase_timing": {
+          "elapsed_ms": 1080,
+          "generated_tokens": 48,
+          "generation_ns": 708720000,
+          "load_ns": 620209,
+          "prompt_ns": 366973000
+        },
+        "route_timing": {
+          "elapsed_ms": 916,
+          "generated_tokens": 16,
+          "generation_ns": 461975000,
+          "load_ns": 440667,
+          "prompt_ns": 449587000
+        },
+        "sources": [],
+        "text": "The filesystem containing \"/\" has 753.33 GiB available to the user, 173.02 GiB used and 926.35 GiB total.",
+        "warning": null
+      },
+      "request": "How much disk space is available on the filesystem containing /?",
+      "selected_route": {
+        "arguments": {
+          "path": "/"
+        },
+        "capability": "system.disk_space"
+      },
+      "tavily_calls": 0
+    },
+    {
+      "call_counts": {
+        "system.disk_space": 1
+      },
+      "error": null,
+      "expected_capability": "system.info",
+      "model": "qwen3.5:2b-q4_K_M",
+      "module_results": [
+        [
+          "system.disk_space",
+          {
+            "data": null,
+            "fallback": "The path could not be resolved; use an existing accessible file or directory.",
+            "outcome": "error",
+            "sources": []
+          }
+        ]
+      ],
+      "profile": "cat",
+      "reply": {
+        "elapsed_ms": 1043,
+        "fallback_used": true,
+        "phrase_status": {
+          "status": "not_attempted"
+        },
+        "phrase_timing": null,
+        "route_timing": {
+          "elapsed_ms": 1043,
+          "generated_tokens": 20,
+          "generation_ns": 583740000,
+          "load_ns": 525958,
+          "prompt_ns": 450085000
+        },
+        "sources": [],
+        "text": "The path could not be resolved; use an existing accessible file or directory.",
+        "warning": null
+      },
+      "request": "What operating system, version and architecture is this computer running?",
+      "selected_route": {
+        "arguments": {
+          "path": "{}},"
+        },
+        "capability": "system.disk_space"
+      },
+      "tavily_calls": 0
+    },
+    {
+      "call_counts": {
+        "system.disk_space": 1
+      },
+      "error": null,
+      "expected_capability": "system.uptime",
+      "model": "qwen3.5:2b-q4_K_M",
+      "module_results": [
+        [
+          "system.disk_space",
+          {
+            "data": null,
+            "fallback": "The path could not be resolved; use an existing accessible file or directory.",
+            "outcome": "error",
+            "sources": []
+          }
+        ]
+      ],
+      "profile": "cat",
+      "reply": {
+        "elapsed_ms": 1061,
+        "fallback_used": true,
+        "phrase_status": {
+          "status": "not_attempted"
+        },
+        "phrase_timing": null,
+        "route_timing": {
+          "elapsed_ms": 1061,
+          "generated_tokens": 20,
+          "generation_ns": 614894000,
+          "load_ns": 418334,
+          "prompt_ns": 441060000
+        },
+        "sources": [],
+        "text": "The path could not be resolved; use an existing accessible file or directory.",
+        "warning": null
+      },
+      "request": "What is this computer's system uptime?",
+      "selected_route": {
+        "arguments": {
+          "path": "{}},"
+        },
+        "capability": "system.disk_space"
+      },
+      "tavily_calls": 0
+    },
+    {
+      "call_counts": {
+        "system.disk_space": 1
+      },
+      "error": null,
+      "expected_capability": "web.search",
+      "model": "qwen3.5:2b-q4_K_M",
+      "module_results": [
+        [
+          "system.disk_space",
+          {
+            "data": null,
+            "fallback": "The path could not be resolved; use an existing accessible file or directory.",
+            "outcome": "error",
+            "sources": []
+          }
+        ]
+      ],
+      "profile": "cat",
+      "reply": {
+        "elapsed_ms": 981,
+        "fallback_used": true,
+        "phrase_status": {
+          "status": "not_attempted"
+        },
+        "phrase_timing": null,
+        "route_timing": {
+          "elapsed_ms": 953,
+          "generated_tokens": 23,
+          "generation_ns": 484799000,
+          "load_ns": 458459,
+          "prompt_ns": 463253000
+        },
+        "sources": [],
+        "text": "The path could not be resolved; use an existing accessible file or directory.",
+        "warning": null
+      },
+      "request": "Search the web for the weather in Amsterdam today.",
+      "selected_route": {
+        "arguments": {
+          "path": "/home/user/Desktop/AmsterdamWeather.txt"
+        },
+        "capability": "system.disk_space"
+      },
+      "tavily_calls": 0
+    }
+  ]
+}

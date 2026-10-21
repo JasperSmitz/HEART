@@ -1,0 +1,35 @@
+# Optional-argument routing follow-up
+
+**Status:** implementation and independent review complete; acceptance remains open. Two correction rounds exhausted. Return to discussion before further implementation. Scope: [plan 0006](../plans/0006-optional-argument-routing.md).
+
+This report preserves the single-step follow-up. The user subsequently authorized [plan 0007](../plans/0007-two-step-routing.md); see its [two-step results](two-step-routing.md) for current experimental code and measurements.
+
+## Diagnosis and correction
+
+Minimal extraction could generate an explicitly supplied path, so the evidence does not establish blanket lack of optional-property support. The full complete-route schema and metadata reproduced omissions on both installed models. Required nullable fields and aligned declarations improved extraction, but intermediate probes also produced invented defaults, a normalized relative path and an incorrect capability. Those observations are preserved in [minimal isolation](optional-argument-isolation.json), [full-route isolation](optional-argument-route-isolation.json) and [alignment isolation](optional-argument-alignment-isolation.json). None is full acceptance evidence.
+
+Core now projects optional string inputs into required nullable inference fields, using the same projected declarations in the user payload and output schema. Instructions require literal values without filling defaults or resolving paths. Strict conversion requires the complete declared field set, removes only declared optional nulls and validates against the original module schema before invocation. Module inputs remain string-or-absent; modules receive no inference null placeholders. Capability/argument binding, discriminator-first serialization, one routing call, original runtime/module validation and factual fallback guards remain intact. The module description expresses path/default semantics without conflicting generation instructions.
+
+## Verification
+
+The expanded credential-free smoke example records twenty requests per model: omitted, root, existing absolute, relative, spaces and nonexistent paths; OS, uptime, web and unsupported requests; both profiles. It separately captures raw model routes, normalized module arguments, counted invocations, native outcomes and canonical paths. Temporary directories belong to the evaluation and are cleaned up afterward. The only web implementation is a counted local stub matching the production declaration; no real Tavily requests or credentials are involved.
+
+The architect independently checks literal request/dispatch equality, canonical paths, nonexistent-path errors, empty-input arguments, appropriate web-query content and unsupported no-execution behavior. Historical system-information evidence remains unchanged. Results below will distinguish a bounded successful sample from general model reliability; no model default change is authorized.
+
+Initial full acceptance after schema projection: [2B](optional-argument-acceptance-2b.json) passed 17/20 and [4B](optional-argument-acceptance-4b.json) passed 18/20. Both passed every explicit-path case, including relative paths, spaces and missing-path errors. However, 2B invented `/` in one omitted-path case and substituted disk readings for both unsupported deletion requests; 4B invented `/` in both omitted-path cases. No deletion occurred: the only invoked capability was the read-only disk reader. These are acceptance failures despite structurally valid outputs.
+
+Correction round 1 changes only generic routing instructions: match the requested operation rather than related nouns, never substitute a different operation, and use null for unspecified optional values rather than filling defaults or implied locations. Schema conversion and acceptance fixtures remain unchanged. The [2B rerun](optional-argument-acceptance-2b-round1.json) passed 18/20: defaults and unsupported requests worked, but both web-weather requests invoked unrelated native capabilities. The [4B rerun](optional-argument-acceptance-4b-round1.json) passed 20/20. Focused deterministic regressions, formatting and warnings-denied Clippy passed.
+
+Final correction round 2 changes only the prompt opening: require the selected capability both to perform the requested operation and supply the requested information, without substituting unrelated information. The unchanged matrix still fails with 2B: one relative `.` becomes `/` and both weather requests invoke unrelated native capabilities. 4B passes all twenty cases. This exhausts the two-round correction allowance; the remaining findings return to the user rather than further prompt tuning.
+
+| Complete request checks passed | 2B Q4_K_M | 4B Q4_K_M |
+|---|---:|---:|
+| Initial nullable-wire implementation | 17/20 | 18/20 |
+| Prompt correction 1 | 18/20 | 20/20 |
+| Final prompt correction 2 | 17/20 | 20/20 |
+
+Final preserved observations: [2B](optional-argument-acceptance-2b-round2.json), [4B](optional-argument-acceptance-4b-round2.json). In the final run both models passed omitted defaults, absolute/root/spaced paths, nonexistent-path errors, OS, uptime and unsupported requests in both profiles. 2B failed the butler relative-path case and both web cases; the cat relative-path case passed. Every case made zero Tavily calls. These are small correctness samples, not estimates of general reliability or evidence of 16 GB performance. All live inference ran on the existing Apple M1 Pro/32 GiB Mac using installed models and Ollama 0.40.6. Unload was requested after each run; the user-owned service remains running.
+
+All 33 all-target workspace tests passed on macOS and Linux ARM64. The Linux container covered the schema/conversion implementation before the subsequent prompt-only corrections; final macOS tests and build include both corrections. Formatting and warnings-denied Clippy passed. Independent review found no actionable deterministic conversion/boundary defect and confirmed two medium-severity acceptance blockers in final 2B: wrong literal path and unrelated capability dispatch. The reviewer added a brief follow-up to the existing routing lesson. Developer/reviewer were requested as Sol/high and Sol/medium via explicit-role fallback; execution telemetry was not inspected.
+
+Recommendation: retain the default model and discuss a separately scoped routing experiment instead of further prompt tuning. A candidate is separating capability selection from argument extraction, accepting one extra local inference call only if measured correctness and latency justify it. This design is a proposal, not implemented or authorized. 4B's successful sample may inform explicit user testing but does not establish universal reliability or authorize a default change. Current follow-up code is unaccepted and includes a known 2B web-routing regression; do not describe this as a finished fix or proceed to dashboard implementation. No real Tavily calls, keys, model downloads, global settings, dashboard/telemetry work or Git commits were involved.

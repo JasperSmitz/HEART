@@ -1,0 +1,1657 @@
+{
+  "purpose": "Bounded full-route schema comparison; actual-model extraction acceptance is separate",
+  "options": {
+    "temperature": 0.2,
+    "num_ctx": 4096,
+    "num_predict": 384,
+    "think": false
+  },
+  "observations": [
+    {
+      "model": "qwen3.5:2b-q4_K_M",
+      "variant": "required_nullable_type",
+      "system": "Select exactly one declared capability for the user's request. Return null capability and empty arguments when unsupported or unclear. Use the routing schema: every argument field must be present. For optional inputs use the exact user-supplied value, or JSON null if the user did not supply it; null will be converted to omission before module execution so declared defaults apply. Preserve literal text exactly. Do not invent optional values. For a capability with no inputs return empty arguments. Never invent IDs or execute commands.",
+      "input": {
+        "request": "How much disk space is available on the filesystem containing /?",
+        "capabilities": [
+          {
+            "id": "system.disk_space",
+            "description": "Read disk space of the local filesystem containing an existing path (file or directory); optional path defaults to the current working directory. Not folder size or web research. Paths are literal, with no shell, home, variable or glob expansion.",
+            "inputs": {
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "minLength": 1,
+                  "maxLength": 4096
+                }
+              },
+              "required": [
+                "path"
+              ],
+              "additionalProperties": false
+            },
+            "progress": "Checking filesystem space."
+          },
+          {
+            "id": "system.info",
+            "description": "Read this computer's local operating system name, OS product version and CPU architecture; not web research, hostname, or hardware telemetry.",
+            "inputs": {
+              "type": "object",
+              "properties": {},
+              "required": [],
+              "additionalProperties": false
+            },
+            "progress": "Checking the operating system."
+          },
+          {
+            "id": "system.uptime",
+            "description": "Read elapsed seconds since this local computer booted, not a web lookup or application running time.",
+            "inputs": {
+              "type": "object",
+              "properties": {},
+              "required": [],
+              "additionalProperties": false
+            },
+            "progress": "Checking system uptime."
+          },
+          {
+            "id": "web.search",
+            "description": "Look up public web information, current facts, weather, or a concise factual question. One search, no private accounts or machine actions.",
+            "inputs": {
+              "type": "object",
+              "properties": {
+                "query": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 400
+                }
+              },
+              "required": [
+                "query"
+              ],
+              "additionalProperties": false
+            },
+            "progress": "Searching the web\u2026"
+          }
+        ]
+      },
+      "schema": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "capability": {
+                "enum": [
+                  "system.disk_space"
+                ]
+              },
+              "arguments": {
+                "type": "object",
+                "properties": {
+                  "path": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "minLength": 1,
+                    "maxLength": 4096
+                  }
+                },
+                "required": [
+                  "path"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "capability",
+              "arguments"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "capability": {
+                "enum": [
+                  "system.info"
+                ]
+              },
+              "arguments": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "capability",
+              "arguments"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "capability": {
+                "enum": [
+                  "system.uptime"
+                ]
+              },
+              "arguments": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "capability",
+              "arguments"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "capability": {
+                "enum": [
+                  "web.search"
+                ]
+              },
+              "arguments": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 400
+                  }
+                },
+                "required": [
+                  "query"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "capability",
+              "arguments"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "capability": {
+                "type": "null"
+              },
+              "arguments": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "capability",
+              "arguments"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      },
+      "output": {
+        "capability": "system.disk_space",
+        "arguments": {
+          "path": "/"
+        }
+      },
+      "elapsed_ms": 2209
+    },
+    {
+      "model": "qwen3.5:2b-q4_K_M",
+      "variant": "required_nullable_type",
+      "system": "Select exactly one declared capability for the user's request. Return null capability and empty arguments when unsupported or unclear. Use the routing schema: every argument field must be present. For optional inputs use the exact user-supplied value, or JSON null if the user did not supply it; null will be converted to omission before module execution so declared defaults apply. Preserve literal text exactly. Do not invent optional values. For a capability with no inputs return empty arguments. Never invent IDs or execute commands.",
+      "input": {
+        "request": "How much disk space is available on this computer?",
+        "capabilities": [
+          {
+            "id": "system.disk_space",
+            "description": "Read disk space of the local filesystem containing an existing path (file or directory); optional path defaults to the current working directory. Not folder size or web research. Paths are literal, with no shell, home, variable or glob expansion.",
+            "inputs": {
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "minLength": 1,
+                  "maxLength": 4096
+                }
+              },
+              "required": [
+                "path"
+              ],
+              "additionalProperties": false
+            },
+            "progress": "Checking filesystem space."
+          },
+          {
+            "id": "system.info",
+            "description": "Read this computer's local operating system name, OS product version and CPU architecture; not web research, hostname, or hardware telemetry.",
+            "inputs": {
+              "type": "object",
+              "properties": {},
+              "required": [],
+              "additionalProperties": false
+            },
+            "progress": "Checking the operating system."
+          },
+          {
+            "id": "system.uptime",
+            "description": "Read elapsed seconds since this local computer booted, not a web lookup or application running time.",
+            "inputs": {
+              "type": "object",
+              "properties": {},
+              "required": [],
+              "additionalProperties": false
+            },
+            "progress": "Checking system uptime."
+          },
+          {
+            "id": "web.search",
+            "description": "Look up public web information, current facts, weather, or a concise factual question. One search, no private accounts or machine actions.",
+            "inputs": {
+              "type": "object",
+              "properties": {
+                "query": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 400
+                }
+              },
+              "required": [
+                "query"
+              ],
+              "additionalProperties": false
+            },
+            "progress": "Searching the web\u2026"
+          }
+        ]
+      },
+      "schema": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "capability": {
+                "enum": [
+                  "system.disk_space"
+                ]
+              },
+              "arguments": {
+                "type": "object",
+                "properties": {
+                  "path": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "minLength": 1,
+                    "maxLength": 4096
+                  }
+                },
+                "required": [
+                  "path"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "capability",
+              "arguments"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "capability": {
+                "enum": [
+                  "system.info"
+                ]
+              },
+              "arguments": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "capability",
+              "arguments"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "capability": {
+                "enum": [
+                  "system.uptime"
+                ]
+              },
+              "arguments": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "capability",
+              "arguments"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "capability": {
+                "enum": [
+                  "web.search"
+                ]
+              },
+              "arguments": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 400
+                  }
+                },
+                "required": [
+                  "query"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "capability",
+              "arguments"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "capability": {
+                "type": "null"
+              },
+              "arguments": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "capability",
+              "arguments"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      },
+      "output": {
+        "capability": "system.disk_space",
+        "arguments": {
+          "path": null
+        }
+      },
+      "elapsed_ms": 812
+    },
+    {
+      "model": "qwen3.5:2b-q4_K_M",
+      "variant": "required_nullable_type",
+      "system": "Select exactly one declared capability for the user's request. Return null capability and empty arguments when unsupported or unclear. Use the routing schema: every argument field must be present. For optional inputs use the exact user-supplied value, or JSON null if the user did not supply it; null will be converted to omission before module execution so declared defaults apply. Preserve literal text exactly. Do not invent optional values. For a capability with no inputs return empty arguments. Never invent IDs or execute commands.",
+      "input": {
+        "request": "How much disk space is available on the filesystem containing /heart-no-such-path-20261019?",
+        "capabilities": [
+          {
+            "id": "system.disk_space",
+            "description": "Read disk space of the local filesystem containing an existing path (file or directory); optional path defaults to the current working directory. Not folder size or web research. Paths are literal, with no shell, home, variable or glob expansion.",
+            "inputs": {
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "minLength": 1,
+                  "maxLength": 4096
+                }
+              },
+              "required": [
+                "path"
+              ],
+              "additionalProperties": false
+            },
+            "progress": "Checking filesystem space."
+          },
+          {
+            "id": "system.info",
+            "description": "Read this computer's local operating system name, OS product version and CPU architecture; not web research, hostname, or hardware telemetry.",
+            "inputs": {
+              "type": "object",
+              "properties": {},
+              "required": [],
+              "additionalProperties": false
+            },
+            "progress": "Checking the operating system."
+          },
+          {
+            "id": "system.uptime",
+            "description": "Read elapsed seconds since this local computer booted, not a web lookup or application running time.",
+            "inputs": {
+              "type": "object",
+              "properties": {},
+              "required": [],
+              "additionalProperties": false
+            },
+            "progress": "Checking system uptime."
+          },
+          {
+            "id": "web.search",
+            "description": "Look up public web information, current facts, weather, or a concise factual question. One search, no private accounts or machine actions.",
+            "inputs": {
+              "type": "object",
+              "properties": {
+                "query": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 400
+                }
+              },
+              "required": [
+                "query"
+              ],
+              "additionalProperties": false
+            },
+            "progress": "Searching the web\u2026"
+          }
+        ]
+      },
+      "schema": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "capability": {
+                "enum": [
+                  "system.disk_space"
+                ]
+              },
+              "arguments": {
+                "type": "object",
+                "properties": {
+                  "path": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "minLength": 1,
+                    "maxLength": 4096
+                  }
+                },
+                "required": [
+                  "path"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "capability",
+              "arguments"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "capability": {
+                "enum": [
+                  "system.info"
+                ]
+              },
+              "arguments": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "capability",
+              "arguments"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "capability": {
+                "enum": [
+                  "system.uptime"
+                ]
+              },
+              "arguments": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "capability",
+              "arguments"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "capability": {
+                "enum": [
+                  "web.search"
+                ]
+              },
+              "arguments": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 400
+                  }
+                },
+                "required": [
+                  "query"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "capability",
+              "arguments"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "capability": {
+                "type": "null"
+              },
+              "arguments": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "capability",
+              "arguments"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      },
+      "output": {
+        "capability": "system.disk_space",
+        "arguments": {
+          "path": "/heart-no-such-path-20261019"
+        }
+      },
+      "elapsed_ms": 807
+    },
+    {
+      "model": "qwen3.5:2b-q4_K_M",
+      "variant": "required_nullable_type",
+      "system": "Select exactly one declared capability for the user's request. Return null capability and empty arguments when unsupported or unclear. Use the routing schema: every argument field must be present. For optional inputs use the exact user-supplied value, or JSON null if the user did not supply it; null will be converted to omission before module execution so declared defaults apply. Preserve literal text exactly. Do not invent optional values. For a capability with no inputs return empty arguments. Never invent IDs or execute commands.",
+      "input": {
+        "request": "How much disk space is available on the filesystem containing \".\"?",
+        "capabilities": [
+          {
+            "id": "system.disk_space",
+            "description": "Read disk space of the local filesystem containing an existing path (file or directory); optional path defaults to the current working directory. Not folder size or web research. Paths are literal, with no shell, home, variable or glob expansion.",
+            "inputs": {
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "minLength": 1,
+                  "maxLength": 4096
+                }
+              },
+              "required": [
+                "path"
+              ],
+              "additionalProperties": false
+            },
+            "progress": "Checking filesystem space."
+          },
+          {
+            "id": "system.info",
+            "description": "Read this computer's local operating system name, OS product version and CPU architecture; not web research, hostname, or hardware telemetry.",
+            "inputs": {
+              "type": "object",
+              "properties": {},
+              "required": [],
+              "additionalProperties": false
+            },
+            "progress": "Checking the operating system."
+          },
+          {
+            "id": "system.uptime",
+            "description": "Read elapsed seconds since this local computer booted, not a web lookup or application running time.",
+            "inputs": {
+              "type": "object",
+              "properties": {},
+              "required": [],
+              "additionalProperties": false
+            },
+            "progress": "Checking system uptime."
+          },
+          {
+            "id": "web.search",
+            "description": "Look up public web information, current facts, weather, or a concise factual question. One search, no private accounts or machine actions.",
+            "inputs": {
+              "type": "object",
+              "properties": {
+                "query": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 400
+                }
+              },
+              "required": [
+                "query"
+              ],
+              "additionalProperties": false
+            },
+            "progress": "Searching the web\u2026"
+          }
+        ]
+      },
+      "schema": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "capability": {
+                "enum": [
+                  "system.disk_space"
+                ]
+              },
+              "arguments": {
+                "type": "object",
+                "properties": {
+                  "path": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "minLength": 1,
+                    "maxLength": 4096
+                  }
+                },
+                "required": [
+                  "path"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "capability",
+              "arguments"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "capability": {
+                "enum": [
+                  "system.info"
+                ]
+              },
+              "arguments": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "capability",
+              "arguments"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "capability": {
+                "enum": [
+                  "system.uptime"
+                ]
+              },
+              "arguments": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "capability",
+              "arguments"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "capability": {
+                "enum": [
+                  "web.search"
+                ]
+              },
+              "arguments": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 400
+                  }
+                },
+                "required": [
+                  "query"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "capability",
+              "arguments"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "capability": {
+                "type": "null"
+              },
+              "arguments": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "capability",
+              "arguments"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      },
+      "output": {
+        "capability": "system.disk_space",
+        "arguments": {
+          "path": "/"
+        }
+      },
+      "elapsed_ms": 643
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "variant": "required_nullable_type",
+      "system": "Select exactly one declared capability for the user's request. Return null capability and empty arguments when unsupported or unclear. Use the routing schema: every argument field must be present. For optional inputs use the exact user-supplied value, or JSON null if the user did not supply it; null will be converted to omission before module execution so declared defaults apply. Preserve literal text exactly. Do not invent optional values. For a capability with no inputs return empty arguments. Never invent IDs or execute commands.",
+      "input": {
+        "request": "How much disk space is available on the filesystem containing /?",
+        "capabilities": [
+          {
+            "id": "system.disk_space",
+            "description": "Read disk space of the local filesystem containing an existing path (file or directory); optional path defaults to the current working directory. Not folder size or web research. Paths are literal, with no shell, home, variable or glob expansion.",
+            "inputs": {
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "minLength": 1,
+                  "maxLength": 4096
+                }
+              },
+              "required": [
+                "path"
+              ],
+              "additionalProperties": false
+            },
+            "progress": "Checking filesystem space."
+          },
+          {
+            "id": "system.info",
+            "description": "Read this computer's local operating system name, OS product version and CPU architecture; not web research, hostname, or hardware telemetry.",
+            "inputs": {
+              "type": "object",
+              "properties": {},
+              "required": [],
+              "additionalProperties": false
+            },
+            "progress": "Checking the operating system."
+          },
+          {
+            "id": "system.uptime",
+            "description": "Read elapsed seconds since this local computer booted, not a web lookup or application running time.",
+            "inputs": {
+              "type": "object",
+              "properties": {},
+              "required": [],
+              "additionalProperties": false
+            },
+            "progress": "Checking system uptime."
+          },
+          {
+            "id": "web.search",
+            "description": "Look up public web information, current facts, weather, or a concise factual question. One search, no private accounts or machine actions.",
+            "inputs": {
+              "type": "object",
+              "properties": {
+                "query": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 400
+                }
+              },
+              "required": [
+                "query"
+              ],
+              "additionalProperties": false
+            },
+            "progress": "Searching the web\u2026"
+          }
+        ]
+      },
+      "schema": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "capability": {
+                "enum": [
+                  "system.disk_space"
+                ]
+              },
+              "arguments": {
+                "type": "object",
+                "properties": {
+                  "path": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "minLength": 1,
+                    "maxLength": 4096
+                  }
+                },
+                "required": [
+                  "path"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "capability",
+              "arguments"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "capability": {
+                "enum": [
+                  "system.info"
+                ]
+              },
+              "arguments": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "capability",
+              "arguments"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "capability": {
+                "enum": [
+                  "system.uptime"
+                ]
+              },
+              "arguments": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "capability",
+              "arguments"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "capability": {
+                "enum": [
+                  "web.search"
+                ]
+              },
+              "arguments": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 400
+                  }
+                },
+                "required": [
+                  "query"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "capability",
+              "arguments"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "capability": {
+                "type": "null"
+              },
+              "arguments": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "capability",
+              "arguments"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      },
+      "output": {
+        "capability": "system.disk_space",
+        "arguments": {
+          "path": "/"
+        }
+      },
+      "elapsed_ms": 3050
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "variant": "required_nullable_type",
+      "system": "Select exactly one declared capability for the user's request. Return null capability and empty arguments when unsupported or unclear. Use the routing schema: every argument field must be present. For optional inputs use the exact user-supplied value, or JSON null if the user did not supply it; null will be converted to omission before module execution so declared defaults apply. Preserve literal text exactly. Do not invent optional values. For a capability with no inputs return empty arguments. Never invent IDs or execute commands.",
+      "input": {
+        "request": "How much disk space is available on this computer?",
+        "capabilities": [
+          {
+            "id": "system.disk_space",
+            "description": "Read disk space of the local filesystem containing an existing path (file or directory); optional path defaults to the current working directory. Not folder size or web research. Paths are literal, with no shell, home, variable or glob expansion.",
+            "inputs": {
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "minLength": 1,
+                  "maxLength": 4096
+                }
+              },
+              "required": [
+                "path"
+              ],
+              "additionalProperties": false
+            },
+            "progress": "Checking filesystem space."
+          },
+          {
+            "id": "system.info",
+            "description": "Read this computer's local operating system name, OS product version and CPU architecture; not web research, hostname, or hardware telemetry.",
+            "inputs": {
+              "type": "object",
+              "properties": {},
+              "required": [],
+              "additionalProperties": false
+            },
+            "progress": "Checking the operating system."
+          },
+          {
+            "id": "system.uptime",
+            "description": "Read elapsed seconds since this local computer booted, not a web lookup or application running time.",
+            "inputs": {
+              "type": "object",
+              "properties": {},
+              "required": [],
+              "additionalProperties": false
+            },
+            "progress": "Checking system uptime."
+          },
+          {
+            "id": "web.search",
+            "description": "Look up public web information, current facts, weather, or a concise factual question. One search, no private accounts or machine actions.",
+            "inputs": {
+              "type": "object",
+              "properties": {
+                "query": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 400
+                }
+              },
+              "required": [
+                "query"
+              ],
+              "additionalProperties": false
+            },
+            "progress": "Searching the web\u2026"
+          }
+        ]
+      },
+      "schema": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "capability": {
+                "enum": [
+                  "system.disk_space"
+                ]
+              },
+              "arguments": {
+                "type": "object",
+                "properties": {
+                  "path": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "minLength": 1,
+                    "maxLength": 4096
+                  }
+                },
+                "required": [
+                  "path"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "capability",
+              "arguments"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "capability": {
+                "enum": [
+                  "system.info"
+                ]
+              },
+              "arguments": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "capability",
+              "arguments"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "capability": {
+                "enum": [
+                  "system.uptime"
+                ]
+              },
+              "arguments": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "capability",
+              "arguments"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "capability": {
+                "enum": [
+                  "web.search"
+                ]
+              },
+              "arguments": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 400
+                  }
+                },
+                "required": [
+                  "query"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "capability",
+              "arguments"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "capability": {
+                "type": "null"
+              },
+              "arguments": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "capability",
+              "arguments"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      },
+      "output": {
+        "capability": "system.info",
+        "arguments": {}
+      },
+      "elapsed_ms": 1409
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "variant": "required_nullable_type",
+      "system": "Select exactly one declared capability for the user's request. Return null capability and empty arguments when unsupported or unclear. Use the routing schema: every argument field must be present. For optional inputs use the exact user-supplied value, or JSON null if the user did not supply it; null will be converted to omission before module execution so declared defaults apply. Preserve literal text exactly. Do not invent optional values. For a capability with no inputs return empty arguments. Never invent IDs or execute commands.",
+      "input": {
+        "request": "How much disk space is available on the filesystem containing /heart-no-such-path-20261019?",
+        "capabilities": [
+          {
+            "id": "system.disk_space",
+            "description": "Read disk space of the local filesystem containing an existing path (file or directory); optional path defaults to the current working directory. Not folder size or web research. Paths are literal, with no shell, home, variable or glob expansion.",
+            "inputs": {
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "minLength": 1,
+                  "maxLength": 4096
+                }
+              },
+              "required": [
+                "path"
+              ],
+              "additionalProperties": false
+            },
+            "progress": "Checking filesystem space."
+          },
+          {
+            "id": "system.info",
+            "description": "Read this computer's local operating system name, OS product version and CPU architecture; not web research, hostname, or hardware telemetry.",
+            "inputs": {
+              "type": "object",
+              "properties": {},
+              "required": [],
+              "additionalProperties": false
+            },
+            "progress": "Checking the operating system."
+          },
+          {
+            "id": "system.uptime",
+            "description": "Read elapsed seconds since this local computer booted, not a web lookup or application running time.",
+            "inputs": {
+              "type": "object",
+              "properties": {},
+              "required": [],
+              "additionalProperties": false
+            },
+            "progress": "Checking system uptime."
+          },
+          {
+            "id": "web.search",
+            "description": "Look up public web information, current facts, weather, or a concise factual question. One search, no private accounts or machine actions.",
+            "inputs": {
+              "type": "object",
+              "properties": {
+                "query": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 400
+                }
+              },
+              "required": [
+                "query"
+              ],
+              "additionalProperties": false
+            },
+            "progress": "Searching the web\u2026"
+          }
+        ]
+      },
+      "schema": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "capability": {
+                "enum": [
+                  "system.disk_space"
+                ]
+              },
+              "arguments": {
+                "type": "object",
+                "properties": {
+                  "path": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "minLength": 1,
+                    "maxLength": 4096
+                  }
+                },
+                "required": [
+                  "path"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "capability",
+              "arguments"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "capability": {
+                "enum": [
+                  "system.info"
+                ]
+              },
+              "arguments": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "capability",
+              "arguments"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "capability": {
+                "enum": [
+                  "system.uptime"
+                ]
+              },
+              "arguments": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "capability",
+              "arguments"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "capability": {
+                "enum": [
+                  "web.search"
+                ]
+              },
+              "arguments": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 400
+                  }
+                },
+                "required": [
+                  "query"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "capability",
+              "arguments"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "capability": {
+                "type": "null"
+              },
+              "arguments": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "capability",
+              "arguments"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      },
+      "output": {
+        "capability": "system.disk_space",
+        "arguments": {
+          "path": "/heart-no-such-path-20261019"
+        }
+      },
+      "elapsed_ms": 1881
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "variant": "required_nullable_type",
+      "system": "Select exactly one declared capability for the user's request. Return null capability and empty arguments when unsupported or unclear. Use the routing schema: every argument field must be present. For optional inputs use the exact user-supplied value, or JSON null if the user did not supply it; null will be converted to omission before module execution so declared defaults apply. Preserve literal text exactly. Do not invent optional values. For a capability with no inputs return empty arguments. Never invent IDs or execute commands.",
+      "input": {
+        "request": "How much disk space is available on the filesystem containing \".\"?",
+        "capabilities": [
+          {
+            "id": "system.disk_space",
+            "description": "Read disk space of the local filesystem containing an existing path (file or directory); optional path defaults to the current working directory. Not folder size or web research. Paths are literal, with no shell, home, variable or glob expansion.",
+            "inputs": {
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "minLength": 1,
+                  "maxLength": 4096
+                }
+              },
+              "required": [
+                "path"
+              ],
+              "additionalProperties": false
+            },
+            "progress": "Checking filesystem space."
+          },
+          {
+            "id": "system.info",
+            "description": "Read this computer's local operating system name, OS product version and CPU architecture; not web research, hostname, or hardware telemetry.",
+            "inputs": {
+              "type": "object",
+              "properties": {},
+              "required": [],
+              "additionalProperties": false
+            },
+            "progress": "Checking the operating system."
+          },
+          {
+            "id": "system.uptime",
+            "description": "Read elapsed seconds since this local computer booted, not a web lookup or application running time.",
+            "inputs": {
+              "type": "object",
+              "properties": {},
+              "required": [],
+              "additionalProperties": false
+            },
+            "progress": "Checking system uptime."
+          },
+          {
+            "id": "web.search",
+            "description": "Look up public web information, current facts, weather, or a concise factual question. One search, no private accounts or machine actions.",
+            "inputs": {
+              "type": "object",
+              "properties": {
+                "query": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 400
+                }
+              },
+              "required": [
+                "query"
+              ],
+              "additionalProperties": false
+            },
+            "progress": "Searching the web\u2026"
+          }
+        ]
+      },
+      "schema": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "capability": {
+                "enum": [
+                  "system.disk_space"
+                ]
+              },
+              "arguments": {
+                "type": "object",
+                "properties": {
+                  "path": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "minLength": 1,
+                    "maxLength": 4096
+                  }
+                },
+                "required": [
+                  "path"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "capability",
+              "arguments"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "capability": {
+                "enum": [
+                  "system.info"
+                ]
+              },
+              "arguments": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "capability",
+              "arguments"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "capability": {
+                "enum": [
+                  "system.uptime"
+                ]
+              },
+              "arguments": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "capability",
+              "arguments"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "capability": {
+                "enum": [
+                  "web.search"
+                ]
+              },
+              "arguments": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 400
+                  }
+                },
+                "required": [
+                  "query"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "capability",
+              "arguments"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "capability": {
+                "type": "null"
+              },
+              "arguments": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "capability",
+              "arguments"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      },
+      "output": {
+        "capability": "system.disk_space",
+        "arguments": {
+          "path": "."
+        }
+      },
+      "elapsed_ms": 1509
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+[package]
+name = "heart"
+version.workspace = true
+edition.workspace = true
+[dependencies]
+heart-core = { path = "../core" }
+heart-websearch = { path = "../../modules/websearch" }
+dotenvy = "0.15"
+heart-system = { path = "../../modules/system" }
+heart-contract = { path = "../contract" }
+serde_json.workspace = true
+ratatui = { version = "=0.30.2", default-features = false, features = ["crossterm", "unstable-rendered-line-info"] }
+crossterm = "0.29"

@@ -1,0 +1,699 @@
+{
+  "date": "2026-10-19",
+  "hardware": {
+    "chip": "Apple M1 Pro",
+    "memory_bytes": 34359738368
+  },
+  "runtime": {
+    "version": "0.40.6"
+  },
+  "model": "qwen3.5:4b-q4_K_M",
+  "model_digest": "d8b0f5e9760cd1682034f292d7ef72ec46f432149be0df7574bf2d6e92e38c04",
+  "notes": [
+    "Actual native readings with a counted web stub using the real web capability declaration.",
+    "No Tavily calls or credentials; existing user-owned Ollama service reused.",
+    "No forced cold load; a Linux container build ran concurrently, so timings are not isolated benchmarks.",
+    "Disk snapshots compared after the run; allow 1 GiB sampling drift and record actual differences."
+  ],
+  "baseline": {
+    "os_product_version": "26.5.2",
+    "architecture": "arm64",
+    "boot_time_epoch_seconds": 1784727137
+  },
+  "run_wall_seconds": 30.39,
+  "native_checks": [
+    {
+      "profile": "butler",
+      "request": "How much disk space is available on this computer?",
+      "capability": "system.disk_space",
+      "outcome": "success",
+      "independent_statvfs": {
+        "total_bytes": 994662584320,
+        "free_bytes": 808618180608,
+        "available_bytes": 808618180608,
+        "used_bytes": 186044403712
+      },
+      "difference_bytes": {
+        "total_bytes": 0,
+        "free_bytes": -16957440,
+        "available_bytes": -16957440,
+        "used_bytes": 16957440
+      },
+      "omitted_path_matches_working_directory": true
+    },
+    {
+      "profile": "butler",
+      "request": "How much disk space is available on the filesystem containing /?",
+      "capability": "system.disk_space",
+      "outcome": "success",
+      "independent_statvfs": {
+        "total_bytes": 994662584320,
+        "free_bytes": 808618180608,
+        "available_bytes": 808618180608,
+        "used_bytes": 186044403712
+      },
+      "difference_bytes": {
+        "total_bytes": 0,
+        "free_bytes": -10534912,
+        "available_bytes": -10534912,
+        "used_bytes": 10534912
+      }
+    },
+    {
+      "profile": "butler",
+      "request": "What operating system, version and architecture is this computer running?",
+      "capability": "system.info",
+      "outcome": "success",
+      "product_version_matches_sw_vers": true,
+      "architecture_matches_uname": true
+    },
+    {
+      "profile": "butler",
+      "request": "What is this computer's system uptime?",
+      "capability": "system.uptime",
+      "outcome": "success",
+      "independent_uptime_bounds_seconds": [
+        7716376,
+        7716410
+      ],
+      "within_sample_window": true
+    },
+    {
+      "profile": "cat",
+      "request": "How much disk space is available on this computer?",
+      "capability": "system.disk_space",
+      "outcome": "success",
+      "independent_statvfs": {
+        "total_bytes": 994662584320,
+        "free_bytes": 808618180608,
+        "available_bytes": 808618180608,
+        "used_bytes": 186044403712
+      },
+      "difference_bytes": {
+        "total_bytes": 0,
+        "free_bytes": 1441792,
+        "available_bytes": 1441792,
+        "used_bytes": -1441792
+      },
+      "omitted_path_matches_working_directory": true
+    },
+    {
+      "profile": "cat",
+      "request": "How much disk space is available on the filesystem containing /?",
+      "capability": "system.disk_space",
+      "outcome": "success",
+      "independent_statvfs": {
+        "total_bytes": 994662584320,
+        "free_bytes": 808618180608,
+        "available_bytes": 808618180608,
+        "used_bytes": 186044403712
+      },
+      "difference_bytes": {
+        "total_bytes": 0,
+        "free_bytes": 1064960,
+        "available_bytes": 1064960,
+        "used_bytes": -1064960
+      }
+    },
+    {
+      "profile": "cat",
+      "request": "What operating system, version and architecture is this computer running?",
+      "capability": "system.info",
+      "outcome": "success",
+      "product_version_matches_sw_vers": true,
+      "architecture_matches_uname": true
+    },
+    {
+      "profile": "cat",
+      "request": "What is this computer's system uptime?",
+      "capability": "system.uptime",
+      "outcome": "success",
+      "independent_uptime_bounds_seconds": [
+        7716376,
+        7716410
+      ],
+      "within_sample_window": true
+    }
+  ],
+  "cases": [
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "butler",
+      "request": "How much disk space is available on this computer?",
+      "expected_capability": "system.disk_space",
+      "selected_route": {
+        "capability": "system.disk_space",
+        "arguments": {}
+      },
+      "call_counts": {
+        "system.disk_space": 1
+      },
+      "module_results": [
+        [
+          "system.disk_space",
+          {
+            "outcome": "success",
+            "fallback": "The filesystem containing \"/Users/jaspersmitz/Developer/personal/HEART\" has 753.07 GiB available to the user, 173.28 GiB used and 926.35 GiB total.",
+            "factual_text": "The filesystem containing \"/Users/jaspersmitz/Developer/personal/HEART\" has 753.07 GiB available to the user, 173.28 GiB used and 926.35 GiB total.",
+            "data": {
+              "path": "/Users/jaspersmitz/Developer/personal/HEART",
+              "total_bytes": 994662584320,
+              "free_bytes": 808601223168,
+              "available_bytes": 808601223168,
+              "used_bytes": 186061361152,
+              "reserved_bytes": 0
+            },
+            "sources": []
+          }
+        ]
+      ],
+      "reply": {
+        "text": "The filesystem containing \"/Users/jaspersmitz/Developer/personal/HEART\" has 753.07 GiB available to the user, 173.28 GiB used and 926.35 GiB total.",
+        "sources": [],
+        "fallback_used": true,
+        "phrase_status": {
+          "status": "rejected",
+          "reason": "ungrounded"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 5103,
+          "load_ns": 3576675625,
+          "prompt_ns": 1224000000,
+          "generation_ns": 285918000,
+          "generated_tokens": 12
+        },
+        "phrase_timing": {
+          "elapsed_ms": 1304,
+          "load_ns": 602958,
+          "prompt_ns": 950542000,
+          "generation_ns": 321334000,
+          "generated_tokens": 13
+        },
+        "elapsed_ms": 6409
+      },
+      "error": null,
+      "tavily_calls": 0
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "butler",
+      "request": "How much disk space is available on the filesystem containing /?",
+      "expected_capability": "system.disk_space",
+      "selected_route": {
+        "capability": "system.disk_space",
+        "arguments": {}
+      },
+      "call_counts": {
+        "system.disk_space": 1
+      },
+      "module_results": [
+        [
+          "system.disk_space",
+          {
+            "outcome": "success",
+            "fallback": "The filesystem containing \"/Users/jaspersmitz/Developer/personal/HEART\" has 753.07 GiB available to the user, 173.28 GiB used and 926.35 GiB total.",
+            "factual_text": "The filesystem containing \"/Users/jaspersmitz/Developer/personal/HEART\" has 753.07 GiB available to the user, 173.28 GiB used and 926.35 GiB total.",
+            "data": {
+              "path": "/Users/jaspersmitz/Developer/personal/HEART",
+              "total_bytes": 994662584320,
+              "free_bytes": 808607645696,
+              "available_bytes": 808607645696,
+              "used_bytes": 186054938624,
+              "reserved_bytes": 0
+            },
+            "sources": []
+          }
+        ]
+      ],
+      "reply": {
+        "text": "The filesystem containing \"/\" has 753.07 GiB available, sir.",
+        "sources": [],
+        "fallback_used": false,
+        "phrase_status": {
+          "status": "accepted"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 1453,
+          "load_ns": 442375,
+          "prompt_ns": 1120251000,
+          "generation_ns": 290350000,
+          "generated_tokens": 12
+        },
+        "phrase_timing": {
+          "elapsed_ms": 1636,
+          "load_ns": 587334,
+          "prompt_ns": 1010928000,
+          "generation_ns": 590139000,
+          "generated_tokens": 23
+        },
+        "elapsed_ms": 3090
+      },
+      "error": null,
+      "tavily_calls": 0
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "butler",
+      "request": "What operating system, version and architecture is this computer running?",
+      "expected_capability": "system.info",
+      "selected_route": {
+        "capability": "system.info",
+        "arguments": {}
+      },
+      "call_counts": {
+        "system.info": 1
+      },
+      "module_results": [
+        [
+          "system.info",
+          {
+            "outcome": "success",
+            "fallback": "Operating system: Darwin; OS version: 26.5.2; architecture: arm64.",
+            "factual_text": "Operating system: Darwin; OS version: 26.5.2; architecture: arm64.",
+            "data": {
+              "os_name": "Darwin",
+              "os_version": "26.5.2",
+              "architecture": "arm64"
+            },
+            "sources": []
+          }
+        ]
+      ],
+      "reply": {
+        "text": "Operating system: Darwin; OS version: 26.5.2; architecture: arm64.",
+        "sources": [],
+        "fallback_used": true,
+        "phrase_status": {
+          "status": "rejected",
+          "reason": "ungrounded"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 1463,
+          "load_ns": 459750,
+          "prompt_ns": 1165062000,
+          "generation_ns": 290058000,
+          "generated_tokens": 11
+        },
+        "phrase_timing": {
+          "elapsed_ms": 1330,
+          "load_ns": 660833,
+          "prompt_ns": 678385000,
+          "generation_ns": 628192000,
+          "generated_tokens": 24
+        },
+        "elapsed_ms": 2794
+      },
+      "error": null,
+      "tavily_calls": 0
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "butler",
+      "request": "What is this computer's system uptime?",
+      "expected_capability": "system.uptime",
+      "selected_route": {
+        "capability": "system.uptime",
+        "arguments": {}
+      },
+      "call_counts": {
+        "system.uptime": 1
+      },
+      "module_results": [
+        [
+          "system.uptime",
+          {
+            "outcome": "success",
+            "fallback": "System uptime is 89 days, 7 hours, 26 minutes and 32 seconds.",
+            "factual_text": "System uptime is 89 days, 7 hours, 26 minutes and 32 seconds.",
+            "data": {
+              "uptime_seconds": 7716392,
+              "duration": "89 days, 7 hours, 26 minutes and 32 seconds"
+            },
+            "sources": []
+          }
+        ]
+      ],
+      "reply": {
+        "text": "The system uptime is 89 days, 7 hours, 26 minutes and 32 seconds, sir.",
+        "sources": [],
+        "fallback_used": false,
+        "phrase_status": {
+          "status": "accepted"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 1484,
+          "load_ns": 432791,
+          "prompt_ns": 1161317000,
+          "generation_ns": 314919000,
+          "generated_tokens": 12
+        },
+        "phrase_timing": {
+          "elapsed_ms": 1474,
+          "load_ns": 647834,
+          "prompt_ns": 698811000,
+          "generation_ns": 752134000,
+          "generated_tokens": 28
+        },
+        "elapsed_ms": 2959
+      },
+      "error": null,
+      "tavily_calls": 0
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "butler",
+      "request": "Search the web for the weather in Amsterdam today.",
+      "expected_capability": "web.search",
+      "selected_route": {
+        "capability": "web.search",
+        "arguments": {
+          "query": "weather in Amsterdam today"
+        }
+      },
+      "call_counts": {
+        "web.search": 1
+      },
+      "module_results": [
+        [
+          "web.search",
+          {
+            "outcome": "success",
+            "fallback": "This is a fixed web stub; no network search was performed.",
+            "data": null,
+            "sources": []
+          }
+        ]
+      ],
+      "reply": {
+        "text": "This is a fixed web stub; no network search was performed.",
+        "sources": [],
+        "fallback_used": true,
+        "phrase_status": {
+          "status": "rejected",
+          "reason": "ungrounded"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 1603,
+          "load_ns": 409750,
+          "prompt_ns": 1160226000,
+          "generation_ns": 435223000,
+          "generated_tokens": 16
+        },
+        "phrase_timing": {
+          "elapsed_ms": 1238,
+          "load_ns": 600625,
+          "prompt_ns": 609751000,
+          "generation_ns": 601683000,
+          "generated_tokens": 22
+        },
+        "elapsed_ms": 2842
+      },
+      "error": null,
+      "tavily_calls": 0
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "cat",
+      "request": "How much disk space is available on this computer?",
+      "expected_capability": "system.disk_space",
+      "selected_route": {
+        "capability": "system.disk_space",
+        "arguments": {}
+      },
+      "call_counts": {
+        "system.disk_space": 1
+      },
+      "module_results": [
+        [
+          "system.disk_space",
+          {
+            "outcome": "success",
+            "fallback": "The filesystem containing \"/Users/jaspersmitz/Developer/personal/HEART\" has 753.09 GiB available to the user, 173.27 GiB used and 926.35 GiB total.",
+            "factual_text": "The filesystem containing \"/Users/jaspersmitz/Developer/personal/HEART\" has 753.09 GiB available to the user, 173.27 GiB used and 926.35 GiB total.",
+            "data": {
+              "path": "/Users/jaspersmitz/Developer/personal/HEART",
+              "total_bytes": 994662584320,
+              "free_bytes": 808619622400,
+              "available_bytes": 808619622400,
+              "used_bytes": 186042961920,
+              "reserved_bytes": 0
+            },
+            "sources": []
+          }
+        ]
+      ],
+      "reply": {
+        "text": "753.09 GiB of disk space is available on the filesystem containing \"/Users/jaspersmitz/Developer/personal/HEART\".",
+        "sources": [],
+        "fallback_used": false,
+        "phrase_status": {
+          "status": "accepted"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 1484,
+          "load_ns": 437667,
+          "prompt_ns": 1186182000,
+          "generation_ns": 290305000,
+          "generated_tokens": 12
+        },
+        "phrase_timing": {
+          "elapsed_ms": 2137,
+          "load_ns": 577792,
+          "prompt_ns": 985439000,
+          "generation_ns": 1108575000,
+          "generated_tokens": 38
+        },
+        "elapsed_ms": 3624
+      },
+      "error": null,
+      "tavily_calls": 0
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "cat",
+      "request": "How much disk space is available on the filesystem containing /?",
+      "expected_capability": "system.disk_space",
+      "selected_route": {
+        "capability": "system.disk_space",
+        "arguments": {}
+      },
+      "call_counts": {
+        "system.disk_space": 1
+      },
+      "module_results": [
+        [
+          "system.disk_space",
+          {
+            "outcome": "success",
+            "fallback": "The filesystem containing \"/Users/jaspersmitz/Developer/personal/HEART\" has 753.09 GiB available to the user, 173.27 GiB used and 926.35 GiB total.",
+            "factual_text": "The filesystem containing \"/Users/jaspersmitz/Developer/personal/HEART\" has 753.09 GiB available to the user, 173.27 GiB used and 926.35 GiB total.",
+            "data": {
+              "path": "/Users/jaspersmitz/Developer/personal/HEART",
+              "total_bytes": 994662584320,
+              "free_bytes": 808619245568,
+              "available_bytes": 808619245568,
+              "used_bytes": 186043338752,
+              "reserved_bytes": 0
+            },
+            "sources": []
+          }
+        ]
+      ],
+      "reply": {
+        "text": "The filesystem containing \"/\" has 753.09 GiB available to the user, 173.27 GiB used and 926.35 GiB total.",
+        "sources": [],
+        "fallback_used": false,
+        "phrase_status": {
+          "status": "accepted"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 429,
+          "load_ns": 1007958,
+          "prompt_ns": 52366000,
+          "generation_ns": 363422000,
+          "generated_tokens": 12
+        },
+        "phrase_timing": {
+          "elapsed_ms": 2498,
+          "load_ns": 779917,
+          "prompt_ns": 1004438000,
+          "generation_ns": 1483311000,
+          "generated_tokens": 48
+        },
+        "elapsed_ms": 2928
+      },
+      "error": null,
+      "tavily_calls": 0
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "cat",
+      "request": "What operating system, version and architecture is this computer running?",
+      "expected_capability": "system.info",
+      "selected_route": {
+        "capability": "system.info",
+        "arguments": {}
+      },
+      "call_counts": {
+        "system.info": 1
+      },
+      "module_results": [
+        [
+          "system.info",
+          {
+            "outcome": "success",
+            "fallback": "Operating system: Darwin; OS version: 26.5.2; architecture: arm64.",
+            "factual_text": "Operating system: Darwin; OS version: 26.5.2; architecture: arm64.",
+            "data": {
+              "os_name": "Darwin",
+              "os_version": "26.5.2",
+              "architecture": "arm64"
+            },
+            "sources": []
+          }
+        ]
+      ],
+      "reply": {
+        "text": "Operating system: Darwin; OS version: 26.5.2; architecture: arm64.",
+        "sources": [],
+        "fallback_used": true,
+        "phrase_status": {
+          "status": "rejected",
+          "reason": "ungrounded"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 401,
+          "load_ns": 407000,
+          "prompt_ns": 51719000,
+          "generation_ns": 327865000,
+          "generated_tokens": 11
+        },
+        "phrase_timing": {
+          "elapsed_ms": 1408,
+          "load_ns": 614667,
+          "prompt_ns": 709282000,
+          "generation_ns": 686213000,
+          "generated_tokens": 24
+        },
+        "elapsed_ms": 1810
+      },
+      "error": null,
+      "tavily_calls": 0
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "cat",
+      "request": "What is this computer's system uptime?",
+      "expected_capability": "system.uptime",
+      "selected_route": {
+        "capability": "system.uptime",
+        "arguments": {}
+      },
+      "call_counts": {
+        "system.uptime": 1
+      },
+      "module_results": [
+        [
+          "system.uptime",
+          {
+            "outcome": "success",
+            "fallback": "System uptime is 89 days, 7 hours, 26 minutes and 45 seconds.",
+            "factual_text": "System uptime is 89 days, 7 hours, 26 minutes and 45 seconds.",
+            "data": {
+              "uptime_seconds": 7716405,
+              "duration": "89 days, 7 hours, 26 minutes and 45 seconds"
+            },
+            "sources": []
+          }
+        ]
+      ],
+      "reply": {
+        "text": "The system uptime is 89 days, 7 hours, 26 minutes and 45 seconds.",
+        "sources": [],
+        "fallback_used": false,
+        "phrase_status": {
+          "status": "accepted"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 439,
+          "load_ns": 601917,
+          "prompt_ns": 66977999,
+          "generation_ns": 361344000,
+          "generated_tokens": 12
+        },
+        "phrase_timing": {
+          "elapsed_ms": 1633,
+          "load_ns": 628250,
+          "prompt_ns": 787815000,
+          "generation_ns": 835723000,
+          "generated_tokens": 28
+        },
+        "elapsed_ms": 2073
+      },
+      "error": null,
+      "tavily_calls": 0
+    },
+    {
+      "model": "qwen3.5:4b-q4_K_M",
+      "profile": "cat",
+      "request": "Search the web for the weather in Amsterdam today.",
+      "expected_capability": "web.search",
+      "selected_route": {
+        "capability": "web.search",
+        "arguments": {
+          "query": "weather in Amsterdam today"
+        }
+      },
+      "call_counts": {
+        "web.search": 1
+      },
+      "module_results": [
+        [
+          "web.search",
+          {
+            "outcome": "success",
+            "fallback": "This is a fixed web stub; no network search was performed.",
+            "data": null,
+            "sources": []
+          }
+        ]
+      ],
+      "reply": {
+        "text": "This is a fixed web stub; no network search was performed.",
+        "sources": [],
+        "fallback_used": true,
+        "phrase_status": {
+          "status": "rejected",
+          "reason": "ungrounded"
+        },
+        "warning": null,
+        "route_timing": {
+          "elapsed_ms": 581,
+          "load_ns": 534000,
+          "prompt_ns": 70836000,
+          "generation_ns": 497056000,
+          "generated_tokens": 16
+        },
+        "phrase_timing": {
+          "elapsed_ms": 1238,
+          "load_ns": 650917,
+          "prompt_ns": 633129000,
+          "generation_ns": 595480000,
+          "generated_tokens": 23
+        },
+        "elapsed_ms": 1820
+      },
+      "error": null,
+      "tavily_calls": 0
+    }
+  ]
+}

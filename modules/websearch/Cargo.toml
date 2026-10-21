@@ -1,0 +1,8 @@
+[package]
+name = "heart-websearch"
+version.workspace = true
+edition.workspace = true
+[dependencies]
+heart-contract = { path = "../../crates/contract" }
+serde_json.workspace = true
+reqwest.workspace = true

@@ -1,0 +1,9 @@
+[package]
+name = "heart-core"
+version.workspace = true
+edition.workspace = true
+[dependencies]
+heart-contract = { path = "../contract" }
+serde.workspace = true
+serde_json.workspace = true
+reqwest.workspace = true
