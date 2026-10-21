@@ -1,10 +1,12 @@
 //! Opt-in terminal frontend. Demo widgets have no module/service access.
-mod art;
+mod portrait;
 mod render;
+mod terminal;
 mod theme;
 use crate::session::{self, Action, Session};
 use crossterm::event::{self, Event, KeyCode, KeyEvent, KeyEventKind, KeyModifiers};
 use heart_core::{Engine, Inference, Personality};
+pub use portrait::{PASTEL_PNG, contain_pixels};
 pub use render::draw;
 use std::{
     io,
@@ -15,6 +17,7 @@ use std::{
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Focus {
+    Shell,
     Input,
     Dialogue,
     Music,
@@ -65,23 +68,36 @@ pub struct Dashboard {
     history: Vec<String>,
     history_index: Option<usize>,
     draft: String,
+    portrait: portrait::Portrait,
+    /// Last production portrait bounds; absent when hidden by help or compact layout.
+    pub portrait_rect: Option<ratatui::layout::Rect>,
+    shell: terminal::TerminalPane,
+    companion: String,
+}
+fn speaker(profile: &Personality) -> &str {
+    profile
+        .appearance
+        .as_ref()
+        .map(|a| a.display_name.as_str())
+        .unwrap_or_else(|| profile.name())
 }
 impl Dashboard {
     pub fn new(session: Session, animations: bool) -> Self {
         let greeting = format!(
             "{} · {}",
-            session.profile().name(),
+            speaker(session.profile()),
             session.profile().greeting()
         );
         Self {
             session,
             input: String::new(),
             cursor: 0,
-            focus: Focus::Input,
+            focus: Focus::Shell,
             help: false,
             help_scroll: 0,
             busy: false,
-            dialogue: vec![greeting],
+            dialogue: vec![greeting.clone()],
+            companion: greeting,
             scroll: u16::MAX,
             playing: false,
             track: 0,
@@ -90,10 +106,21 @@ impl Dashboard {
             history: vec![],
             history_index: None,
             draft: String::new(),
+            portrait: portrait::Portrait::default(),
+            portrait_rect: None,
+            shell: terminal::TerminalPane::preview(),
         }
+    }
+    /// Deterministic screen fixture; never starts a child or exposes an input handle.
+    pub fn preview_terminal(&mut self, width: u16, height: u16, output: &[u8]) {
+        let area = render::areas(ratatui::layout::Rect::new(0, 0, width, height));
+        self.shell
+            .resize(area.shell_inner.height, area.shell_inner.width);
+        self.shell.preview_output(output);
     }
     fn append(&mut self, line: String) {
         // Bound session memory and paragraph scroll offsets; no persistent conversation.
+        self.companion = line.clone();
         self.dialogue.push(line);
         if self.dialogue.len() > 80 {
             self.dialogue.remove(0);
@@ -101,15 +128,20 @@ impl Dashboard {
         self.scroll = u16::MAX;
     }
     fn normalize_focus(&mut self, width: u16, height: u16) {
-        if self.focus == Focus::Music && !render::wide(width, height) {
+        let areas = render::areas(ratatui::layout::Rect::new(0, 0, width, height));
+        if (self.focus == Focus::Music && areas.music.is_empty())
+            || (self.focus == Focus::Dialogue
+                && (areas.dialogue.width < 3 || areas.dialogue.height < 3))
+        {
             self.focus = Focus::Input;
         }
     }
+
     fn switch_profile(&mut self) {
         self.session.cycle();
         self.append(format!(
             "{} · {}",
-            self.session.profile().name(),
+            speaker(self.session.profile()),
             self.session.profile().greeting()
         ));
     }
@@ -137,7 +169,7 @@ impl Dashboard {
             Action::Empty => {}
             Action::Help => self.help = true,
             Action::Profile(text) => {
-                self.append(format!("{} · {text}", self.session.profile().name()))
+                self.append(format!("{} · {text}", speaker(self.session.profile())))
             }
             Action::Message(text) => self.append(text),
             Action::Request(request) => {
@@ -157,9 +189,11 @@ impl Dashboard {
                 Ok(Update::Progress(name, text)) => self.append(format!("{name} · {text}")),
                 Ok(Update::Done(name, lines)) => {
                     self.busy = false;
+                    let companion = format!("{name} · {}", lines.join("\n"));
                     for text in lines {
                         self.append(format!("{name} · {text}"));
                     }
+                    self.companion = companion;
                 }
                 Err(TryRecvError::Empty) => break,
                 Err(TryRecvError::Disconnected) => {
@@ -174,6 +208,19 @@ impl Dashboard {
     }
     fn key(&mut self, key: KeyEvent, worker: &Worker, width: u16, height: u16) -> bool {
         if key.kind == KeyEventKind::Release {
+            return false;
+        }
+        if key.code == KeyCode::F(12) {
+            self.help = false;
+            self.focus = if self.focus == Focus::Shell {
+                Focus::Input
+            } else {
+                Focus::Shell
+            };
+            return false;
+        }
+        if self.focus == Focus::Shell {
+            self.shell.key(key);
             return false;
         }
         if key.modifiers.contains(KeyModifiers::CONTROL)
@@ -208,11 +255,14 @@ impl Dashboard {
                 return false;
             }
             KeyCode::Tab | KeyCode::BackTab => {
-                let choices = if render::wide(width, height) {
-                    vec![Focus::Input, Focus::Dialogue, Focus::Music]
-                } else {
-                    vec![Focus::Input, Focus::Dialogue]
-                };
+                let mut choices = vec![Focus::Shell, Focus::Input];
+                let areas = render::areas(ratatui::layout::Rect::new(0, 0, width, height));
+                if areas.dialogue.width >= 3 && areas.dialogue.height >= 3 {
+                    choices.push(Focus::Dialogue);
+                }
+                if !areas.music.is_empty() {
+                    choices.push(Focus::Music);
+                }
                 let pos = choices.iter().position(|f| *f == self.focus).unwrap_or(0);
                 let backwards =
                     key.code == KeyCode::BackTab || key.modifiers.contains(KeyModifiers::SHIFT);
@@ -299,6 +349,20 @@ impl Dashboard {
         }
         false
     }
+    fn paste(&mut self, text: &str) {
+        if self.focus == Focus::Shell {
+            self.shell.paste(text);
+        } else if self.focus == Focus::Input && !self.help {
+            for c in text
+                .chars()
+                .filter(|c| !c.is_control())
+                .take(2000usize.saturating_sub(self.input.chars().count()))
+            {
+                self.input.insert(self.cursor, c);
+                self.cursor += c.len_utf8();
+            }
+        }
+    }
 }
 struct TerminalGuard;
 impl Drop for TerminalGuard {
@@ -314,7 +378,7 @@ pub fn run<I: Inference + Send + 'static>(
 ) -> io::Result<()> {
     let diagnostics = session.diagnostics;
     let worker = Worker::spawn(move |work, updates| {
-        let name = work.profile.name().to_owned();
+        let name = speaker(&work.profile).to_owned();
         let result = session::execute(&mut engine, &work.request, &work.profile, |text| {
             let _ = updates.send(Update::Progress(name.clone(), text.to_owned()));
         });
@@ -330,25 +394,32 @@ pub fn run<I: Inference + Send + 'static>(
     let mut terminal = ratatui::try_init()?;
     crossterm::execute!(io::stdout(), event::EnableBracketedPaste)?;
     let mut app = Dashboard::new(session, animations);
+    app.portrait = portrait::Portrait::interactive();
+    let size = terminal.size()?;
+    let areas = render::areas(ratatui::layout::Rect::new(0, 0, size.width, size.height));
+    app.shell = terminal::TerminalPane::spawn(areas.shell_inner.height, areas.shell_inner.width);
+    if app.shell.ended() {
+        app.focus = Focus::Input;
+    }
     let mut last_tick = Instant::now();
     loop {
         app.updates(&worker);
         let size = terminal.size()?;
+        let areas = render::areas(ratatui::layout::Rect::new(0, 0, size.width, size.height));
+        app.shell
+            .resize(areas.shell_inner.height, areas.shell_inner.width);
+        let was_ended = app.shell.ended();
+        app.shell.drain();
+        if !was_ended && app.shell.ended() && app.focus == Focus::Shell {
+            app.focus = Focus::Input;
+        }
         app.normalize_focus(size.width, size.height);
         terminal.draw(|frame| draw(frame, &mut app))?;
         if event::poll(Duration::from_millis(50))? {
             match event::read()? {
                 Event::Key(key) if app.key(key, &worker, size.width, size.height) => break,
-                Event::Paste(text) if app.focus == Focus::Input && !app.help => {
-                    for c in text
-                        .chars()
-                        .filter(|c| !c.is_control())
-                        .take(2000usize.saturating_sub(app.input.chars().count()))
-                    {
-                        app.input.insert(app.cursor, c);
-                        app.cursor += c.len_utf8();
-                    }
-                }
+                Event::Paste(text) => app.paste(&text),
+                Event::Resize(..) => app.portrait.refresh_metrics(),
                 _ => {}
             }
         }
@@ -366,10 +437,10 @@ pub fn run<I: Inference + Send + 'static>(
 #[cfg(test)]
 mod tests {
     use super::*;
-    use ratatui::{Terminal, backend::TestBackend, style::Color};
+    use ratatui::{Terminal, backend::TestBackend};
     use std::collections::BTreeMap;
     fn app() -> Dashboard {
-        Dashboard::new(
+        let mut app = Dashboard::new(
             Session {
                 profiles: BTreeMap::from([
                     ("cat".into(), Personality::cat()),
@@ -381,7 +452,9 @@ mod tests {
                 diagnostics: false,
             },
             false,
-        )
+        );
+        app.focus = Focus::Input;
+        app
     }
     fn key(code: KeyCode) -> KeyEvent {
         KeyEvent::new(code, KeyModifiers::NONE)
@@ -400,11 +473,234 @@ mod tests {
             .collect()
     }
     #[test]
+    fn shell_focus_owns_chords_and_paste_f12_restores_contextual_heart_controls() {
+        let (sent, requests) = mpsc::channel();
+        let worker = Worker::spawn(move |work, _| {
+            sent.send(work.request).unwrap();
+        })
+        .unwrap();
+        let mut app = Dashboard::new(app().session, false);
+        assert_eq!(app.focus, Focus::Shell);
+        for key in [
+            KeyEvent::new(KeyCode::Char('c'), KeyModifiers::CONTROL),
+            KeyEvent::new(KeyCode::Char('q'), KeyModifiers::CONTROL),
+            key(KeyCode::Tab),
+            key(KeyCode::F(1)),
+            key(KeyCode::F(2)),
+            key(KeyCode::Enter),
+        ] {
+            assert!(!app.key(key, &worker, 120, 40));
+            assert_eq!(app.focus, Focus::Shell);
+            assert_eq!(app.session.selected, "cat");
+            assert!(!app.help);
+        }
+        app.paste("/uptime\n");
+        assert!(app.input.is_empty());
+        assert!(requests.try_recv().is_err());
+        app.key(key(KeyCode::F(12)), &worker, 120, 40);
+        assert_eq!(app.focus, Focus::Input);
+        app.paste("/uptime\n");
+        assert_eq!(app.input, "/uptime");
+        assert!(requests.try_recv().is_err());
+        app.key(key(KeyCode::Enter), &worker, 120, 40);
+        assert_eq!(
+            requests.recv_timeout(Duration::from_secs(1)).unwrap(),
+            "/uptime"
+        );
+        app.key(key(KeyCode::F(1)), &worker, 120, 40);
+        assert!(app.help);
+        app.key(key(KeyCode::F(12)), &worker, 120, 40);
+        assert!(!app.help);
+        assert_eq!(app.focus, Focus::Shell);
+        app.key(key(KeyCode::F(12)), &worker, 120, 40);
+        app.key(key(KeyCode::F(2)), &worker, 120, 40);
+        assert_eq!(app.session.selected, "butler");
+        assert!(app.key(
+            KeyEvent::new(KeyCode::Char('q'), KeyModifiers::CONTROL),
+            &worker,
+            120,
+            40
+        ));
+    }
+    #[test]
+    fn compact_companion_starts_with_answer_and_history_keeps_sources_and_diagnostics() {
+        let mut app = app();
+        let (requests, _) = mpsc::sync_channel(1);
+        let (send, updates) = mpsc::channel();
+        let worker = Worker { requests, updates };
+        send.send(Update::Done(
+            "Pastel".into(),
+            vec![
+                "The answer stays visible.".into(),
+                "Source [1]: https://example.com/".repeat(20),
+                "Diagnostics: authored".into(),
+            ],
+        ))
+        .unwrap();
+        app.updates(&worker);
+        let current = plain(&backend(&mut app, 80, 24));
+        assert!(current.contains("The answer stays visible."));
+        assert!(app.dialogue.iter().any(|s| s.contains("Source [1]")));
+        assert!(app.dialogue.iter().any(|s| s.contains("Diagnostics:")));
+        app.focus = Focus::Dialogue;
+        app.scroll = u16::MAX;
+        assert!(plain(&backend(&mut app, 80, 24)).contains("Diagnostics:"));
+    }
+    #[test]
+    fn shared_geometry_prioritizes_shell_and_normalizes_hidden_controls() {
+        use ratatui::layout::Rect;
+        let mut app = app();
+        for (w, h) in [
+            (120, 40),
+            (100, 30),
+            (80, 24),
+            (45, 16),
+            (30, 10),
+            (10, 5),
+            (1, 1),
+            (0, 0),
+        ] {
+            let area = Rect::new(0, 0, w, h);
+            let parts = render::areas(area);
+            assert!(parts.shell.height >= parts.dialogue.height);
+            for rect in [
+                parts.shell,
+                parts.shell_inner,
+                parts.dialogue,
+                parts.input,
+                parts.footer,
+            ] {
+                assert!(rect.right() <= w && rect.bottom() <= h);
+            }
+            backend(&mut app, w, h);
+            assert_eq!(
+                app.shell.screen().size(),
+                (
+                    parts.shell_inner.height.max(1),
+                    parts.shell_inner.width.max(1)
+                )
+            );
+            app.focus = Focus::Music;
+            app.normalize_focus(w, h);
+            assert_eq!(app.focus == Focus::Music, render::wide(w, h));
+            app.focus = Focus::Dialogue;
+            app.normalize_focus(w, h);
+            assert_eq!(app.focus == Focus::Dialogue, parts.dialogue.height > 0);
+        }
+        let tiny = render::areas(Rect::new(0, 0, 1, 1));
+        assert_eq!(tiny.shell_inner, Rect::new(0, 0, 1, 1));
+    }
+    #[test]
+    fn shell_first_rectangles_are_contained_disjoint_and_full_height() {
+        use ratatui::layout::Rect;
+        // Include offset frames and every transition, rather than only origin layouts.
+        for w in [0, 1, 30, 79, 80, 99, 100, 120] {
+            for h in 0..=42 {
+                let frame = Rect::new(7, 5, w, h);
+                let a = render::areas(frame);
+                let panes = [
+                    a.header, a.shell, a.system, a.music, a.dialogue, a.input, a.footer,
+                ];
+                for (i, pane) in panes.iter().enumerate().filter(|(_, p)| !p.is_empty()) {
+                    assert_eq!(pane.intersection(frame), *pane, "{w}x{h}: {pane:?}");
+                    for other in &panes[i + 1..] {
+                        assert!(
+                            pane.intersection(*other).is_empty(),
+                            "{w}x{h}: {pane:?} overlaps {other:?}"
+                        );
+                    }
+                }
+                assert_eq!(a.shell.intersection(a.shell_inner), a.shell_inner);
+                if w >= 100 && h >= 16 {
+                    assert_eq!(a.shell.y, a.header.bottom());
+                    assert_eq!(a.shell.bottom(), a.footer.y);
+                    assert_eq!(a.shell.width, w - 35);
+                    assert_eq!(a.dialogue.width, 34);
+                    assert_eq!(a.dialogue.bottom(), a.input.y);
+                    assert_eq!(a.input.bottom(), a.footer.y);
+                    assert!(a.dialogue.x > a.shell.right());
+                    if h >= 30 {
+                        assert_eq!(a.system.y, a.header.bottom());
+                        assert_eq!(a.system.height, 5);
+                        assert_eq!(a.system.bottom(), a.music.y);
+                        assert_eq!(a.music.height, 5);
+                        assert_eq!(a.music.bottom(), a.dialogue.y);
+                    } else {
+                        assert!(a.system.is_empty() && a.music.is_empty());
+                    }
+                }
+            }
+        }
+    }
+    #[test]
+    fn compact_sidebar_preserves_reply_portrait_input_and_visible_focus() {
+        let worker = Worker::spawn(|_, _| {}).unwrap();
+        let mut app = app();
+        app.companion = "Pastel · Uptime is 42 minutes.".into();
+        for (w, h) in [(100, 30), (120, 40), (100, 24), (80, 24)] {
+            let contents = plain(&backend(&mut app, w, h));
+            assert!(contents.contains("Uptime is 42 minutes."), "{w}x{h}");
+            assert!(contents.contains("HEART INPUT"), "{w}x{h}");
+            assert!(app.portrait_rect.is_some(), "{w}x{h}");
+        }
+        for (w, h) in [(100, 16), (120, 29), (80, 24), (30, 10)] {
+            app.focus = Focus::Music;
+            backend(&mut app, w, h);
+            assert_eq!(app.focus, Focus::Input);
+            // Tab never selects a hidden utility, including in short wide layouts.
+            for _ in 0..8 {
+                app.key(key(KeyCode::Tab), &worker, w, h);
+                assert_ne!(app.focus, Focus::Music);
+            }
+            app.focus = Focus::Shell;
+            app.key(key(KeyCode::F(12)), &worker, w, h);
+            assert_eq!(app.focus, Focus::Input);
+            assert!(
+                render::areas(ratatui::layout::Rect::new(0, 0, w, h))
+                    .input
+                    .height
+                    > 0
+            );
+        }
+    }
+    #[test]
+    fn shell_cursor_uses_original_vt_coordinates_through_focus_changes() {
+        use ratatui::backend::Backend;
+        for (w, h) in [(100, 30), (120, 40), (80, 24)] {
+            let mut app = app();
+            app.preview_terminal(w, h, b"prompt> ");
+            app.focus = Focus::Shell;
+            let inner = render::areas(ratatui::layout::Rect::new(0, 0, w, h)).shell_inner;
+            let mut terminal = Terminal::new(TestBackend::new(w, h)).unwrap();
+            for expected in [(0, 8), (3, 6)] {
+                if expected.0 == 3 {
+                    app.preview_terminal(w, h, b"\x1b[4;7H");
+                }
+                terminal.draw(|f| draw(f, &mut app)).unwrap();
+                let cursor = terminal.backend_mut().get_cursor_position().unwrap();
+                assert_eq!(
+                    (cursor.x, cursor.y),
+                    (inner.x + expected.1, inner.y + expected.0)
+                );
+                app.focus = Focus::Input;
+                terminal.draw(|f| draw(f, &mut app)).unwrap();
+                app.focus = Focus::Shell;
+                terminal.draw(|f| draw(f, &mut app)).unwrap();
+                assert_eq!(
+                    terminal.backend_mut().get_cursor_position().unwrap(),
+                    cursor
+                );
+            }
+        }
+    }
+    #[test]
     fn themed_layouts_keep_character_dialogue_and_safe_small_sizes() {
         for id in ["cat", "butler"] {
             for (w, h) in [
                 (120, 40),
                 (100, 30),
+                (100, 31),
+                (120, 30),
                 (80, 24),
                 (45, 16),
                 (30, 10),
@@ -423,19 +719,19 @@ mod tests {
                         "status/header missing at {w}x{h}"
                     );
                     assert!(contents.contains("DIALOGUE"));
-                    assert!(
-                        b.buffer()
-                            .content()
-                            .iter()
-                            .filter(|c| matches!(c.bg, Color::Rgb(247, 200, 174)))
-                            .count()
-                            > 10,
-                        "portrait skin missing at {w}x{h}"
-                    );
+                    assert!(contents.contains("Portrait") && contents.contains("unavailable"));
+                    assert!(!contents.contains("GOOD IDEAS"));
+                    assert!(contents.contains(if id == "cat" { "Pastel" } else { "Butler" }));
                 }
                 if w >= 100 && h >= 30 {
                     assert!(contents.contains("STATIC DEMO"));
                     assert!(contents.contains("LOCAL MOCK"));
+                    for reading in ["CPU   32%", "Memory   9.3 / 16 GB", "Disk   322 / 476 GB"] {
+                        assert!(
+                            contents.contains(reading),
+                            "missing {reading} for {id} at {w}x{h}"
+                        );
+                    }
                 } else {
                     assert!(!contents.contains("STATIC DEMO"));
                 }
@@ -484,7 +780,7 @@ mod tests {
         app.key(key(KeyCode::Down), &worker, 80, 24);
         assert!(app.input.is_empty());
         app.key(key(KeyCode::BackTab), &worker, 80, 24);
-        assert_eq!(app.focus, Focus::Dialogue);
+        assert_eq!(app.focus, Focus::Shell);
     }
     #[test]
     fn long_content_scrolls_help_and_input_remain_bounded() {
@@ -493,8 +789,9 @@ mod tests {
         app.dialogue = vec!["猫 café source https://example.com/long ".repeat(400)];
         app.input = "é猫🙂".repeat(600);
         app.cursor = app.input.len();
+        app.focus = Focus::Dialogue;
         let b = backend(&mut app, 80, 24);
-        assert!(plain(&b).contains("MESSAGE"));
+        assert!(plain(&b).contains("HEART INPUT"));
         assert!(app.scroll > 0);
         app.focus = Focus::Dialogue;
         app.key(key(KeyCode::Home), &worker, 80, 24);
@@ -508,6 +805,64 @@ mod tests {
         for (w, h) in [(120, 40), (80, 24), (30, 10), (1, 1), (0, 0)] {
             backend(&mut app, w, h);
         }
+    }
+    #[test]
+    fn kitty_placements_follow_help_profile_and_resize_without_idle_transmission() {
+        let mut app = app();
+        app.portrait = portrait::Portrait::fixture();
+        let home = backend(&mut app, 120, 40);
+        let rect = app.portrait_rect.unwrap();
+        let symbols = plain(&home);
+        assert!(symbols.contains('\u{10eeee}'));
+        assert!(symbols.contains("\x1b_G"));
+        assert!(!plain(&backend(&mut app, 120, 40)).contains("\x1b_G"));
+        app.help = true;
+        let help = backend(&mut app, 120, 40);
+        assert!(!plain(&help).contains('\u{10eeee}'));
+        assert!(app.portrait_rect.is_none());
+        app.help = false;
+        assert!(plain(&backend(&mut app, 120, 40)).contains('\u{10eeee}'));
+        app.session.selected = "butler".into();
+        let butler = plain(&backend(&mut app, 120, 40));
+        assert!(!butler.contains('\u{10eeee}'));
+        assert!(butler.contains("Text mode"));
+        app.session.selected = "cat".into();
+        let compact = plain(&backend(&mut app, 45, 16));
+        assert!(!compact.contains('\u{10eeee}'));
+        assert!(app.portrait_rect.is_none());
+        let resized = plain(&backend(&mut app, 80, 24));
+        assert!(resized.contains('\u{10eeee}'));
+        assert!(resized.contains("\x1b_G"));
+        assert_ne!(app.portrait_rect.unwrap(), rect);
+        assert!(!plain(&backend(&mut app, 80, 24)).contains("\x1b_G"));
+    }
+    #[test]
+    fn appearance_names_label_snapshots_and_old_custom_profiles_still_render() {
+        let mut app = app();
+        assert!(app.dialogue[0].starts_with("Pastel · "));
+        let captured = speaker(app.session.profile()).to_owned();
+        app.switch_profile();
+        assert_eq!(captured, "Pastel");
+        assert!(app.dialogue.last().unwrap().starts_with("Butler · "));
+        let (requests, _) = mpsc::sync_channel(1);
+        let (send, updates) = mpsc::channel();
+        let worker = Worker { requests, updates };
+        send.send(Update::Progress(captured.clone(), "working".into()))
+            .unwrap();
+        send.send(Update::Done(captured, vec!["done".into()]))
+            .unwrap();
+        app.updates(&worker);
+        assert!(app.dialogue.iter().any(|s| s == "Pastel · working"));
+        assert!(app.dialogue.last().unwrap() == "Pastel · done");
+        let mut custom = Personality::cat();
+        custom.id = "custom".into();
+        custom.appearance = None;
+        assert_eq!(speaker(&custom), "custom");
+        app.session.profiles.insert("custom".into(), custom);
+        app.session.selected = "custom".into();
+        let contents = plain(&backend(&mut app, 80, 24));
+        assert!(contents.contains("custom"));
+        assert!(contents.contains("Portrait") && contents.contains("unavailable"));
     }
     #[test]
     fn long_input_reserves_a_visible_caret_after_ascii_and_wide_unicode() {

@@ -1,0 +1,18 @@
+{
+  "pending-hup": {
+    "pending_input_confirmed_in_zsh_buffer": true,
+    "absent_before_quit": true,
+    "normal_bounded_exit": true,
+    "shell_reaped": true,
+    "pending_command_never_executed": true,
+    "terminal_restored": true
+  },
+  "pending-hup-term": {
+    "pending_input_confirmed_in_zsh_buffer": true,
+    "absent_before_quit": true,
+    "normal_bounded_exit": true,
+    "shell_reaped": true,
+    "pending_command_never_executed": true,
+    "terminal_restored": true
+  }
+}

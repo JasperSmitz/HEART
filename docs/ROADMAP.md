@@ -45,6 +45,25 @@ All 66 all-target tests passed on macOS and Linux ARM64, with formatting, warnin
 Authorized [plan 0012](plans/0012-cozy-dashboard.md) adds opt-in `--dashboard` with Cat by default, original cell-pixel character rooms, JRPG dialogue, editable input, profile themes, responsive layout and a single request worker. Existing console/commands remain available; system **STATIC DEMO** and music **LOCAL MOCK** widgets do not poll or integrate services. Optional frontend-neutral appearance keeps older profile files compatible. Deterministic actual-renderer SVG previews support visual iteration. Independent review, real terminal/Linux checks and the user's visual evaluation are tracked in the plan/evaluation; live telemetry, audio and desktop integration remain outside this scope.
 
 
+## Terminal home redesign — implemented and reviewed; visual iteration ready
+
+[Plan 0013](plans/0013-terminal-home.md) implements the approved visual milestone: generated character environment removed, exact supplied Pastel portrait in JRPG dialogue, cohesive Sunset colors and retained commands/System/Music mocks. The product direction is now a cozy personal terminal workspace with a companion. The 78-test suite, Clippy, ten-test focused correction/recheck, two fallback PTY checks and actual Linux/Ghostty screenshot inspection are recorded in the [evaluation](evaluations/terminal-home.md). Independent review cleared after one correction round. The user's profile JSON and existing core edit remain unchanged; workspace formatting still reports that pre-existing edit. macOS runtime remains untested here. Product-owner visual iteration is next; embedded shell/PTY management, real widgets, new integrations and workspace management remain future scope.
+
+## Single embedded terminal — implemented and reviewed; hands-on iteration ready
+
+[Plan 0014](plans/0014-embedded-terminal.md) implements a configured interactive shell in a native PTY, ANSI/alternate-screen rendering, F12 shell/HEART focus, bounded scrollback, resize and owned-child cleanup. The shell is now the main dashboard workspace; compact Pastel dialogue/input and existing mock utilities remain. Manual shell input is separate from assistant/tool execution. All 91 workspace/all-target tests, Clippy and CLI formatting pass; 25 independent outer-PTY checks and actual Linux/Ghostty zsh/Starship/btop inspection passed. Independent review cleared after one correction for each of two shutdown issues; no unresolved findings. Protected user/profile/artwork hashes remain unchanged. [Evidence and screenshots](evaluations/embedded-terminal.md) record compatibility limits and the pre-existing core formatting discrepancy. macOS runtime remains untested. Product-owner hands-on iteration is next; no tabs, multiplexing, shell automation or new integration was added.
+
+### Shell-first layout refinement
+
+[Plan 0015](plans/0015-shell-first-layout.md) gives the shell full content height
+with a right sidebar for compact System/Music, character dialogue and HEART input.
+At narrow sizes a bottom companion/input strip preserves shell width. Existing
+F12 behavior, theme and PTY lifecycle remain intact. Developer's 31 CLI tests,
+25 architect outer-PTY checks and actual Ghostty portrait/zsh/btop/resize
+inspection passed. [Evaluation and screenshots](evaluations/shell-first-layout.md)
+record exact breakpoints, normal prompt placement and review status. No new
+features or integrations are included.
+
 ## Possible later exploration
 
 Useful terminal tasks, additional modular capabilities, fully self-hosted web search, local/cloud model interchangeability, and a desktop companion may inform future milestones. Their order, scope, feasibility, and delivery are open; this list is not a commitment.

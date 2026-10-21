@@ -1,0 +1,35 @@
+{
+  "wide_outer_cells": [
+    140,
+    46
+  ],
+  "wide_inner_shell_cells": [
+    103,
+    40
+  ],
+  "compact_outer_cells": [
+    81,
+    24
+  ],
+  "compact_inner_shell_cells": [
+    79,
+    11
+  ],
+  "actual_ghostty_portrait": true,
+  "normal_prompt_reaches_bottom_after_output": true,
+  "f12_heart_uptime_and_return": true,
+  "shell_export_survives_focus_resize_and_btop": true,
+  "fullscreen_btop": true,
+  "protected_file_hashes_unchanged": {
+    "crates/cli/src/dashboard/terminal.rs": true,
+    "crates/core/src/profiles.rs": true,
+    "profiles/cat.json": true,
+    "crates/cli/assets/pastel.png": true
+  },
+  "exit": {
+    "exit_code": 0
+  },
+  "restored": {
+    "outer_modes_restored": true
+  }
+}

@@ -7,6 +7,8 @@ pub struct Theme {
     pub text: Color,
     pub accent: Color,
     pub gold: Color,
+    pub muted: Color,
+    pub meters: [Color; 3],
     pub portrait: String,
     pub name: String,
 }
@@ -19,6 +21,8 @@ impl Theme {
                 text: Color::Rgb(243, 233, 215),
                 accent: Color::Rgb(165, 188, 194),
                 gold: Color::Rgb(215, 185, 137),
+                muted: Color::Rgb(126, 140, 158),
+                meters: [Color::Rgb(165, 188, 194); 3],
                 portrait: "neutral".into(),
                 name: profile.id.clone(),
             };
@@ -33,6 +37,16 @@ impl Theme {
             text: color(&a.text),
             accent: color(&a.accent),
             gold: color(&a.gold),
+            muted: if a.portrait == "cat" {
+                color("#708bd4")
+            } else {
+                color(&a.accent)
+            },
+            meters: if a.portrait == "cat" {
+                [color("#f5bad9"), color("#daaae4"), color("#a49dd4")]
+            } else {
+                [color(&a.accent), color(&a.gold), color(&a.accent)]
+            },
             portrait: a.portrait.clone(),
             name: a.display_name.clone(),
         }

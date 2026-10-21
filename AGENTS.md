@@ -11,6 +11,17 @@ The repository is the source of truth. Read `docs/VISION.md`, `docs/ARCHITECTURE
 - **Reviewer** independently evaluates correctness, security, maintainability, test coverage, architecture consistency, and Linux/macOS portability against the approved scope. Focus on actual defects, not speculative improvements. Report findings with severity, file:line references, evidence, and impact. Do not edit application code or other project files; the reviewer's only permitted edits are substantial entries in `docs/LESSONS.md`. Role instructions and inherited permissions are not a security boundary.
 - **Architect** coordinates findings and blockers. Allow at most two developer correction and reviewer recheck rounds for an unresolved issue, then escalate to the user with a concrete recommendation. Do not silently expand scope or accept an unmet criterion.
 
+## Acceptance and publishing
+
+When the user accepts completed work, the architect commits and pushes the
+accepted changes to the configured GitHub remote as part of completion. This is
+standing authorization; do not request duplicate permission to commit or push.
+Implementation approval alone is not acceptance. Complete required verification
+and independent review before publishing, preserve unrelated user work, and
+include it only when explicitly authorized (for example, “push everything”). Use
+a normal push without rewriting remote history. Report the pushed branch and
+commit, or any blocker.
+
 ## Working principles
 
 Prefer the simplest adequate solution, purposeful dependencies, clear module boundaries, and portability across Linux and macOS. Respect operating-system permissions and use safe, explicit handling of consequential actions. Choose tests appropriate to the change and its risks; avoid speculative abstractions and unnecessary scaffolding. Communicate decisions, evidence, uncertainty, and blockers concisely.

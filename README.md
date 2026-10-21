@@ -1,6 +1,6 @@
 # HEART
 
-A small Rust terminal assistant: use an explicit command, receive a brief factual answer in an editable character voice. Authored profile templates present disk/uptime results; a local Ollama model phrases other successful results; Tavily performs one basic web search for `/search`; separate native modules read filesystem space, OS/architecture and uptime. No chat history is stored.
+A cozy personal terminal workspace around a Rust assistant: work in your configured shell and use HEART commands for brief factual answers in an editable character voice. Authored profile templates present disk/uptime results; a local Ollama model phrases other successful results; Tavily performs one basic web search for `/search`; separate native modules read filesystem space, OS/architecture and uptime. No chat history is stored. Multiple terminals and expanded module workspaces remain future milestones.
 
 Install a current Rust toolchain and [Ollama](https://ollama.com). Start `ollama serve` in a separate terminal (or use your existing local Ollama service). Download a model explicitly; HEART never installs one:
 
@@ -21,27 +21,39 @@ Use `/cat`, `/butler`, `/profile ID`, or `/ID` for any discovered profile, and `
 
 ## Cozy dashboard prototype
 
-See the [Cat preview](docs/evaluations/dashboard/cat-wide.png), [Butler preview](docs/evaluations/dashboard/butler-wide.png), and [verification/compact previews](docs/evaluations/cozy-dashboard.md).
+See the [real Pastel/Ghostty screenshot](docs/evaluations/terminal-home/pastel-ghostty.png), [Butler screenshot](docs/evaluations/terminal-home/butler-ghostty.png), and [verification/compact screenshots](docs/evaluations/terminal-home.md).
 
-Run `cargo run -p heart -- --dashboard` in an interactive Linux/macOS terminal. Dashboard starts with Cat; `--personality butler` or a discovered custom ID selects another initial character. The no-flag console still defaults to Butler. `--no-animation` disables the subtle blink. Opening the dashboard makes no provider/model requests or native readings; no Ollama service/key is needed to view it. Typed `/disk` and `/uptime` use real native data and authored replies without model requests; `/system`, `/search` and opt-in natural-language requests retain their existing inference behavior.
+Run `cargo run -p heart -- --dashboard` in an interactive Linux/macOS terminal. Dashboard starts with Pastel (profile ID `cat`); `--personality butler` or a discovered custom ID selects another initial character. The no-flag console still defaults to Butler. Portrait expressions/typewriter effects remain future work; `--no-animation` remains accepted. Opening the dashboard invokes no assistant module/model/provider; no Ollama service/key is needed to view it. The configured shell runs its usual startup commands. In HEART input, `/disk` and `/uptime` use real native data and authored replies without model requests; `/system`, `/search` and opt-in natural-language requests retain their existing inference behavior.
 
-System **STATIC DEMO** values are fixed illustrations. Music **LOCAL MOCK** playback/track controls only change local UI state; they play no audio. READY/WORKING describes HEART's request state, not service connectivity. At 100+ columns and 30+ rows, supporting widgets sit beside the character room; 80×24 prioritizes room/dialogue/input; very small terminals retain dialogue/input. There is no system polling, real music or new capability.
+The dashboard opens one interactive `$SHELL` in a real PTY and starts with **shell focus**. Its normal rc files, environment, aliases and prompt run unchanged. **F12 switches between the shell and HEART input**. With shell focus, Ctrl+C interrupts the shell's foreground command, Tab completes, arrows recall/edit shell history, and F1/F2/Ctrl+Q go to the child. They do not invoke HEART controls. The focused border, header and footer identify the active context. The outer terminal must deliver F12 to HEART.
+
+To talk to Pastel, press F12, enter a HEART command such as `/uptime`, then press F12 to return to the same shell cwd and state. In HEART context, the controls below retain their existing meaning. Shift+PgUp/PgDn while shell-focused scroll a bounded 2,000-line shell history; typing returns to live output. Paste goes to the focused context and respects the child's bracketed-paste mode, with a 64 KiB shell paste limit. Exiting HEART closes its shell and attached foreground job; deliberately detached processes are outside that cleanup guarantee. Shell exit/start failure leaves HEART controls available and does not automatically restart a shell.
+
+Manual shell commands are never assistant tool invocations: no model, capability or assistant response can write to the terminal. The no-flag console retains its existing command interface and starts no embedded shell. Shell history files follow your shell configuration; HEART's assistant history remains in memory only. See [embedded-terminal verification and limitations](docs/evaluations/embedded-terminal.md).
+
+System **STATIC DEMO** values are fixed illustrations. Music **LOCAL MOCK** playback/track controls only change local UI state; they play no audio. READY/WORKING describes HEART's request state, not service connectivity. The shell fills the left workspace vertically beneath the header. The right sidebar stacks System, Music, compact character dialogue and HEART input; smaller terminals hide utilities and shrink/omit companion artwork before sacrificing shell space. The shell preserves normal cursor placement: a fresh prompt can start at the top, and output scrolls at the bottom once it fills the pane. There is no widget polling, real music or new capability.
+
+The sidebar layout needs at least 100 columns and 16 rows; System/Music appear
+at 30+ rows. Narrower or shorter windows keep a compact bottom companion/input
+strip to preserve shell width. [Layout screenshots and verification](docs/evaluations/shell-first-layout.md)
+show both arrangements.
 
 | Keys | Action |
 | --- | --- |
-| Tab / Shift-Tab | Cycle visible input, dialogue and music focus |
-| Enter | Submit input / toggle focused music |
+| F12 | Globally toggle shell / HEART input |
+| Tab / Shift-Tab in HEART | Cycle visible HEART controls and shell; shell Tab always completes |
+| Enter in HEART | Submit input / toggle focused music |
 | ← / →, Home / End | Edit input; music arrows change mock track |
 | ↑ / ↓ in input | Recall command history, returning to the current draft |
 | ↑ / ↓, PgUp / PgDn, Home / End in dialogue/help | Scroll |
 | F1 / Esc | Toggle help / close help and focus input |
 | F2 | Cycle discovered characters and themes |
 | Space in music | Toggle mock playback |
-| Ctrl-Q / Ctrl-C / `/exit` | Quit promptly, including during a request |
+| Ctrl-Q / Ctrl-C / `/exit` in HEART | Quit promptly, including during an assistant request |
 
 Input supports Unicode character editing and a horizontal viewport, with a 2,000-character draft limit. A single worker executes requests; submitting another capability while busy preserves the draft. Help and profile selection remain available. Each reply keeps the character selected when submitted. The dashboard keeps a bounded in-memory display (80 entries) and input history (50), with no persistence or model conversation context. Safe `--diagnostics` appear in dialogue rather than over the alternate screen. Normal exit, initialization errors and panics restore raw/alternate-screen mode and cursor through Ratatui and a scope guard.
 
-The renderer uses original terminal-cell art with true-color RGB and Unicode borders; use a terminal/font that supports those features. No Nerd Font or terminal image protocol is required. Color approximation and Unicode cell widths depend on the terminal. [Departure Mono](https://departuremono.com/) gives a pixel feel; [Cascadia Mono](https://github.com/microsoft/cascadia-code) is a softer alternative. Choose/install fonts and line height in your own terminal settings; HEART never changes them.
+Pastel's supplied portrait uses real Kitty graphics on Ghostty/Kitty with available terminal pixel metrics, keeping sharp nearest-neighbor scaling and proportions. Unknown terminals, multiplexers, missing metrics and nonempty `NO_COLOR` use a labelled text fallback; `HEART_PORTRAIT=text cargo run -p heart -- --dashboard` forces it. Butler/custom assets currently use text fallback until artwork is added. No generated character art, Nerd Font or font changes are used. True-color RGB, Unicode widths and cell metrics depend on your terminal; choose fonts and line height in its settings. See the [asset notes](crates/cli/assets/README.md).
 
 A deterministic preview uses the actual renderer with mock state, without reading credentials/configuration or constructing services:
 

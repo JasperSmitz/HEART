@@ -1,0 +1,10 @@
+{
+  "startup_ready": true,
+  "text_fallback": true,
+  "first_command": true,
+  "help": true,
+  "profile": true,
+  "no_kitty_transmit": true,
+  "normal_exit": true,
+  "terminal_restored": true
+}

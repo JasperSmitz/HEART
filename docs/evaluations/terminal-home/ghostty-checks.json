@@ -1,0 +1,29 @@
+{
+  "terminal": "Ghostty 1.3.1-arch2 on Linux/Wayland",
+  "initial_cells": [
+    119,
+    39
+  ],
+  "compact_cells": [
+    81,
+    23
+  ],
+  "actual_screenshot_review": [
+    "portrait nearest contain and Sunset colors",
+    "help removes portrait",
+    "Butler switches to text fallback",
+    "Pastel restores portrait",
+    "uptime produces authored result",
+    "mock music play and track controls change state",
+    "resize rescales image and hides utilities",
+    "small layout hides image and retains dialogue/input/scroll indicator"
+  ],
+  "exit_code": 0,
+  "owned_image_cleanup": true,
+  "graphics_transmissions": 2,
+  "limits": [
+    "macOS not run",
+    "cell counts depend on actual compositor geometry",
+    "some captures include compositor focus hints"
+  ]
+}

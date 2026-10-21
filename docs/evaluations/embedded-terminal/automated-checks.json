@@ -1,0 +1,19 @@
+{
+  "workspace_all_targets_tests_passed": 91,
+  "all_recorded_test_groups_passed": true,
+  "test_group_counts": [
+    23,
+    0,
+    2,
+    0,
+    3,
+    5,
+    37,
+    0,
+    8,
+    13
+  ],
+  "provenance": "Developer cargo test --workspace --all-targets --locked; original log /tmp/heart-0014-tests.log",
+  "architect_cli_format_check": true,
+  "architect_diff_whitespace_check": true
+}

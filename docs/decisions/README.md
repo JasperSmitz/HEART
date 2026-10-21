@@ -9,3 +9,5 @@ Include: status (proposed, accepted, superseded, or rejected), context, meaningf
 - [0003 — Explicit commands and editable profiles](0003-explicit-commands-and-editable-profiles.md)
 - [0004 — Authored numerical presentation](0004-authored-numeric-presentation.md)
 - [0005 — Cozy terminal dashboard frontend](0005-terminal-dashboard-presentation.md)
+- [0006 — Terminal home and supplied character portraits](0006-terminal-home-and-portraits.md)
+- [0007 — Single manual shell inside the dashboard](0007-single-embedded-shell.md)

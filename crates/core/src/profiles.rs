@@ -128,7 +128,12 @@ pub fn load_profiles(
             .map_err(|_| format!("Could not read profile {}", path.display()))?;
         let profile: Personality = serde_json::from_str(&text)
             .map_err(|_| format!("Invalid profile JSON: {}", path.display()))?;
-        let safe = |s: &str| !s.trim().is_empty() && !s.chars().any(char::is_control);
+        let safe = |s: &str| {
+            !s.trim().is_empty()
+                && !s.chars().any(|c| {
+                    c.is_control() && !matches!(c, '\n' | '\r' | '\t')
+                })
+        };
         if !valid_name(&profile.id)
             || reserved.contains(&profile.id)
             || profiles.contains_key(&profile.id)

@@ -1,0 +1,40 @@
+{
+  "terminal": "Ghostty 1.3.1-arch2 on Linux/Wayland",
+  "shell": "zsh 5.9.2 with actual user rc, seven aliases and Starship 1.26.0",
+  "initial_cells": [
+    139,
+    45
+  ],
+  "compact_outer_cells": [
+    81,
+    24
+  ],
+  "compact_shell_cells": [
+    79,
+    11
+  ],
+  "fullscreen": "btop1.4.7 --force-utf --update1000; isolated XDG_CONFIG_HOME",
+  "checks": [
+    "real portrait with compact companion",
+    "manual shell zsh/aliases/ANSI output",
+    "F12 to HEART and authored uptime",
+    "shell exported value cozy survives focus changes and btop",
+    "live resize changes inner PTY dimensions",
+    "btop alternate screen coherent after HVP compatibility alias",
+    "arrow navigation in btop",
+    "HEART uptime response while btop keeps running",
+    "btop q returns prompt",
+    "normal quit and outer terminal restoration"
+  ],
+  "exit": {
+    "exit_code": 0
+  },
+  "restoration": {
+    "outer_modes_restored": true
+  },
+  "limits": [
+    "macOS runtime not tested",
+    "Neovim absent, not installed",
+    "no child graphics/OSC clipboard/mouse passthrough/extended keyboard protocols"
+  ]
+}
